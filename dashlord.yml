@@ -1,13 +1,15 @@
-title: DashLord example
+title: DashLord Culture
 description: Bonnes pratiques techniques
-entity: Votre entité
-footer: Powered by SocialGouv
-marianne: false
+entity: |
+  Ministère
+  de la culture
+footer: Déployé par l’Atelier numérique
+marianne: true
 tools:
   "404": true
   screenshot: true
   nmap: true
-  zap: true
+  zap: false
   wappalyzer: true
   http: true
   testssl: true
@@ -21,17 +23,148 @@ tools:
   declaration-a11y: true
   ecoindex: true
   dsfr: true
-  betagouv: true
+  betagouv: false
 columns: # pour masquer des colonnes
   zap: false
-updownioStatusPage: https://updown.io/status_pages
-updownioRecipients:
-  - email:123456
-  - email:789987
+#updownioStatusPage: https://updown.io/status_pages
+#updownioRecipients:
+#  - email:123456
+#  - email:789987
 urls:
-  - url: https://www.fabrique.social.gouv.fr
+  - url: https://www.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Site institutionnel ministère"
+  - url: https://www.culturecheznous.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "#culturecheznous"
+  - url: https://basedeslieux.culture.gouv.fr
+    category: LPGP
+    tags:
+      - portail
+    title: Base des lieux
+  - url: https://atlasculture.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: Atlas culture
+  - url: https://journeesdupatrimoine.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Journées européennes du patrimoine"
+  - url: https://archeologie.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Collection Grands Sites Archéologiques"
+  - url: https://ellesfontla.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Elles font la culture"
+    tools:
+      - betagouv: true
+  - url: https://www.archives-nationales.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Archives nationales"
+  - url: https://francearchives.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "France Archives"
+  - url: https://archives-nationales-travail.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Archives nationales du monde du travail"
+  - url: https://www.culture.fr/franceterme
+    category: LPGP
+    tags:
+      - portail
+    title: "France Terme"
+  - url: https://www.culturecheznous.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Culture chez nous"
+  - url: https://histoiredesarts.culture.gouv.fr/
+    category: LPGP
+    tags:
+      - portail
+    title: "Histoire des arts"
+
+
+  - url: https://data.culture.gouv.fr
+    category: LP Données
+    tags:
+      - data
+    #title: Data culture
+
+
+  - url: https://collectif-objets.beta.gouv.fr
+    betaId: collectif_objets
+    tags:
+      - promo1
     repositories:
-      - socialgouv/www
-    docker:
-      - ghcr.io/socialgouv/fabrique/frontend
-  - url: https://beta.gouv.fr
+      - betagouv/collectif-objets
+    tools:
+      - betagouv: true
+  - url: https://www.comparia.beta.gouv.fr
+    title: "Compar:IA"
+    betaId: languia
+    category: Atelier numérique
+    tags:
+      - IA
+      - promo4
+    repositories:
+      - betagouv/comparia
+  - url: https://compte-rendu-vif.beta.gouv.fr
+    title: "Compte rendu vif"
+    betaId: compte-rendu-vif
+    category: Atelier numérique
+    tags:
+      - promo3
+    repositories:
+      - betagouv/compte-rendu-vif
+  - url: https://assistant-declaration.beta.gouv.fr
+    title: Assistant déclaration (prod)
+    category: Atelier numérique
+    betaId: donnees-spectacle
+    repositories:
+      - betagouv/assistant-declaration
+    tags:
+      - app
+      - production
+  - url: https://assistant-declaration.incubateur.net
+    title: Assistant déclaration (préprod)
+    category: Atelier numérique
+    betaId: donnees-spectacle
+    repositories:
+      - betagouv/assistant-declaration
+    tags:
+      - app
+      - staging
+  - url: "https://euphrosyne.beta.gouv.fr/"
+    title: Euphrosyne
+    category: Atelier numérique
+    betaId: euphrosyne
+    repositories:
+      - betagouv/euphrosyne
+
+  - url: http://atlas.patrimoines.culture.fr
+    title: "Atlas des patrimoines"
+  - url: https://ccbmn.culture.gouv.fr/
+    title: "Réseau des bibliothèques des musées nationaux"
+  - url: "https://www.museedesplansreliefs.culture.fr/
+    title: "Musée des plans-reliefs"
+  - url: "http://www.inventaire.culture.gouv.fr/"
+    title: "Inventaire général du patrimoine culturel"
+  - url : "https://recherche-anom.culture.gouv.fr/"
+    title: "Archives nationales d'Outre-Mer, recherche"
+  
