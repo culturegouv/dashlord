@@ -8,7 +8,7 @@ marianne: true
 tools:
   "404": true
   screenshot: true
-  nmap: true
+  nmap: false
   zap: false
   wappalyzer: true
   http: true
@@ -17,8 +17,8 @@ tools:
   thirdparties: true
   nuclei: true
   updownio: false
-  dependabot: true
-  codescan: true
+  dependabot: false
+  codescan: false
   stats: false
   declaration-a11y: true
   ecoindex: true
@@ -31,12 +31,12 @@ columns: # pour masquer des colonnes
 #  - email:123456
 #  - email:789987
 urls:
-  - url: https://www.culture.gouv.fr/
+  - url: https://www.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Site institutionnel ministère"
-  - url: https://www.culturecheznous.gouv.fr/
+  - url: https://www.culturecheznous.gouv.fr
     category: LPGP
     tags:
       - portail
@@ -46,67 +46,223 @@ urls:
     tags:
       - portail
     title: Base des lieux
-  - url: https://atlasculture.fr/
+  - url: https://atlasculture.fr
     category: LPGP
     tags:
       - portail
     title: Atlas culture
-  - url: https://journeesdupatrimoine.culture.gouv.fr/
+  - url: https://journeesdupatrimoine.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Journées européennes du patrimoine"
-  - url: https://archeologie.culture.gouv.fr/
+  - url: https://archeologie.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Collection Grands Sites Archéologiques"
-  - url: https://ellesfontla.culture.gouv.fr/
+  # - url: https://semainelanguefrancaise.culture.gouv.fr
+  #   category: LPGP
+  #   title: "Semaine de la langue française"
+  - url: https://nuitdesmusees.culture.gouv.fr
+    category: LPGP
+    title: "Nuit des musées"
+  - url: https://rendezvousauxjardins.culture.gouv.fr
+    category: LPGP
+    title: "Rendez-vous aux jardins"
+  - url: https://fetedelamusique.culture.gouv.fr
+    category: LPGP
+    title: "Fête de la musique"
+  - url: https://journeesarchitecture.culture.gouv.fr
+    category: LPGP
+    title: "Journées nationales de l’architecture"
+  - url: https://forumentreprendreculture.culture.gouv.fr
+    category: LPGP
+    title: "Forum Entreprendre dans la Culture"
+  - url: https://dismoidixmots.culture.gouv.fr
+    category: LPGP
+    title: "Dis-moi dix mots pour la planète"
+  - url: https://etats-generaux-information.fr
+    category: LPGP
+    title: "États généraux de l’information"
+  - url: https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr
+    category: LPGP
+    title: "Cathédrale de Perpignan"
+  - url: https://citedecarcassonne.culture.gouv.fr
+    category: LPGP
+    title: "Cité de Carcassonne"
+  - url: https://sculpturesdumaine.culture.gouv.fr
+    category: LPGP
+    title: "Sculptures en terre cuite du Maine"
+  - url: https://tresor-cathedrale-amiens.culture.gouv.fr
+    category: LPGP
+    title: "Tréseor des cathédrales d’Amiens"
+  - url: https://cordouan.culture.gouv.fr
+    category: LPGP
+    title: "Le phare de Cordouan"
+  - url: https://notre-dame-de-paris.culture.gouv.fr
+    category: LPGP
+    title: "Notre Dame de Paris"
+  - url: https://commande-photojournalisme.culture.gouv.fr
+    category: LPGP
+    title: "Grande commande photojournalisme"
+  - url: https://mondes-nouveaux.culture.gouv.fr
+    category: LPGP
+    title: "Mondes nouveaux"
+  - url: https://cheval-patrimoine.culture.gouv.fr
+    category: LPGP
+    title: "Le cheval et ses patrimoines"
+  - url: https://bateauxdupatrimoine.culture.gouv.fr
+    category: LPGP
+    title: "Bateaux du patrimoine en Pays de Loire"
+  - url: https://visites-en-ligne-musees.culture.gouv.fr
+    category: LPGP
+    title: "Catalogue des visites en ligne des musées"
+  - url: https://garamond.culture.gouv.fr
+    category: LPGP
+    title: "Garamond"
+  - url: https://cathedrale-saint-pierre-de-montpellier.culture.gouv.fr
+    category: LPGP
+    title: "La cathédrale Saint-Pierre de Montpellier"
+  - url: http://www.tcmh.culture.gouv.fr
+    category: LPGP
+    title: "TECHNIQUES CONTEMPORAINES utilisées dans les MONUMENTS HISTORIQUES"
+  - url: https://www.port-royal-des-champs.eu
+    category: LPGP
+    title: "Musée National de Port-Royal des Champs"
+  - url: https://www.musee-moyenage.fr
+    category: LPGP
+    title: "Musée de Cluny, Musée national du Moyen Âge"
+  - url: https://pci-lab.fr
+    category: LPC
+    title: "L’Inventaire du Patrimoine culturel immatériel en France"
+  - url: https://neoscrib.culture.gouv.fr
+    category: LP Données
+    title: "Néoscrib - enquête annuelle bibliothèques"
+  - url: https://www.lrmh.fr
+    category: LPC
+    title: "Laboratoire de recherche des monuments historiques"
+  - url: https://oscar.culture.fr
+    category: LPC
+    title: "OSCAR - Guichet Internet des Biens Culturels"
+  - url: https://mediatheque-patrimoine.culture.gouv.fr
+    category: LPGP
+    title: "Médiathèque du Patrimoine et de la Photographie"
+  - url: http://www.photographierlepatrimoine.culture.fr
+    category: LPGP
+    title: "Photographier le patrimoine"
+  - url: https://musees-nationaux-malmaison.fr
+    category: LPGP
+    title: "Musées Nationaux de Malmaison"
+  - url: https://musees-nationaux-malmaison.fr/chateau-malmaison/
+    category: LPGP
+    title: "Musée national des châteaux de Malmaison et de Bois-Préau"
+  - url: https://musees-nationaux-malmaison.fr/musee-maisonbonaparte/
+    category: LPGP
+    title: "Maison Bonaparte"
+  - url: https://musees-nationaux-malmaison.fr/musees-napoleonien-africain/
+    category: LPGP
+    title: "Musées nationaux de l’Ile d’Aix"
+  - url: https://musee-renaissance.fr
+    category: LPGP
+    title: "Musée national de la Renaissance - château d’Ecouen"
+  - url: https://musee-magnin.fr
+    category: LPGP
+    title: "Musée national Magnin"
+  - url: https://musee-clemenceau-delattre.fr
+    category: LPGP
+    title: "Musée national Clemenceau De Lattre"
+  - url: https://musees-nationaux-alpesmaritimes.fr
+    category: LPGP
+    title: "Musées Nationaux Alpes Maritimes"
+  - url: https://musees-nationaux-alpesmaritimes.fr/fleger/
+    category: LPGP
+    title: "Musée national Fernand Léger"
+  - url: https://musees-nationaux-alpesmaritimes.fr/chagall/
+    category: LPGP
+    title: "Musée national Marc Chagall"
+  - url: https://musees-nationaux-alpesmaritimes.fr/picasso/
+    category: LPGP
+    title: "Musée national Pablo Picasso"
+  - url: https://musee-prehistoire-eyzies.fr
+    category: LPGP
+    title: "Musée national de Préhistoire"
+  - url: https://chateaudecompiegne.fr
+    category: LPGP
+    title: "Château de Compiègne"
+  - url: https://museefrancoamericain.fr
+    category: LPGP
+    title: "Musée Franco-Américain du château de Blérancourt"
+  - url: https://musee-archeologienationale.fr
+    category: LPGP
+    title: "Musée d’Archéologie nationale - Domaine national du château de Saint-Germain-en-Laye"
+  - url: https://chateau-pau.fr
+    category: LPGP
+    title: "Musée national et domaine du château de Pau"
+  - url: https://c2rmf.fr
+    category: LPGP
+    title: "Centre de recherche et de restauration des musées de France"
+  # - url: https://cestmonpatrimoine.culture.gouv.fr
+  #   category: LPGP
+  #   title: "C’est mon patrimoine"
+  - url: https://ellesfontla.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Elles font la culture"
     tools:
       - betagouv: true
-  - url: https://www.archives-nationales.culture.gouv.fr/
+  - url: https://www.archives-nationales.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Archives nationales"
-  - url: https://francearchives.gouv.fr/
+  - url: https://www.leonore.archives-nationales.culture.gouv.fr
+    category: LPA
+    title: "Leonore"
+  - url: https://girophares.archives-nationales.culture.gouv.fr
+    category: LPA
+    title: "Girophares"
+  - url: www.siv.archives-nationales.culture.gouv.fr
+    category: LPA
+    title: "Salle des inventaires virtuels"
+  - url: https://francearchives.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "France Archives"
-  - url: https://archives-nationales-travail.culture.gouv.fr/
+  - url: https://archives-nationales-travail.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Archives nationales du monde du travail"
+  - url: https://archives-nationales-travail.culture.gouv.fr/Faire-une-recherche/Archives-en-ligne
+    category: LPA
+    title: "Archives nationales du monde du travail - Archives en ligne"
   - url: https://www.culture.fr/franceterme
     category: LPGP
     tags:
       - portail
     title: "France Terme"
-  - url: https://www.culturecheznous.gouv.fr/
+  - url: https://www.culturecheznous.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Culture chez nous"
-  - url: https://histoiredesarts.culture.gouv.fr/
+  - url: https://histoiredesarts.culture.gouv.fr
     category: LPGP
     tags:
       - portail
     title: "Histoire des arts"
-
-
   - url: https://data.culture.gouv.fr
     category: LP Données
-    tags:
-      - data
-    #title: Data culture
-
-
+    title: Data culture
+  - url: https://sibil.culture.gouv.fr
+    title: "SIBIL - système d’information billetterie"
+    category: LP Données
+  - url: https://taiga.archi.fr/taiga/
+    title: "Taïga"
+    category: "LP Écoles"
   - url: https://collectif-objets.beta.gouv.fr
     betaId: collectif_objets
     tags:
@@ -115,6 +271,16 @@ urls:
       - betagouv/collectif-objets
     tools:
       - betagouv: true
+  - url: https://pop.culture.gouv.fr
+    betaId: pop
+    category: LPC
+    repositories:
+      - betagouv/pop
+    tools:
+      - betagouv: true
+  - url: https://production.pop.culture.gouv.fr
+    category: LPC
+    title: "POP - espace édition"
   - url: https://www.comparia.beta.gouv.fr
     title: "Compar:IA"
     betaId: languia
@@ -150,21 +316,33 @@ urls:
     tags:
       - app
       - staging
-  - url: "https://euphrosyne.beta.gouv.fr/"
+  - url: "https://euphrosyne.beta.gouv.fr"
     title: Euphrosyne
     category: Atelier numérique
     betaId: euphrosyne
     repositories:
       - betagouv/euphrosyne
-
   - url: http://atlas.patrimoines.culture.fr
     title: "Atlas des patrimoines"
   - url: https://ccbmn.culture.gouv.fr
     title: "Réseau des bibliothèques des musées nationaux"
-  - url: https://www.museedesplansreliefs.culture.fr/
+  - url: https://www.museedesplansreliefs.culture.fr
     title: "Musée des plans-reliefs"
   - url: http://www.inventaire.culture.gouv.fr
     title: "Inventaire général du patrimoine culturel"
   - url: https://recherche-anom.culture.gouv.fr
     title: "Archives nationales d'Outre-Mer, recherche"
+    category: LPA
+  - url: http://www.archivesnationales.culture.gouv.fr/anom/fr/
+    title: "ANOM - site institutionel"
+    category: LPGP
+  - url: https://archives-map.culture.gouv.fr/n/faire-une-recherche/n:1
+    title: "MPP - Archives en ligne"
+    category: LPA
+  - url: https://www.cppap.fr
+    title: "CPPAP - Commission paritaire des publications et agences de presse"
+    category: LPGP
+  - url: https://pmb.culture.fr
+    title: "PMB - Centre de documentation des DRAC"
+    category: LPC
   
