@@ -19,9 +19,9 @@
 <span style="font-weight:bold;">#####################################################################</span>
 
   Using <i>OpenSSL 1.0.2-bad (Mar 28 2025)</i>  [~183 ciphers]
-  on fv-az1911-478:/home/testssl/bin/openssl.Linux.x86_64
+  on fv-az1074-926:/home/testssl/bin/openssl.Linux.x86_64
 
-<span style="color:white;background-color:black;"> Start 2025-05-04 02:09:24        --&gt;&gt; 143.126.211.113:443 (dismoidixmots.culture.gouv.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2025-05-11 02:03:22        --&gt;&gt; 143.126.211.113:443 (dismoidixmots.culture.gouv.fr) &lt;&lt;--</span>
 
  rDNS (143.126.211.113): eve-p0-lba001.culture.fr.
  Service detected:       HTTP
@@ -89,23 +89,23 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Session Ticket RFC 5077 hint </span>86400 seconds, session tickets keys seems to be rotated &lt; daily
 <span style="font-weight:bold;"> SSL Session ID support       </span>yes
 <span style="font-weight:bold;"> Session Resumption           </span>Tickets: yes, ID: yes
-<span style="font-weight:bold;"> TLS clock skew</span>               -4 sec from localtime
+<span style="font-weight:bold;"> TLS clock skew</span>               -2 sec from localtime
 <span style="font-weight:bold;"> Client Authentication        </span>none
 <span style="font-weight:bold;"> Signature Algorithm          </span><span style="color:#008817;">SHA256 with RSA</span>
 <span style="font-weight:bold;"> Server key size              </span>RSA 2048 bits (exponent is 65537)
 <span style="font-weight:bold;"> Server key usage             </span>Digital Signature, Key Encipherment
 <span style="font-weight:bold;"> Server extended key usage    </span>TLS Web Server Authentication, TLS Web Client Authentication
-<span style="font-weight:bold;"> Serial                       </span>04C54F92C335D04179781DAAAB0F16BA25EE (OK: length 18)
-<span style="font-weight:bold;"> Fingerprints                 </span>SHA1 B509FD771E3833493B2BBB62707D5F0EC5EF11F5
-                              SHA256 54163D51A1587937E6CBFEA283A22303E24F996E7AB1A24DD56162D7C274D72C
+<span style="font-weight:bold;"> Serial                       </span>064E55C2332CDD7DFBB1080444123CF418EA (OK: length 18)
+<span style="font-weight:bold;"> Fingerprints                 </span>SHA1 B9A7C0CBB34688658FAAA856410BB7467F830987
+                              SHA256 95F68717E67710A8C0DA936B48DE5E70F3E5548479866A8FF24FECE5D03B0832
 <span style="font-weight:bold;"> Common Name (CN)             </span><i>dismoidixmots.culture.gouv.fr </i> (CN in response to request w/o SNI: <i>forumentreprendreculture.culture.gouv.fr </i>)
 <span style="font-weight:bold;"> subjectAltName (SAN)         </span><i>dismoidixmots.culture.gouv.fr </i>
 <span style="font-weight:bold;"> Trust (hostname)             </span><span style="color:#008817;">Ok via SAN and CN</span> (SNI mandatory)
 <span style="font-weight:bold;"> Chain of trust</span>               <span style="color:#008817;">Ok   </span><span style="color:#cd00cd;"></span>
 <span style="font-weight:bold;"> EV cert</span> (experimental)       no 
-<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">32 &gt;= 30 days</span> (2025-03-07 22:31 --&gt; 2025-06-05 22:31)
+<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">86 &gt;= 30 days</span> (2025-05-07 12:31 --&gt; 2025-08-05 12:31)
 <span style="font-weight:bold;"> ETS/&quot;eTLS&quot;</span>, visibility info  not present
-<span style="font-weight:bold;"> Certificate Revocation List  </span>--
+<span style="font-weight:bold;"> Certificate Revocation List  </span>http://r11.c.lencr.org/107.crl
 <span style="font-weight:bold;"> OCSP URI                     </span>http://r11.o.lencr.org
 <span style="font-weight:bold;"> OCSP stapling                </span><span style="color:#a86437;">not offered</span>
 <span style="font-weight:bold;"> OCSP must staple extension   </span>--
@@ -121,8 +121,8 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="text-decoration:underline;font-weight:bold;"> Testing HTTP header response @ &quot;/&quot; </span>
 
 <span style="font-weight:bold;"> HTTP Status Code           </span>  200 OK
-<span style="font-weight:bold;"> HTTP clock skew              </span>+78037 sec from localtime
-<span style="font-weight:bold;"> HTTP Age</span> (RFC 7234)          78037
+<span style="font-weight:bold;"> HTTP clock skew              </span>+47293 sec from localtime
+<span style="font-weight:bold;"> HTTP Age</span> (RFC 7234)          47293
 <span style="font-weight:bold;"> Strict Transport Security    </span><span style="color:#c05600;">2592000 s = 30 days is too short ( &gt;= 15552000 seconds recommended)</span><span style="color:#008817;">, includeSubDomains</span>
 <span style="font-weight:bold;"> Public Key Pinning           </span>--
 <span style="font-weight:bold;"> Server banner                </span>nginx&apos;
@@ -237,7 +237,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
                                 strict-origin-when-cross-origin
                               Cache-Control: public, s-maxage=600,
                                 stale-while-revalidate=300, stale-if-error=300
-<span style="font-weight:bold;"> Reverse Proxy banner         </span><span style="color:#8a7237;font-weight:bold;">X-Varnish</span>: <span style="color:#8a7237;">2</span><span style="color:#8a7237;">2</span><span style="color:#8a7237;">6</span><span style="color:#8a7237;">7</span><span style="color:#8a7237;">0</span><span style="color:#8a7237;">8</span><span style="color:#8a7237;">7</span> <span style="color:#8a7237;">1</span><span style="color:#8a7237;">9</span><span style="color:#8a7237;">3</span><span style="color:#8a7237;">5</span><span style="color:#8a7237;">2</span><span style="color:#8a7237;">8</span><span style="color:#8a7237;">4</span>&apos;
+<span style="font-weight:bold;"> Reverse Proxy banner         </span><span style="color:#8a7237;font-weight:bold;">X-Varnish</span>: <span style="color:#8a7237;">6</span><span style="color:#8a7237;">5</span><span style="color:#8a7237;">5</span><span style="color:#8a7237;">5</span><span style="color:#8a7237;">4</span><span style="color:#8a7237;">3</span> <span style="color:#8a7237;">5</span><span style="color:#8a7237;">8</span><span style="color:#8a7237;">5</span><span style="color:#8a7237;">4</span><span style="color:#8a7237;">4</span>&apos;
 
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing vulnerabilities </span>
@@ -257,7 +257,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> FREAK</span> (CVE-2015-0204)                     <span style="color:#008817;font-weight:bold;">not vulnerable (OK)</span>
 <span style="font-weight:bold;"> DROWN</span> (CVE-2016-0800, CVE-2016-0703)      <span style="color:#008817;font-weight:bold;">not vulnerable on this host and port (OK)</span>
                                            make sure you don&apos;t use this certificate elsewhere with SSLv2 enabled services, see
-                                           <a href="https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=54163D51A1587937E6CBFEA283A22303E24F996E7AB1A24DD56162D7C274D72C" style="color:black;text-decoration:none;">https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=54163D51A1587937E6CBFEA283A22303E24F996E7AB1A24DD56162D7C274D72C</a>
+                                           <a href="https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=95F68717E67710A8C0DA936B48DE5E70F3E5548479866A8FF24FECE5D03B0832" style="color:black;text-decoration:none;">https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=95F68717E67710A8C0DA936B48DE5E70F3E5548479866A8FF24FECE5D03B0832</a>
 <span style="font-weight:bold;"> LOGJAM</span> (CVE-2015-4000), experimental      common prime with 2048 bits detected: <i>RFC7919/ffdhe2048</i> (<span style="color:#008817;">2048 bits</span>),
                                            but no DH EXPORT ciphers
 <span style="font-weight:bold;"> BEAST</span> (CVE-2011-3389)                     <span style="color:#008817;">not vulnerable (OK)</span>, no SSL3 or TLS1
@@ -276,6 +276,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
  Android 10.0 (native)        TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
  Android 11/12 (native)       TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
  Android 13/14 (native)       TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
+ Android 15 (native)          TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
  Chrome 101 (Win 10)          TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
  Chromium 137 (Win 11)        TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
  Firefox 100 (Win 10)         TLSv1.2   ECDHE-RSA-AES128-GCM-SHA256       <span style="color:#008817;">256 bit ECDH (P-256)</span>
@@ -317,7 +318,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Overall Grade                </span><span style="color:#008817;font-weight:bold;">A</span>
 <span style="font-weight:bold;"> Grade cap reasons            </span>Grade capped to A. HSTS max-age is too short
 
-<span style="color:white;background-color:black;"> Done 2025-05-04 02:11:08 [ 105s] --&gt;&gt; 143.126.211.113:443 (dismoidixmots.culture.gouv.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2025-05-11 02:04:28 [  68s] --&gt;&gt; 143.126.211.113:443 (dismoidixmots.culture.gouv.fr) &lt;&lt;--</span>
 
 
 </pre>
