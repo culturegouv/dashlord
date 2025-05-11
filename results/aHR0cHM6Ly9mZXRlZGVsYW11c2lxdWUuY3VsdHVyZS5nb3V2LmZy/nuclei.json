@@ -32,209 +32,9 @@
       "type": "dns",
       "host": "fetedelamusique.culture.gouv.fr.",
       "matched-at": "fetedelamusique.culture.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 22740\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;fetedelamusique.culture.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 22740\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;fetedelamusique.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t300\tIN\tSOA\tmnemosyne.culture.fr. hostmaster.culture.gouv.fr. 2025041511 14400 3200 1209600 3600\n",
-      "timestamp": "2025-05-04T01:45:55.125645594Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "https://fetedelamusique.culture.gouv.fr",
-      "matched-at": "https://fetedelamusique.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345658705Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://fetedelamusique.culture.gouv.fr",
-      "matched-at": "https://fetedelamusique.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345716974Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "strict-transport-security",
-      "type": "http",
-      "host": "https://fetedelamusique.culture.gouv.fr",
-      "matched-at": "https://fetedelamusique.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345737092Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://fetedelamusique.culture.gouv.fr",
-      "matched-at": "https://fetedelamusique.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345753403Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://fetedelamusique.culture.gouv.fr",
-      "matched-at": "https://fetedelamusique.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345777919Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 34649\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;fetedelamusique.culture.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 34649\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;fetedelamusique.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t300\tIN\tSOA\tmnemosyne.culture.fr. hostmaster.culture.gouv.fr. 2025041582 14400 3200 1209600 3600\n",
+      "timestamp": "2025-05-11T01:42:20.721775626Z",
       "matcher-status": true
     },
     {
@@ -271,9 +71,9 @@
       "host": "https://fetedelamusique.culture.gouv.fr",
       "matched-at": "https://fetedelamusique.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345801182Z",
+      "timestamp": "2025-05-11T01:43:15.074502218Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -311,9 +111,9 @@
       "host": "https://fetedelamusique.culture.gouv.fr",
       "matched-at": "https://fetedelamusique.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345827231Z",
+      "timestamp": "2025-05-11T01:43:15.074596524Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -351,49 +151,9 @@
       "host": "https://fetedelamusique.culture.gouv.fr",
       "matched-at": "https://fetedelamusique.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345849954Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://fetedelamusique.culture.gouv.fr",
-      "matched-at": "https://fetedelamusique.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.34587467Z",
+      "timestamp": "2025-05-11T01:43:15.074621812Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -431,9 +191,9 @@
       "host": "https://fetedelamusique.culture.gouv.fr",
       "matched-at": "https://fetedelamusique.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345900608Z",
+      "timestamp": "2025-05-11T01:43:15.07463729Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -471,9 +231,249 @@
       "host": "https://fetedelamusique.culture.gouv.fr",
       "matched-at": "https://fetedelamusique.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 354\r\nContent-Type: text/html\r\nDate: Sun, 04 May 2025 01:46:50 GMT\r\nSet-Cookie: bot_mitigation_cookie=AMKSMFIAFY7UNDYJMHOQMOLZTVDGEEHY23FER7RSY4LHBQIJ4BE574WI6XRKJMGRYYDI5MJ32JWS4ILIYEKRLUNK5NLJJNH37F45VPASMLBI6FEG6DJQ====; Path=/\r\nX-Cp-Via: C3-d55ac2f4-df661b5d\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_ZBWQ6M7DUPIEKXTGWMTEDBHPTD6F6YHK3VHI2ZRKC3K3AFDV256Q====/?';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:46:50.345918782Z",
+      "timestamp": "2025-05-11T01:43:15.074656496Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://fetedelamusique.culture.gouv.fr",
+      "matched-at": "https://fetedelamusique.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:43:15.07467429Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://fetedelamusique.culture.gouv.fr",
+      "matched-at": "https://fetedelamusique.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:43:15.074688666Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "https://fetedelamusique.culture.gouv.fr",
+      "matched-at": "https://fetedelamusique.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:43:15.074707472Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://fetedelamusique.culture.gouv.fr",
+      "matched-at": "https://fetedelamusique.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:43:15.074730444Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://fetedelamusique.culture.gouv.fr",
+      "matched-at": "https://fetedelamusique.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:43:15.074748989Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://fetedelamusique.culture.gouv.fr",
+      "matched-at": "https://fetedelamusique.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: fetedelamusique.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:43:15 GMT\r\nSet-Cookie: bot_mitigation_cookie=W23XNFJS4RSZTQD2D6KI3MCVN6NSAY76IE3FU6OBGFRM7ZNPXOAOXXNEDK4ZRPGAHEGPSPSBCPFGBV5YRKDH2KVQMEHHXVEBUAYDEPXG4T44XS2TEA2A====; Path=/\r\nX-Cp-Via: C2-252a3089-8b55fece\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_SBBF7PB5BPWIJOZBN6LULLEOG5Y2OBSYVYOC75IDSA6K3Y5ENKRA====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:43:15.074762585Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://fetedelamusique.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -504,7 +504,7 @@
         "Let's Encrypt"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:50:11.73290697Z",
+      "timestamp": "2025-05-11T01:48:09.496662246Z",
       "matcher-status": true
     },
     {
@@ -531,15 +531,15 @@
       "host": "fetedelamusique.culture.gouv.fr",
       "matched-at": "fetedelamusique.culture.gouv.fr:443",
       "extracted-results": [
+        "fec-evenementiels.prd.cloud.culture.fr",
         "fetedelamusique.culture.gouv.fr",
         "journeesdupatrimoine.culture.gouv.fr",
         "nuitdesmusees.culture.gouv.fr",
         "rendezvousauxjardins.culture.gouv.fr",
-        "biblisenfolie.culture.gouv.fr",
-        "fec-evenementiels.prd.cloud.culture.fr"
+        "biblisenfolie.culture.gouv.fr"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:50:11.733054917Z",
+      "timestamp": "2025-05-11T01:48:09.496815122Z",
       "matcher-status": true
     },
     {
@@ -570,7 +570,7 @@
         "tls12"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:50:25.088671974Z",
+      "timestamp": "2025-05-11T01:48:12.691947554Z",
       "matcher-status": true
     },
     {
@@ -601,7 +601,7 @@
         "tls13"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-04T01:50:25.324545256Z",
+      "timestamp": "2025-05-11T01:48:12.902745364Z",
       "matcher-status": true
     }
   ]
