@@ -1,0 +1,608 @@
+[
+  [
+    {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "journeesdupatrimoine.culture.gouv.fr.",
+      "matched-at": "journeesdupatrimoine.culture.gouv.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 36165\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;journeesdupatrimoine.culture.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 36165\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;journeesdupatrimoine.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t300\tIN\tSOA\tmnemosyne.culture.fr. hostmaster.culture.gouv.fr. 2025041582 14400 3200 1209600 3600\n",
+      "timestamp": "2025-05-11T01:16:32.592110076Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.75195898Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752011298Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752030554Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752052094Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752069356Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752083312Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752096577Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "clear-site-data",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752109792Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752124279Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752137624Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://journeesdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: journeesdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 353\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 01:17:27 GMT\r\nSet-Cookie: bot_mitigation_cookie=HWIHSZ7FSDCY2RB7TIMU46H22JVGY3PM4Q5W7M3B4LVG6C3EW2FCOZKJZL2LSZFHXJ2VNZOHXTWSPW7NDX5YJ75KEHSSAH5QPTPJVJ6BDMVRNNRKIKUQ====; Path=/\r\nX-Cp-Via: C2-ba692372-9c2036ad\r\n\r\n<!DOCTYPE html> \n<html lang = \"en\"> \n   <script>\n       window.location.href = '/redirect_VBG542XPHCV4PZRZX2RP3ZP5HAJX4FWFKDY56B346JRA4CYINHRQ====/';\n   </script>\n   <noscipt>       <head> \n           <title> Redirecting...</title>\n      </head>\n       <body>\n           This website requires JS enabled and cookies\n       </body> \n   </noscript></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:17:27.752150748Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://journeesdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "journeesdupatrimoine.culture.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:20:39.31128738Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "journeesdupatrimoine.culture.gouv.fr:443",
+      "extracted-results": [
+        "biblisenfolie.culture.gouv.fr",
+        "fec-evenementiels.prd.cloud.culture.fr",
+        "fetedelamusique.culture.gouv.fr",
+        "journeesdupatrimoine.culture.gouv.fr",
+        "nuitdesmusees.culture.gouv.fr",
+        "rendezvousauxjardins.culture.gouv.fr"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:20:39.311456286Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "journeesdupatrimoine.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:21:02.957602126Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "journeesdupatrimoine.culture.gouv.fr",
+      "matched-at": "journeesdupatrimoine.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T01:21:03.193182196Z",
+      "matcher-status": true
+    }
+  ]
+]
