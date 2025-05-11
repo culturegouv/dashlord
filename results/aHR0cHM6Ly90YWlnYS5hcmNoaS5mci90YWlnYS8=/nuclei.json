@@ -1,0 +1,1073 @@
+[
+  [
+    {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "taiga.archi.fr.",
+      "matched-at": "taiga.archi.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 28406\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 28406\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\narchi.fr.\t3600\tIN\tSOA\tcorbu.gamsau.archi.fr. dnsmaster.archi.fr. 2025032612 28800 7200 1209600 86400\n",
+      "timestamp": "2025-05-11T07:35:35.745633557Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/mx-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/mx-fingerprint",
+      "template-id": "mx-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/mx-fingerprint.yaml",
+      "info": {
+        "name": "MX Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "mx"
+        ],
+        "description": "An MX record was detected. MX records direct emails to a mail exchange server.",
+        "reference": [
+          "https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/",
+          "https://mxtoolbox.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "taiga.archi.fr.",
+      "matched-at": "taiga.archi.fr",
+      "extracted-results": [
+        "5 taiga.archi.fr."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 62198\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t MX\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 62198\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t MX\n\n;; ANSWER SECTION:\ntaiga.archi.fr.\t3600\tIN\tMX\t5 taiga.archi.fr.\n",
+      "timestamp": "2025-05-11T07:35:37.648914378Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dmarc-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/dmarc-detect",
+      "template-id": "dmarc-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/dmarc-detect.yaml",
+      "info": {
+        "name": "DNS DMARC - Detect",
+        "author": [
+          "juliosmelo"
+        ],
+        "tags": [
+          "dns",
+          "dmarc"
+        ],
+        "description": "DNS DMARC information was detected.\n",
+        "reference": [
+          "https://dmarc.org/",
+          "https://dmarc.org/wiki/faq#why_is_dmarc_important.3f"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "dns",
+      "host": "taiga.archi.fr.",
+      "matched-at": "_dmarc.taiga.archi.fr",
+      "extracted-results": [
+        "\"v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 5624\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;_dmarc.taiga.archi.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 5624\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;_dmarc.taiga.archi.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\n_dmarc.taiga.archi.fr.\t3600\tIN\tTXT\t\"v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com\"\n",
+      "timestamp": "2025-05-11T07:35:37.653581673Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/spf-record-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/spf-record-detect",
+      "template-id": "spf-record-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/spf-record-detect.yaml",
+      "info": {
+        "name": "SPF Record - Detection",
+        "author": [
+          "rxerium"
+        ],
+        "tags": [
+          "dns",
+          "spf"
+        ],
+        "description": "An SPF TXT record was detected\n",
+        "reference": [
+          "https://www.mimecast.com/content/how-to-create-an-spf-txt-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "taiga.archi.fr.",
+      "matched-at": "taiga.archi.fr",
+      "extracted-results": [
+        "v=spf1 mx ip4:194.199.192.222 ip4:194.199.196.193  ip4:195.220.59.17 ip4:195.220.59.41  ip4:194.199.196.88  ip4:193.51.174.22 ip4:194.199.210.150 ip4:62.210.129.177 ip4:194.199.203.4 ip4:194.199.214.19 \" \" ip4:194.199.189.251 ip4:194.199.201.237 ip4:194.199.216.10\" \" ip4:194.199.192.220 ip4:91.191.153.38 ip4:194.199.200.98 ip4:194.254.192.75 ip4:194.199.221.229 ip4:194.199.194.131 a:ironport.montpellier.archi.fr ip4:193.52.5.147 ip4:193.52.197.105 include:spf.brevo.com ip6:2001:41D0:2:F2a2:: -all\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 31184\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 31184\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n; EDE: 18 (Prohibited): ()\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\ntaiga.archi.fr.\t3600\tIN\tTXT\t\"brevo-code:8e38f55f1a6f101037a9599bee80e35d\"\ntaiga.archi.fr.\t3600\tIN\tTXT\t\"v=spf1 mx ip4:194.199.192.222 ip4:194.199.196.193  ip4:195.220.59.17 ip4:195.220.59.41  ip4:194.199.196.88  ip4:193.51.174.22 ip4:194.199.210.150 ip4:62.210.129.177 ip4:194.199.203.4 ip4:194.199.214.19 \" \" ip4:194.199.189.251 ip4:194.199.201.237 ip4:194.199.216.10\" \" ip4:194.199.192.220 ip4:91.191.153.38 ip4:194.199.200.98 ip4:194.254.192.75 ip4:194.199.221.229 ip4:194.199.194.131 a:ironport.montpellier.archi.fr ip4:193.52.5.147 ip4:193.52.197.105 include:spf.brevo.com ip6:2001:41D0:2:F2a2:: -all\"\n",
+      "timestamp": "2025-05-11T07:35:37.745379692Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/txt-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/txt-fingerprint",
+      "template-id": "txt-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/txt-fingerprint.yaml",
+      "info": {
+        "name": "DNS TXT Record Detected",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "txt"
+        ],
+        "description": "A DNS TXT record was detected. The TXT record lets a domain admin leave notes on a DNS server.",
+        "reference": [
+          "https://www.netspi.com/blog/technical/network-penetration-testing/analyzing-dns-txt-records-to-fingerprint-service-providers/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "taiga.archi.fr.",
+      "matched-at": "taiga.archi.fr",
+      "extracted-results": [
+        "\"brevo-code:8e38f55f1a6f101037a9599bee80e35d\"",
+        "\"v=spf1 mx ip4:194.199.192.222 ip4:194.199.196.193  ip4:195.220.59.17 ip4:195.220.59.41  ip4:194.199.196.88  ip4:193.51.174.22 ip4:194.199.210.150 ip4:62.210.129.177 ip4:194.199.203.4 ip4:194.199.214.19 \" \" ip4:194.199.189.251 ip4:194.199.201.237 ip4:194.199.216.10\" \" ip4:194.199.192.220 ip4:91.191.153.38 ip4:194.199.200.98 ip4:194.254.192.75 ip4:194.199.221.229 ip4:194.199.194.131 a:ironport.montpellier.archi.fr ip4:193.52.5.147 ip4:193.52.197.105 include:spf.brevo.com ip6:2001:41D0:2:F2a2:: -all\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 31184\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 31184\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n; EDE: 18 (Prohibited): ()\n\n;; QUESTION SECTION:\n;taiga.archi.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\ntaiga.archi.fr.\t3600\tIN\tTXT\t\"brevo-code:8e38f55f1a6f101037a9599bee80e35d\"\ntaiga.archi.fr.\t3600\tIN\tTXT\t\"v=spf1 mx ip4:194.199.192.222 ip4:194.199.196.193  ip4:195.220.59.17 ip4:195.220.59.41  ip4:194.199.196.88  ip4:193.51.174.22 ip4:194.199.210.150 ip4:62.210.129.177 ip4:194.199.203.4 ip4:194.199.214.19 \" \" ip4:194.199.189.251 ip4:194.199.201.237 ip4:194.199.216.10\" \" ip4:194.199.192.220 ip4:91.191.153.38 ip4:194.199.200.98 ip4:194.254.192.75 ip4:194.199.221.229 ip4:194.199.194.131 a:ironport.montpellier.archi.fr ip4:193.52.5.147 ip4:193.52.197.105 include:spf.brevo.com ip6:2001:41D0:2:F2a2:: -all\"\n",
+      "timestamp": "2025-05-11T07:35:37.745491953Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/apache/apache-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/apache-detect",
+      "template-id": "apache-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/apache/apache-detect.yaml",
+      "info": {
+        "name": "Apache Detection",
+        "author": [
+          "philippedelteil"
+        ],
+        "tags": [
+          "tech",
+          "apache"
+        ],
+        "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "extracted-results": [
+        "Apache"
+      ],
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:35:49 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:35:49.252020404Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.474940744Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.474993091Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475009773Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475026374Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475040681Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475052623Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475065237Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "clear-site-data",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475078692Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475091887Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "GET /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:29 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:29.475105783Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/configs/exposed-gitignore.yaml",
+      "template-url": "https://templates.nuclei.sh/public/exposed-gitignore",
+      "template-id": "exposed-gitignore",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/exposed-gitignore.yaml",
+      "info": {
+        "name": "Gitignore Config - Detect",
+        "author": [
+          "thezakman",
+          "geeknik"
+        ],
+        "tags": [
+          "exposure",
+          "tenable",
+          "config",
+          "git"
+        ],
+        "description": "Gitignore configuration information was detected.",
+        "reference": [
+          "https://twitter.com/pratiky9967/status/1230001391701086208",
+          "https://www.tenable.com/plugins/was/98595"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 3
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/.gitignore",
+      "request": "GET /taiga/.gitignore HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 1736\r\nAccept-Ranges: bytes\r\nDate: Sun, 11 May 2025 07:36:32 GMT\r\nEtag: \"6c8-5a96f9a9f98d7\"\r\nLast-Modified: Thu, 02 Jul 2020 06:34:44 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\n\r\n# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm\n# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839\n\n# User-specific stuff\n.idea/\n\n.idea/**/workspace.xml\n.idea/**/tasks.xml\n.idea/**/usage.statistics.xml\n.idea/**/dictionaries\n.idea/**/shelf\n\n# Generated files\n.idea/**/contentModel.xml\n\n# Sensitive or high-churn files\n.idea/**/dataSources/\n.idea/**/dataSources.ids\n.idea/**/dataSources.local.xml\n.idea/**/sqlDataSources.xml\n.idea/**/dynamic.xml\n.idea/**/uiDesigner.xml\n.idea/**/dbnavigator.xml\n\n# Gradle\n.idea/**/gradle.xml\n.idea/**/libraries\n\n# Gradle and Maven with auto-import\n# When using Gradle or Maven with auto-import, you should exclude module files,\n# since they will be recreated, and may cause churn. Uncomment if using\n# auto-import.\n# .idea/artifacts\n# .idea/compiler.xml\n# .idea/jarRepositories.xml\n# .idea/modules.xml\n# .idea/*.iml\n# .idea/modules\n# *.iml\n# *.ipr\n\n# CMake\ncmake-build-*/\n\n# Mongo Explorer plugin\n.idea/**/mongoSettings.xml\n\n# File-based project format\n*.iws\n\n# IntelliJ\nout/\n\n# mpeltonen/sbt-idea plugin\n.idea_modules/\n\n# JIRA plugin\natlassian-ide-plugin.xml\n\n# Cursive Clojure plugin\n.idea/replstate.xml\n\n# Crashlytics plugin (for Android Studio and IntelliJ)\ncom_crashlytics_export_strings.xml\ncrashlytics.properties\ncrashlytics-build.properties\nfabric.properties\n\n# Editor-based Rest Client\n.idea/httpRequests\n\n# Android studio 3.1+ serialized cache file\n.idea/caches/build_file_checksums.ser\n\n# Pour TAIGA\n# Les fichiers temporaires\nadm/pages/tmp/\netd/pages/tmp/\nesn/pages/tmp/\nxyz/tmp/\n\n# Les fichiers des écoles\nxyz/upl/\n\n# les exports bases de données\nadm/pages/scripts/*.sql\nadm/pages/scripts/*.tar.gz\n\n\n\n",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:31.809267469Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/.gitignore'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/files/readme-md.yaml",
+      "template-url": "https://templates.nuclei.sh/public/readme-md",
+      "template-id": "readme-md",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/files/readme-md.yaml",
+      "info": {
+        "name": "README.md file disclosure",
+        "author": [
+          "ambassify"
+        ],
+        "tags": [
+          "exposure",
+          "markdown",
+          "files"
+        ],
+        "description": "Internal documentation file often used in projects which can contain sensitive information.",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "shodan-query": "html:\"README.MD\""
+        }
+      },
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/README.md",
+      "request": "GET /taiga/README.md HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 296\r\nAccept-Ranges: bytes\r\nContent-Type: text/markdown\r\nDate: Sun, 11 May 2025 07:36:37 GMT\r\nEtag: \"128-5a96f9a9f98d7\"\r\nLast-Modified: Thu, 02 Jul 2020 06:34:44 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\n\r\n# Taiga\n**Version 1.11 en préparation**\n\nL'objectif est :\n- de mettre en route _**composer**_ pour la gestion des dépendances.\n- supprimer les dépendances inutiles.\n- ajouter Jasper pour produire des états en PDF / RTF / ODT / HTML / CSV\n- déployer la version par GIT\n- Etc...\n- A modifier\n\n",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:37.318651063Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/README.md'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/robots-txt-endpoint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/robots-txt-endpoint",
+      "template-id": "robots-txt-endpoint",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/robots-txt-endpoint.yaml",
+      "info": {
+        "name": "robots.txt endpoint prober",
+        "author": [
+          "caspergn",
+          "pdteam"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 2
+        }
+      },
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/robots.txt",
+      "request": "GET /robots.txt HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 40\r\nAccept-Ranges: bytes\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:40 GMT\r\nEtag: \"28-5422fe687f1b7\"\r\nLast-Modified: Sat, 26 Nov 2016 08:19:42 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\n\r\nUser-agent: *\nDisallow: /taiga/xyz/upl/\n",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:40.35412198Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/robots.txt'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/ekultek/whatwaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "https://taiga.archi.fr/taiga/",
+      "matched-at": "https://taiga.archi.fr/taiga/",
+      "request": "POST /taiga/ HTTP/1.1\r\nHost: taiga.archi.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 11 May 2025 07:36:55 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=63072000; includeSubdomains; preload\r\nVary: Accept-Encoding\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" \"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"fr\">\n<head>\n<title>Portails Taïga</title>\n<style><!--\n\n\tbody { background:url(xyz/images/logomc.png) right top no-repeat fixed white; margin:0; padding:0; }\n\t@font-face { font-family:tglogo; src:url(../../taiga_libext/fontes/LetterGothicStd.ttf) format('truetype'); }\n\ttable.ptlx { margin:25% auto 0 auto; width:75%; border-collapse:collapse; box-shadow:#999 2px 2px 4px; }\n\ttable.ptlx td { font-family:tglogo,Verdana,sans-serif; text-align:center; font-size:14px; color:#CCC; height:10em; width:25%; }\n\ttable.ptlx td a { color:white; font-size:175%; text-decoration:none; font-variant:small-caps; }\n\ttable.ptlx td a:hover { text-shadow:white 0 0 5px; }\n --></style>\n<meta http-equiv=\"Content-Type\" content=\"text/HTML; charset=utf-8\" />\n</head>\n\n<body>\n<table class=\"ptlx\">\n  <tr>\n    <td style=\"background-color:rgb(170,34,34)\">accès<br /><a href=\"adm\">administration</a></td>\n    <td style=\"background-color:rgb(50,100,135)\">accès<br /><a href=\"esn\">enseignants</a></td>\n    <td style=\"background-color:rgb(130,40,0)\">accès<br /><a href=\"etd\">étudiants</a></td>\n    <td style=\"background-color:rgb(0,80,90)\">accès<br /><a href=\"ext\">extérieurs</a></td>\n  </tr>\n  <tr>\n    <td style=\"background-color:rgb(55,10,90)\">accès<br /><a href=\"tut\">tutelle</a></td>\n    <td style=\"background-color:rgb(20,70,40)\">accès<br /><a href=\"cnd\">admission</a></td>\n    <td style=\"background-color:rgb(30,30,60)\">accès<br /><a href=\"rch\">recherche</a></td>\n  </tr>\n</table>\n</body>\n</html>",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:36:54.803864716Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: taiga.archi.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://taiga.archi.fr/taiga/'",
+      "matcher-status": true
+    },
+    {
+      "template": "network/detection/openssh-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/openssh-detect",
+      "template-id": "openssh-detect",
+      "template-path": "/home/runner/nuclei-templates/network/detection/openssh-detect.yaml",
+      "info": {
+        "name": "OpenSSH Service - Detect",
+        "author": [
+          "r3dg33k",
+          "daffainfo",
+          "iamthefrogy"
+        ],
+        "tags": [
+          "seclists",
+          "network",
+          "ssh",
+          "openssh",
+          "detect",
+          "detection",
+          "tcp"
+        ],
+        "description": "OpenSSH service was detected.\n",
+        "reference": [
+          "http://www.openwall.com/lists/oss-security/2016/08/01/2",
+          "http://www.openwall.com/lists/oss-security/2018/08/15/5",
+          "http://seclists.org/fulldisclosure/2016/jul/51",
+          "https://nvd.nist.gov/vuln/detail/cve-2016-6210",
+          "https://nvd.nist.gov/vuln/detail/cve-2018-15473"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "tcp",
+      "host": "taiga.archi.fr:22",
+      "matched-at": "taiga.archi.fr:22",
+      "extracted-results": [
+        "SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4"
+      ],
+      "response": "SSH-2.0-OpenSSH_7.9p1 Debian-10+deb10u4\r\n",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:17.741353144Z",
+      "matcher-status": true
+    },
+    {
+      "template": "network/detection/mysql-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/mysql-detect",
+      "template-id": "mysql-detect",
+      "template-path": "/home/runner/nuclei-templates/network/detection/mysql-detect.yaml",
+      "info": {
+        "name": "MySQL - Detect",
+        "author": [
+          "pussycat0x"
+        ],
+        "tags": [
+          "network",
+          "mysql",
+          "db",
+          "detect",
+          "detection",
+          "tcp"
+        ],
+        "description": "MySQL instance was detected.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "shodan-query": "product:\"MySQL\"",
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "tcp",
+      "host": "taiga.archi.fr:3306",
+      "matched-at": "taiga.archi.fr:3306",
+      "request": "\n",
+      "response": "c\u0000\u0000\u0000\n5.5.5-10.3.39-MariaDB-0+deb10u2\u0000\u0000R$XpJ`&8\u0000��\b\u0002\u0000��\u0015\u0000\u0000\u0000\u0000\u0000\u0000\u0007\u0000\u0000\u0000)b6#J-BFu<j\"\u0000mysql_native_password\u0000",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:17.748085288Z",
+      "matcher-status": true
+    },
+    {
+      "template": "network/detection/proftpd-server-detect.yaml",
+      "template-url": "https://templates.nuclei.sh/public/proftpd-server-detect",
+      "template-id": "proftpd-server-detect",
+      "template-path": "/home/runner/nuclei-templates/network/detection/proftpd-server-detect.yaml",
+      "info": {
+        "name": "ProFTPD Server Detect",
+        "author": [
+          "pussycat0x"
+        ],
+        "tags": [
+          "network",
+          "ftp",
+          "proftpd",
+          "detect",
+          "detection",
+          "tcp"
+        ],
+        "description": "The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "shodan-query": "product:\"ProFTPD\"",
+          "verified": true
+        }
+      },
+      "type": "tcp",
+      "host": "taiga.archi.fr:21",
+      "matched-at": "taiga.archi.fr:21",
+      "request": "\n",
+      "response": "220 ProFTPD Server (Debian) [::ffff:176.31.225.162]\r\n",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:17.755528764Z",
+      "matcher-status": true
+    },
+    {
+      "template": "network/misconfig/mysql-native-password.yaml",
+      "template-url": "https://templates.nuclei.sh/public/mysql-native-password",
+      "template-id": "mysql-native-password",
+      "template-path": "/home/runner/nuclei-templates/network/misconfig/mysql-native-password.yaml",
+      "info": {
+        "name": "MySQL - Password Vulnerability",
+        "author": [
+          "iamthefrogy"
+        ],
+        "tags": [
+          "network",
+          "mysql",
+          "db",
+          "misconfig",
+          "tcp"
+        ],
+        "description": "MySQL database queries with enabled native password support are susceptible to password brute-force attacks.",
+        "reference": [
+          "https://github.com/tinram/mysql-brute"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "tcp",
+      "host": "taiga.archi.fr:3306",
+      "matched-at": "taiga.archi.fr:3306",
+      "response": "c\u0000\u0000\u0000\n5.5.5-10.3.39-MariaDB-0+deb10u2\u0000���\u0000Ph;.s{2%\u0000��\b\u0002\u0000��\u0015\u0000\u0000\u0000\u0000\u0000\u0000\u0007\u0000\u0000\u0000^.hDYpLiJu3;\u0000mysql_native_password\u0000",
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:19.955904177Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "taiga.archi.fr",
+      "matched-at": "taiga.archi.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:21.224158653Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "taiga.archi.fr",
+      "matched-at": "taiga.archi.fr:443",
+      "extracted-results": [
+        "taiga.archi.fr"
+      ],
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:21.224297413Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "taiga.archi.fr",
+      "matched-at": "taiga.archi.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:23.743736691Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "taiga.archi.fr",
+      "matched-at": "taiga.archi.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "176.31.225.162",
+      "timestamp": "2025-05-11T07:37:23.922723315Z",
+      "matcher-status": true
+    }
+  ]
+]
