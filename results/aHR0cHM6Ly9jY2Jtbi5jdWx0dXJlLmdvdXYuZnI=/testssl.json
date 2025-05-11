@@ -352,8 +352,8 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
               "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "expires < 60 days (32)"
+              "severity"     : "HIGH",
+              "finding"      : "expires < 30 days (25)"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -366,7 +366,7 @@
               "id"           : "cert_notAfter",
               "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
               "port"         : "443",
-              "severity"     : "MEDIUM",
+              "severity"     : "HIGH",
               "finding"      : "2025-06-05 21:59"
           }
 ,         {
@@ -514,14 +514,14 @@
               "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "+87 seconds from localtime"
+              "finding"      : "+100 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
               "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1746347348"
+              "finding"      : "1746951460"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -849,6 +849,13 @@
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
+              "id"           : "clientsimulation-android_15",
+              "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+          }
+,         {
               "id"           : "clientsimulation-chrome_101_win10",
               "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
               "port"         : "443",
@@ -1133,6 +1140,6 @@
               "ip"           : "ccbmn.culture.gouv.fr/145.239.63.77",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "137"
+              "finding"      : "74"
           }
 ]
