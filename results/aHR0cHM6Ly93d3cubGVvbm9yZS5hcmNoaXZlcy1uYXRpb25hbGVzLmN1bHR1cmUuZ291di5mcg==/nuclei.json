@@ -32,9 +32,49 @@
       "type": "dns",
       "host": "www.leonore.archives-nationales.culture.gouv.fr.",
       "matched-at": "www.leonore.archives-nationales.culture.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 22046\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.leonore.archives-nationales.culture.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 22046\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.leonore.archives-nationales.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t300\tIN\tSOA\tmnemosyne.culture.fr. hostmaster.culture.gouv.fr. 2025041511 14400 3200 1209600 3600\n",
-      "timestamp": "2025-05-02T20:33:12.721754615Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 35698\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.leonore.archives-nationales.culture.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 35698\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.leonore.archives-nationales.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t300\tIN\tSOA\tmnemosyne.culture.fr. hostmaster.culture.gouv.fr. 2025041582 14400 3200 1209600 3600\n",
+      "timestamp": "2025-05-11T06:11:37.232832714Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.808842671Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
       "matcher-status": true
     },
     {
@@ -71,9 +111,9 @@
       "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956031733Z",
+      "timestamp": "2025-05-11T06:12:31.808886894Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -111,9 +151,9 @@
       "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.95608371Z",
+      "timestamp": "2025-05-11T06:12:31.80890605Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -151,289 +191,9 @@
       "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956102646Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956117584Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.9561315Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956144034Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956156227Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956171045Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956185953Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956200329Z",
+      "timestamp": "2025-05-11T06:12:31.808920557Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -471,10 +231,311 @@
       "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Fri, 02 May 2025 20:34:07 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-100a7519-75610753\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-02T20:34:07+0000</p>\n                <p>Request UID: aBUsP4AE2j4bIgjxh9lPwQAAAD0</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:34:07.956213625Z",
+      "timestamp": "2025-05-11T06:12:31.808939422Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.808952647Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.808969308Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.808984105Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.809016907Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.809036603Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "https://www.leonore.archives-nationales.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.leonore.archives-nationales.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 11 May 2025 06:12:31 GMT\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-92140706-c602df63\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2025-05-11T06:12:31+0000</p>\n                <p>Request UID: aCA_z5H31pctxnej3h_KiAAACAg</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:12:31.809052503Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.leonore.archives-nationales.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "www.leonore.archives-nationales.culture.gouv.fr:443",
+      "extracted-results": [
+        "DHIMYOTIS"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:17:32.307538004Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "www.leonore.archives-nationales.culture.gouv.fr",
+      "matched-at": "www.leonore.archives-nationales.culture.gouv.fr:443",
+      "extracted-results": [
+        "www.leonore-recette.archives-nationales.culture.gouv.fr",
+        "www.leonore.archives-nationales.culture.gouv.fr"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2025-05-11T06:17:32.30769153Z",
       "matcher-status": true
     },
     {
@@ -505,68 +566,7 @@
         "tls12"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:36:24.017088727Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/detect-ssl-issuer.yaml",
-      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
-      "template-id": "ssl-issuer",
-      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
-      "info": {
-        "name": "Detect SSL Certificate Issuer",
-        "author": [
-          "lingtren"
-        ],
-        "tags": [
-          "ssl",
-          "tls"
-        ],
-        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "ssl",
-      "host": "www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "www.leonore.archives-nationales.culture.gouv.fr:443",
-      "extracted-results": [
-        "DHIMYOTIS"
-      ],
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:36:24.134369815Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/ssl-dns-names.yaml",
-      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
-      "template-id": "ssl-dns-names",
-      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
-      "info": {
-        "name": "SSL DNS Names",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "ssl",
-          "tls"
-        ],
-        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "ssl",
-      "host": "www.leonore.archives-nationales.culture.gouv.fr",
-      "matched-at": "www.leonore.archives-nationales.culture.gouv.fr:443",
-      "extracted-results": [
-        "www.leonore.archives-nationales.culture.gouv.fr",
-        "www.leonore-recette.archives-nationales.culture.gouv.fr"
-      ],
-      "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:36:24.134513235Z",
+      "timestamp": "2025-05-11T06:17:32.469001657Z",
       "matcher-status": true
     },
     {
@@ -597,7 +597,7 @@
         "tls13"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2025-05-02T20:36:24.94198885Z",
+      "timestamp": "2025-05-11T06:17:33.377066497Z",
       "matcher-status": true
     }
   ]
