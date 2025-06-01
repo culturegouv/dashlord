@@ -1,27 +1,26 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "B",
+    "grade": "C",
     "error": null,
-    "score": 70,
+    "score": 50,
     "statusCode": 200,
-    "testsFailed": 2,
-    "testsPassed": 8,
+    "testsFailed": 3,
+    "testsPassed": 7,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 25 May 2025 02:01:31 GMT",
+      "date": "Sun, 01 Jun 2025 02:10:28 GMT",
       "content-type": "text/html; charset=UTF-8",
       "x-content-type-options": "nosniff",
       "strict-transport-security": "max-age=31536000; includeSubDomains",
       "referrer-policy": "no-referrer, strict-origin-when-cross-origin, no-referrer, strict-origin-when-cross-origin",
-      "x-frame-options": "SAMEORIGIN",
       "x-xss-protection": "1; mode=block; report=/nelmio/xss/report",
-      "age": "4363",
+      "age": "41269",
       "vary": "Origin,X-Editorial-Mode,X-Requested-With",
       "cache-control": "public, s-maxage=86400, stale-while-revalidate=3600, stale-if-error=3600",
       "accept-ranges": "bytes",
       "x-forwarded-for": ";",
-      "x-cp-via": "C2-d19257e0-ba877435",
+      "x-cp-via": "C3-8e0afce0-90cadf21",
       "connection": "close",
       "transfer-encoding": "chunked"
     }
@@ -92,7 +91,7 @@
       "result": "sri-not-implemented-but-external-scripts-loaded-securely",
       "scoreModifier": -5,
       "data": {
-        "https://tarteaucitron.io/load.js?domain=forumentreprendreculture.culture.gouv.fr/&uuid=cb6c31eaf0d65c6f8768c5734dd1a8df6bfd7780": {
+        "https://tarteaucitron.io/load.js?domain=forumentreprendreculture.culture.gouv.fr&uuid=cb6c31eaf0d65c6f8768c5734dd1a8df6bfd7780": {
           "crossorigin": null,
           "integrity": null
         }
@@ -107,10 +106,10 @@
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": true,
-      "result": "x-frame-options-sameorigin-or-deny",
-      "scoreModifier": 0,
-      "data": "SAMEORIGIN"
+      "pass": false,
+      "result": "x-frame-options-not-implemented",
+      "scoreModifier": -20,
+      "data": null
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
