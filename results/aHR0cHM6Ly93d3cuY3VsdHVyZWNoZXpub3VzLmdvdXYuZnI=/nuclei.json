@@ -33,9 +33,9 @@
       "extracted-results": [
         "uyhj6isgzepaw.edge.platform.sh."
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 46717\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 46717\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.culturecheznous.gouv.fr.\t300\tIN\tCNAME\tuyhj6isgzepaw.edge.platform.sh.\n",
-      "timestamp": "2025-06-08T01:04:39.615737194Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 37620\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 37620\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.culturecheznous.gouv.fr.\t300\tIN\tCNAME\tuyhj6isgzepaw.edge.platform.sh.\n",
+      "timestamp": "2025-06-08T07:26:47.571915852Z",
       "matcher-status": true
     },
     {
@@ -70,289 +70,9 @@
       "type": "dns",
       "host": "www.culturecheznous.gouv.fr.",
       "matched-at": "www.culturecheznous.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 6082\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 6082\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwww.culturecheznous.gouv.fr.\t300\tIN\tCNAME\tuyhj6isgzepaw.edge.platform.sh.\n\n;; AUTHORITY SECTION:\nedge.platform.sh.\t900\tIN\tSOA\tns-561.awsdns-06.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400\n",
-      "timestamp": "2025-06-08T01:04:39.627749099Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.53639193Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536438557Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536456009Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536471087Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536484562Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536496064Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "https://www.culturecheznous.gouv.fr",
-      "matched-at": "https://www.culturecheznous.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536508667Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 28297\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 28297\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.culturecheznous.gouv.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwww.culturecheznous.gouv.fr.\t300\tIN\tCNAME\tuyhj6isgzepaw.edge.platform.sh.\n\n;; AUTHORITY SECTION:\nedge.platform.sh.\t900\tIN\tSOA\tns-561.awsdns-06.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400\n",
+      "timestamp": "2025-06-08T07:26:48.705731134Z",
       "matcher-status": true
     },
     {
@@ -389,9 +109,9 @@
       "host": "https://www.culturecheznous.gouv.fr",
       "matched-at": "https://www.culturecheznous.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536521802Z",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615034726Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
       "matcher-status": true
     },
@@ -429,9 +149,49 @@
       "host": "https://www.culturecheznous.gouv.fr",
       "matched-at": "https://www.culturecheznous.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536533925Z",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.61508462Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.61510114Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
       "matcher-status": true
     },
@@ -469,9 +229,249 @@
       "host": "https://www.culturecheznous.gouv.fr",
       "matched-at": "https://www.culturecheznous.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:16 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000059-IAD\r\nX-Timer: S1749344717.533754,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000059-IAD 1749344717 1320757888</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:16.536545496Z",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615116329Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615129724Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615143029Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615166623Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615187983Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615204704Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "https://www.culturecheznous.gouv.fr",
+      "matched-at": "https://www.culturecheznous.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:25 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210030-DFW\r\nX-Timer: S1749367646.608532,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210030-DFW 1749367646 1947598832</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:25.615222528Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr'",
       "matcher-status": true
     },
@@ -511,9 +511,9 @@
       "host": "https://www.culturecheznous.gouv.fr",
       "matched-at": "https://www.culturecheznous.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: www.culturecheznous.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 431\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 01:05:32 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-iad-kiad7000112-IAD\r\nX-Timer: S1749344733.577846,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-iad-kiad7000112-IAD 1749344733 2543984885</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:05:32.586132746Z",
+      "response": "HTTP/1.1 405 Not allowed\r\nConnection: close\r\nContent-Length: 430\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Jun 2025 07:27:41 GMT\r\nRetry-After: 0\r\nServer: Varnish\r\nStrict-Transport-Security: max-age=300\r\nVia: 1.1 varnish\r\nX-Cache: MISS\r\nX-Cache-Hits: 0\r\nX-Served-By: cache-dfw-kdfw8210084-DFW\r\nX-Timer: S1749367662.736330,VS0,VE0\r\n\r\n\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html>\n  <head>\n    <title>405 Not allowed</title>\n  </head>\n  <body>\n    <h1>Error 405 Not allowed</h1>\n    <p>Not allowed</p>\n    <h3>Error 54113</h3>\n    <p>Details: cache-dfw-kdfw8210084-DFW 1749367662 202362650</p>\n    <hr>\n    <p>Varnish cache server</p>\n  </body>\n</html>\n",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:27:41.747574606Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: www.culturecheznous.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.culturecheznous.gouv.fr/'",
       "matcher-status": true
     },
@@ -543,8 +543,8 @@
       "extracted-results": [
         "Let's Encrypt"
       ],
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:11:08.878641954Z",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:33:08.299915702Z",
       "matcher-status": true
     },
     {
@@ -574,8 +574,8 @@
         "culturecheznous.gouv.fr",
         "www.culturecheznous.gouv.fr"
       ],
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:11:08.878793466Z",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:33:08.300052669Z",
       "matcher-status": true
     },
     {
@@ -605,8 +605,8 @@
       "extracted-results": [
         "tls12"
       ],
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:11:08.908090748Z",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:33:08.697456661Z",
       "matcher-status": true
     },
     {
@@ -636,8 +636,8 @@
       "extracted-results": [
         "tls13"
       ],
-      "ip": "151.101.2.216",
-      "timestamp": "2025-06-08T01:11:08.939168416Z",
+      "ip": "151.101.194.216",
+      "timestamp": "2025-06-08T07:33:08.77323614Z",
       "matcher-status": true
     }
   ]
