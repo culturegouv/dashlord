@@ -1,107 +1,49 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "B+",
+    "grade": "F",
     "error": null,
-    "score": 80,
+    "score": 10,
     "statusCode": 200,
-    "testsFailed": 1,
-    "testsPassed": 9,
+    "testsFailed": 5,
+    "testsPassed": 5,
     "testsQuantity": 10,
     "responseHeaders": {
-      "cache-control": "no-cache, no-store",
-      "pragma": "no-cache",
-      "content-type": "text/html; charset=utf-8",
-      "expires": "-1",
-      "vary": "Accept-Encoding",
+      "date": "Sun, 08 Jun 2025 08:47:13 GMT",
       "set-cookie": [
-        "_syrSessGuid=9ed3bc3e-d36d-4f77-beac-9e0b3237f02a; expires=Sun, 01-Jun-2025 09:15:32 GMT; path=/; secure; HttpOnly; SameSite=Lax"
+        "bot_mitigation_cookie=NQQULV3MP6VVWC7L2X2OOW2TMJROJTFSWSWLPFXKMRIC6UK7MZDZSMWS3RALUELVHLRW7K4NMQZE7S2WGVDHSWMOQZBIVLVBCXIQ3CWXMGWCYA3JRCNQ====; Path=/"
       ],
-      "x-content-type-options": "nosniff",
-      "referrer-policy": "strict-origin-when-cross-origin",
-      "content-security-policy": "default-src 'self' https: blob: 'unsafe-eval' 'unsafe-inline'; object-src 'none'; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data: blob:; font-src 'self' data: https:; frame-src 'self' https:; frame-ancestors 'self' https:",
-      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
-      "date": "Sun, 01 Jun 2025 08:45:32 GMT",
-      "connection": "close",
-      "content-length": "34861"
+      "content-type": "text/html",
+      "content-length": "353",
+      "x-cp-via": "C2-08dae091-a73b0a54",
+      "connection": "close"
     }
   },
   "tests": {
     "content-security-policy": {
       "expectation": "csp-implemented-with-no-unsafe",
       "pass": false,
-      "result": "csp-implemented-with-unsafe-inline",
-      "scoreModifier": -20,
-      "data": {
-        "default-src": [
-          "'self'",
-          "'unsafe-eval'",
-          "'unsafe-inline'",
-          "blob:",
-          "https:"
-        ],
-        "object-src": [
-          "'none'"
-        ],
-        "style-src": [
-          "'self'",
-          "'unsafe-inline'",
-          "https:"
-        ],
-        "img-src": [
-          "'self'",
-          "blob:",
-          "data:",
-          "https:"
-        ],
-        "font-src": [
-          "'self'",
-          "data:",
-          "https:"
-        ],
-        "frame-src": [
-          "'self'",
-          "https:"
-        ],
-        "frame-ancestors": [
-          "'self'",
-          "https:"
-        ]
-      },
-      "http": true,
+      "result": "csp-not-implemented",
+      "scoreModifier": -25,
+      "data": null,
+      "http": false,
       "meta": false,
-      "policy": {
-        "antiClickjacking": false,
-        "defaultNone": false,
-        "insecureBaseUri": true,
-        "insecureFormAction": true,
-        "insecureSchemeActive": false,
-        "insecureSchemePassive": false,
-        "strictDynamic": false,
-        "unsafeEval": true,
-        "unsafeInline": true,
-        "unsafeInlineStyle": true,
-        "unsafeObjects": false
-      },
-      "numPolicies": 1
+      "policy": null,
+      "numPolicies": 0
     },
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
-      "pass": true,
-      "result": "cookies-secure-with-httponly-sessions-and-samesite",
-      "scoreModifier": 5,
+      "pass": false,
+      "result": "cookies-without-secure-flag",
+      "scoreModifier": -20,
       "data": {
-        "_syrSessGuid": {
+        "bot_mitigation_cookie": {
           "domain": "ccbmn.culture.gouv.fr",
-          "expires": "2025-06-01T09:15:32.000Z",
-          "httponly": true,
           "path": "/",
-          "port": null,
-          "samesite": "lax",
-          "secure": true
+          "port": null
         }
       },
-      "sameSite": true
+      "sameSite": false
     },
     "cross-origin-resource-sharing": {
       "expectation": "cross-origin-resource-sharing-not-implemented",
@@ -126,21 +68,21 @@
     "referrer-policy": {
       "expectation": "referrer-policy-private",
       "pass": true,
-      "result": "referrer-policy-private",
-      "scoreModifier": 5,
-      "data": "strict-origin-when-cross-origin",
-      "http": true,
+      "result": "referrer-policy-not-implemented",
+      "scoreModifier": 0,
+      "data": null,
+      "http": false,
       "meta": false
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=63072000; includeSubDomains; preload",
-      "includeSubDomains": true,
-      "maxAge": 63072000,
-      "preload": true,
+      "pass": false,
+      "result": "hsts-not-implemented",
+      "scoreModifier": -20,
+      "data": null,
+      "includeSubDomains": false,
+      "maxAge": null,
+      "preload": false,
       "preloaded": false
     },
     "subresource-integrity": {
@@ -152,16 +94,16 @@
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
-      "pass": true,
-      "result": "x-content-type-options-nosniff",
-      "scoreModifier": 0,
-      "data": "nosniff"
+      "pass": false,
+      "result": "x-content-type-options-not-implemented",
+      "scoreModifier": -5,
+      "data": null
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": true,
-      "result": "x-frame-options-implemented-via-csp",
-      "scoreModifier": 5,
+      "pass": false,
+      "result": "x-frame-options-not-implemented",
+      "scoreModifier": -20,
       "data": null
     },
     "cross-origin-resource-policy": {
