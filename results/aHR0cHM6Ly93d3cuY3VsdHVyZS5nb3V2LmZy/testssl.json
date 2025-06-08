@@ -345,8 +345,8 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "www.culture.gouv.fr/178.33.22.3",
               "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "expires < 60 days (33)"
+              "severity"     : "HIGH",
+              "finding"      : "expires < 30 days (26)"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -359,7 +359,7 @@
               "id"           : "cert_notAfter",
               "ip"           : "www.culture.gouv.fr/178.33.22.3",
               "port"         : "443",
-              "severity"     : "MEDIUM",
+              "severity"     : "HIGH",
               "finding"      : "2025-07-04 21:59"
           }
 ,         {
@@ -500,21 +500,21 @@
               "ip"           : "www.culture.gouv.fr/178.33.22.3",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "+4406 seconds from localtime"
+              "finding"      : "+1945 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
               "ip"           : "www.culture.gouv.fr/178.33.22.3",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1748740425"
+              "finding"      : "1749344903"
           }
 ,         {
               "id"           : "HTTP_headerAge",
               "ip"           : "www.culture.gouv.fr/178.33.22.3",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "4407 seconds"
+              "finding"      : "1945 seconds"
           }
 ,         {
               "id"           : "ipv4_in_header",
@@ -522,7 +522,7 @@
               "port"         : "443",
               "severity"     : "MEDIUM",
               "cwe"          : "CWE-212",
-              "finding"      : "x-forwarded-for: 52.176.89.25; (check if it's your IP address or e.g. a cluster IP)"
+              "finding"      : "x-forwarded-for: 52.237.157.158; (check if it's your IP address or e.g. a cluster IP)"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -642,7 +642,7 @@
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-200",
-              "finding"      : "x-forwarded-for: 52.176.89.25;"
+              "finding"      : "x-forwarded-for: 52.237.157.158;"
           }
 ,         {
               "id"           : "heartbleed",
@@ -1141,6 +1141,6 @@
               "ip"           : "www.culture.gouv.fr/178.33.22.3",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "113"
+              "finding"      : "83"
           }
 ]
