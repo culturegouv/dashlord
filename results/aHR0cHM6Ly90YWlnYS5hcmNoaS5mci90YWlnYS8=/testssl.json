@@ -339,7 +339,7 @@
               "ip"           : "taiga.archi.fr/176.31.225.162",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "40 >= 30 days"
+              "finding"      : "33 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -457,15 +457,15 @@
               "id"           : "intermediate_cert_notAfter <#1>",
               "ip"           : "taiga.archi.fr/176.31.225.162",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "MEDIUM",
               "finding"      : "2025-08-08 08:28"
           }
 ,         {
               "id"           : "intermediate_cert_expiration <#1>",
               "ip"           : "taiga.archi.fr/176.31.225.162",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "ok > 40 days"
+              "severity"     : "MEDIUM",
+              "finding"      : "expires <= 40 days"
           }
 ,         {
               "id"           : "intermediate_cert_chain <#1>",
@@ -535,14 +535,14 @@
               "ip"           : "taiga.archi.fr/176.31.225.162",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-1 seconds from localtime"
+              "finding"      : "0 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
               "ip"           : "taiga.archi.fr/176.31.225.162",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1751183468"
+              "finding"      : "1751789294"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -1105,6 +1105,6 @@
               "ip"           : "taiga.archi.fr/176.31.225.162",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "132"
+              "finding"      : "91"
           }
 ]
