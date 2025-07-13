@@ -213,7 +213,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "off by -10 seconds from your localtime"
+              "finding"      : "off by -1 seconds from your localtime"
           }
 ,         {
               "id"           : "cert_compression",
@@ -346,7 +346,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "71 >= 30 days"
+              "finding"      : "64 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -507,7 +507,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1751774331"
+              "finding"      : "1752379891"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -660,10 +660,10 @@
               "id"           : "BREACH",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "MEDIUM",
               "cve"          : "CVE-2013-3587",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable, no gzip/deflate/compress/br HTTP compression  - only supplied '/' tested"
+              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
           }
 ,         {
               "id"           : "POODLE_SSL",
@@ -1021,7 +1021,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "SSL Labs's 'SSL Server Rating Guide' (version 2009q from 2020-01-30)"
+              "finding"      : "SSL Labs's 'SSL Server Rating Guide' (version 2009r from 2025-05-16)"
           }
 ,         {
               "id"           : "rating_doc",
@@ -1094,10 +1094,17 @@
               "finding"      : "Grade capped to B. RC4 ciphers offered"
           }
 ,         {
+              "id"           : "grade_cap_warning_1",
+              "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "TLS 1.3 is not supported"
+          }
+,         {
               "id"           : "scanTime",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "175"
+              "finding"      : "117"
           }
 ]
