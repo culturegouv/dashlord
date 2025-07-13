@@ -32,9 +32,9 @@
       "type": "dns",
       "host": "cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr.",
       "matched-at": "cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 45517\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 45517\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t1800\tIN\tSOA\ta.ns.developpement-durable.gouv.fr. hostmaster.culture.gouv.fr. 2025043017 14400 3200 1209600 3600\n",
-      "timestamp": "2025-07-06T02:16:11.967578306Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 1107\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 1107\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t1800\tIN\tSOA\ta.ns.developpement-durable.gouv.fr. hostmaster.culture.gouv.fr. 2025043224 14400 3200 1209600 3600\n",
+      "timestamp": "2025-07-13T02:22:12.280613405Z",
       "matcher-status": true
     },
     {
@@ -61,209 +61,9 @@
       "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:21 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:21 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:21.925218287Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065289051Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065355134Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065384279Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065404637Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065417932Z",
+      "timestamp": "2025-07-13T02:23:21.525458268Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -301,49 +101,9 @@
       "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065430605Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065443069Z",
+      "timestamp": "2025-07-13T02:23:56.444390171Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -381,9 +141,209 @@
       "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065457386Z",
+      "timestamp": "2025-07-13T02:23:56.444438912Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-07-13T02:23:56.444460652Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-07-13T02:23:56.444479367Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-07-13T02:23:56.444495768Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-07-13T02:23:56.444511387Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-07-13T02:23:56.444527137Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -421,9 +381,9 @@
       "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065475009Z",
+      "timestamp": "2025-07-13T02:23:56.444547545Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -461,9 +421,49 @@
       "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:17:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:17:56.065487512Z",
+      "timestamp": "2025-07-13T02:23:56.444565208Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:23:56 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-07-13T02:23:56.444583522Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -503,9 +503,9 @@
       "host": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr",
       "matched-at": "https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Jul 2025 02:18:33 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 13 Jul 2025 02:24:35 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:18:33.83388872Z",
+      "timestamp": "2025-07-13T02:24:35.948581213Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr/'",
       "matcher-status": true
     },
@@ -541,9 +541,9 @@
       "host": "cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr:443",
       "matched-at": "cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr:443",
       "request": "2E",
-      "response": "HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Sun, 06 Jul 2025 02:20:24 GMT\r\nContent-Type: text/html\r\nContent-Length: 166\r\nConnection: close\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response": "HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Sun, 13 Jul 2025 02:26:37 GMT\r\nContent-Type: text/html\r\nContent-Length: 166\r\nConnection: close\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:20:25.699406681Z",
+      "timestamp": "2025-07-13T02:26:38.620467213Z",
       "matcher-status": true
     },
     {
@@ -573,7 +573,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:20:34.763803148Z",
+      "timestamp": "2025-07-13T02:26:46.847335416Z",
       "matcher-status": true
     },
     {
@@ -603,7 +603,7 @@
         "cathedrale-saint-jean-baptiste-de-perpignan.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:20:34.763947979Z",
+      "timestamp": "2025-07-13T02:26:46.847472733Z",
       "matcher-status": true
     },
     {
@@ -634,7 +634,7 @@
         "tls12"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:20:36.504229348Z",
+      "timestamp": "2025-07-13T02:26:48.393286185Z",
       "matcher-status": true
     },
     {
@@ -665,7 +665,7 @@
         "tls13"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-07-06T02:20:36.685471369Z",
+      "timestamp": "2025-07-13T02:26:48.57776465Z",
       "matcher-status": true
     }
   ]
