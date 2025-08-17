@@ -32,9 +32,9 @@
       "type": "dns",
       "host": "visites-en-ligne-musees.culture.gouv.fr.",
       "matched-at": "visites-en-ligne-musees.culture.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 49334\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;visites-en-ligne-musees.culture.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 49334\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;visites-en-ligne-musees.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t3600\tIN\tSOA\ta.ns.developpement-durable.gouv.fr. hostmaster.culture.gouv.fr. 2025043630 14400 3200 1209600 3600\n",
-      "timestamp": "2025-08-03T03:30:48.828847542Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 25756\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;visites-en-ligne-musees.culture.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 25756\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;visites-en-ligne-musees.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t3600\tIN\tSOA\ta.ns.developpement-durable.gouv.fr. hostmaster.culture.gouv.fr. 2025043946 14400 3200 1209600 3600\n",
+      "timestamp": "2025-08-17T03:23:17.578344328Z",
       "matcher-status": true
     },
     {
@@ -61,89 +61,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:31 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:12 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:31.938684388Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.66847211Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.66850974Z",
+      "timestamp": "2025-08-17T03:24:12.122312983Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -181,9 +101,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668520119Z",
+      "timestamp": "2025-08-17T03:24:26.692516978Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -221,89 +141,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668535478Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668551988Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668566966Z",
+      "timestamp": "2025-08-17T03:24:26.692561451Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -341,9 +181,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668584419Z",
+      "timestamp": "2025-08-17T03:24:26.692578764Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -381,9 +221,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668602422Z",
+      "timestamp": "2025-08-17T03:24:26.692589764Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -421,9 +261,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668620726Z",
+      "timestamp": "2025-08-17T03:24:26.692601606Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -461,10 +301,338 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:31:43 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:31:43.668672032Z",
+      "timestamp": "2025-08-17T03:24:26.692615282Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:26.692629178Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:26.69265161Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:26.692671016Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:26 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:26.692687106Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/configs/composer-config.yaml",
+      "template-url": "https://templates.nuclei.sh/public/composer-config",
+      "template-id": "composer-config",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/composer-config.yaml",
+      "info": {
+        "name": "Composer Config - Detect",
+        "author": [
+          "mahendra purbia (mah3sec_)",
+          "thezakman"
+        ],
+        "tags": [
+          "config",
+          "exposure"
+        ],
+        "description": "Composer configuration file detected.",
+        "reference": [
+          "https://getcomposer.org/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "matcher-name": "composer.lock",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr/composer.json",
+      "request": "GET /composer.json HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/json\r\nDate: Sun, 17 Aug 2025 03:24:29 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:29.379339669Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr/composer.json'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/configs/composer-config.yaml",
+      "template-url": "https://templates.nuclei.sh/public/composer-config",
+      "template-id": "composer-config",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/composer-config.yaml",
+      "info": {
+        "name": "Composer Config - Detect",
+        "author": [
+          "mahendra purbia (mah3sec_)",
+          "thezakman"
+        ],
+        "tags": [
+          "config",
+          "exposure"
+        ],
+        "description": "Composer configuration file detected.",
+        "reference": [
+          "https://getcomposer.org/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "matcher-name": "composer.lock",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr/composer.lock",
+      "request": "GET /composer.lock HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:24:29 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:29.698862384Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr/composer.lock'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/configs/composer-config.yaml",
+      "template-url": "https://templates.nuclei.sh/public/composer-config",
+      "template-id": "composer-config",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/composer-config.yaml",
+      "info": {
+        "name": "Composer Config - Detect",
+        "author": [
+          "mahendra purbia (mah3sec_)",
+          "thezakman"
+        ],
+        "tags": [
+          "config",
+          "exposure"
+        ],
+        "description": "Composer configuration file detected.",
+        "reference": [
+          "https://getcomposer.org/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "matcher-name": "composer.lock",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr/.composer/composer.json",
+      "request": "GET /.composer/composer.json HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/json\r\nDate: Sun, 17 Aug 2025 03:24:29 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:30.019889984Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr/.composer/composer.json'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/exposures/configs/composer-config.yaml",
+      "template-url": "https://templates.nuclei.sh/public/composer-config",
+      "template-id": "composer-config",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/composer-config.yaml",
+      "info": {
+        "name": "Composer Config - Detect",
+        "author": [
+          "mahendra purbia (mah3sec_)",
+          "thezakman"
+        ],
+        "tags": [
+          "config",
+          "exposure"
+        ],
+        "description": "Composer configuration file detected.",
+        "reference": [
+          "https://getcomposer.org/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "matcher-name": "composer.lock",
+      "type": "http",
+      "host": "https://visites-en-ligne-musees.culture.gouv.fr",
+      "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr/vendor/composer/installed.json",
+      "request": "GET /vendor/composer/installed.json HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/json\r\nDate: Sun, 17 Aug 2025 03:24:30 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-08-17T03:24:30.352729576Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr/vendor/composer/installed.json'",
       "matcher-status": true
     },
     {
@@ -503,9 +671,9 @@
       "host": "https://visites-en-ligne-musees.culture.gouv.fr",
       "matched-at": "https://visites-en-ligne-musees.culture.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: visites-en-ligne-musees.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 03 Aug 2025 03:32:12 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 17 Aug 2025 03:25:01 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:32:12.760750358Z",
+      "timestamp": "2025-08-17T03:25:01.264325105Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: visites-en-ligne-musees.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://visites-en-ligne-musees.culture.gouv.fr/'",
       "matcher-status": true
     },
@@ -541,9 +709,9 @@
       "host": "visites-en-ligne-musees.culture.gouv.fr:443",
       "matched-at": "visites-en-ligne-musees.culture.gouv.fr:443",
       "request": "2E",
-      "response": "HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Sun, 03 Aug 2025 03:33:50 GMT\r\nContent-Type: text/html\r\nContent-Length: 166\r\nConnection: close\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response": "HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Sun, 17 Aug 2025 03:26:39 GMT\r\nContent-Type: text/html\r\nContent-Length: 166\r\nConnection: close\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:33:50.249720132Z",
+      "timestamp": "2025-08-17T03:26:39.766995168Z",
       "matcher-status": true
     },
     {
@@ -573,7 +741,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:34:00.479803132Z",
+      "timestamp": "2025-08-17T03:26:49.46304331Z",
       "matcher-status": true
     },
     {
@@ -603,7 +771,7 @@
         "visites-en-ligne-musees.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:34:00.479938584Z",
+      "timestamp": "2025-08-17T03:26:49.46320382Z",
       "matcher-status": true
     },
     {
@@ -634,7 +802,7 @@
         "tls12"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:34:02.303000591Z",
+      "timestamp": "2025-08-17T03:26:52.523229532Z",
       "matcher-status": true
     },
     {
@@ -665,7 +833,7 @@
         "tls13"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-08-03T03:34:02.501293122Z",
+      "timestamp": "2025-08-17T03:26:52.743549887Z",
       "matcher-status": true
     }
   ]
