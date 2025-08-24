@@ -9,13 +9,18 @@
     "testsPassed": 7,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 17 Aug 2025 07:57:32 GMT",
+      "date": "Sun, 24 Aug 2025 08:05:24 GMT",
       "server": "Apache",
-      "strict-transport-security": "max-age=63072000; includeSubdomains; preload",
+      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
+      "x-frame-options": "DENY, SAMEORIGIN",
+      "x-content-type-options": "nosniff, nosniff",
+      "x-powered-by": "PHP/7.4.33",
       "vary": "Accept-Encoding",
+      "x-xss-protection": "1; mode=block",
       "content-length": "789",
-      "connection": "close",
-      "content-type": "text/html; charset=utf-8"
+      "content-type": "text/html; charset=utf-8",
+      "x-cp-via": "C2-b51ba143-729c810b",
+      "connection": "close"
     }
   },
   "tests": {
@@ -72,7 +77,7 @@
       "pass": true,
       "result": "hsts-implemented-max-age-at-least-six-months",
       "scoreModifier": 0,
-      "data": "max-age=63072000; includeSubdomains; preload",
+      "data": "max-age=63072000; includeSubDomains; preload",
       "includeSubDomains": true,
       "maxAge": 63072000,
       "preload": true,
@@ -88,16 +93,16 @@
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
       "pass": false,
-      "result": "x-content-type-options-not-implemented",
+      "result": "x-content-type-options-header-invalid",
       "scoreModifier": -5,
-      "data": null
+      "data": "nosniff, nosniff"
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
       "pass": false,
-      "result": "x-frame-options-not-implemented",
+      "result": "x-frame-options-header-invalid",
       "scoreModifier": -20,
-      "data": null
+      "data": "DENY, SAMEORIGIN"
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
