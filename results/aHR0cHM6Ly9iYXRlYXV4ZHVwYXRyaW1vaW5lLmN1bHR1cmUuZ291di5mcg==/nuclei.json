@@ -32,9 +32,9 @@
       "type": "dns",
       "host": "bateauxdupatrimoine.culture.gouv.fr.",
       "matched-at": "bateauxdupatrimoine.culture.gouv.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 29973\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;bateauxdupatrimoine.culture.gouv.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 29973\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;bateauxdupatrimoine.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t1800\tIN\tSOA\ta.ns.developpement-durable.gouv.fr. hostmaster.culture.gouv.fr. 2025044307 14400 3200 1209600 3600\n",
-      "timestamp": "2025-09-07T03:15:07.053137497Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 5618\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;bateauxdupatrimoine.culture.gouv.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 5618\n;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;bateauxdupatrimoine.culture.gouv.fr.\tIN\t CAA\n\n;; AUTHORITY SECTION:\nculture.gouv.fr.\t1800\tIN\tSOA\ta.ns.developpement-durable.gouv.fr. hostmaster.culture.gouv.fr. 2025044600 14400 3200 1209600 3600\n",
+      "timestamp": "2025-09-21T02:25:05.617589026Z",
       "matcher-status": true
     },
     {
@@ -61,209 +61,9 @@
       "host": "https://bateauxdupatrimoine.culture.gouv.fr",
       "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:06 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:25:53 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:06.686338604Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950344377Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950395863Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950412173Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950426971Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950441768Z",
+      "timestamp": "2025-09-21T02:25:53.105547209Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -301,89 +101,9 @@
       "host": "https://bateauxdupatrimoine.culture.gouv.fr",
       "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950455925Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950475331Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "clear-site-data",
-      "type": "http",
-      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950492283Z",
+      "timestamp": "2025-09-21T02:26:05.796019353Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -421,9 +141,9 @@
       "host": "https://bateauxdupatrimoine.culture.gouv.fr",
       "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950506599Z",
+      "timestamp": "2025-09-21T02:26:05.796075768Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -461,9 +181,289 @@
       "host": "https://bateauxdupatrimoine.culture.gouv.fr",
       "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:16:22 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:16:22.950531486Z",
+      "timestamp": "2025-09-21T02:26:05.79609305Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.796107898Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.796120952Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.796134347Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.79614667Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.796162089Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "clear-site-data",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.796179572Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:05 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2025-09-21T02:26:05.79619484Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -503,9 +503,9 @@
       "host": "https://bateauxdupatrimoine.culture.gouv.fr",
       "matched-at": "https://bateauxdupatrimoine.culture.gouv.fr/",
       "request": "POST / HTTP/1.1\r\nHost: bateauxdupatrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 07 Sep 2025 03:17:02 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 21 Sep 2025 02:26:36 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:17:02.543406544Z",
+      "timestamp": "2025-09-21T02:26:36.702692733Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: bateauxdupatrimoine.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://bateauxdupatrimoine.culture.gouv.fr/'",
       "matcher-status": true
     },
@@ -541,9 +541,9 @@
       "host": "bateauxdupatrimoine.culture.gouv.fr:443",
       "matched-at": "bateauxdupatrimoine.culture.gouv.fr:443",
       "request": "2E",
-      "response": "HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Sun, 07 Sep 2025 03:18:52 GMT\r\nContent-Type: text/html\r\nContent-Length: 166\r\nConnection: close\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
+      "response": "HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Sun, 21 Sep 2025 02:29:25 GMT\r\nContent-Type: text/html\r\nContent-Length: 166\r\nConnection: close\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n<html>\r\n<head><title>400 Bad Request</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>400 Bad Request</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:18:54.703801121Z",
+      "timestamp": "2025-09-21T02:29:27.45522422Z",
       "matcher-status": true
     },
     {
@@ -573,7 +573,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:19:04.085481979Z",
+      "timestamp": "2025-09-21T02:29:35.992357977Z",
       "matcher-status": true
     },
     {
@@ -603,7 +603,7 @@
         "bateauxdupatrimoine.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:19:04.085620747Z",
+      "timestamp": "2025-09-21T02:29:35.992497788Z",
       "matcher-status": true
     },
     {
@@ -634,7 +634,7 @@
         "tls12"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:19:07.305874715Z",
+      "timestamp": "2025-09-21T02:29:39.045536587Z",
       "matcher-status": true
     },
     {
@@ -665,7 +665,7 @@
         "tls13"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2025-09-07T03:19:07.604102731Z",
+      "timestamp": "2025-09-21T02:29:39.23363633Z",
       "matcher-status": true
     }
   ]
