@@ -1,21 +1,21 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "C-",
+    "grade": "D-",
     "error": null,
-    "score": 45,
+    "score": 25,
     "statusCode": 200,
-    "testsFailed": 4,
-    "testsPassed": 6,
+    "testsFailed": 5,
+    "testsPassed": 5,
     "testsQuantity": 10,
     "responseHeaders": {
       "server": "nginx",
-      "date": "Sun, 02 Nov 2025 07:23:54 GMT",
+      "date": "Sun, 09 Nov 2025 07:20:24 GMT",
       "content-type": "text/html; charset=UTF-8",
       "transfer-encoding": "chunked",
       "connection": "close",
-      "x-varnish": "4014185 5046504",
-      "age": "86054",
+      "x-varnish": "2352802 817921",
+      "age": "1444",
       "vary": "Accept-Encoding,X-Requested-With",
       "cache-control": "public, s-maxage=600, stale-while-revalidate=300, stale-if-error=300",
       "accept-ranges": "bytes",
@@ -52,12 +52,15 @@
     "redirection": {
       "expectation": "redirection-to-https",
       "pass": true,
-      "result": "redirection-not-needed-no-http",
+      "result": "redirection-to-https",
       "scoreModifier": 0,
-      "destination": "http://archives-nationales-travail.culture.gouv.fr/Faire-une-recherche/Archives-en-ligne",
+      "destination": "https://archives-nationales-travail.culture.gouv.fr/Faire-une-recherche/Archives-en-ligne",
       "redirects": true,
-      "route": [],
-      "statusCode": null
+      "route": [
+        "http://archives-nationales-travail.culture.gouv.fr/Faire-une-recherche/Archives-en-ligne",
+        "https://archives-nationales-travail.culture.gouv.fr/Faire-une-recherche/Archives-en-ligne"
+      ],
+      "statusCode": 200
     },
     "referrer-policy": {
       "expectation": "referrer-policy-private",
@@ -70,12 +73,12 @@
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=15768000",
+      "pass": false,
+      "result": "hsts-not-implemented-no-https",
+      "scoreModifier": -20,
+      "data": null,
       "includeSubDomains": false,
-      "maxAge": 15768000,
+      "maxAge": null,
       "preload": false,
       "preloaded": false
     },
