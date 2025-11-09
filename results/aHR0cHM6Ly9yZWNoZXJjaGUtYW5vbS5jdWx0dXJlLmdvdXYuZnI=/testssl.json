@@ -1,70 +1,77 @@
 [
          {
               "id"           : "service",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "HTTP"
           }
 ,         {
               "id"           : "pre_128cipher",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No 128 cipher limit bug"
           }
 ,         {
               "id"           : "SSLv2",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "SSLv3",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1_1",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1_2",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "offered"
           }
 ,         {
               "id"           : "TLS1_3",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "not offered + downgraded to weaker protocol"
+              "severity"     : "OK",
+              "finding"      : "offered with final"
+          }
+,         {
+              "id"           : "ALPN_HTTP2",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "h2"
           }
 ,         {
               "id"           : "ALPN",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "not offered"
+              "finding"      : "http/1.1"
           }
 ,         {
               "id"           : "cipherlist_NULL",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -72,7 +79,7 @@
           }
 ,         {
               "id"           : "cipherlist_aNULL",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -80,7 +87,7 @@
           }
 ,         {
               "id"           : "cipherlist_EXPORT",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -88,7 +95,7 @@
           }
 ,         {
               "id"           : "cipherlist_LOW",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -96,7 +103,7 @@
           }
 ,         {
               "id"           : "cipherlist_3DES_IDEA",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-310",
@@ -104,498 +111,456 @@
           }
 ,         {
               "id"           : "cipherlist_OBSOLETED",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "LOW",
+              "severity"     : "INFO",
               "cwe"          : "CWE-310",
-              "finding"      : "offered"
+              "finding"      : "not offered"
           }
 ,         {
               "id"           : "cipherlist_STRONG_NOFS",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "cipherlist_STRONG_FS",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "offered"
           }
 ,         {
               "id"           : "cipher_order-tls1_2",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "server"
-          }
-,         {
-              "id"           : "cipherorder_TLSv1_2",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "NOT a cipher order configured"
+          }
+,         {
+              "id"           : "cipher-tls1_2_xc02c",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "TLSv1.2   xc02c   ECDHE-ECDSA-AES256-GCM-SHA384     ECDH 521   AESGCM      256      TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+          }
+,         {
+              "id"           : "cipher-tls1_2_xc02b",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "TLSv1.2   xc02b   ECDHE-ECDSA-AES128-GCM-SHA256     ECDH 521   AESGCM      128      TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+          }
+,         {
+              "id"           : "supportedciphers_TLSv1_2",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "ECDHE-ECDSA-AES256-GCM-SHA384 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "cipher_order",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "server"
+              "severity"     : "INFO",
+              "finding"      : "NOT a server cipher order configured"
           }
 ,         {
               "id"           : "FS",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "offered"
           }
 ,         {
               "id"           : "FS_ciphers",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "DHE-RSA-AES128-GCM-SHA256 DHE-RSA-AES128-SHA256 DHE-RSA-AES128-SHA DHE-RSA-AES256-GCM-SHA384 DHE-RSA-AES256-SHA256 DHE-RSA-AES256-SHA ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES128-SHA256 ECDHE-RSA-AES128-SHA ECDHE-RSA-AES256-GCM-SHA384 ECDHE-RSA-AES256-SHA384 ECDHE-RSA-AES256-SHA"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "FS_ECDHE_curves",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "prime256v1"
+              "finding"      : "prime256v1 secp384r1 secp521r1"
           }
 ,         {
               "id"           : "TLS_extensions",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "'server name/#0' 'EC point formats/#11' 'heartbeat/#15' 'renegotiation info/#65281'"
+              "finding"      : "'server name/#0' 'max fragment length/#1' 'supported_groups/#10' 'EC point formats/#11' 'application layer protocol negotiation/#16' 'extended master secret/#23' 'supported versions/#43' 'key share/#51' 'renegotiation info/#65281'"
           }
 ,         {
               "id"           : "TLS_session_ticket",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "no -- no lifetime advertised"
           }
 ,         {
               "id"           : "SSL_sessionID_support",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "yes"
           }
 ,         {
               "id"           : "sessionresumption_ticket",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not supported"
           }
 ,         {
               "id"           : "sessionresumption_ID",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "supported"
           }
 ,         {
               "id"           : "TLS_timestamp",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "random"
           }
 ,         {
-              "id"           : "cert_compression",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "id"           : "certificate_compression",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "N/A"
+              "finding"      : "none"
           }
 ,         {
               "id"           : "clientAuth",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "none"
           }
 ,         {
               "id"           : "cert_numbers",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "1"
           }
 ,         {
               "id"           : "cert_signatureAlgorithm",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "SHA256 with RSA"
+              "finding"      : "ECDSA with SHA384"
           }
 ,         {
               "id"           : "cert_keySize",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "RSA 2048 bits (exponent is 65537)"
+              "severity"     : "OK",
+              "finding"      : "EC 256 bits (curve P-256)"
           }
 ,         {
               "id"           : "cert_keyUsage",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Digital Signature, Key Encipherment"
+              "finding"      : "Digital Signature"
           }
 ,         {
               "id"           : "cert_extKeyUsage",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLS Web Server Authentication"
+              "finding"      : "TLS Web Server Authentication, TLS Web Client Authentication"
           }
 ,         {
               "id"           : "cert_serialNumber",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "08F1F2EE763E5AF457971C6141F9ABC7"
+              "finding"      : "05CCBD85E40BD89CA92B78892ACC3CC31598"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "16"
+              "finding"      : "18"
           }
 ,         {
               "id"           : "cert_fingerprintSHA1",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "021047033834F9807775137E347CE0C65062DEFF"
+              "finding"      : "8C83604B86785D830458B902368D86AFE7C49E51"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ED4CD7C0276D4017D7954B3EC3AA6F34669986E67302D2F448C98D5D34659F34"
+              "finding"      : "BA20E55C0446EA942F6F756F127DE5A7F1F6885A4133976502D3DF2AA9B225F5"
           }
 ,         {
               "id"           : "cert",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIIYDCCBkigAwIBAgIQCPHy7nY+WvRXlxxhQfmrxzANBgkqhkiG9w0BAQsFADB2MQswCQYDVQQGEwJGUjERMA8GA1UECgwIQ2VydGlnbmExHTAbBgNVBGEMFE5UUkZSLTQ4MTQ2MzA4MTAwMDM2MTUwMwYDVQQDDCxDZXJ0aWduYSBTZXJ2ZXIgQXV0aGVudGljYXRpb24gT1ZDUCBFVSBDQSBHMTAeFw0yNTEwMzEwMDAwMDBaFw0yNjAxMjgyMzU5NTlaMIGSMQswCQYDVQQGEwJGUjEOMAwGA1UEBwwFUEFSSVMxNzA1BgNVBAoMLlNFQ1JFVEFSSUFUIEdFTkVSQUwgRFUgTUlOSVNURVJFIERFIExBIENVTFRVUkUxJTAjBgNVBAMMHHJlY2hlcmNoZS1hbm9tLWJvLmN1bHR1cmUuZnIxEzARBgNVBAUTClMzNjI4NzU2MDIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDXJZyasInYTNED+VS/C2sXD235KA6Ax3crf+XfKvkvG6XXgocmAIv5vHsByCoecewzVRLtEZSCfIOcRsjhf9gC0SXJ40RPh5RvB0Nr4hnNRasNZ2PuvBCW1Wea1bSydLkvbs4iZ9evno00n+Ueh18mhSNBGwR+sQerz8SWbJCk1/CL8fN7DYhe1Yc9L2vzgArLIRlfAhytqEpgudYfaD4fX9yEeWY0n99nUj0F9HbZt98NGlW4UmLDVQTtU1K8Jd/R0oxjZV+ebtvDQ/T1HVInB5gTvoWKJNrSPvEtBkk3AH1O973mUdx3wo/FBhkyhACbNLDsDn5NAIIIbAQ1SEG9AgMBAAGjggPLMIIDxzBfBggrBgEFBQcBAQRTMFEwTwYIKwYBBQUHMAKGQ2h0dHA6Ly9jZXJ0LmNlcnRpZ25hLmNvbS9DZXJ0aWduYVNlcnZlckF1dGhlbnRpY2F0aW9uT1ZDUEVVQ0FHMS5jZXIwHwYDVR0jBBgwFoAUoHLmRsQwXOStwhzC1WI4mIFaVKYwDAYDVR0TAQH/BAIwADBTBgNVHSAETDBKMAgGBgQAj3oBBzA0BgsqgXoBgTEBFwEBATAlMCMGCCsGAQUFBwIBFhdodHRwOi8vY3BzLmNlcnRpZ25hLmNvbTAIBgZngQwBAgIwUwYDVR0fBEwwSjBIoEagRIZCaHR0cDovL2NybC5jZXJ0aWduYS5jb20vQ2VydGlnbmFTZXJ2ZXJBdXRoZW50aWNhdGlvbk9WQ1BFVUNBRzEuY3JsMBMGA1UdJQQMMAoGCCsGAQUFBwMBMA4GA1UdDwEB/wQEAwIFoDCBwwYDVR0RBIG7MIG4gh1hcmNoaXZlcy1tYXAtYWRtaW4uY3VsdHVyZS5mcoIfcmVjaGVyY2hlLWFub20tYWRtaW4uY3VsdHVyZS5mcoIaYXJjaGl2ZXMtbWFwLWJvLmN1bHR1cmUuZnKCHHJlY2hlcmNoZS1hbm9tLWJvLmN1bHR1cmUuZnKCHnJlY2hlcmNoZS1hbm9tLmN1bHR1cmUuZ291di5mcoIcYXJjaGl2ZXMtbWFwLmN1bHR1cmUuZ291di5mcjAdBgNVHQ4EFgQUbSJU2LzKHj4f3yK5cBwLNi4i5cQwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB2ACW3796hEwGT7ZMHl3CqMiomYg3jWsiqfHUZfeCxqeBlAAABmjmV07UAAAQDAEcwRQIhANKls2n7TxNR8akY66RIx728wBgRzILWDG0/rDNKkbtqAiAQ2P/7x4Gbhq9StMaS/KRyEe765SMfO675NuJHOTpRIwB3AJaXZL9VWJet90OHaDcIQnfp8DrV9qTzNm5GpD8PyqnGAAABmjmV01sAAAQDAEgwRgIhAP9wytp992b2PNfMn4U9iryO1aEiiJy9HojGWqA90rbkAiEAjBdHZTkWD1F9GDp35pKiBYdSarE2PCqfnDGD2pyUqhsAdgBJnJtp3h187Pw23s2HZKa4W68Kh4AZ0VVS++nrKd34wwAAAZo5ldU8AAAEAwBHMEUCIQDX5HhUF8zTXv2ngYbc1Vm2mZWQqXwo4NK4upfdzuIjnwIgbBXF/qOPxqdT7EaTT4QJydhVCNLrLgxA8Kuom+rIaFMwDQYJKoZIhvcNAQELBQADggIBAMjTeeCqN+rhuqElTEtDoIXBPlrMh6AYVJkC3GHdS6g0ff7sXZRM2ud4JxzmYVt19XNIzbg2e9TrZTmBp5wczYlAQGxJdRWn5Ibzyb6Wq5baAjrdlsbGpr8Tg6Gpuj+wPHStAnR6EMza3y56CxGcl/t2Qcrh4hoobWDafV9dDX3eBZGrZ/zItMFmyujLZVDiCOyQB3AmWL4AJlEwOVOldYBYszf+A/YThZusDCRHIJE34E00zHCpvhD3/7NQEiCaXG83feulHQXjeTNdYReUX4iupOpzPXtUsjhck9pxAhkxkJ1+76p+dqsWjLCacStKCZ4sTPUnsxivXNNCiQxmNho7puPerYLauBysDjY065ovVgNUAC00mIjxX/ByPt9vSoAKV718LNmI6h/newBLg+LTi2jeUbKPC0/ZyxtOO2rlzrsmN3UBC1d1l5Zu2Vi0cVaWlPWpWQPqoK+Z42NHKOCY9CIk0x8cSOj1HtgSFjIemGw95191D6Yll8uE4A9hwYsXHsoHfpRRVys3SbgobDJ8DjG/rPizWjFxpfGcIpiQeo1W6KOVVaL6At05Mwn2bMFImWvf8APs4Y8TV8ycpvREsM6Wh2QQ+Ysz5KgYu6kyQV8pFNFrX3T5P5/MJbgg8LmvIYylNLTWUEp5qBeNZLvr+eXVrFi44MlMvk1+gwhq\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIDqDCCAy6gAwIBAgISBcy9heQL2JypK3iJKsw8wxWYMAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFODAeFw0yNTExMDMxMTQ2MDlaFw0yNjAyMDExMTQ2MDhaMCkxJzAlBgNVBAMTHnJlY2hlcmNoZS1hbm9tLmN1bHR1cmUuZ291di5mcjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABPOwHdK7i+CJVkMDsm6a6vXtLNx64ayJWjnmQMkqWvLzr3TX9uZ9d31a79rvM2HvIP01vU1kAqE7wSEZe1T17gWjggIrMIICJzAOBgNVHQ8BAf8EBAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFDDJHgbXywk/4HD5vW6PyGtCDAcyMB8GA1UdIwQYMBaAFI8NE6L2Ln7RUGwzGDhdWY4jcpHKMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL2U4LmkubGVuY3Iub3JnLzApBgNVHREEIjAggh5yZWNoZXJjaGUtYW5vbS5jdWx0dXJlLmdvdXYuZnIwEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0cDovL2U4LmMubGVuY3Iub3JnLzI1LmNybDCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB2AGQRxGykEuyniRyiAi4AvKtPKAfUHjUnq+r+1QPJfc3wAAABmkm/hIcAAAQDAEcwRQIgYAAZOangbg/vBH/uwMnPYzbZ9A00UWk22NdpT4jL+8cCIQCbuU4VOXodGwZ1X7I8IHAo2VZi8KCOQ3zm7S9iKeAKjQB1AJaXZL9VWJet90OHaDcIQnfp8DrV9qTzNm5GpD8PyqnGAAABmkm/hMcAAAQDAEYwRAIgOPkjjcY89q7j1eSn8QpFo4xyJ4/fG7jvbNrA7YFbF6ECIH4ohjJ5wCvUtwVkw9EjBv3/snRwZNWwbCQgxazIu4CtMAoGCCqGSM49BAMDA2gAMGUCMQDGd6wzRLNRVc4YXFPgLUNCgMj6/H4D2f6ShCB/vZcSiaQe0W08LhxQD/i3p3lqWxUCMC/oUmPUrqowhP7J09V3bR+md86ZV3KmO56ZbF1B3cdEOmWN336TA03+PHsI7tFrBA==\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "recherche-anom-bo.culture.fr"
+              "finding"      : "recherche-anom.culture.gouv.fr"
           }
 ,         {
               "id"           : "cert_commonName_wo_SNI",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "sso.culture.fr"
+              "finding"      : "request w/o SNI didn't succeed, usual for EC certificates"
           }
 ,         {
               "id"           : "cert_subjectAltName",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "archives-map-admin.culture.fr recherche-anom-admin.culture.fr archives-map-bo.culture.fr recherche-anom-bo.culture.fr recherche-anom.culture.gouv.fr archives-map.culture.gouv.fr"
+              "finding"      : "recherche-anom.culture.gouv.fr"
           }
 ,         {
               "id"           : "cert_trust",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "Ok via SAN (SNI mandatory)"
+              "finding"      : "Ok via SAN and CN (SNI mandatory)"
           }
 ,         {
               "id"           : "cert_chain_of_trust",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "passed."
           }
 ,         {
               "id"           : "cert_certificatePolicies_EV",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "no"
           }
 ,         {
               "id"           : "cert_expirationStatus",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "87 >= 60 days"
+              "finding"      : "84 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2025-10-31 00:00"
+              "finding"      : "2025-11-03 11:46"
           }
 ,         {
               "id"           : "cert_notAfter",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "2026-01-28 23:59"
+              "finding"      : "2026-02-01 11:46"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "certificate has no extended life time according to browser forum"
           }
 ,         {
               "id"           : "cert_eTLS",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not present"
           }
 ,         {
               "id"           : "cert_crlDistributionPoints",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "http://crl.certigna.com/CertignaServerAuthenticationOVCPEUCAG1.crl"
+              "finding"      : "http://e8.c.lencr.org/25.crl"
           }
 ,         {
               "id"           : "cert_ocspURL",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "--"
           }
 ,         {
               "id"           : "OCSP_stapling",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "cert_mustStapleExtension",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "--"
           }
 ,         {
               "id"           : "DNS_CAArecord",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "issue=certigna.com, issue=letsencrypt.org"
           }
 ,         {
               "id"           : "certificate_transparency",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "yes (certificate extension)"
           }
 ,         {
               "id"           : "certs_countServer",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "2"
           }
 ,         {
               "id"           : "certs_list_ordering_problem",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "no"
           }
 ,         {
               "id"           : "cert_caIssuers",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Certigna Server Authentication OVCP EU CA G1 (Certigna from FR)"
+              "finding"      : "E8 (Let's Encrypt from US)"
           }
 ,         {
               "id"           : "intermediate_cert <#1>",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIFhTCCBG2gAwIBAgIUZC/nHF2pouqOZECc9JYzehjW3kAwDQYJKoZIhvcNAQEMBQAwNDELMAkGA1UEBhMCRlIxEjAQBgNVBAoMCURoaW15b3RpczERMA8GA1UEAwwIQ2VydGlnbmEwHhcNMjUwMjI4MDk0OTA0WhcNMjcwNjI4MDk0OTAzWjB2MQswCQYDVQQGEwJGUjERMA8GA1UECgwIQ2VydGlnbmExHTAbBgNVBGEMFE5UUkZSLTQ4MTQ2MzA4MTAwMDM2MTUwMwYDVQQDDCxDZXJ0aWduYSBTZXJ2ZXIgQXV0aGVudGljYXRpb24gT1ZDUCBFVSBDQSBHMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBANZ0kTuG6eFTF0KPbtvYBB5zIq+eR03FgyQAyRZE0lqCGRyx96ko+W/yyfxbCgPxMw5jlxdXteXBh8DLc5S4w0ICfOSc8vabFuXKhKa8BAB5/VtdzZosAF1AvFC1WLEVvPiUJRTsY0BkhnFI0UKdLN145hY4EL+CaSUENQ19006BR5P5HeWtmikYHgiq/TBlhTsnaYB6SL8mT40GfBxmp6PEjjrhKLurSQOMbF+6HiEnfZUr3OrKDncxN0GHxFYcIFBTL53JBNFA9qbPYsD6KubJmUqVoImyRKR+eXJHVNfPMhYzQv3EaYh2rpHRsjV96yZBIqBc3QSw82gj8bxh+rZRz8e+QISMlvljhHXqn+Qy4puuMt+3yQmnwFTYJQ13NFv1Uh3cJ5tEHP+yaLLCDqjy+cGCwNGMgsdWhS/67F4/AvRyI424psxuS/RbnKRrva0ZpDLTABgqfnONeU0LdkP817nGKNTKX2BDMD93BzOKzjDSBITJIRR8QICTKtQzmaKhd4UgbqPp+Bq1dMVhk5wW+x+bIHcB+wpqkO534SRMz93ijW2hSKrDWa2CB0Pl5tgcoGZThtjB3/Fm45XQLfW+vcTf+7nH8CRjMXO9swS6TovOXIpa5aG3jM+Dgewg6RbxtO/uIjv1zuIdS02d2h8Is2CvJ9/duOKucuYt1YnfAgMBAAGjggFLMIIBRzBBBggrBgEFBQcBAQQ1MDMwMQYIKwYBBQUHMAKGJWh0dHA6Ly9jZXJ0LmNlcnRpZ25hLmNvbS9DZXJ0aWduYS5jZXIwHwYDVR0jBBgwFoAUGu3+QTmQtCRZvgHyUtVF9lo53BEwEgYDVR0TAQH/BAgwBgEB/wIBADBIBgNVHSAEQTA/MAgGBmeBDAECAjAzBgoqgXoBgTEBAAECMCUwIwYIKwYBBQUHAgEWF2h0dHA6Ly9jcHMuY2VydGlnbmEuY29tMDUGA1UdHwQuMCwwKqAooCaGJGh0dHA6Ly9jcmwuY2VydGlnbmEuY29tL0NlcnRpZ25hLmNybDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBSgcuZGxDBc5K3CHMLVYjiYgVpUpjANBgkqhkiG9w0BAQwFAAOCAQEAkYjFkMa/La7tXDId/3ltDS8PKsxhxmOBA6bRsLeDQWIU2E1M/1A1y0bRkw4Y6ZRGmkVLLdQRD9mJIvxnllTyoeOzJPk0BVW6xVgPncatyhNx0bKEFouetx7k+J7yKhu/k3jJP9XAxtbCWViQ4rZ3BvABYHA8rBmfccbVMr04a/+ILTpT/1QiGzhHcpo2fnlQ+okXq0cuikN5/WMlHNgsTJIG2b5yEFtYY84Hlx0ejJX3cOAd4pot9vHdjv8e2KvIq/jopdB5lyv/wbaQ4EHz9i5Z4dvmECjsx9oEHRDmUoeEoV1sb/I/2np3PHjtYTrzzoOTYUaebmdXkFasRpTx1w==\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIEVjCCAj6gAwIBAgIQY5WTY8JOcIJxWRi/w9ftVjANBgkqhkiG9w0BAQsFADBPMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBaFw0yNzAzMTIyMzU5NTlaMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFODB2MBAGByqGSM49AgEGBSuBBAAiA2IABNFl8l7cS7QMApzSsvru6WyrOq44ofTUOTIzxULUzDMMNMchIJBwXOhiLxxxs0LXeb5GDcHbR6EToMffgSZjO9SNHfY9gjMy9vQr5/WWOrQTZxh7az6NSNnq3u2ubT6HTKOB+DCB9TAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFI8NE6L2Ln7RUGwzGDhdWY4jcpHKMB8GA1UdIwQYMBaAFHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzATBgNVHSAEDDAKMAgGBmeBDAECATAnBgNVHR8EIDAeMBygGqAYhhZodHRwOi8veDEuYy5sZW5jci5vcmcvMA0GCSqGSIb3DQEBCwUAA4ICAQBnE0hGINKsCYWi0Xx1ygxD5qihEjZ0RI3tTZz1wuATH3ZwYPIp97kWEayanD1j0cDhIYzy4CkDo2jB8D5t0a6zZWzlr98dAQFNh8uKJkIHdLShy+nUyeZxc5bNeMp1Lu0gSzE4McqfmNMvIpeiwWSYO9w82Ob8otvXcO2JUYi3svHIWRm3+707DUbL51XMcY2iZdlCq4Wa9nbuk3WTU4gr6LY8MzVAaDQG2+4U3eJ6qUF10bBnR1uuVyDYs9RhrwucRVnfuDj29CMLTsplM5f5wSV5hUpmUwp/vV7M4w4aGunt74koX71n4EdagCsL/Yk5+mAQU0+tue0JOfAV/R6t1k+Xk9s2HMQFeoxppfzAVC04FdG9M+AC2JWxmFSt6BCuh3CEey3fE52Qrj9YM75rtvIjsm/1Hl+u//Wqxnu1ZQ4jpa+VpuZiGOlWrqSP9eogdOhCGisnyewWJwRQOqK16wiGyZeRxs/Bekw65vwSIaVkBruPiTfMOo0Zh4gVa8/qJgMbJbyrwwG97z/PRgmLKCDl8z3dtA0Z7qq7fta0Gl24uyuB05dqI5J1LvAzKuWdIjT1tP8qCoxSE/xpix8hX2dt3h+/jujUgFPFZ0EVZ0xSyBNRF3MboGZnYXFUxpNjTWPKpagDHJQmqrAcDmWJnMsFY3jSu1igv3OefnWjSQ==\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "intermediate_cert_fingerprintSHA256 <#1>",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1A209DB499625B4EA29F597BE7744BA1E240B8C7629F75B41A3373339FD7EDDF"
+              "finding"      : "83624FD338C8D9B023C18A67CB7A9C0519DA43D11775B4C6CBDAD45C3D997C52"
           }
 ,         {
               "id"           : "intermediate_cert_notBefore <#1>",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2025-02-28 09:49"
+              "finding"      : "2024-03-13 00:00"
           }
 ,         {
               "id"           : "intermediate_cert_notAfter <#1>",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "2027-06-28 09:49"
+              "finding"      : "2027-03-12 23:59"
           }
 ,         {
               "id"           : "intermediate_cert_expiration <#1>",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "ok > 40 days"
           }
 ,         {
               "id"           : "intermediate_cert_chain <#1>",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Certigna Server Authentication OVCP EU CA G1 <-- Certigna"
+              "finding"      : "E8 <-- ISRG Root X1"
           }
 ,         {
               "id"           : "intermediate_cert_badOCSP",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "intermediate certificate(s) is/are ok"
           }
 ,         {
               "id"           : "HTTP_status_code",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "200 OK ('/')"
+              "finding"      : "403 Forbidden ('/')"
           }
 ,         {
               "id"           : "HTTP_clock_skew",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "0 seconds from localtime"
+              "finding"      : "Got no HTTP time, maybe try different URL?"
           }
 ,         {
-              "id"           : "HTTP_headerTime",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "id"           : "HSTS",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1762074744"
-          }
-,         {
-              "id"           : "HSTS_time",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "182 days (=15768000 seconds) > 15552000 seconds"
-          }
-,         {
-              "id"           : "HSTS_subdomains",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "only for this domain"
-          }
-,         {
-              "id"           : "HSTS_preload",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "domain is NOT marked for preloading"
+              "severity"     : "LOW",
+              "finding"      : "not offered"
           }
 ,         {
               "id"           : "HPKP",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No support for HTTP Public Key Pinning"
           }
 ,         {
               "id"           : "banner_server",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "nginx"
+              "finding"      : "No Server banner line in header, interesting!"
           }
 ,         {
               "id"           : "banner_application",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No application banner found"
           }
 ,         {
               "id"           : "cookie_count",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1 at '/'"
-          }
-,         {
-              "id"           : "cookie_secure",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "All (1) at '/' marked as secure"
-          }
-,         {
-              "id"           : "cookie_httponly",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "All (1) at '/' marked as HttpOnly"
-          }
-,         {
-              "id"           : "X-Frame-Options",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "SAMEORIGIN"
-          }
-,         {
-              "id"           : "X-Content-Type-Options",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "nosniff"
-          }
-,         {
-              "id"           : "X-XSS-Protection",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1; mode=block"
+              "finding"      : "0 at '/' (maybe missed the application)"
           }
 ,         {
               "id"           : "Cache-Control",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "no-cache"
           }
 ,         {
               "id"           : "banner_reverseproxy",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-200",
@@ -603,16 +568,16 @@
           }
 ,         {
               "id"           : "heartbleed",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-0160",
               "cwe"          : "CWE-119",
-              "finding"      : "not vulnerable"
+              "finding"      : "not vulnerable, no heartbeat extension"
           }
 ,         {
               "id"           : "CCS",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-0224",
@@ -621,7 +586,7 @@
           }
 ,         {
               "id"           : "ticketbleed",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2016-9244",
@@ -630,7 +595,7 @@
           }
 ,         {
               "id"           : "ROBOT",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2017-17382 CVE-2017-17427 CVE-2017-17428 CVE-2017-13098 CVE-2017-1000385 CVE-2017-13099 CVE-2016-6883 CVE-2012-5081 CVE-2017-6168",
@@ -639,7 +604,7 @@
           }
 ,         {
               "id"           : "secure_renego",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-310",
@@ -647,7 +612,7 @@
           }
 ,         {
               "id"           : "secure_client_renego",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2011-1473",
@@ -656,7 +621,7 @@
           }
 ,         {
               "id"           : "CRIME_TLS",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2012-4929",
@@ -665,16 +630,16 @@
           }
 ,         {
               "id"           : "BREACH",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "MEDIUM",
+              "severity"     : "OK",
               "cve"          : "CVE-2013-3587",
               "cwe"          : "CWE-310",
-              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
+              "finding"      : "not vulnerable, no gzip/deflate/compress/br HTTP compression  - only supplied '/' tested"
           }
 ,         {
               "id"           : "POODLE_SSL",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-3566",
@@ -683,14 +648,14 @@
           }
 ,         {
               "id"           : "fallback_SCSV",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "no protocol below TLS 1.2 offered"
           }
 ,         {
               "id"           : "SWEET32",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2016-2183 CVE-2016-6329",
@@ -699,7 +664,7 @@
           }
 ,         {
               "id"           : "FREAK",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2015-0204",
@@ -708,7 +673,7 @@
           }
 ,         {
               "id"           : "DROWN",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
@@ -717,25 +682,16 @@
           }
 ,         {
               "id"           : "DROWN_hint",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=ED4CD7C0276D4017D7954B3EC3AA6F34669986E67302D2F448C98D5D34659F34"
-          }
-,         {
-              "id"           : "LOGJAM-common_primes",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "cve"          : "CVE-2015-4000",
-              "cwe"          : "CWE-310",
-              "finding"      : "HAProxy"
+              "finding"      : "no RSA certificate, can't be used with SSLv2 elsewhere"
           }
 ,         {
               "id"           : "LOGJAM",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2015-4000",
@@ -743,8 +699,17 @@
               "finding"      : "not vulnerable, no DH EXPORT ciphers,"
           }
 ,         {
+              "id"           : "LOGJAM-common_primes",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "OK",
+              "cve"          : "CVE-2015-4000",
+              "cwe"          : "CWE-310",
+              "finding"      : "no DH key with <= TLS 1.2"
+          }
+,         {
               "id"           : "BEAST",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2011-3389",
@@ -753,16 +718,16 @@
           }
 ,         {
               "id"           : "LUCKY13",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "LOW",
+              "severity"     : "OK",
               "cve"          : "CVE-2013-0169",
               "cwe"          : "CWE-310",
-              "finding"      : "potentially vulnerable, uses obsolete TLS CBC ciphers"
+              "finding"      : "not vulnerable"
           }
 ,         {
               "id"           : "winshock",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-6321",
@@ -771,7 +736,7 @@
           }
 ,         {
               "id"           : "RC4",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2013-2566 CVE-2015-2808",
@@ -780,331 +745,324 @@
           }
 ,         {
               "id"           : "clientsimulation-android_70",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_81",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_90",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_X",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_11_12",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_13_14",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_15",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-chrome_101_win10",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-chromium_137_win11",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-firefox_100_win10",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-firefox_137_win11",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_8_win7",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win7",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 DHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win81",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 DHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_winphone81",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win10",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-edge_15_win10",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-edge_101_win10_21h2",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_133_win11_23h2",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_184_ios_184",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_154_osx_1231",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_184_osx_154",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-java_7u25",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-java_80442",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_1102",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-java_1703",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_2106",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-go_1178",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-libressl_336",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_CHACHA20_POLY1305_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-openssl_102e",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_111d",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_315",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_350",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-apple_mail_16_0",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-thunderbird_91_9",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "rating_spec",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "SSL Labs's 'SSL Server Rating Guide' (version 2009r from 2025-05-16)"
           }
 ,         {
               "id"           : "rating_doc",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "https://github.com/ssllabs/research/wiki/SSL-Server-Rating-Guide"
           }
 ,         {
               "id"           : "protocol_support_score",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "100"
           }
 ,         {
               "id"           : "protocol_support_score_weighted",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "30"
           }
 ,         {
               "id"           : "key_exchange_score",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "100"
+          }
+,         {
+              "id"           : "key_exchange_score_weighted",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "30"
+          }
+,         {
+              "id"           : "cipher_strength_score",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "90"
           }
 ,         {
-              "id"           : "key_exchange_score_weighted",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "27"
-          }
-,         {
-              "id"           : "cipher_strength_score",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "60"
-          }
-,         {
               "id"           : "cipher_strength_score_weighted",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "24"
+              "finding"      : "36"
           }
 ,         {
               "id"           : "final_score",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "81"
+              "finding"      : "96"
           }
 ,         {
               "id"           : "overall_grade",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "A-"
-          }
-,         {
-              "id"           : "grade_cap_warning_1",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "TLS 1.3 is not supported"
+              "finding"      : "A+"
           }
 ,         {
               "id"           : "scanTime",
-              "ip"           : "recherche-anom.culture.gouv.fr/143.126.211.16",
+              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "99"
+              "finding"      : "97"
           }
 ]
