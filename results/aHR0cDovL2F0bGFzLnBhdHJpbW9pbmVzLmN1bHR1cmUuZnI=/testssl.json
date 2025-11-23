@@ -234,7 +234,7 @@
               "ip"           : "atlas.patrimoines.culture.fr/143.126.211.128",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "off by 0 seconds from your localtime"
+              "finding"      : "off by -1 seconds from your localtime"
           }
 ,         {
               "id"           : "cert_compression",
@@ -485,15 +485,15 @@
               "id"           : "intermediate_cert_notAfter <#1>",
               "ip"           : "atlas.patrimoines.culture.fr/143.126.211.128",
               "port"         : "443",
-              "severity"     : "HIGH",
+              "severity"     : "CRITICAL",
               "finding"      : "2025-11-22 11:33"
           }
 ,         {
               "id"           : "intermediate_cert_expiration <#1>",
               "ip"           : "atlas.patrimoines.culture.fr/143.126.211.128",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "expires <= 20 days"
+              "severity"     : "CRITICAL",
+              "finding"      : "expired!"
           }
 ,         {
               "id"           : "intermediate_cert_chain <#1>",
@@ -521,14 +521,14 @@
               "ip"           : "atlas.patrimoines.culture.fr/143.126.211.128",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-1 seconds from localtime"
+              "finding"      : "0 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
               "ip"           : "atlas.patrimoines.culture.fr/143.126.211.128",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1763282802"
+              "finding"      : "1763887830"
           }
 ,         {
               "id"           : "HSTS",
@@ -1128,6 +1128,6 @@
               "ip"           : "atlas.patrimoines.culture.fr/143.126.211.128",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "85"
+              "finding"      : "100"
           }
 ]
