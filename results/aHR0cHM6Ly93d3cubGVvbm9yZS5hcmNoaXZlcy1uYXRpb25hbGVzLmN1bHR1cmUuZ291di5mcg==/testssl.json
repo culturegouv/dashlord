@@ -136,7 +136,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "cipher_order",
@@ -157,7 +157,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "FS_ECDHE_curves",
@@ -234,63 +234,63 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "SHA256 with RSA"
+              "finding"      : "ECDSA with SHA384"
           }
 ,         {
               "id"           : "cert_keySize",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "RSA 2048 bits (exponent is 65537)"
+              "severity"     : "OK",
+              "finding"      : "EC 256 bits (curve P-256)"
           }
 ,         {
               "id"           : "cert_keyUsage",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Digital Signature, Key Encipherment"
+              "finding"      : "Digital Signature"
           }
 ,         {
               "id"           : "cert_extKeyUsage",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLS Web Server Authentication"
+              "finding"      : "TLS Web Server Authentication, TLS Web Client Authentication"
           }
 ,         {
               "id"           : "cert_serialNumber",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "7CF9565F4393D2125F347183BEEC879B"
+              "finding"      : "06213C2B2AB89724153A0755CA1ED9C99047"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "16"
+              "finding"      : "18"
           }
 ,         {
               "id"           : "cert_fingerprintSHA1",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "04BB69BAA2E8DD0893C01B11C437CA7141A0CE02"
+              "finding"      : "7076FFCEDFCB3CC017CA522B356D5D168E767815"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ABCED30C2E8F245659779FB07FB55A6424C0DB612991A07F51FCE712B3367132"
+              "finding"      : "C6E0C32E0878B9A52146F201FAAE967277DEBD1DCDF39A4DEA8C650B2C802E51"
           }
 ,         {
               "id"           : "cert",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\n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\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIID0zCCA1qgAwIBAgISBiE8Kyq4lyQVOgdVyh7ZyZBHMAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFNzAeFw0yNTEyMDMxNDA1MDdaFw0yNjAzMDMxNDA1MDZaMDoxODA2BgNVBAMTL3d3dy5sZW9ub3JlLmFyY2hpdmVzLW5hdGlvbmFsZXMuY3VsdHVyZS5nb3V2LmZyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE5E8/jy8EH+bwiMHl+1jlEDDtuJp1ZGD95Sj5JFocwGEWPuyCfbHlDquXMLvwmlMrNAa+CNKhdhivCKPjD3I0vqOCAkYwggJCMA4GA1UdDwEB/wQEAwIHgDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUqOsjSnIrRwvWm1onQBFc15Mo72swHwYDVR0jBBgwFoAUrkie3IcdRKBv2qLlYHQEeMKcAIAwMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAChhZodHRwOi8vZTcuaS5sZW5jci5vcmcvMDoGA1UdEQQzMDGCL3d3dy5sZW9ub3JlLmFyY2hpdmVzLW5hdGlvbmFsZXMuY3VsdHVyZS5nb3V2LmZyMBMGA1UdIAQMMAowCAYGZ4EMAQIBMC0GA1UdHwQmMCQwIqAgoB6GHGh0dHA6Ly9lNy5jLmxlbmNyLm9yZy83Mi5jcmwwggENBgorBgEEAdZ5AgQCBIH+BIH7APkAfgClyXiSXVdGF4KHDdiJZgtcVWSLfQBA8uwHaFHRiGkZ9wAAAZrkvYhmAAgAAAUAJvKRMwQDAEcwRQIhAP+WvFLsemcRponM80EGkzrD7YHBhTRa7dwN6ize2slWAiAm7AecTtD+hZFicD+0nV0qJYXJ5HOcOLLWUfayNIaCSgB3AMs49xWJfIShRF9bwd37yW7ymlnNRwppBYWwyxTDFFjnAAABmuS9ldAAAAQDAEgwRgIhAKqlyX5+ppw2AxLnXCyCA2xvJWmsbCkcEqrzSMV2/H3ZAiEAy1DTfRwmnB3YWqE536uzdaIEv365TGEuz5DO6WAqZ78wCgYIKoZIzj0EAwMDZwAwZAIwX8+AxW63ygPMYptfOYDU9SCSRLEsDrS5IhNgQ7CRQk8CiR7yv6OtgFvJ/7IEND/mAjAXxRVQGl8EPjleI1kqTG1Vc+CHWOAoaYg4V/m0G3yBStozB6/akNfKFGx3nSV+rcU=\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
@@ -304,14 +304,14 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "request w/o SNI didn't succeed"
+              "finding"      : "request w/o SNI didn't succeed, usual for EC certificates"
           }
 ,         {
               "id"           : "cert_subjectAltName",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "www.leonore.archives-nationales.culture.gouv.fr www.leonore-recette.archives-nationales.culture.gouv.fr"
+              "finding"      : "www.leonore.archives-nationales.culture.gouv.fr"
           }
 ,         {
               "id"           : "cert_trust",
@@ -324,8 +324,8 @@
               "id"           : "cert_chain_of_trust",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "CRITICAL",
-              "finding"      : "failed (chain incomplete)."
+              "severity"     : "OK",
+              "finding"      : "passed."
           }
 ,         {
               "id"           : "cert_certificatePolicies_EV",
@@ -338,22 +338,22 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "expires < 30 days (10)"
+              "severity"     : "OK",
+              "finding"      : "86 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2025-09-12 00:00"
+              "finding"      : "2025-12-03 14:05"
           }
 ,         {
               "id"           : "cert_notAfter",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "2025-12-10 23:59"
+              "severity"     : "OK",
+              "finding"      : "2026-03-03 14:05"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
@@ -374,7 +374,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "http://crl.certigna.com/CertignaServerAuthenticationOVCPEUCAG1.crl"
+              "finding"      : "http://e7.c.lencr.org/72.crl"
           }
 ,         {
               "id"           : "cert_ocspURL",
@@ -416,7 +416,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1"
+              "finding"      : "2"
           }
 ,         {
               "id"           : "certs_list_ordering_problem",
@@ -430,7 +430,49 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Certigna Server Authentication OVCP EU CA G1 (Certigna from FR)"
+              "finding"      : "E7 (Let's Encrypt from US)"
+          }
+,         {
+              "id"           : "intermediate_cert <#1>",
+              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIEVzCCAj+gAwIBAgIRAKp18eYrjwoiCWbTi7/UuqEwDQYJKoZIhvcNAQELBQAwTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2VhcmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAwWhcNMjcwMzEyMjM1OTU5WjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3MgRW5jcnlwdDELMAkGA1UEAxMCRTcwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAARB6ASTCFh/vjcwDMCgQer+VtqEkz7JANurZxLP+U9TCeioL6sp5Z8VRvRbYk4P1INBmbefQHJFHCxcSjKmwtvGBWpl/9ra8HW0QDsUaJW2qOJqceJ0ZVFT3hbUHifBM/2jgfgwgfUwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBSuSJ7chx1EoG/aouVgdAR4wpwAgDAfBgNVHSMEGDAWgBR5tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYDVR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0BAQsFAAOCAgEAjx66fDdLk5ywFn3CzA1w1qfylHUDaEf0QZpXcJseddJGSfbUUOvbNR9N/QQ16K1lXl4VFyhmGXDT5Kdfcr0RvIIVrNxFh4lqHtRRCP6RBRstqbZ2zURgqakn/Xip0iaQL0IdfHBZr396FgknniRYFckKORPGyM3QKnd66gtMst8I5nkRQlAg/Jb+Gc3egIvuGKWboE1G89NTsN9LTDD3PLj0dUMrOIuqVjLB8pEC6yk9enrlrqjXQgkLEYhXzq7dLafv5Vkig6Gl0nuuqjqfp0Q1bi1oyVNAlXe6aUXw92CcghC9bNsKEO1+M52YY5+ofIXlS/SEQbvVYYBLZ5yeiglV6t3SM6H+vTG0aP9YHzLn/KVOHzGQfXDP7qM5tkf+7diZe7o2fw6O7IvN6fsQXEQQj8TJUXJxv2/uJhcuy/tSDgXwHM8Uk34WNbRT7zGTGkQRX0gsbjAea/jYAoWv0ZvQRwpqPe79D/i7Cep8qWnA+7AE/3B3S/3dEEYmc0lpe1366A/6GEgk3ktr9PEoQrLChs6Itu3wnNLB2euC8IKGLQFpGtOO/2/hiAKjyajaBP25w1jF0Wl8Bbqne3uZ2q1GyPFJYRmT7/OXpmOH/FVLtwS+8ng1cAmpCujPwteJZNcDG0sF2n/sc0+SQf49fdyUK0ty+VUwFj9tmWxyR/M=\n-----END CERTIFICATE-----"
+          }
+,         {
+              "id"           : "intermediate_cert_fingerprintSHA256 <#1>",
+              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "AEB1FD7410E83BC96F5DA3C6A7C2C1BB836D1FA5CB86E708515890E428A8770B"
+          }
+,         {
+              "id"           : "intermediate_cert_notBefore <#1>",
+              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "2024-03-13 00:00"
+          }
+,         {
+              "id"           : "intermediate_cert_notAfter <#1>",
+              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "2027-03-12 23:59"
+          }
+,         {
+              "id"           : "intermediate_cert_expiration <#1>",
+              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "ok > 40 days"
+          }
+,         {
+              "id"           : "intermediate_cert_chain <#1>",
+              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "E7 <-- ISRG Root X1"
           }
 ,         {
               "id"           : "intermediate_cert_badOCSP",
@@ -458,7 +500,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1764485214"
+              "finding"      : "1765090043"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -687,7 +729,7 @@
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=ABCED30C2E8F245659779FB07FB55A6424C0DB612991A07F51FCE712B3367132"
+              "finding"      : "no RSA certificate, can't be used with SSLv2 elsewhere"
           }
 ,         {
               "id"           : "LOGJAM",
@@ -748,14 +790,14 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_81",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_90",
@@ -832,35 +874,35 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win81",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_winphone81",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win10",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_15_win10",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_101_win10_21h2",
@@ -951,7 +993,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-openssl_111d",
@@ -979,7 +1021,7 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-thunderbird_91_9",
@@ -1021,14 +1063,14 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "90"
+              "finding"      : "100"
           }
 ,         {
               "id"           : "key_exchange_score_weighted",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "27"
+              "finding"      : "30"
           }
 ,         {
               "id"           : "cipher_strength_score",
@@ -1049,27 +1091,20 @@
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "81"
+              "finding"      : "84"
           }
 ,         {
               "id"           : "overall_grade",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "B"
-          }
-,         {
-              "id"           : "grade_cap_reason_1",
-              "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "Grade capped to B. Issues with chain of trust (chain incomplete)"
+              "severity"     : "OK",
+              "finding"      : "A+"
           }
 ,         {
               "id"           : "scanTime",
               "ip"           : "www.leonore.archives-nationales.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "91"
+              "finding"      : "72"
           }
 ]
