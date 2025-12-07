@@ -136,7 +136,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "cipher_order",
@@ -157,7 +157,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "FS_ECDHE_curves",
@@ -234,63 +234,63 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "SHA256 with RSA"
+              "finding"      : "ECDSA with SHA384"
           }
 ,         {
               "id"           : "cert_keySize",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "RSA 2048 bits (exponent is 65537)"
+              "severity"     : "OK",
+              "finding"      : "EC 256 bits (curve P-256)"
           }
 ,         {
               "id"           : "cert_keyUsage",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Digital Signature, Key Encipherment"
+              "finding"      : "Digital Signature"
           }
 ,         {
               "id"           : "cert_extKeyUsage",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLS Web Server Authentication"
+              "finding"      : "TLS Web Server Authentication, TLS Web Client Authentication"
           }
 ,         {
               "id"           : "cert_serialNumber",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "51B96921B31B0C5127A654243FD9E9F1"
+              "finding"      : "06D858B841BF7761DA983A5311BE82F9675F"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "16"
+              "finding"      : "18"
           }
 ,         {
               "id"           : "cert_fingerprintSHA1",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "5F22BFDDE9D22990859A876AECD664F4BE40ECC0"
+              "finding"      : "92DAC5C3A5B8EE5B482ECA84B2A955CE9B0D4007"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "4CA60F4F8E280586719D9DE5E3658218FA7D5744CE2F35FC045704E582F0F050"
+              "finding"      : "75E3AEAB73B78A478BB6A1C07249F216233824A997CD8E9EE7B3271AC082B89A"
           }
 ,         {
               "id"           : "cert",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\n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\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIDlzCCAxygAwIBAgISBthYuEG/d2HamDpTEb6C+WdfMAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFNzAeFw0yNTEyMDExMjUxMjVaFw0yNjAzMDExMjUxMjRaMCAxHjAcBgNVBAMTFXNpYmlsLmN1bHR1cmUuZ291di5mcjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABLAyO8vP7O993MnSLTryuh9wln4nj7FdxBKCVlkejaIJxCVajaa2d7lcFbVwXnSH7qBgdI0cMY3X5udl27D9ddSjggIiMIICHjAOBgNVHQ8BAf8EBAMCB4AwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFB80DTNsltyZAjx/mAVrb7ElorP4MB8GA1UdIwQYMBaAFK5IntyHHUSgb9qi5WB0BHjCnACAMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL2U3LmkubGVuY3Iub3JnLzAgBgNVHREEGTAXghVzaWJpbC5jdWx0dXJlLmdvdXYuZnIwEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0cDovL2U3LmMubGVuY3Iub3JnLzk2LmNybDCCAQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1ABmG1Mcoqm/+ugNveCpNAZGqzi1yMQ+uzl1wQS0lTMfUAAABmtotVPsAAAQDAEYwRAIgZnoiH5K+zRGJD5r0zRaG1b+2HHdn4LM1qq8kSrHnAQICIDYt8BZ/TY3Eu1aDvPaw+Tpddd5SmtTHj9yaiDREBWboAHYAyzj3FYl8hKFEX1vB3fvJbvKaWc1HCmkFhbDLFMMUWOcAAAGa2i1VBAAABAMARzBFAiEAtRPaYMPi58VzVy1Z3+ByO/G/IAX4fe7NkZOrWQzHlEUCIHqhBIjHPCYhStjHbgx9y+0iLJezk3DztjcIipCvgF+sMAoGCCqGSM49BAMDA2kAMGYCMQCf/ywfu6YW5hE5AiNIpEWKGNp34RZaD6F6jq5zj7LLO657It+tjKnJZwCAe0ZwuK0CMQC4cULgI40xeHUFZJXqC6dhHZxOkRwCldgeQcJVDF5jj5P/4WtzJCheU1mhuzfNSR8=\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
@@ -304,7 +304,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "request w/o SNI didn't succeed"
+              "finding"      : "request w/o SNI didn't succeed, usual for EC certificates"
           }
 ,         {
               "id"           : "cert_subjectAltName",
@@ -324,8 +324,8 @@
               "id"           : "cert_chain_of_trust",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "CRITICAL",
-              "finding"      : "failed (chain incomplete)."
+              "severity"     : "OK",
+              "finding"      : "passed."
           }
 ,         {
               "id"           : "cert_certificatePolicies_EV",
@@ -338,22 +338,22 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "expires < 30 days (24)"
+              "severity"     : "OK",
+              "finding"      : "84 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2025-09-26 00:00"
+              "finding"      : "2025-12-01 12:51"
           }
 ,         {
               "id"           : "cert_notAfter",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "2025-12-24 23:59"
+              "severity"     : "OK",
+              "finding"      : "2026-03-01 12:51"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
@@ -374,7 +374,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "http://crl.certigna.com/CertignaServerAuthenticationOVCPEUCAG1.crl"
+              "finding"      : "http://e7.c.lencr.org/96.crl"
           }
 ,         {
               "id"           : "cert_ocspURL",
@@ -416,7 +416,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1"
+              "finding"      : "2"
           }
 ,         {
               "id"           : "certs_list_ordering_problem",
@@ -430,7 +430,49 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Certigna Server Authentication OVCP EU CA G1 (Certigna from FR)"
+              "finding"      : "E7 (Let's Encrypt from US)"
+          }
+,         {
+              "id"           : "intermediate_cert <#1>",
+              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIEVzCCAj+gAwIBAgIRAKp18eYrjwoiCWbTi7/UuqEwDQYJKoZIhvcNAQELBQAwTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2VhcmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAwWhcNMjcwMzEyMjM1OTU5WjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3MgRW5jcnlwdDELMAkGA1UEAxMCRTcwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAARB6ASTCFh/vjcwDMCgQer+VtqEkz7JANurZxLP+U9TCeioL6sp5Z8VRvRbYk4P1INBmbefQHJFHCxcSjKmwtvGBWpl/9ra8HW0QDsUaJW2qOJqceJ0ZVFT3hbUHifBM/2jgfgwgfUwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBSuSJ7chx1EoG/aouVgdAR4wpwAgDAfBgNVHSMEGDAWgBR5tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYDVR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0BAQsFAAOCAgEAjx66fDdLk5ywFn3CzA1w1qfylHUDaEf0QZpXcJseddJGSfbUUOvbNR9N/QQ16K1lXl4VFyhmGXDT5Kdfcr0RvIIVrNxFh4lqHtRRCP6RBRstqbZ2zURgqakn/Xip0iaQL0IdfHBZr396FgknniRYFckKORPGyM3QKnd66gtMst8I5nkRQlAg/Jb+Gc3egIvuGKWboE1G89NTsN9LTDD3PLj0dUMrOIuqVjLB8pEC6yk9enrlrqjXQgkLEYhXzq7dLafv5Vkig6Gl0nuuqjqfp0Q1bi1oyVNAlXe6aUXw92CcghC9bNsKEO1+M52YY5+ofIXlS/SEQbvVYYBLZ5yeiglV6t3SM6H+vTG0aP9YHzLn/KVOHzGQfXDP7qM5tkf+7diZe7o2fw6O7IvN6fsQXEQQj8TJUXJxv2/uJhcuy/tSDgXwHM8Uk34WNbRT7zGTGkQRX0gsbjAea/jYAoWv0ZvQRwpqPe79D/i7Cep8qWnA+7AE/3B3S/3dEEYmc0lpe1366A/6GEgk3ktr9PEoQrLChs6Itu3wnNLB2euC8IKGLQFpGtOO/2/hiAKjyajaBP25w1jF0Wl8Bbqne3uZ2q1GyPFJYRmT7/OXpmOH/FVLtwS+8ng1cAmpCujPwteJZNcDG0sF2n/sc0+SQf49fdyUK0ty+VUwFj9tmWxyR/M=\n-----END CERTIFICATE-----"
+          }
+,         {
+              "id"           : "intermediate_cert_fingerprintSHA256 <#1>",
+              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "AEB1FD7410E83BC96F5DA3C6A7C2C1BB836D1FA5CB86E708515890E428A8770B"
+          }
+,         {
+              "id"           : "intermediate_cert_notBefore <#1>",
+              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "2024-03-13 00:00"
+          }
+,         {
+              "id"           : "intermediate_cert_notAfter <#1>",
+              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "2027-03-12 23:59"
+          }
+,         {
+              "id"           : "intermediate_cert_expiration <#1>",
+              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "ok > 40 days"
+          }
+,         {
+              "id"           : "intermediate_cert_chain <#1>",
+              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "E7 <-- ISRG Root X1"
           }
 ,         {
               "id"           : "intermediate_cert_badOCSP",
@@ -458,7 +500,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1764488582"
+              "finding"      : "1765093505"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -659,7 +701,7 @@
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=4CA60F4F8E280586719D9DE5E3658218FA7D5744CE2F35FC045704E582F0F050"
+              "finding"      : "no RSA certificate, can't be used with SSLv2 elsewhere"
           }
 ,         {
               "id"           : "LOGJAM",
@@ -720,14 +762,14 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_81",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_90",
@@ -804,35 +846,35 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win81",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_winphone81",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win10",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_15_win10",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_101_win10_21h2",
@@ -923,7 +965,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-openssl_111d",
@@ -951,7 +993,7 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-thunderbird_91_9",
@@ -993,14 +1035,14 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "90"
+              "finding"      : "100"
           }
 ,         {
               "id"           : "key_exchange_score_weighted",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "27"
+              "finding"      : "30"
           }
 ,         {
               "id"           : "cipher_strength_score",
@@ -1021,27 +1063,20 @@
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "81"
+              "finding"      : "84"
           }
 ,         {
               "id"           : "overall_grade",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "MEDIUM",
-              "finding"      : "B"
-          }
-,         {
-              "id"           : "grade_cap_reason_1",
-              "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "Grade capped to B. Issues with chain of trust (chain incomplete)"
+              "severity"     : "OK",
+              "finding"      : "A+"
           }
 ,         {
               "id"           : "scanTime",
               "ip"           : "sibil.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "65"
+              "finding"      : "73"
           }
 ]
