@@ -19,9 +19,9 @@
 <span style="font-weight:bold;">#####################################################################</span>
 
   Using <i>OpenSSL 1.0.2-bad (Mar 28 2025)</i>  [~183 ciphers]
-  on runnervm6qbrg:/home/testssl/bin/openssl.Linux.x86_64
+  on runnervmh13bl:/home/testssl/bin/openssl.Linux.x86_64
 
-<span style="color:white;background-color:black;"> Start 2025-12-14 08:04:59        --&gt;&gt; 87.98.187.73:443 (production.pop.culture.gouv.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2025-12-21 08:01:08        --&gt;&gt; 87.98.187.73:443 (production.pop.culture.gouv.fr) &lt;&lt;--</span>
 
  rDNS (87.98.187.73):    ip73.ip-87-98-187.eu.
  Service detected:       HTTP
@@ -92,20 +92,18 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Server key size              </span>EC <span style="color:#008817;">256</span> bits (curve P-256)
 <span style="font-weight:bold;"> Server key usage             </span>Digital Signature
 <span style="font-weight:bold;"> Server extended key usage    </span>TLS Web Server Authentication, TLS Web Client Authentication
-<span style="font-weight:bold;"> Serial                       </span>0609B573BF76CDCC3596FA92F3F0D8CE6A2F (OK: length 18)
-<span style="font-weight:bold;"> Fingerprints                 </span>SHA1 CDE4C713C7BD2279C9219F703BB264CBC1B83004
-                              SHA256 7A1FA530DFDBE21498E62655354570E24B5D28B850DF363A253B3CE6DA72E39E
-<span style="font-weight:bold;"> Common Name (CN)             </span><i>api.pop.culture.gouv.fr </i> (request w/o SNI didn&apos;t succeed, usual for EC certificates)
-<span style="font-weight:bold;"> subjectAltName (SAN)         </span><i>api.pop.culture.gouv.fr pop.culture.gouv.fr
-                              production.pop.culture.gouv.fr
-                              www.pop.culture.gouv.fr
+<span style="font-weight:bold;"> Serial                       </span>0553A488B3C9281CCE9EDC2B70EE9B364D6D (OK: length 18)
+<span style="font-weight:bold;"> Fingerprints                 </span>SHA1 E85877FE15CB851C0BD8426C1615983B95F71EA8
+                              SHA256 7943338580D8ECF8FA169CCED5120E8AD0B019EBD4F59E3C3978E4E3885D3C80
+<span style="font-weight:bold;"> Common Name (CN)             </span><i>www.production.pop.culture.gouv.fr </i> (request w/o SNI didn&apos;t succeed, usual for EC certificates)
+<span style="font-weight:bold;"> subjectAltName (SAN)         </span><i>production.pop.culture.gouv.fr
                               www.production.pop.culture.gouv.fr </i>
 <span style="font-weight:bold;"> Trust (hostname)             </span><span style="color:#008817;">Ok via SAN</span> (SNI mandatory)
 <span style="font-weight:bold;"> Chain of trust</span>               <span style="color:#008817;">Ok   </span><span style="color:#cd00cd;"></span>
 <span style="font-weight:bold;"> EV cert</span> (experimental)       no 
-<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">79 &gt;= 30 days</span> (2025-12-03 14:05 --&gt; 2026-03-03 14:05)
+<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">84 &gt;= 30 days</span> (2025-12-15 08:06 --&gt; 2026-03-15 08:06)
 <span style="font-weight:bold;"> ETS/&quot;eTLS&quot;</span>, visibility info  not present
-<span style="font-weight:bold;"> Certificate Revocation List  </span>http://e7.c.lencr.org/48.crl
+<span style="font-weight:bold;"> Certificate Revocation List  </span>http://e8.c.lencr.org/110.crl
 <span style="font-weight:bold;"> OCSP URI                     </span>--
 <span style="font-weight:bold;"> OCSP stapling                </span>not offered
 <span style="font-weight:bold;"> OCSP must staple extension   </span>--
@@ -113,22 +111,22 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
                               <i>issue=certigna.com, issue=letsencrypt.org</i>
 <span style="font-weight:bold;"> Certificate Transparency     </span><span style="color:#008817;">yes</span> (certificate extension)
 <span style="font-weight:bold;"> Certificates provided</span>        2
-<span style="font-weight:bold;"> Issuer                       </span><i>E7</i> (<i>Let&apos;s Encrypt</i> from <i>US</i>)
-<span style="font-weight:bold;"> Intermediate cert validity   </span>#1: <span style="color:#008817;">ok &gt; 40 days</span> (2027-03-12 23:59). <i>E7</i> &lt;-- <i>ISRG Root X1</i>
+<span style="font-weight:bold;"> Issuer                       </span><i>E8</i> (<i>Let&apos;s Encrypt</i> from <i>US</i>)
+<span style="font-weight:bold;"> Intermediate cert validity   </span>#1: <span style="color:#008817;">ok &gt; 40 days</span> (2027-03-12 23:59). <i>E8</i> &lt;-- <i>ISRG Root X1</i>
 <span style="font-weight:bold;"> Intermediate Bad OCSP</span> (exp.) <span style="color:#008817;">Ok</span>
 
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing HTTP header response @ &quot;/&quot; </span>
 
-<span style="font-weight:bold;"> HTTP Status Code           </span>  200 OK
+<span style="font-weight:bold;"> HTTP Status Code           </span>  503 Service Unavailable<span style="color:#cd00cd;">. Oh, didn&apos;t expect &quot;503 Service Unavailable&quot;</span>
 <span style="font-weight:bold;"> HTTP clock skew              </span>0 sec from localtime
-<span style="font-weight:bold;"> Strict Transport Security    </span><span style="color:#008817;">365 days</span>=31536000 s<span style="color:#008817;">, includeSubDomains</span>
+<span style="font-weight:bold;"> Strict Transport Security    </span><span style="color:#a86437;">not offered</span>
 <span style="font-weight:bold;"> Public Key Pinning           </span>--
 <span style="font-weight:bold;"> Server banner                </span>(no &quot;Server&quot; line in header, interesting!)
 <span style="font-weight:bold;"> Application banner           </span>--
-<span style="font-weight:bold;"> Cookie(s)                    </span>(none issued at &quot;/&quot;)
-<span style="font-weight:bold;"> Security headers             </span>Cache-Control: public, max-age=0
-<span style="font-weight:bold;"> Reverse Proxy banner         </span>x-forwarded-for: ;&apos;
+<span style="font-weight:bold;"> Cookie(s)                    </span>(none issued at &quot;/&quot;) -- HTTP status 503 signals you maybe missed the web application
+<span style="font-weight:bold;"> Security headers             </span><span style="color:#c05600;">--</span>
+<span style="font-weight:bold;"> Reverse Proxy banner         </span>--
 
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing vulnerabilities </span>
@@ -140,7 +138,8 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Secure Renegotiation (RFC 5746)           </span><span style="color:#008817;font-weight:bold;">supported (OK)</span>
 <span style="font-weight:bold;"> Secure Client-Initiated Renegotiation     </span><span style="color:#008817;">not vulnerable (OK)</span>
 <span style="font-weight:bold;"> CRIME, TLS </span>(CVE-2012-4929)                <span style="color:#008817;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> BREACH</span> (CVE-2013-3587)                    <span style="color:#008817;">no gzip/deflate/compress/br HTTP compression (OK) </span> - only supplied &quot;/&quot; tested
+<span style="font-weight:bold;"> BREACH</span> (CVE-2013-3587)                    <span style="color:#c05600;">potentially NOT ok, &quot;gzip&quot; HTTP compression detected.</span> - only supplied &quot;/&quot; tested
+                                           Can be ignored for static pages or if no secrets in the page
 <span style="font-weight:bold;"> POODLE, SSL</span> (CVE-2014-3566)               <span style="color:#008817;font-weight:bold;">not vulnerable (OK)</span>, no SSLv3 support
 <span style="font-weight:bold;"> TLS_FALLBACK_SCSV</span> (RFC 7507)              <span style="color:#008817;">No fallback possible (OK)</span>, no protocol below TLS 1.2 offered
 <span style="font-weight:bold;"> SWEET32</span> (CVE-2016-2183, CVE-2016-6329)    <span style="color:#008817;font-weight:bold;">not vulnerable (OK)</span>
@@ -205,7 +204,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Final Score                  </span>84
 <span style="font-weight:bold;"> Overall Grade                </span><span style="color:#008817;font-weight:bold;">A+</span>
 
-<span style="color:white;background-color:black;"> Done 2025-12-14 08:06:33 [  96s] --&gt;&gt; 87.98.187.73:443 (production.pop.culture.gouv.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2025-12-21 08:02:44 [  98s] --&gt;&gt; 87.98.187.73:443 (production.pop.culture.gouv.fr) &lt;&lt;--</span>
 
 
 </pre>
