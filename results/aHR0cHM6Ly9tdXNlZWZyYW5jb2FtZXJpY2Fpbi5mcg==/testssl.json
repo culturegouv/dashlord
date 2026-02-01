@@ -1,77 +1,91 @@
 [
          {
+              "id"           : "optimal_proto",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "museefrancoamericain.fr:443 appears to support TLS 1.3 ONLY, switching from /home/testssl/bin/openssl.Linux.x86_64 to /usr/bin/openssl automagically"
+          }
+,         {
+              "id"           : "engine_problem",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "WARN",
+              "finding"      : "No engine or GOST support via engine with your /usr/bin/openssl"
+          }
+,         {
               "id"           : "service",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "HTTP"
           }
 ,         {
               "id"           : "pre_128cipher",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No 128 cipher limit bug"
           }
 ,         {
               "id"           : "SSLv2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "SSLv3",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1_1",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1_2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "offered"
+              "severity"     : "INFO",
+              "finding"      : "not offered"
           }
 ,         {
               "id"           : "TLS1_3",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "offered with final"
           }
 ,         {
               "id"           : "ALPN_HTTP2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "h2"
           }
 ,         {
               "id"           : "ALPN",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "http/1.1"
           }
 ,         {
               "id"           : "cipherlist_NULL",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -79,7 +93,7 @@
           }
 ,         {
               "id"           : "cipherlist_aNULL",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -87,7 +101,7 @@
           }
 ,         {
               "id"           : "cipherlist_EXPORT",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -95,7 +109,7 @@
           }
 ,         {
               "id"           : "cipherlist_LOW",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-327",
@@ -103,7 +117,7 @@
           }
 ,         {
               "id"           : "cipherlist_3DES_IDEA",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-310",
@@ -111,7 +125,7 @@
           }
 ,         {
               "id"           : "cipherlist_OBSOLETED",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-310",
@@ -119,504 +133,469 @@
           }
 ,         {
               "id"           : "cipherlist_STRONG_NOFS",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "cipherlist_STRONG_FS",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "offered"
-          }
-,         {
-              "id"           : "cipher_order-tls1_2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "NOT a cipher order configured"
-          }
-,         {
-              "id"           : "cipher-tls1_2_xc030",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "TLSv1.2   xc030   ECDHE-RSA-AES256-GCM-SHA384       ECDH 521   AESGCM      256      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
-          }
-,         {
-              "id"           : "cipher-tls1_2_x9f",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "TLSv1.2   x9f     DHE-RSA-AES256-GCM-SHA384         DH 2048    AESGCM      256      TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
-          }
-,         {
-              "id"           : "cipher-tls1_2_xc02f",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "TLSv1.2   xc02f   ECDHE-RSA-AES128-GCM-SHA256       ECDH 521   AESGCM      128      TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
-          }
-,         {
-              "id"           : "cipher-tls1_2_x9e",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "TLSv1.2   x9e     DHE-RSA-AES128-GCM-SHA256         DH 2048    AESGCM      128      TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
-          }
-,         {
-              "id"           : "supportedciphers_TLSv1_2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES256-GCM-SHA384 DHE-RSA-AES256-GCM-SHA384 ECDHE-RSA-AES128-GCM-SHA256 DHE-RSA-AES128-GCM-SHA256"
+              "severity"     : "MEDIUM",
+              "finding"      : "not offered"
           }
 ,         {
               "id"           : "cipher_order",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "NOT a server cipher order configured"
+              "finding"      : "not a server cipher order for TLS 1.3 configured"
           }
 ,         {
               "id"           : "FS",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "offered"
-          }
-,         {
-              "id"           : "FS_ciphers",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "DHE-RSA-AES128-GCM-SHA256 DHE-RSA-AES256-GCM-SHA384 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-GCM-SHA384"
-          }
-,         {
-              "id"           : "FS_KEMs",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "LOW",
-              "finding"      : "No KEMs offered"
-          }
-,         {
-              "id"           : "FS_ECDHE_curves",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "prime256v1 secp384r1 secp521r1"
+              "severity"     : "MEDIUM",
+              "finding"      : "No ciphers supporting Forward Secrecy offered"
           }
 ,         {
               "id"           : "TLS_extensions",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "'server name/#0' 'supported_groups/#10' 'EC point formats/#11' 'session ticket/#35' 'supported versions/#43' 'key share/#51' 'renegotiation info/#65281'"
+              "finding"      : "'server name/#0' 'supported versions/#43' 'key share/#51'"
           }
 ,         {
               "id"           : "TLS_session_ticket",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "valid for 300 seconds only (<daily)"
+              "finding"      : "no -- no lifetime advertised"
           }
 ,         {
               "id"           : "SSL_sessionID_support",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "yes"
+              "finding"      : "no"
           }
 ,         {
               "id"           : "sessionresumption_ticket",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "supported"
-          }
-,         {
-              "id"           : "sessionresumption_ID",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not supported"
           }
 ,         {
+              "id"           : "sessionresumption_ID",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "No Session ID, no resumption"
+          }
+,         {
               "id"           : "TLS_timestamp",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "random"
           }
 ,         {
               "id"           : "certificate_compression",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "none"
           }
 ,         {
               "id"           : "clientAuth",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "none"
           }
 ,         {
               "id"           : "cert_numbers",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "1"
           }
 ,         {
               "id"           : "cert_signatureAlgorithm",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "SHA256 with RSA"
+              "finding"      : "ECDSA with SHA256"
           }
 ,         {
               "id"           : "cert_keySize",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "RSA 2048 bits (exponent is 65537)"
+              "severity"     : "OK",
+              "finding"      : "EC 256 bits (curve P-256)"
           }
 ,         {
               "id"           : "cert_keyUsage",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Digital Signature, Key Encipherment"
+              "finding"      : "Digital Signature, Key Agreement"
           }
 ,         {
               "id"           : "cert_extKeyUsage",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLS Web Server Authentication, TLS Web Client Authentication"
           }
 ,         {
               "id"           : "cert_serialNumber",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "0690AFEEE34D15401B1FE5829074AC19E399"
+              "finding"      : "0891E4C41A82EF24D1F82E86A9C5D068"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "18"
+              "finding"      : "16"
           }
 ,         {
               "id"           : "cert_fingerprintSHA1",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "A1C8160EC36529F0D8C55ADA5767B12AB1C7498A"
+              "finding"      : "389A435B67D68B6B2858047EE515EED702FE9E77"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1628C9FE853C3288F536A6210DCB4F314BDEB123C42E544604E78CB1180A1F7F"
+              "finding"      : "C9C6AE9F3A405F818B2EE86A9FAC57D2504B7C540E1F2C7CAEC10654EE0DC46B"
           }
 ,         {
               "id"           : "cert",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIFLzCCBBegAwIBAgISBpCv7uNNFUAbH+WCkHSsGeOZMA0GCSqGSIb3DQEBCwUAMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQDEwNSMTIwHhcNMjYwMTA1MDc0NTMzWhcNMjYwNDA1MDc0NTMyWjAiMSAwHgYDVQQDExdtdXNlZWZyYW5jb2FtZXJpY2Fpbi5mcjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALftE1zCNkEYPtRlT7p0zszuIFtTP6z506Ausnj84X+ieN/LRFLGDu0V/PTmVunkyH09WOy5rG4Uf2qHvYxIFV2grKpzTKNEp6VUE3go8Vv3z4J42xYATe51MTv1q6uxNnafBLZWDLFHE8VyTcAwvVFItIyTLZlPFrSI2c2uI4agtaTj/Xc8jqIFvxDnlsMPcj5KpRsNKO3LjInrjM8smvqdFez5LE2c7G1t0EpkaGjD1Gc+GGMaR9V6fU88s2N5SJeJvWE0BSGsaieebOvZ4Rwg31VT+Jv5JKM7AoEGAyr2xBhR/ms5PK7k+DqgOzXY4pxE/TgnHeu6Pz9JG95TSxMCAwEAAaOCAkwwggJIMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUM1LAfFCqUX1XYc+6nZcgssei6EEwHwYDVR0jBBgwFoAUALUp8i2ObzHom0yteD763OkM0dIwMwYIKwYBBQUHAQEEJzAlMCMGCCsGAQUFBzAChhdodHRwOi8vcjEyLmkubGVuY3Iub3JnLzA/BgNVHREEODA2ghdtdXNlZWZyYW5jb2FtZXJpY2Fpbi5mcoIbd3d3Lm11c2VlZnJhbmNvYW1lcmljYWluLmZyMBMGA1UdIAQMMAowCAYGZ4EMAQIBMC4GA1UdHwQnMCUwI6AhoB+GHWh0dHA6Ly9yMTIuYy5sZW5jci5vcmcvMjYuY3JsMIIBDAYKKwYBBAHWeQIEAgSB/QSB+gD4AHYAFoMtq/CpJQ8P8DqlRf/Iv8gj0IdL9gQpJ/jnHzMT9foAAAGbjVPjRAAABAMARzBFAiBL4+JBAOXLQFcbbL9B2xnd0eIMGav/bZIZeW3tXw0JBwIhAP0Uya2LdCweZQmouKutfj0s162nM7cg4ahf4ggydEZ0AH4A4yON8o2iiOCq4Kzw+pDJhfC2v/XSpSewAfwcRFjEtugAAAGbjVPmKwAIAAAFAC5Sw/4EAwBHMEUCIQD+qliUP/S2Md1rvOZViMZ905B/dG49hijjx9qt2JGUkQIgBFkO8ghZI3VUu+/JhsH7pdxs2O9kyCRJ1dsfcUeZGkAwDQYJKoZIhvcNAQELBQADggEBAHBjBUtzjaM5k64SKpZ1RO17R337bjCToC4G2qOygG7l9Ou/QJgp8ONCEQpZEcTSUpxItif6oPwmjm/gXP+oV0nZjRAoaIUGqH4COzQq7K+Oo9uz8R51FFYX8BrL0TSrX1RaAdOZCuJYkqoTN7IIsPhLCXBw1fzYWVjUdB+azHzcBSwD/wRcAgnGMZJy8j/GuhAmrSUB4LuYc09naVbrQTq7wi1me3efc0+k+3oCNt4MlXrHk71xD44OFQsbudf1OVEXJck+ePfKpFPDKeKEtdsa9bC/N75cQB5ySxp/2tirl8n7zNJq5i1m0+c3zB2qBAX1RgjWQAAy9fBL+UndsDw=\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIJTDCCCPGgAwIBAgIQCJHkxBqC7yTR+C6GqcXQaDAKBggqhkjOPQQDAjBgMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMR8wHQYDVQQDExZHZW9UcnVzdCBUTFMgRUNDIENBIEcxMB4XDTI2MDEyNzAwMDAwMFoXDTI3MDEyMjIzNTk1OVowYDELMAkGA1UEBhMCRlIxDjAMBgNVBAcTBVBhcmlzMScwJQYDVQQKDB5Sw6l1bmlvbiBkZXMgTXVzw6llcyBOYXRpb25hdXgxGDAWBgNVBAMTD2dyYW5kLXBhbGFpcy5mcjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBE37JSuwV4KGPiTvTdLgCkTR73DsVLxYFcJybDeeZZdsgxWJ09wRMLsOrsQwQksbSjs9kKODye/q9gP7PxpbOyjggeLMIIHhzAfBgNVHSMEGDAWgBS9gs9Hex6MIoX+jKgfw+Gy3/2mmTAdBgNVHQ4EFgQUPIpCXdB/1OEG0/ZTw7JsqOeszS8wggSKBgNVHREEggSBMIIEfYIPZ3JhbmQtcGFsYWlzLmZyghFhcHBsaS5sYWJybW5ncC5mcoIQbXVzZWUtZGVsYW1lci5zboISMjAxMi5tb251bWVudGEuY29tgiBkZXNqb3VldHMtdW5zb3Jpbi1ncmFuZHBhbGFpcy5mcoIMbW9uZXQyMDEwLmZyghhoZWxpb3Ntb2JpbGUubGFicm1uZ3AuZnKCEmhpc3RvaXJlLWltYWdlLm9yZ4IScGFub3JhbWFkZWxhcnQuY29tghJzZWFyY2gubGFicm1uZ3AuZnKCHWJpam91eC1tYWxtYWlzb24tY29tcGllZ25lLmZyghRndWltZXQtZ3JhbmRpZGllci5mcoIVZ3VpbWV0LXBob3RvLWphcG9uLmZyghdndWltZXQtcGhvdG8tdHVycXVpZS5mcoIOY2hhdGVhdS1wYXUuZnKCC2xhYnJtbmdwLmZygh1tdXNlZS1hcmNoZW9sb2dpZW5hdGlvbmFsZS5mcoIPbXVzZWUtbWFnbmluLmZyghRtdXNlZS1yZW5haXNzYW5jZS5mcoIXbXVzZWVmcmFuY29hbWVyaWNhaW4uZnKCHW11c2Vlcy1uYXRpb25hdXgtbWFsbWFpc29uLmZygh1jYXRhbG9ndWUtcm9jLWF1eC1zb3JjaWVycy5mcoIjY2VyYW1pcXVlcy1jb250ZW1wb3JhaW5lcy1zZXZyZXMuZnKCFmNvbXBpZWduZS1wZWludHVyZXMuZnKCEWRlc3NpbnMtbWFnbmluLmZyghdkZXNzaW5zLW11c2VlLW1vcmVhdS5mcoIPZGVzc2luc2RlcGF1LmZyghxldG9mZmVzLm11c2VlLXJlbmFpc3NhbmNlLmZyghdndWltZXQtcGhvdG8tcGVsbGlvdC5mcoIdbXVjZW0tc2lmZmxldHMtdGVycmUtY3VpdGUuZnKCHXNjdWxwdHVyZXNtZWRpZXZhbGVzLWNsdW55LmZygghjMnJtZi5mcoIVY2hhdGVhdWRlY29tcGllZ25lLmZyghdncmFuZHBhbGFpcy1pbW1lcnNpZi5mcoIcbXVzZWUtY2xlbWVuY2VhdS1kZWxhdHRyZS5mcoIbbXVzZWUtcHJlaGlzdG9pcmUtZXl6aWVzLmZygiJtdXNlZXMtbmF0aW9uYXV4LWFscGVzbWFyaXRpbWVzLmZygidzY3VscHR1cmVzLWphcmRpbnMuY2hhdGVhdXZlcnNhaWxsZXMuZnKCF3NjdWxwdHVyZXN2ZXJzYWlsbGVzLmZyghBlbmZhbnRzLnJtbmdwLmZygg9tdXNlZS1oZW5uZXIuZnKCD211c2VlLW1vcmVhdS5mcoIeZ2FsZXJpZWRlc2dsYWNlcy12ZXJzYWlsbGVzLmZyghVndWltZXQtcGhvdG8tZ3JlY2UuZnKCHG11c2VlLWhpc3RvcmlxdWVkdXNlbmVnYWwuc26CDm11c2VlLW1vbm9kLnNughRtdXNlZWR1bHV4ZW1ib3VyZy5mcoITd3d3LmdyYW5kLXBhbGFpcy5mcjA+BgNVHSAENzA1MDMGBmeBDAECAjApMCcGCCsGAQUFBwIBFhtodHRwOi8vd3d3LmRpZ2ljZXJ0LmNvbS9DUFMwDgYDVR0PAQH/BAQDAgOIMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA/BgNVHR8EODA2MDSgMqAwhi5odHRwOi8vY2RwLmdlb3RydXN0LmNvbS9HZW9UcnVzdFRMU0VDQ0NBRzEuY3JsMHYGCCsGAQUFBwEBBGowaDAmBggrBgEFBQcwAYYaaHR0cDovL3N0YXR1cy5nZW90cnVzdC5jb20wPgYIKwYBBQUHMAKGMmh0dHA6Ly9jYWNlcnRzLmdlb3RydXN0LmNvbS9HZW9UcnVzdFRMU0VDQ0NBRzEuY3J0MAwGA1UdEwEB/wQCMAAwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB3AExj3JjlnB2riPYeij3ero+rRKM3e1+blMP7oZz8wb4mAAABm//3jQoAAAQDAEgwRgIhAINeS3+hScwHWSA4s80X/dQFnWwpYYeSSb/DmMwcZZWSAiEApnhySZ8uCXw4UEnqHxX3bi07fQpd6NDeiy2Pp1vb+HMAdgAcn2gs6frwRWlQ+BuWiofd2zIQ2EzmyLLjglJKxM9ZnwAAAZv/940DAAAEAwBHMEUCIHMYooFCZM1kOfJ2SvvFXgSuhpLD1ePjSqR8ZNw6fHzPAiEA39VWCXEVYZf0A442Lp34thtuR3mZ3scQC9c8Z+7car4AdgBgTJqven93XwHUBvySDciZ6wscffjJUhv6+hd3O5eLyQAAAZv/9429AAAEAwBHMEUCIA5xlGhhGa9fKVkvg++Y/dyMMMeeEvbo52TbWDBr/qVrAiEAiGyY9pdb+nW294dKMUuaGGlEk6O3vGw64GTCYBocEqkwCgYIKoZIzj0EAwIDSQAwRgIhAKLOFGTi62SFDU82Ysj5PxpUdeChHU2D39lIYd77dcu2AiEAhn72hd7NfZK3B6EK7xvqcfbRPBiiklmDAgNn7amc5BA=\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "museefrancoamericain.fr"
+              "finding"      : "grand-palais.fr"
           }
 ,         {
               "id"           : "cert_commonName_wo_SNI",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "rmn-scn-01.oxyd.net"
+              "finding"      : "grand-palais.fr"
           }
 ,         {
               "id"           : "cert_subjectAltName",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "museefrancoamericain.fr www.museefrancoamericain.fr"
+              "finding"      : "grand-palais.fr appli.labrmngp.fr musee-delamer.sn 2012.monumenta.com desjouets-unsorin-grandpalais.fr monet2010.fr heliosmobile.labrmngp.fr histoire-image.org panoramadelart.com search.labrmngp.fr bijoux-malmaison-compiegne.fr guimet-grandidier.fr guimet-photo-japon.fr guimet-photo-turquie.fr chateau-pau.fr labrmngp.fr musee-archeologienationale.fr musee-magnin.fr musee-renaissance.fr museefrancoamericain.fr musees-nationaux-malmaison.fr catalogue-roc-aux-sorciers.fr ceramiques-contemporaines-sevres.fr compiegne-peintures.fr dessins-magnin.fr dessins-musee-moreau.fr dessinsdepau.fr etoffes.musee-renaissance.fr guimet-photo-pelliot.fr mucem-sifflets-terre-cuite.fr sculpturesmedievales-cluny.fr c2rmf.fr chateaudecompiegne.fr grandpalais-immersif.fr musee-clemenceau-delattre.fr musee-prehistoire-eyzies.fr musees-nationaux-alpesmaritimes.fr sculptures-jardins.chateauversailles.fr sculpturesversailles.fr enfants.rmngp.fr musee-henner.fr musee-moreau.fr galeriedesglaces-versailles.fr guimet-photo-grece.fr musee-historiquedusenegal.sn musee-monod.sn museeduluxembourg.fr www.grand-palais.fr"
           }
 ,         {
               "id"           : "cert_trust",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "Ok via SAN and CN (SNI mandatory)"
+              "finding"      : "Ok via SAN (same w/o SNI)"
           }
 ,         {
               "id"           : "cert_chain_of_trust",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "passed."
           }
 ,         {
               "id"           : "cert_certificatePolicies_EV",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "no"
           }
 ,         {
               "id"           : "cert_expirationStatus",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "70 >= 30 days"
+              "finding"      : "355 >= 60 days"
           }
 ,         {
               "id"           : "cert_notBefore",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2026-01-05 07:45"
+              "finding"      : "2026-01-27 00:00"
           }
 ,         {
               "id"           : "cert_notAfter",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "2026-04-05 07:45"
+              "finding"      : "2027-01-22 23:59"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "certificate has no extended life time according to browser forum"
           }
 ,         {
               "id"           : "cert_eTLS",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "not present"
           }
 ,         {
               "id"           : "cert_crlDistributionPoints",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "http://r12.c.lencr.org/26.crl"
+              "finding"      : "http://cdp.geotrust.com/GeoTrustTLSECCCAG1.crl"
           }
 ,         {
               "id"           : "cert_ocspURL",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "--"
+              "finding"      : "http://status.geotrust.com"
           }
 ,         {
               "id"           : "OCSP_stapling",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
-              "severity"     : "INFO",
+              "severity"     : "LOW",
               "finding"      : "not offered"
           }
 ,         {
               "id"           : "cert_mustStapleExtension",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "--"
           }
 ,         {
               "id"           : "DNS_CAArecord",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "LOW",
               "finding"      : "--"
           }
 ,         {
               "id"           : "certificate_transparency",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "yes (certificate extension)"
           }
 ,         {
               "id"           : "certs_countServer",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "2"
           }
 ,         {
               "id"           : "certs_list_ordering_problem",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "no"
           }
 ,         {
               "id"           : "cert_caIssuers",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "R12 (Let's Encrypt from US)"
+              "finding"      : "GeoTrust TLS ECC CA G1 (DigiCert Inc from US)"
           }
 ,         {
               "id"           : "intermediate_cert <#1>",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIFBjCCAu6gAwIBAgIRAMISMktwqbSRcdxA9+KFJjwwDQYJKoZIhvcNAQELBQAwTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2VhcmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAwWhcNMjcwMzEyMjM1OTU5WjAzMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3MgRW5jcnlwdDEMMAoGA1UEAxMDUjEyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2pgodK2+lP474B7i5Ut1qywSf+2nAzJ+Npfs6DGPpRONC5kuHs0BUT1M5ShuCVUxqqUiXXL0LQfCTUA83wEjuXg39RplMjTmhnGdBO+ECFu9AhqZ66YBAJpzkG2Pogeg0JfT2kVhgTU9FPnEwF9q3AuWGrCf4yrqvSrWmMebcas7dA8827JgvlpLThjp2ypzXIlhZZ7+7Tymy05v5J75AEaz/xlNKmOzjmbGGIVwx1Blbzt05UiDDwhYXS0jnV6j/ujbAKHS9OMZTfLuevYnnuXNnC2i8n+cF63vEzc50bTILEHWhsDp7CH4WRt/uTp8n1wBnWIEwii9Cq08yhDsGwIDAQABo4H4MIH1MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQUALUp8i2ObzHom0yteD763OkM0dIwHwYDVR0jBBgwFoAUebRZ5nu25eQBc4AIiMgaWPbpm24wMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAChhZodHRwOi8veDEuaS5sZW5jci5vcmcvMBMGA1UdIAQMMAowCAYGZ4EMAQIBMCcGA1UdHwQgMB4wHKAaoBiGFmh0dHA6Ly94MS5jLmxlbmNyLm9yZy8wDQYJKoZIhvcNAQELBQADggIBAI910AnPanZIZTKS3rVEyIV29BWEjAK/duuz8eL5boSoVpHhkkv34eoAeEiPdZLj5EZ7G2ArIK+gzhTlRQ1q4FKGpPPaFBSpqV/xbUb5UlAXQOnkHn3mFVj+qYv87/WeY+Bm4sN3Ox8BhyaU7UAQ3LeZ7N1X01xxQe4wIAAE3JVLUCiHmZL+qoCUtgYIFPgcg350QMUIWgxPXNGEncT921ne7nluI02V8pLUmClqXOsCwULw+PVOZCB7qOMxxMBoCUeL2Ll4oMpOSr5pJCpLN3tRA2s6P1KLs9TSrVhOk+7LX28NMUlIusQ/nxLJID0RhAeFtPjyOCOscQBA53+NRjSCak7P4A5jX7ppmkcJECL+S0i3kXVUy5Me5BbrU8973jZNv/ax6+ZK6TM8jWmimL6of6OrX7ZU6E2WqazzsFrLG3o2kySbzlhSgJ81Cl4tv3SbYiYXnJExKQvzf83DYotox3f0fwv7xln1A2ZLplCb0O+l/AK0YE0DS2FPxSAHi0iwMfW2nNHJrXcY3LLHD77gRgje4Eveubi2xxa+Nmk/hmhLdIETiVDFanoCrMVIpQ59XWHkzdFmoHXHBV7oibVjGSO7ULSQ7MJ1Nz51phuDJSgAIU7A0zrLnOrAj/dfrlEWRhCvAgbuwLZX1A2sjNjXoPOHbsPiy+lO1KF8/XY7\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIDIjCCAqegAwIBAgIQA0o/+Ue+OcGZzrgGlh5RbTAKBggqhkjOPQQDAjBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBHMzAeFw0xNzExMDIxMjU5MzhaFw0yNzExMDIxMjU5MzhaMGAxCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xHzAdBgNVBAMTFkdlb1RydXN0IFRMUyBFQ0MgQ0EgRzEwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARq1Zj5CUHtNOXYXvkbpA0hbP0z4QRoAVYDNhmA4ZS4c1ZsNCkW9dRLoGN903ll4C1knoqPlurtQFbE1zZKQgJVo4IBQDCCATwwHQYDVR0OBBYEFL2Cz0d7Howihf6MqB/D4bLf/aaZMB8GA1UdIwQYMBaAFLPbSKT5ocXYrjZBzBFjaWIpvEvGMA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwEgYDVR0TAQH/BAgwBgEB/wIBADA0BggrBgEFBQcBAQQoMCYwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBCBgNVHR8EOzA5MDegNaAzhjFodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9iYWxSb290RzMuY3JsMD0GA1UdIAQ2MDQwMgYEVR0gADAqMCgGCCsGAQUFBwIBFhxodHRwczovL3d3dy5kaWdpY2VydC5jb20vQ1BTMAoGCCqGSM49BAMCA2kAMGYCMQDi0sZJgYka7acLC8ncY9M1bbgvlkAyznRVT+O15a/l7xFVq230VXPrGeiwGZkfdJ0CMQDMWuDYxQNFeogRQNzAmTaQxOW+mxCdxdmL5dLHLJOQaI8N4TjTct2W3oyvTAaYn20=\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "intermediate_cert_fingerprintSHA256 <#1>",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "131FCE7784016899A5A00203A9EFC80F18EBBD75580717EDC1553580930836EC"
+              "finding"      : "A838405EBB03F5DFD8D4A9572AE6E0E3F356EC4EC134375A59DB7B195DC3EC44"
           }
 ,         {
               "id"           : "intermediate_cert_notBefore <#1>",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2024-03-13 00:00"
+              "finding"      : "2017-11-02 12:59"
           }
 ,         {
               "id"           : "intermediate_cert_notAfter <#1>",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "2027-03-12 23:59"
+              "finding"      : "2027-11-02 12:59"
           }
 ,         {
               "id"           : "intermediate_cert_expiration <#1>",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "ok > 40 days"
           }
 ,         {
               "id"           : "intermediate_cert_chain <#1>",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "R12 <-- ISRG Root X1"
+              "finding"      : "GeoTrust TLS ECC CA G1 <-- DigiCert Global Root G3"
           }
 ,         {
               "id"           : "intermediate_cert_badOCSP",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "intermediate certificate(s) is/are ok"
           }
 ,         {
               "id"           : "HTTP_status_code",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "200 OK ('/')"
           }
 ,         {
               "id"           : "HTTP_clock_skew",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-1 seconds from localtime"
+              "finding"      : "-145468 seconds from localtime"
           }
 ,         {
               "id"           : "HTTP_headerTime",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1769319756"
+              "finding"      : "1769782635"
           }
 ,         {
               "id"           : "HSTS_time",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "182 days (=15768000 seconds) > 15552000 seconds"
+              "finding"      : "185 days (=16000000 seconds) > 15552000 seconds"
           }
 ,         {
               "id"           : "HSTS_subdomains",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "includes subdomains"
           }
 ,         {
               "id"           : "HSTS_preload",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "domain is NOT marked for preloading"
           }
 ,         {
               "id"           : "HPKP",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No support for HTTP Public Key Pinning"
           }
 ,         {
               "id"           : "banner_server",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "nginx"
+              "finding"      : "Apache"
           }
 ,         {
               "id"           : "banner_application",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "X-Powered-By: PHP/8.2.30"
+              "finding"      : "No application banner found"
           }
 ,         {
               "id"           : "cookie_count",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "0 at '/'"
           }
 ,         {
               "id"           : "X-Frame-Options",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "SAMEORIGIN"
           }
 ,         {
               "id"           : "X-Content-Type-Options",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "nosniff"
           }
 ,         {
+              "id"           : "Content-Security-Policy",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "upgrade-insecure-requests"
+          }
+,         {
+              "id"           : "X-XSS-Protection",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "1 ;mode=block"
+          }
+,         {
+              "id"           : "Upgrade",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "h2,h2c"
+          }
+,         {
+              "id"           : "Referrer-Policy",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "no-referrer-when-downgrade"
+          }
+,         {
               "id"           : "Cache-Control",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "max-age=3600, public"
           }
 ,         {
               "id"           : "banner_reverseproxy",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "cwe"          : "CWE-200",
@@ -624,7 +603,7 @@
           }
 ,         {
               "id"           : "heartbleed",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-0160",
@@ -633,7 +612,7 @@
           }
 ,         {
               "id"           : "CCS",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-0224",
@@ -642,16 +621,16 @@
           }
 ,         {
               "id"           : "ticketbleed",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2016-9244",
               "cwe"          : "CWE-200",
-              "finding"      : "not vulnerable"
+              "finding"      : "no session ticket extension"
           }
 ,         {
               "id"           : "ROBOT",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2017-17382 CVE-2017-17427 CVE-2017-17428 CVE-2017-13098 CVE-2017-1000385 CVE-2017-13099 CVE-2016-6883 CVE-2012-5081 CVE-2017-6168",
@@ -660,42 +639,42 @@
           }
 ,         {
               "id"           : "secure_renego",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cwe"          : "CWE-310",
-              "finding"      : "supported"
+              "finding"      : "TLS 1.3 only server"
           }
 ,         {
               "id"           : "secure_client_renego",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2011-1473",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
+              "finding"      : "not vulnerable, TLS 1.3 only"
           }
 ,         {
               "id"           : "CRIME_TLS",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2012-4929",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
+              "finding"      : "TLS 1.3 only server"
           }
 ,         {
               "id"           : "BREACH",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "MEDIUM",
               "cve"          : "CVE-2013-3587",
               "cwe"          : "CWE-310",
-              "finding"      : "potentially VULNERABLE, gzip br HTTP compression detected  - only supplied '/' tested"
+              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
           }
 ,         {
               "id"           : "POODLE_SSL",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-3566",
@@ -704,14 +683,14 @@
           }
 ,         {
               "id"           : "fallback_SCSV",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "no protocol below TLS 1.2 offered"
+              "finding"      : "only TLS 1.3 supported"
           }
 ,         {
-              "id"           : "SWEET32",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "id"           : "CRIME_TLS",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2016-2183 CVE-2016-6329",
@@ -720,7 +699,7 @@
           }
 ,         {
               "id"           : "FREAK",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2015-0204",
@@ -729,7 +708,7 @@
           }
 ,         {
               "id"           : "DROWN",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
@@ -738,25 +717,16 @@
           }
 ,         {
               "id"           : "DROWN_hint",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=1628C9FE853C3288F536A6210DCB4F314BDEB123C42E544604E78CB1180A1F7F"
-          }
-,         {
-              "id"           : "LOGJAM-common_primes",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "cve"          : "CVE-2015-4000",
-              "cwe"          : "CWE-310",
-              "finding"      : "RFC7919/ffdhe2048"
+              "finding"      : "no RSA certificate, can't be used with SSLv2 elsewhere"
           }
 ,         {
               "id"           : "LOGJAM",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2015-4000",
@@ -764,8 +734,17 @@
               "finding"      : "not vulnerable, no DH EXPORT ciphers,"
           }
 ,         {
+              "id"           : "LOGJAM-common_primes",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "OK",
+              "cve"          : "CVE-2015-4000",
+              "cwe"          : "CWE-310",
+              "finding"      : "no DH key with <= TLS 1.2"
+          }
+,         {
               "id"           : "BEAST",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2011-3389",
@@ -774,16 +753,16 @@
           }
 ,         {
               "id"           : "LUCKY13",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2013-0169",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
+              "finding"      : "not vulnerable, TLS 1.3 only"
           }
 ,         {
               "id"           : "winshock",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2014-6321",
@@ -792,333 +771,340 @@
           }
 ,         {
               "id"           : "RC4",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "OK",
               "cve"          : "CVE-2013-2566 CVE-2015-2808",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
+              "finding"      : "not vulnerable, TLS 1.3 only"
           }
 ,         {
               "id"           : "clientsimulation-android_70",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-android_81",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-android_90",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_X",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_11_12",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_13_14",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_15",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-chrome_101_win10",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-chromium_137_win11",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-firefox_100_win10",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-firefox_137_win11",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_8_win7",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win7",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 DHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win81",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_winphone81",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win10",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-edge_15_win10",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-edge_101_win10_21h2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_133_win11_23h2",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_184_ios_184",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_154_osx_1231",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_184_osx_154",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-java_7u25",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-java_80442",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_1102",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-java_1703",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_2106",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-go_1178",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-libressl_336",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_CHACHA20_POLY1305_SHA256"
           }
 ,         {
               "id"           : "clientsimulation-openssl_102e",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-openssl_111d",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_315",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_350",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
           }
 ,         {
               "id"           : "clientsimulation-apple_mail_16_0",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "No connection"
           }
 ,         {
               "id"           : "clientsimulation-thunderbird_91_9",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
           }
 ,         {
               "id"           : "rating_spec",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "SSL Labs's 'SSL Server Rating Guide' (version 2009r from 2025-05-16)"
           }
 ,         {
               "id"           : "rating_doc",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "https://github.com/ssllabs/research/wiki/SSL-Server-Rating-Guide"
           }
 ,         {
               "id"           : "protocol_support_score",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "100"
           }
 ,         {
               "id"           : "protocol_support_score_weighted",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "30"
           }
 ,         {
               "id"           : "key_exchange_score",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "90"
+              "finding"      : "100"
           }
 ,         {
               "id"           : "key_exchange_score_weighted",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "27"
+              "finding"      : "30"
           }
 ,         {
               "id"           : "cipher_strength_score",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "90"
-          }
-,         {
-              "id"           : "cipher_strength_score_weighted",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "36"
-          }
-,         {
-              "id"           : "final_score",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "93"
-          }
-,         {
-              "id"           : "overall_grade",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "A+"
-          }
-,         {
-              "id"           : "scanTime",
-              "ip"           : "museefrancoamericain.fr/87.252.7.122",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
               "port"         : "443",
               "severity"     : "INFO",
               "finding"      : "60"
+          }
+,         {
+              "id"           : "cipher_strength_score_weighted",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "24"
+          }
+,         {
+              "id"           : "final_score",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "84"
+          }
+,         {
+              "id"           : "overall_grade",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "MEDIUM",
+              "finding"      : "B"
+          }
+,         {
+              "id"           : "grade_cap_reason_1",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "Grade capped to B. Forward Secrecy (FS) is not supported"
+          }
+,         {
+              "id"           : "scanTime",
+              "ip"           : "museefrancoamericain.fr/31.193.48.129",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "48"
           }
 ]
