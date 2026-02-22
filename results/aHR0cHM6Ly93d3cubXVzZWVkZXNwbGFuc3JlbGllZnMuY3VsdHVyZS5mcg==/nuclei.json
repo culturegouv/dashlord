@@ -1,41 +1,46 @@
 [
   [
     {
-      "template": "dns/dns-saas-service-detection.yaml",
-      "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
-      "template-id": "dns-saas-service-detection",
-      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "template": "dns/aaaa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/aaaa-fingerprint",
+      "template-id": "aaaa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/aaaa-fingerprint.yaml",
       "info": {
-        "name": "DNS SaaS Service Detection",
+        "name": "AAAA Record - IPv6 Detection",
         "author": [
-          "noah @thesubtlety",
-          "pdteam"
+          "rxerium"
         ],
         "tags": [
           "dns",
-          "service",
+          "aaaa",
+          "ipv6",
           "discovery"
         ],
-        "description": "A CNAME DNS record was discovered",
+        "description": "An AAAA record was detected. AAAA records are used to map domain names to IPv6 addresses.\n",
         "reference": [
-          "https://ns1.com/resources/cname",
-          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
-          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+          "https://www.cloudflare.com/learning/dns/dns-records/dns-aaaa-record/",
+          "https://en.wikipedia.org/wiki/ipv6_address"
         ],
         "severity": "info",
         "metadata": {
           "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
         }
       },
       "type": "dns",
       "host": "www.museedesplansreliefs.culture.fr.",
       "matched-at": "www.museedesplansreliefs.culture.fr",
       "extracted-results": [
-        "edge.redirect.pizza."
+        "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 36082\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 36082\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-02-15T09:14:44.605689778Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 48967\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 48967\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t296\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-02-22T09:12:56.367284661Z",
       "matcher-status": true
     },
     {
@@ -71,9 +76,47 @@
       "type": "dns",
       "host": "www.museedesplansreliefs.culture.fr.",
       "matched-at": "www.museedesplansreliefs.culture.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 50156\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 50156\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n\n;; AUTHORITY SECTION:\nredirect.pizza.\t1800\tIN\tSOA\tns1.enflow.nl. hostmaster.enflow.nl. 1646682899 10800 3600 604800 1800\n",
-      "timestamp": "2026-02-15T09:14:44.71787686Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 31588\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 31588\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n\n;; AUTHORITY SECTION:\nredirect.pizza.\t1800\tIN\tSOA\tns1.enflow.nl. hostmaster.enflow.nl. 1646682900 10800 3600 604800 1800\n",
+      "timestamp": "2026-02-22T09:12:56.368357775Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "www.museedesplansreliefs.culture.fr.",
+      "matched-at": "www.museedesplansreliefs.culture.fr",
+      "extracted-results": [
+        "edge.redirect.pizza."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 27348\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 27348\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-02-22T09:12:56.516029398Z",
       "matcher-status": true
     },
     {
@@ -104,7 +147,7 @@
         "Let's Encrypt"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-02-15T09:20:26.97939694Z",
+      "timestamp": "2026-02-22T09:19:02.893561381Z",
       "matcher-status": true
     },
     {
@@ -135,7 +178,7 @@
         "www.museedesplansreliefs.culture.fr"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-02-15T09:20:26.979531654Z",
+      "timestamp": "2026-02-22T09:19:02.893683057Z",
       "matcher-status": true
     },
     {
@@ -167,7 +210,7 @@
         "tls12"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-02-15T09:20:28.62259836Z",
+      "timestamp": "2026-02-22T09:19:03.942489013Z",
       "matcher-status": true
     },
     {
@@ -199,7 +242,7 @@
         "tls13"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-02-15T09:20:28.738955882Z",
+      "timestamp": "2026-02-22T09:19:03.967484986Z",
       "matcher-status": true
     }
   ]
