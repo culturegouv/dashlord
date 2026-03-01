@@ -381,7 +381,7 @@
               "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "50 >= 30 days"
+              "finding"      : "43 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -527,15 +527,93 @@
               "id"           : "HTTP_status_code",
               "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
               "port"         : "443",
-              "severity"     : "WARN",
-              "finding"      : "HTTP header request failed"
+              "severity"     : "INFO",
+              "finding"      : "200 OK ('/')"
           }
 ,         {
-              "id"           : "scanProblem",
+              "id"           : "HTTP_clock_skew",
               "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
               "port"         : "443",
-              "severity"     : "WARN",
-              "finding"      : "HTTP header was repeatedly zero."
+              "severity"     : "INFO",
+              "finding"      : "+107 seconds from localtime"
+          }
+,         {
+              "id"           : "HTTP_headerTime",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "1772351402"
+          }
+,         {
+              "id"           : "HTTP_headerAge",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "108 seconds"
+          }
+,         {
+              "id"           : "HSTS_time",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "OK",
+              "finding"      : "182 days (=15768000 seconds) > 15552000 seconds"
+          }
+,         {
+              "id"           : "HSTS_subdomains",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "only for this domain"
+          }
+,         {
+              "id"           : "HSTS_preload",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "domain is NOT marked for preloading"
+          }
+,         {
+              "id"           : "HPKP",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "No support for HTTP Public Key Pinning"
+          }
+,         {
+              "id"           : "banner_server",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "nginx"
+          }
+,         {
+              "id"           : "banner_application",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "No application banner found"
+          }
+,         {
+              "id"           : "cookie_count",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "0 at '/'"
+          }
+,         {
+              "id"           : "Cache-Control",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "public, s-maxage=600, stale-while-revalidate=300, stale-if-error=300"
+          }
+,         {
+              "id"           : "banner_reverseproxy",
+              "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "cwe"          : "CWE-200",
+              "finding"      : "X-Varnish: 2948701 4370568"
           }
 ,         {
               "id"           : "heartbleed",
@@ -603,10 +681,10 @@
               "id"           : "BREACH",
               "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
               "port"         : "443",
-              "severity"     : "WARN",
+              "severity"     : "MEDIUM",
               "cve"          : "CVE-2013-3587",
               "cwe"          : "CWE-310",
-              "finding"      : "Test failed as HTTP request stalled and was terminated"
+              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
           }
 ,         {
               "id"           : "POODLE_SSL",
@@ -1041,6 +1119,6 @@
               "ip"           : "archives-nationales-travail.culture.gouv.fr/143.126.211.8",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "132"
+              "finding"      : "107"
           }
 ]
