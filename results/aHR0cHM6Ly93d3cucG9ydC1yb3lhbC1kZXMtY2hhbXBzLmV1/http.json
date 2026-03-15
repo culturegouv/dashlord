@@ -1,20 +1,28 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "F",
+    "grade": "B",
     "error": null,
-    "score": 20,
+    "score": 70,
     "statusCode": 200,
-    "testsFailed": 6,
-    "testsPassed": 4,
+    "testsFailed": 3,
+    "testsPassed": 7,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 08 Mar 2026 03:18:29 GMT",
+      "date": "Sun, 15 Mar 2026 03:30:17 GMT",
       "content-type": "text/html; charset=UTF-8",
       "transfer-encoding": "chunked",
       "connection": "close",
       "vary": "Accept-Encoding",
-      "link": "<https://port-royal-des-champs.fr/wp-json/>; rel=\"https://api.w.org/\", <https://port-royal-des-champs.fr/wp-json/wp/v2/pages/2446>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://port-royal-des-champs.fr/>; rel=shortlink",
+      "last-modified": "Sun, 15 Mar 2026 01:22:55 GMT",
+      "cache-control": "max-age=0",
+      "expires": "Sun, 15 Mar 2026 03:30:17 GMT",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "permissions-policy": "camera=(), microphone=(), geolocation=()",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "content-security-policy": "frame-ancestors 'self';",
       "server": "o2switch-PowerBoost-v3"
     }
   },
@@ -22,13 +30,29 @@
     "content-security-policy": {
       "expectation": "csp-implemented-with-no-unsafe",
       "pass": false,
-      "result": "csp-not-implemented",
-      "scoreModifier": -25,
-      "data": null,
-      "http": false,
+      "result": "csp-implemented-with-unsafe-inline",
+      "scoreModifier": -20,
+      "data": {
+        "frame-ancestors": [
+          "'self'"
+        ]
+      },
+      "http": true,
       "meta": false,
-      "policy": null,
-      "numPolicies": 0
+      "policy": {
+        "antiClickjacking": true,
+        "defaultNone": false,
+        "insecureBaseUri": true,
+        "insecureFormAction": true,
+        "insecureSchemeActive": false,
+        "insecureSchemePassive": false,
+        "strictDynamic": false,
+        "unsafeEval": false,
+        "unsafeInline": true,
+        "unsafeInlineStyle": true,
+        "unsafeObjects": true
+      },
+      "numPolicies": 1
     },
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
@@ -61,20 +85,20 @@
     "referrer-policy": {
       "expectation": "referrer-policy-private",
       "pass": true,
-      "result": "referrer-policy-not-implemented",
-      "scoreModifier": 0,
-      "data": null,
-      "http": false,
+      "result": "referrer-policy-private",
+      "scoreModifier": 5,
+      "data": "strict-origin-when-cross-origin",
+      "http": true,
       "meta": false
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": false,
-      "result": "hsts-not-implemented",
-      "scoreModifier": -20,
-      "data": null,
-      "includeSubDomains": false,
-      "maxAge": null,
+      "pass": true,
+      "result": "hsts-implemented-max-age-at-least-six-months",
+      "scoreModifier": 0,
+      "data": "max-age=31536000; includeSubDomains",
+      "includeSubDomains": true,
+      "maxAge": 31536000,
       "preload": false,
       "preloaded": false
     },
@@ -100,27 +124,27 @@
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-content/plugins/cookie-law-info/lite/frontend/js/script.min.js?ver=3.4.0": {
+        "https://port-royal-des-champs.fr/wp-content/plugins/cookie-law-info/lite/frontend/js/script.min.js": {
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-includes/js/jquery/jquery.min.js?ver=3.7.1": {
+        "https://port-royal-des-champs.fr/wp-includes/js/jquery/jquery.min.js": {
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1": {
+        "https://port-royal-des-champs.fr/wp-includes/js/jquery/jquery-migrate.min.js": {
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-content/plugins/mailin/js/mailin-front.js?ver=1771070304": {
+        "https://port-royal-des-champs.fr/wp-content/cache/min/1/wp-content/plugins/mailin/js/mailin-front.js?ver=1773317353": {
           "crossorigin": null,
           "integrity": null
         },
-        "https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js": {
+        "https://port-royal-des-champs.fr/wp-content/cache/min/1/sdk/1.1/wonderpush-loader.min.js?ver=1773317353": {
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-content/uploads/fusion-scripts/9773866b5456316789a957580410b3ee.min.js?ver=3.14.2": {
+        "https://port-royal-des-champs.fr/wp-content/uploads/fusion-scripts/9295fbdaa4f331824a17202335130111.min.js": {
           "crossorigin": null,
           "integrity": null
         }
@@ -128,17 +152,17 @@
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
-      "pass": false,
-      "result": "x-content-type-options-not-implemented",
-      "scoreModifier": -5,
-      "data": null
+      "pass": true,
+      "result": "x-content-type-options-nosniff",
+      "scoreModifier": 0,
+      "data": "nosniff"
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
-      "pass": false,
-      "result": "x-frame-options-not-implemented",
-      "scoreModifier": -20,
-      "data": null
+      "pass": true,
+      "result": "x-frame-options-implemented-via-csp",
+      "scoreModifier": 5,
+      "data": "SAMEORIGIN"
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
