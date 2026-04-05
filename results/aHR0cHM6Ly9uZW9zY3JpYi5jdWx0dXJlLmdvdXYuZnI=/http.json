@@ -12,16 +12,17 @@
       "content-type": "text/html",
       "last-modified": "Thu, 18 Sep 2025 07:33:38 GMT",
       "accept-ranges": "bytes",
-      "etag": "\"46ccb88c6e28dc1:0\"",
+      "etag": "\"075528c6e28dc1:0\"",
+      "vary": "Accept-Encoding",
       "server": "",
       "x-frame-options": "SAMEORIGIN",
       "x-xss-protection": "1; mode=block",
       "x-content-type-options": "nosniff",
       "strict-transport-security": "max-age=31536000",
       "referrer-policy": "no-referrer",
-      "date": "Sun, 29 Mar 2026 03:53:07 GMT",
+      "date": "Sun, 05 Apr 2026 03:51:33 GMT",
       "connection": "close",
-      "content-length": "7917"
+      "content-length": "1260"
     }
   },
   "tests": {
@@ -54,15 +55,12 @@
     "redirection": {
       "expectation": "redirection-to-https",
       "pass": true,
-      "result": "redirection-to-https",
+      "result": "redirection-not-needed-no-http",
       "scoreModifier": 0,
-      "destination": "https://neoscrib.culture.gouv.fr/",
+      "destination": null,
       "redirects": true,
-      "route": [
-        "http://neoscrib.culture.gouv.fr/",
-        "https://neoscrib.culture.gouv.fr/"
-      ],
-      "statusCode": 200
+      "route": [],
+      "statusCode": null
     },
     "referrer-policy": {
       "expectation": "referrer-policy-private",
