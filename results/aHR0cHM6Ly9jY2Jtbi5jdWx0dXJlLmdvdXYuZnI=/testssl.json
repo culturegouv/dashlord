@@ -136,7 +136,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "cipher_order",
@@ -157,7 +157,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-GCM-SHA384"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "FS_KEMs",
@@ -241,21 +241,21 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "SHA256 with RSA"
+              "finding"      : "ECDSA with SHA384"
           }
 ,         {
               "id"           : "cert_keySize",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "RSA 4096 bits (exponent is 65537)"
+              "finding"      : "EC 256 bits (curve P-256)"
           }
 ,         {
               "id"           : "cert_keyUsage",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Digital Signature, Key Encipherment"
+              "finding"      : "Digital Signature"
           }
 ,         {
               "id"           : "cert_extKeyUsage",
@@ -269,35 +269,35 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "8374399E59C3F46C5893639DD1D1CE5E"
+              "finding"      : "06D8BD4A558A7B19824389D2C73DF27601F6"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "16"
+              "finding"      : "18"
           }
 ,         {
               "id"           : "cert_fingerprintSHA1",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2DA486C5612AA62B1246CE0D138951576B5DC75C"
+              "finding"      : "75E4B1192A8508CA5A0C626D7B099A5EA0822FD0"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "18C88C38D800BA1C374DCDA6F8CDF67512829DAA874C5329DCBED626EC31E1E9"
+              "finding"      : "03EFC9391AEDEF7135A7C4A43350B093050D317FD042E3C08F5EF355601699B6"
           }
 ,         {
               "id"           : "cert",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\n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\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIDlzCCAx2gAwIBAgISBti9SlWKexmCQ4nSxz3ydgH2MAoGCCqGSM49BAMDMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFODAeFw0yNjA0MDMwODIzMzhaFw0yNjA3MDIwODIzMzdaMCAxHjAcBgNVBAMTFWNjYm1uLmN1bHR1cmUuZ291di5mcjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABPrCLB6VImlU/o+K2YJXBacUDb0lqLrX7mMI5OAQHOfK1i9gXb/xDqmMXOZ81WAiYe+KSmHvmmgy6F7V6I9LfeajggIjMIICHzAOBgNVHQ8BAf8EBAMCB4AwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQULwYHcZcZcbnEpLF+rrFu4kPZNpwwHwYDVR0jBBgwFoAUjw0TovYuftFQbDMYOF1ZjiNykcowMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAChhZodHRwOi8vZTguaS5sZW5jci5vcmcvMCAGA1UdEQQZMBeCFWNjYm1uLmN1bHR1cmUuZ291di5mcjATBgNVHSAEDDAKMAgGBmeBDAECATAuBgNVHR8EJzAlMCOgIaAfhh1odHRwOi8vZTguYy5sZW5jci5vcmcvMTE5LmNybDCCAQ0GCisGAQQB1nkCBAIEgf4EgfsA+QB2AK9niDtXsE7dj6bZfvYuqOuBCsdxYPAkXlXWDC/nhYc6AAABnVKmY2kAAAQDAEcwRQIgH6TbPOKdtQzWiAG+v8sHJ3emntdifBCqG8ZHFJ//t6ICIQCjoWik6CnObIUK0WLRrlJvb5sEy9y2KYRBRb6SwMoZawB/ABqLnWsP/r+BtHk5xtIxCobW0QLU8EbiGCyd419eJiXvAAABnVKmZKUACAAABQAGb1tRBAMASDBGAiEA/DCVaY4a1OQgFZKqW0euFmfNqxGIFeqwthHbWbrB3kgCIQDMt7Yoqabs+sb0yFbjngYZxgPOL7FG4R8L3qkaPO9mtjAKBggqhkjOPQQDAwNoADBlAjAIgXu/clh4e9tf2e5C8MhPTJmcOwm6+gNb0Ro/PPpEAyyikE6z+wAG89SU3+yrnp0CMQDgKRZzW+CqVi8mq74UU6RuIQThOu717SSjU/JtuWZ7EzxMcmyjwRagSBJwO1mbazM=\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
@@ -311,7 +311,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "request w/o SNI didn't succeed"
+              "finding"      : "request w/o SNI didn't succeed, usual for EC certificates"
           }
 ,         {
               "id"           : "cert_subjectAltName",
@@ -345,22 +345,22 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "expires < 30 days (7)"
+              "severity"     : "OK",
+              "finding"      : "87 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2026-01-06 00:00"
+              "finding"      : "2026-04-03 08:23"
           }
 ,         {
               "id"           : "cert_notAfter",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
-              "severity"     : "HIGH",
-              "finding"      : "2026-04-05 23:59"
+              "severity"     : "OK",
+              "finding"      : "2026-07-02 08:23"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
@@ -381,7 +381,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "http://crl.certigna.com/CertignaServerAuthenticationOVCPEUCAG1.crl"
+              "finding"      : "http://e8.c.lencr.org/119.crl"
           }
 ,         {
               "id"           : "cert_ocspURL",
@@ -437,35 +437,35 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Certigna Server Authentication OVCP EU CA G1 (Certigna from FR)"
+              "finding"      : "E8 (Let's Encrypt from US)"
           }
 ,         {
               "id"           : "intermediate_cert <#1>",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIFhTCCBG2gAwIBAgIUZC/nHF2pouqOZECc9JYzehjW3kAwDQYJKoZIhvcNAQEMBQAwNDELMAkGA1UEBhMCRlIxEjAQBgNVBAoMCURoaW15b3RpczERMA8GA1UEAwwIQ2VydGlnbmEwHhcNMjUwMjI4MDk0OTA0WhcNMjcwNjI4MDk0OTAzWjB2MQswCQYDVQQGEwJGUjERMA8GA1UECgwIQ2VydGlnbmExHTAbBgNVBGEMFE5UUkZSLTQ4MTQ2MzA4MTAwMDM2MTUwMwYDVQQDDCxDZXJ0aWduYSBTZXJ2ZXIgQXV0aGVudGljYXRpb24gT1ZDUCBFVSBDQSBHMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBANZ0kTuG6eFTF0KPbtvYBB5zIq+eR03FgyQAyRZE0lqCGRyx96ko+W/yyfxbCgPxMw5jlxdXteXBh8DLc5S4w0ICfOSc8vabFuXKhKa8BAB5/VtdzZosAF1AvFC1WLEVvPiUJRTsY0BkhnFI0UKdLN145hY4EL+CaSUENQ19006BR5P5HeWtmikYHgiq/TBlhTsnaYB6SL8mT40GfBxmp6PEjjrhKLurSQOMbF+6HiEnfZUr3OrKDncxN0GHxFYcIFBTL53JBNFA9qbPYsD6KubJmUqVoImyRKR+eXJHVNfPMhYzQv3EaYh2rpHRsjV96yZBIqBc3QSw82gj8bxh+rZRz8e+QISMlvljhHXqn+Qy4puuMt+3yQmnwFTYJQ13NFv1Uh3cJ5tEHP+yaLLCDqjy+cGCwNGMgsdWhS/67F4/AvRyI424psxuS/RbnKRrva0ZpDLTABgqfnONeU0LdkP817nGKNTKX2BDMD93BzOKzjDSBITJIRR8QICTKtQzmaKhd4UgbqPp+Bq1dMVhk5wW+x+bIHcB+wpqkO534SRMz93ijW2hSKrDWa2CB0Pl5tgcoGZThtjB3/Fm45XQLfW+vcTf+7nH8CRjMXO9swS6TovOXIpa5aG3jM+Dgewg6RbxtO/uIjv1zuIdS02d2h8Is2CvJ9/duOKucuYt1YnfAgMBAAGjggFLMIIBRzBBBggrBgEFBQcBAQQ1MDMwMQYIKwYBBQUHMAKGJWh0dHA6Ly9jZXJ0LmNlcnRpZ25hLmNvbS9DZXJ0aWduYS5jZXIwHwYDVR0jBBgwFoAUGu3+QTmQtCRZvgHyUtVF9lo53BEwEgYDVR0TAQH/BAgwBgEB/wIBADBIBgNVHSAEQTA/MAgGBmeBDAECAjAzBgoqgXoBgTEBAAECMCUwIwYIKwYBBQUHAgEWF2h0dHA6Ly9jcHMuY2VydGlnbmEuY29tMDUGA1UdHwQuMCwwKqAooCaGJGh0dHA6Ly9jcmwuY2VydGlnbmEuY29tL0NlcnRpZ25hLmNybDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBSgcuZGxDBc5K3CHMLVYjiYgVpUpjANBgkqhkiG9w0BAQwFAAOCAQEAkYjFkMa/La7tXDId/3ltDS8PKsxhxmOBA6bRsLeDQWIU2E1M/1A1y0bRkw4Y6ZRGmkVLLdQRD9mJIvxnllTyoeOzJPk0BVW6xVgPncatyhNx0bKEFouetx7k+J7yKhu/k3jJP9XAxtbCWViQ4rZ3BvABYHA8rBmfccbVMr04a/+ILTpT/1QiGzhHcpo2fnlQ+okXq0cuikN5/WMlHNgsTJIG2b5yEFtYY84Hlx0ejJX3cOAd4pot9vHdjv8e2KvIq/jopdB5lyv/wbaQ4EHz9i5Z4dvmECjsx9oEHRDmUoeEoV1sb/I/2np3PHjtYTrzzoOTYUaebmdXkFasRpTx1w==\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIEVjCCAj6gAwIBAgIQY5WTY8JOcIJxWRi/w9ftVjANBgkqhkiG9w0BAQsFADBPMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFyY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBaFw0yNzAzMTIyMzU5NTlaMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJFODB2MBAGByqGSM49AgEGBSuBBAAiA2IABNFl8l7cS7QMApzSsvru6WyrOq44ofTUOTIzxULUzDMMNMchIJBwXOhiLxxxs0LXeb5GDcHbR6EToMffgSZjO9SNHfY9gjMy9vQr5/WWOrQTZxh7az6NSNnq3u2ubT6HTKOB+DCB9TAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFI8NE6L2Ln7RUGwzGDhdWY4jcpHKMB8GA1UdIwQYMBaAFHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzATBgNVHSAEDDAKMAgGBmeBDAECATAnBgNVHR8EIDAeMBygGqAYhhZodHRwOi8veDEuYy5sZW5jci5vcmcvMA0GCSqGSIb3DQEBCwUAA4ICAQBnE0hGINKsCYWi0Xx1ygxD5qihEjZ0RI3tTZz1wuATH3ZwYPIp97kWEayanD1j0cDhIYzy4CkDo2jB8D5t0a6zZWzlr98dAQFNh8uKJkIHdLShy+nUyeZxc5bNeMp1Lu0gSzE4McqfmNMvIpeiwWSYO9w82Ob8otvXcO2JUYi3svHIWRm3+707DUbL51XMcY2iZdlCq4Wa9nbuk3WTU4gr6LY8MzVAaDQG2+4U3eJ6qUF10bBnR1uuVyDYs9RhrwucRVnfuDj29CMLTsplM5f5wSV5hUpmUwp/vV7M4w4aGunt74koX71n4EdagCsL/Yk5+mAQU0+tue0JOfAV/R6t1k+Xk9s2HMQFeoxppfzAVC04FdG9M+AC2JWxmFSt6BCuh3CEey3fE52Qrj9YM75rtvIjsm/1Hl+u//Wqxnu1ZQ4jpa+VpuZiGOlWrqSP9eogdOhCGisnyewWJwRQOqK16wiGyZeRxs/Bekw65vwSIaVkBruPiTfMOo0Zh4gVa8/qJgMbJbyrwwG97z/PRgmLKCDl8z3dtA0Z7qq7fta0Gl24uyuB05dqI5J1LvAzKuWdIjT1tP8qCoxSE/xpix8hX2dt3h+/jujUgFPFZ0EVZ0xSyBNRF3MboGZnYXFUxpNjTWPKpagDHJQmqrAcDmWJnMsFY3jSu1igv3OefnWjSQ==\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "intermediate_cert_fingerprintSHA256 <#1>",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1A209DB499625B4EA29F597BE7744BA1E240B8C7629F75B41A3373339FD7EDDF"
+              "finding"      : "83624FD338C8D9B023C18A67CB7A9C0519DA43D11775B4C6CBDAD45C3D997C52"
           }
 ,         {
               "id"           : "intermediate_cert_notBefore <#1>",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2025-02-28 09:49"
+              "finding"      : "2024-03-13 00:00"
           }
 ,         {
               "id"           : "intermediate_cert_notAfter <#1>",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "2027-06-28 09:49"
+              "finding"      : "2027-03-12 23:59"
           }
 ,         {
               "id"           : "intermediate_cert_expiration <#1>",
@@ -479,7 +479,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "Certigna Server Authentication OVCP EU CA G1 <-- Certigna"
+              "finding"      : "E8 <-- ISRG Root X1"
           }
 ,         {
               "id"           : "intermediate_cert_badOCSP",
@@ -507,7 +507,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1774775973"
+              "finding"      : "1775380531"
           }
 ,         {
               "id"           : "HSTS",
@@ -694,7 +694,7 @@
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=18C88C38D800BA1C374DCDA6F8CDF67512829DAA874C5329DCBED626EC31E1E9"
+              "finding"      : "no RSA certificate, can't be used with SSLv2 elsewhere"
           }
 ,         {
               "id"           : "LOGJAM",
@@ -755,14 +755,14 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_81",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_90",
@@ -839,35 +839,35 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win81",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_winphone81",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "No connection"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_11_win10",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_15_win10",
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_101_win10_21h2",
@@ -958,7 +958,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-openssl_111d",
@@ -986,7 +986,7 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
+              "finding"      : "TLSv1.2 ECDHE-ECDSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-thunderbird_91_9",
@@ -1070,6 +1070,6 @@
               "ip"           : "ccbmn.culture.gouv.fr/87.98.187.73",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "94"
+              "finding"      : "63"
           }
 ]
