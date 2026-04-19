@@ -14,13 +14,16 @@
       "content-type": "text/html; charset=utf-8",
       "expires": "-1",
       "vary": "Accept-Encoding",
+      "set-cookie": [
+        "_syrSessGuid=e1aadaf3-8985-4692-b16b-8aa99eef8174; expires=Sun, 19-Apr-2026 04:30:27 GMT; path=/; secure; HttpOnly; SameSite=Lax"
+      ],
       "x-content-type-options": "nosniff",
       "referrer-policy": "strict-origin-when-cross-origin",
       "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
       "content-security-policy": "default-src 'self'; form-action 'self'; script-src https: 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'none'; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data: blob:; font-src 'self' data: https:; frame-src 'self' https: blob:; frame-ancestors 'self' https:; media-src 'self' blob:; connect-src 'self' https://*.google-analytics.com https://*.matomo.cloud",
-      "date": "Sun, 12 Apr 2026 04:20:17 GMT",
+      "date": "Sun, 19 Apr 2026 04:00:29 GMT",
       "connection": "close",
-      "content-length": "43215"
+      "content-length": "43260"
     }
   },
   "tests": {
@@ -100,10 +103,20 @@
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
       "pass": true,
-      "result": "cookies-not-found",
-      "scoreModifier": 0,
-      "data": null,
-      "sameSite": false
+      "result": "cookies-secure-with-httponly-sessions-and-samesite",
+      "scoreModifier": 5,
+      "data": {
+        "_syrSessGuid": {
+          "domain": "www.lrmh.fr",
+          "expires": "2026-04-19T04:30:27.000Z",
+          "httponly": true,
+          "path": "/",
+          "port": null,
+          "samesite": "lax",
+          "secure": true
+        }
+      },
+      "sameSite": true
     },
     "cross-origin-resource-sharing": {
       "expectation": "cross-origin-resource-sharing-not-implemented",
