@@ -1,15 +1,15 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "D+",
+    "grade": "F",
     "error": null,
-    "score": 40,
+    "score": 0,
     "statusCode": 200,
-    "testsFailed": 3,
-    "testsPassed": 7,
+    "testsFailed": 5,
+    "testsPassed": 5,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 03 May 2026 04:27:05 GMT",
+      "date": "Sun, 10 May 2026 04:26:42 GMT",
       "server": "Apache",
       "x-frame-options": "SAMEORIGIN",
       "strict-transport-security": "max-age=15768000",
@@ -54,16 +54,12 @@
     },
     "redirection": {
       "expectation": "redirection-to-https",
-      "pass": true,
-      "result": "redirection-to-https",
-      "scoreModifier": 0,
-      "destination": "https://oscar.culture.fr/oscar_guichet/guichet/identificationGuichet;jsessionid=35CE3314DE63F8E148E691FAC934BBDF",
+      "pass": false,
+      "result": "redirection-invalid-cert",
+      "scoreModifier": -20,
+      "destination": "https://oscar.culture.fr/oscar_guichet/guichet/identificationGuichet;jsessionid=A9EFAD832FE11367193A89E0BFA48AE9",
       "redirects": true,
-      "route": [
-        "http://oscar.culture.fr/",
-        "https://oscar.culture.fr/oscar_guichet/",
-        "https://oscar.culture.fr/oscar_guichet/guichet/identificationGuichet;jsessionid=35CE3314DE63F8E148E691FAC934BBDF"
-      ],
+      "route": [],
       "statusCode": 200
     },
     "referrer-policy": {
@@ -77,12 +73,12 @@
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=15768000",
+      "pass": false,
+      "result": "hsts-invalid-cert",
+      "scoreModifier": -20,
+      "data": null,
       "includeSubDomains": false,
-      "maxAge": 15768000,
+      "maxAge": null,
       "preload": false,
       "preloaded": false
     },
