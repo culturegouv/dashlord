@@ -52,8 +52,8 @@
               "id"           : "TLS1_3",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "offered with final"
+              "severity"     : "INFO",
+              "finding"      : "not offered + downgraded to weaker protocol"
           }
 ,         {
               "id"           : "ALPN_HTTP2",
@@ -206,14 +206,14 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "prime256v1 secp384r1 secp521r1"
+              "finding"      : "secp256k1 prime256v1 secp384r1 secp521r1"
           }
 ,         {
               "id"           : "TLS_extensions",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "'server name/#0' 'max fragment length/#1' 'supported_groups/#10' 'EC point formats/#11' 'application layer protocol negotiation/#16' 'extended master secret/#23' 'session ticket/#35' 'supported versions/#43' 'key share/#51' 'renegotiation info/#65281'"
+              "finding"      : "'server name/#0' 'EC point formats/#11' 'heartbeat/#15' 'application layer protocol negotiation/#16' 'session ticket/#35' 'renegotiation info/#65281'"
           }
 ,         {
               "id"           : "TLS_session_ticket",
@@ -251,11 +251,11 @@
               "finding"      : "random"
           }
 ,         {
-              "id"           : "certificate_compression",
+              "id"           : "cert_compression",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "none"
+              "finding"      : "N/A"
           }
 ,         {
               "id"           : "clientAuth",
@@ -387,8 +387,8 @@
               "id"           : "cert_expirationStatus",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "34 >= 30 days"
+              "severity"     : "MEDIUM",
+              "finding"      : "expires < 30 days (27)"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -401,7 +401,7 @@
               "id"           : "cert_notAfter",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "MEDIUM",
               "finding"      : "2026-06-13 23:00"
           }
 ,         {
@@ -549,7 +549,7 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1778385997"
+              "finding"      : "1778991342"
           }
 ,         {
               "id"           : "HSTS",
@@ -608,7 +608,7 @@
               "severity"     : "OK",
               "cve"          : "CVE-2014-0160",
               "cwe"          : "CWE-119",
-              "finding"      : "not vulnerable, no heartbeat extension"
+              "finding"      : "not vulnerable , timed out"
           }
 ,         {
               "id"           : "CCS",
@@ -667,10 +667,10 @@
               "id"           : "BREACH",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "MEDIUM",
               "cve"          : "CVE-2013-3587",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable, no gzip/deflate/compress/br HTTP compression  - only supplied '/' tested"
+              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
           }
 ,         {
               "id"           : "POODLE_SSL",
@@ -797,63 +797,63 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_X",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_11_12",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_13_14",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-android_15",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-chrome_101_win10",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-chromium_137_win11",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-firefox_100_win10",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-firefox_137_win11",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-ie_8_win7",
@@ -902,35 +902,35 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-edge_133_win11_23h2",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-safari_184_ios_184",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-safari_154_osx_1231",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-safari_184_osx_154",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_7u25",
@@ -944,42 +944,42 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_1102",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_1703",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-java_2106",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-go_1178",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "clientsimulation-libressl_336",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_CHACHA20_POLY1305_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_102e",
@@ -993,21 +993,21 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_315",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-openssl_350",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_256_GCM_SHA384"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384"
           }
 ,         {
               "id"           : "clientsimulation-apple_mail_16_0",
@@ -1021,7 +1021,7 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "TLSv1.3 TLS_AES_128_GCM_SHA256"
+              "finding"      : "TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256"
           }
 ,         {
               "id"           : "rating_spec",
@@ -1091,13 +1091,20 @@
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "A+"
+              "finding"      : "A-"
+          }
+,         {
+              "id"           : "grade_cap_warning_1",
+              "ip"           : "www.musee-moyenage.fr/91.194.100.121",
+              "port"         : "443",
+              "severity"     : "INFO",
+              "finding"      : "TLS 1.3 is not supported"
           }
 ,         {
               "id"           : "scanTime",
               "ip"           : "www.musee-moyenage.fr/91.194.100.121",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "61"
+              "finding"      : "91"
           }
 ]
