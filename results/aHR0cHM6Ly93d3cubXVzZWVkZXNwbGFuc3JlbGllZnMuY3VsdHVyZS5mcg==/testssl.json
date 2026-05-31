@@ -113,9 +113,9 @@
               "id"           : "cipherlist_OBSOLETED",
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
-              "severity"     : "INFO",
+              "severity"     : "LOW",
               "cwe"          : "CWE-310",
-              "finding"      : "not offered"
+              "finding"      : "offered"
           }
 ,         {
               "id"           : "cipherlist_STRONG_NOFS",
@@ -164,7 +164,7 @@
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES256-GCM-SHA384"
+              "finding"      : "ECDHE-ECDSA-AES128-GCM-SHA256 ECDHE-ECDSA-AES128-SHA ECDHE-ECDSA-AES256-GCM-SHA384 ECDHE-ECDSA-AES256-SHA"
           }
 ,         {
               "id"           : "FS_KEMs",
@@ -178,7 +178,7 @@
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "prime256v1"
+              "finding"      : "prime256v1 secp384r1 secp521r1"
           }
 ,         {
               "id"           : "TLS_extensions",
@@ -353,7 +353,7 @@
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "62 >= 30 days"
+              "finding"      : "55 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -514,7 +514,7 @@
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1779616209"
+              "finding"      : "1780221387"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -755,10 +755,10 @@
               "id"           : "LUCKY13",
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "LOW",
               "cve"          : "CVE-2013-0169",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
+              "finding"      : "potentially vulnerable, uses obsolete TLS CBC ciphers"
           }
 ,         {
               "id"           : "winshock",
@@ -1098,6 +1098,6 @@
               "ip"           : "www.museedesplansreliefs.culture.fr/89.106.200.1",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "34"
+              "finding"      : "35"
           }
 ]
