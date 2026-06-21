@@ -1,26 +1,24 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "C-",
+    "grade": "F",
     "error": null,
-    "score": 45,
+    "score": 10,
     "statusCode": 200,
-    "testsFailed": 4,
-    "testsPassed": 6,
+    "testsFailed": 5,
+    "testsPassed": 5,
     "testsQuantity": 10,
     "responseHeaders": {
-      "server": "nginx",
-      "date": "Sun, 14 Jun 2026 09:06:26 GMT",
-      "content-type": "text/html; charset=UTF-8",
-      "transfer-encoding": "chunked",
-      "connection": "close",
-      "x-hello": "World",
-      "x-varnish": "7671030 8135999",
-      "age": "62602",
-      "vary": "Accept-Encoding,X-Requested-With",
-      "cache-control": "public, s-maxage=600, stale-while-revalidate=300, stale-if-error=300",
-      "accept-ranges": "bytes",
-      "strict-transport-security": "max-age=15768000"
+      "date": "Sun, 21 Jun 2026 09:03:42 GMT",
+      "set-cookie": [
+        "bot_mitigation_cookie=RIRYMJFKMHRR6FV443UNIH67BTGNDXIPRU56OF5XBQ4R7WCCWLEWG2LI4QMXSENFTCKEKECXTKMYOK6RPD5YBYL4KI7DZTXJPROKDJJXRRLLQZ3UMEDA====; Path=/; SameSite=lax"
+      ],
+      "content-type": "text/html",
+      "cache-control": "no-store",
+      "vary": "Accept-Encoding",
+      "content-length": "201",
+      "x-cp-via": "C2-867be992-0e7bb70f",
+      "connection": "close"
     }
   },
   "tests": {
@@ -37,18 +35,25 @@
     },
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
-      "pass": true,
-      "result": "cookies-not-found",
-      "scoreModifier": 0,
-      "data": null,
+      "pass": false,
+      "result": "cookies-without-secure-flag",
+      "scoreModifier": -20,
+      "data": {
+        "bot_mitigation_cookie": {
+          "domain": "histoiredesarts.culture.gouv.fr",
+          "path": "/",
+          "port": null,
+          "samesite": "lax"
+        }
+      },
       "sameSite": false
     },
     "cross-origin-resource-sharing": {
       "expectation": "cross-origin-resource-sharing-not-implemented",
       "pass": true,
-      "result": "cross-origin-resource-sharing-implemented-with-restricted-access",
+      "result": "cross-origin-resource-sharing-not-implemented",
       "scoreModifier": 0,
-      "data": "null"
+      "data": null
     },
     "redirection": {
       "expectation": "redirection-to-https",
@@ -74,34 +79,21 @@
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=15768000",
+      "pass": false,
+      "result": "hsts-not-implemented",
+      "scoreModifier": -20,
+      "data": null,
       "includeSubDomains": false,
-      "maxAge": 15768000,
+      "maxAge": null,
       "preload": false,
       "preloaded": false
     },
     "subresource-integrity": {
       "expectation": "sri-implemented-and-external-scripts-loaded-securely",
-      "pass": false,
-      "result": "sri-not-implemented-but-external-scripts-loaded-securely",
-      "scoreModifier": -5,
-      "data": {
-        "https://tarteaucitron.io/load.js?domain=histoiredesarts.culture.gouv.fr&uuid=cb6c31eaf0d65c6f8768c5734dd1a8df6bfd7780": {
-          "crossorigin": null,
-          "integrity": null
-        },
-        "https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.10/jquery.autocomplete.js": {
-          "crossorigin": null,
-          "integrity": null
-        },
-        "https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js": {
-          "crossorigin": null,
-          "integrity": null
-        }
-      }
+      "pass": true,
+      "result": "sri-not-implemented-but-all-scripts-loaded-from-secure-origin",
+      "scoreModifier": 0,
+      "data": {}
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
