@@ -1,27 +1,29 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "B",
+    "grade": "C-",
     "error": null,
-    "score": 70,
+    "score": 45,
     "statusCode": 200,
-    "testsFailed": 3,
-    "testsPassed": 7,
+    "testsFailed": 5,
+    "testsPassed": 5,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 21 Jun 2026 04:45:48 GMT",
+      "date": "Sun, 28 Jun 2026 04:34:21 GMT",
       "content-type": "text/html; charset=UTF-8",
       "transfer-encoding": "chunked",
       "connection": "close",
       "vary": "Accept-Encoding",
-      "last-modified": "Sun, 21 Jun 2026 03:23:03 GMT",
+      "referrer-policy": "strict-origin-when-cross-origin, strict-origin-when-cross-origin",
+      "x-frame-options": "SAMEORIGIN, SAMEORIGIN",
+      "x-xss-protection": "1; mode=block",
+      "x-content-type-options": "nosniff, nosniff",
+      "strict-transport-security": "max-age=31536000, max-age=31536000; includeSubDomains",
+      "link": "<https://port-royal-des-champs.fr/wp-json/>; rel=\"https://api.w.org/\", <https://port-royal-des-champs.fr/wp-json/wp/v2/pages/2446>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://port-royal-des-champs.fr/>; rel=shortlink",
+      "last-modified": "Sun, 28 Jun 2026 04:34:21 GMT",
       "cache-control": "max-age=0",
-      "expires": "Sun, 21 Jun 2026 04:45:48 GMT",
-      "x-frame-options": "SAMEORIGIN",
-      "x-content-type-options": "nosniff",
-      "referrer-policy": "strict-origin-when-cross-origin",
+      "expires": "Sun, 28 Jun 2026 04:34:20 GMT",
       "permissions-policy": "camera=(), microphone=(), geolocation=()",
-      "strict-transport-security": "max-age=31536000; includeSubDomains",
       "content-security-policy": "frame-ancestors 'self';",
       "server": "o2switch-PowerBoost-v3"
     }
@@ -87,18 +89,18 @@
       "pass": true,
       "result": "referrer-policy-private",
       "scoreModifier": 5,
-      "data": "strict-origin-when-cross-origin",
+      "data": "strict-origin-when-cross-origin, strict-origin-when-cross-origin",
       "http": true,
       "meta": false
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": true,
-      "result": "hsts-implemented-max-age-at-least-six-months",
-      "scoreModifier": 0,
-      "data": "max-age=31536000; includeSubDomains",
-      "includeSubDomains": true,
-      "maxAge": 31536000,
+      "pass": false,
+      "result": "hsts-header-invalid",
+      "scoreModifier": -20,
+      "data": "max-age=31536000, max-age=31536000; includeSubDomains",
+      "includeSubDomains": false,
+      "maxAge": null,
       "preload": false,
       "preloaded": false
     },
@@ -136,11 +138,11 @@
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-content/cache/min/1/wp-content/plugins/mailin/js/mailin-front.js?ver=1776250942": {
+        "https://port-royal-des-champs.fr/wp-content/cache/min/1/wp-content/plugins/mailin/js/mailin-front.js?ver=1782322571": {
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-content/cache/min/1/sdk/1.1/wonderpush-loader.min.js?ver=1776250942": {
+        "https://port-royal-des-champs.fr/wp-content/cache/min/1/sdk/1.1/wonderpush-loader.min.js?ver=1782322572": {
           "crossorigin": null,
           "integrity": null
         },
@@ -148,7 +150,7 @@
           "crossorigin": null,
           "integrity": null
         },
-        "https://port-royal-des-champs.fr/wp-content/uploads/fusion-scripts/081eabdd4e5c6d0718639b3cd8178a7b.min.js": {
+        "https://port-royal-des-champs.fr/wp-content/uploads/fusion-scripts/75434cc7c494604adc03830d8b41d4b9.min.js": {
           "crossorigin": null,
           "integrity": null
         }
@@ -156,17 +158,17 @@
     },
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
-      "pass": true,
-      "result": "x-content-type-options-nosniff",
-      "scoreModifier": 0,
-      "data": "nosniff"
+      "pass": false,
+      "result": "x-content-type-options-header-invalid",
+      "scoreModifier": -5,
+      "data": "nosniff, nosniff"
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
       "pass": true,
       "result": "x-frame-options-implemented-via-csp",
       "scoreModifier": 5,
-      "data": "SAMEORIGIN"
+      "data": "SAMEORIGIN, SAMEORIGIN"
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
