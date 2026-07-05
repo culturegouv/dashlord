@@ -1,6 +1,44 @@
 [
   [
     {
+      "template": "dns/caa-fingerprint.yaml",
+      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
+      "template-id": "caa-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
+      "info": {
+        "name": "CAA Record",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "caa",
+          "discovery"
+        ],
+        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
+        "reference": [
+          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "www.museedesplansreliefs.culture.fr.",
+      "matched-at": "www.museedesplansreliefs.culture.fr",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 49052\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 49052\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n\n;; AUTHORITY SECTION:\nredirect.pizza.\t1527\tIN\tSOA\tns1.enflow.nl. hostmaster.enflow.nl. 1646685900 10800 3600 604800 1800\n",
+      "timestamp": "2026-07-05T09:28:37.352397423Z",
+      "matcher-status": true
+    },
+    {
       "template": "dns/aaaa-fingerprint.yaml",
       "template-url": "https://templates.nuclei.sh/public/aaaa-fingerprint",
       "template-id": "aaaa-fingerprint",
@@ -38,9 +76,9 @@
       "extracted-results": [
         "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 25399\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 25399\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t3600\tIN\tAAAA\t2a12:5240::1\n",
-      "timestamp": "2026-06-28T10:01:08.037120135Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 22269\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 22269\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t3160\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-07-05T09:28:37.372008237Z",
       "matcher-status": true
     },
     {
@@ -76,47 +114,9 @@
       "extracted-results": [
         "edge.redirect.pizza."
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 55855\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 55855\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-06-28T10:01:09.017637552Z",
-      "matcher-status": true
-    },
-    {
-      "template": "dns/caa-fingerprint.yaml",
-      "template-url": "https://templates.nuclei.sh/public/caa-fingerprint",
-      "template-id": "caa-fingerprint",
-      "template-path": "/home/runner/nuclei-templates/dns/caa-fingerprint.yaml",
-      "info": {
-        "name": "CAA Record",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "dns",
-          "caa",
-          "discovery"
-        ],
-        "description": "A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.",
-        "reference": [
-          "https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-200"
-          ]
-        }
-      },
-      "type": "dns",
-      "host": "www.museedesplansreliefs.culture.fr.",
-      "matched-at": "www.museedesplansreliefs.culture.fr",
-      "request": ";; opcode: QUERY, status: NOERROR, id: 16156\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 16156\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t2885\tIN\tCNAME\tedge.redirect.pizza.\n\n;; AUTHORITY SECTION:\nredirect.pizza.\t1800\tIN\tSOA\tns1.enflow.nl. hostmaster.enflow.nl. 1646685899 10800 3600 604800 1800\n",
-      "timestamp": "2026-06-28T10:01:09.027993508Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 43886\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 43886\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-07-05T09:28:37.445321116Z",
       "matcher-status": true
     },
     {
@@ -147,7 +147,7 @@
         "Let's Encrypt"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-06-28T10:06:38.502686103Z",
+      "timestamp": "2026-07-05T09:34:11.300081463Z",
       "matcher-status": true
     },
     {
@@ -178,7 +178,7 @@
         "www.museedesplansreliefs.culture.fr"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-06-28T10:06:38.502859027Z",
+      "timestamp": "2026-07-05T09:34:11.300225442Z",
       "matcher-status": true
     },
     {
@@ -210,7 +210,7 @@
         "tls12"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-06-28T10:06:38.6915073Z",
+      "timestamp": "2026-07-05T09:34:13.613939352Z",
       "matcher-status": true
     },
     {
@@ -242,7 +242,7 @@
         "tls13"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-06-28T10:06:38.714046924Z",
+      "timestamp": "2026-07-05T09:34:13.685435386Z",
       "matcher-status": true
     }
   ]
