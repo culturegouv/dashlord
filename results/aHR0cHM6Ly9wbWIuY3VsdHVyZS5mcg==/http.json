@@ -1,15 +1,15 @@
 {
   "scan": {
     "algorithmVersion": 4,
-    "grade": "C",
+    "grade": "B",
     "error": null,
-    "score": 50,
+    "score": 70,
     "statusCode": 200,
-    "testsFailed": 3,
-    "testsPassed": 7,
+    "testsFailed": 2,
+    "testsPassed": 8,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 05 Jul 2026 10:08:04 GMT",
+      "date": "Sun, 12 Jul 2026 09:49:44 GMT",
       "server": "Apache",
       "x-frame-options": "SAMEORIGIN",
       "last-modified": "Wed, 02 Apr 2025 14:20:27 GMT",
@@ -17,9 +17,10 @@
       "accept-ranges": "bytes",
       "content-type": "text/html; charset=UTF-8",
       "vary": "Accept-Encoding",
-      "content-length": "1372",
-      "x-cp-via": "C3-08a37475-456e8c20",
-      "connection": "close"
+      "strict-transport-security": "max-age=31536000",
+      "x-cp-via": "C2-b215c61d-3ad35c60",
+      "connection": "close",
+      "transfer-encoding": "chunked"
     }
   },
   "tests": {
@@ -73,12 +74,12 @@
     },
     "strict-transport-security": {
       "expectation": "hsts-implemented-max-age-at-least-six-months",
-      "pass": false,
-      "result": "hsts-not-implemented",
-      "scoreModifier": -20,
-      "data": null,
+      "pass": true,
+      "result": "hsts-implemented-max-age-at-least-six-months",
+      "scoreModifier": 0,
+      "data": "max-age=31536000",
       "includeSubDomains": false,
-      "maxAge": null,
+      "maxAge": 31536000,
       "preload": false,
       "preloaded": false
     },
