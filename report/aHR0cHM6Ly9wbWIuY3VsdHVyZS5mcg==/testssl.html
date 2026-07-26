@@ -19,9 +19,9 @@
 <span style="font-weight:bold;">#####################################################################</span>
 
   Using <i>OpenSSL 1.0.2-bad (Mar 28 2025)</i>  [~183 ciphers]
-  on runnervm3jd5f:/home/testssl/bin/openssl.Linux.x86_64
+  on runnervmvrwv9:/home/testssl/bin/openssl.Linux.x86_64
 
-<span style="color:white;background-color:black;"> Start 2026-07-21 18:27:28        --&gt;&gt; 87.98.187.73:443 (pmb.culture.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2026-07-26 09:50:27        --&gt;&gt; 87.98.187.73:443 (pmb.culture.fr) &lt;&lt;--</span>
 
  rDNS (87.98.187.73):    ip73.ip-87-98-187.eu.
  Service detected:       HTTP
@@ -92,33 +92,36 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Server key size              </span>EC <span style="color:#008817;">256</span> bits (curve P-256)
 <span style="font-weight:bold;"> Server key usage             </span>Digital Signature
 <span style="font-weight:bold;"> Server extended key usage    </span>TLS Web Server Authentication
-<span style="font-weight:bold;"> Serial                       </span>057F028D1377561B306E505164097DF06B20 (OK: length 18)
-<span style="font-weight:bold;"> Fingerprints                 </span>SHA1 AC8415DC9EE306A9A1B8FCB40DEB6F2EC8C06B49
-                              SHA256 461B3552377BD492B5E836FF2DEFF2A829FC0B60FC9C3E0350D53D803FBFBE3F
+<span style="font-weight:bold;"> Serial                       </span>055AC7174A9962CE2E67BD37D227B52468CB (OK: length 18)
+<span style="font-weight:bold;"> Fingerprints                 </span>SHA1 BE3B226F568952BCDC4815E116918346B4B73055
+                              SHA256 91CE0C945E726B578F7D6433B853F4BDBC7A6C8DE20F0F17D1E2C3A7F06FF5EE
 <span style="font-weight:bold;"> Common Name (CN)             </span><i>pmb.culture.fr </i> (request w/o SNI didn&apos;t succeed, usual for EC certificates)
 <span style="font-weight:bold;"> subjectAltName (SAN)         </span><i>pmb.culture.fr </i>
 <span style="font-weight:bold;"> Trust (hostname)             </span><span style="color:#008817;">Ok via SAN and CN</span> (SNI mandatory)
 <span style="font-weight:bold;"> Chain of trust</span>               <span style="color:#008817;">Ok   </span><span style="color:#cd00cd;"></span>
 <span style="font-weight:bold;"> EV cert</span> (experimental)       no 
-<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">33 &gt;= 30 days</span> (2026-05-26 16:57 --&gt; 2026-08-24 16:57)
+<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">89 &gt;= 30 days</span> (2026-07-25 18:11 --&gt; 2026-10-23 18:11)
 <span style="font-weight:bold;"> ETS/&quot;eTLS&quot;</span>, visibility info  not present
-<span style="font-weight:bold;"> Certificate Revocation List  </span>http://e8.c.lencr.org/33.crl
+<span style="font-weight:bold;"> Certificate Revocation List  </span>http://ye1.c.lencr.org/76.crl
 <span style="font-weight:bold;"> OCSP URI                     </span>--
 <span style="font-weight:bold;"> OCSP stapling                </span>not offered
 <span style="font-weight:bold;"> OCSP must staple extension   </span>--
 <span style="font-weight:bold;"> DNS CAA RR</span> (experimental)    <span style="color:#008817;">available</span> - please check for match with &quot;Issuer&quot; below
-                              <i>issue=certigna.com, issue=letsencrypt.org</i>
+                              <i>issue=certigna.com, issue=harica.gr,
+                              issue=letsencrypt.org, issuewild=harica.gr</i>
 <span style="font-weight:bold;"> Certificate Transparency     </span><span style="color:#008817;">yes</span> (certificate extension)
-<span style="font-weight:bold;"> Certificates provided</span>        2
-<span style="font-weight:bold;"> Issuer                       </span><i>E8</i> (<i>Let&apos;s Encrypt</i> from <i>US</i>)
-<span style="font-weight:bold;"> Intermediate cert validity   </span>#1: <span style="color:#008817;">ok &gt; 40 days</span> (2027-03-12 23:59). <i>E8</i> &lt;-- <i>ISRG Root X1</i>
+<span style="font-weight:bold;"> Certificates provided</span>        4
+<span style="font-weight:bold;"> Issuer                       </span><i>YE1</i> (<i>Let&apos;s Encrypt</i> from <i>US</i>)
+<span style="font-weight:bold;"> Intermediate cert validity   </span>#1: <span style="color:#008817;">ok &gt; 40 days</span> (2028-09-02 23:59). <i>YE1</i> &lt;-- <i>Root YE</i>
+                              #2: <span style="color:#008817;">ok &gt; 40 days</span> (2032-09-02 23:59). <i>Root YE</i> &lt;-- <i>ISRG Root X2</i>
+                              #3: <span style="color:#008817;">ok &gt; 40 days</span> (2032-09-02 23:59). <i>ISRG Root X2</i> &lt;-- <i>ISRG Root X1</i>
 <span style="font-weight:bold;"> Intermediate Bad OCSP</span> (exp.) <span style="color:#008817;">Ok</span>
 
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing HTTP header response @ &quot;/&quot; </span>
 
 <span style="font-weight:bold;"> HTTP Status Code           </span>  200 OK
-<span style="font-weight:bold;"> HTTP clock skew              </span>-1 sec from localtime
+<span style="font-weight:bold;"> HTTP clock skew              </span>-2 sec from localtime
 <span style="font-weight:bold;"> Strict Transport Security    </span><span style="color:#008817;">365 days</span>=31536000 s<span style="color:#168092;">, just this domain</span>
 <span style="font-weight:bold;"> Public Key Pinning           </span>--
 <span style="font-weight:bold;"> Server banner                </span>Apache&apos;
@@ -203,7 +206,7 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Final Score                  </span>84
 <span style="font-weight:bold;"> Overall Grade                </span><span style="color:#008817;font-weight:bold;">A+</span>
 
-<span style="color:white;background-color:black;"> Done 2026-07-21 18:28:31 [  65s] --&gt;&gt; 87.98.187.73:443 (pmb.culture.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2026-07-26 09:51:37 [  71s] --&gt;&gt; 87.98.187.73:443 (pmb.culture.fr) &lt;&lt;--</span>
 
 
 </pre>

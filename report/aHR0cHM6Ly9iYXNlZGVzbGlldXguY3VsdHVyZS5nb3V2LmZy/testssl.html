@@ -19,9 +19,9 @@
 <span style="font-weight:bold;">#####################################################################</span>
 
   Using <i>OpenSSL 1.0.2-bad (Mar 28 2025)</i>  [~183 ciphers]
-  on runnervm3jd5f:/home/testssl/bin/openssl.Linux.x86_64
+  on runnervmvrwv9:/home/testssl/bin/openssl.Linux.x86_64
 
-<span style="color:white;background-color:black;"> Start 2026-07-21 09:51:20        --&gt;&gt; 94.23.123.122:443 (basedeslieux.culture.gouv.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2026-07-26 01:34:06        --&gt;&gt; 94.23.123.122:443 (basedeslieux.culture.gouv.fr) &lt;&lt;--</span>
 
  rDNS (94.23.123.122):   ip122.ip-94-23-123.eu.
  Service detected:       HTTP
@@ -33,7 +33,7 @@
 <span style="font-weight:bold;"> TLS 1      </span>not offered
 <span style="font-weight:bold;"> TLS 1.1    </span>not offered
 <span style="font-weight:bold;"> TLS 1.2    </span><span style="color:#008817;font-weight:bold;">offered (OK)</span>
-<span style="font-weight:bold;"> TLS 1.3    </span><span style="color:#008817;font-weight:bold;">offered (OK)</span>: final
+<span style="font-weight:bold;"> TLS 1.3    </span><span style="color:#cd00cd;">Unexpected results</span>, rerun with DEBUG&gt;=2 or --ssl-native
 <span style="font-weight:bold;"> ALPN/HTTP2 </span><span style="color:#008817;">h2</span>, http/1.1 (offered)
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing cipher categories </span>
@@ -50,6 +50,8 @@
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing server&apos;s cipher preferences </span>
 
+<span style="color:#cd00cd;">Fixme: something weird happened around line 7091</span>
+<span style="color:#cd00cd;">Fixme: something weird happened around line 7096</span>
 Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Cipher Suite Name (IANA/RFC)
 -----------------------------------------------------------------------------------------------------------------------------
 <u>SSLv2</u>
@@ -62,9 +64,9 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
  - 
 <u>TLSv1.2</u> (server order)
 <u>TLSv1.3</u>
-<span style="color:#cd00cd;">Local problem: Your /home/testssl/bin/openssl.Linux.x86_64 does not support -tls1_3</span>
+<span style="color:#cd00cd;">Local problem: /home/testssl/bin/openssl.Linux.x86_64 doesn&apos;t support &quot;s_client -tls1_3&quot;</span>
 
-<span style="font-weight:bold;"> Has server cipher order?     </span><span style="color:#008817;">yes (OK)</span> -- only for &lt; TLS 1.3
+<span style="font-weight:bold;"> Has server cipher order?     </span><span style="color:#008817;font-weight:bold;">yes (OK)</span> -- TLS 1.3 and below
 
 
 <span style="text-decoration:underline;font-weight:bold;"> Testing robust forward secrecy (FS)</span><u> -- omitting Null Authentication/Encryption, 3DES, RC4 </u>
@@ -103,14 +105,15 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
                               https://search.censys.io/search?resource=hosts&amp;virtual_hosts=INCLUDE&amp;q=7ADC9D9F3CA9A2D8CD2A8C8920076D7449DF5B02367236D8B1F27C4D0C11B197
 <span style="font-weight:bold;"> Chain of trust</span>               <span style="color:#008817;">Ok   </span><span style="color:#cd00cd;"></span>
 <span style="font-weight:bold;"> EV cert</span> (experimental)       no 
-<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">50 &gt;= 30 days</span> (2026-06-11 10:57 --&gt; 2026-09-09 10:57)
+<span style="font-weight:bold;"> Certificate Validity (UTC)   </span><span style="color:#008817;">45 &gt;= 30 days</span> (2026-06-11 10:57 --&gt; 2026-09-09 10:57)
 <span style="font-weight:bold;"> ETS/&quot;eTLS&quot;</span>, visibility info  not present
 <span style="font-weight:bold;"> Certificate Revocation List  </span>http://ye1.c.lencr.org/85.crl
 <span style="font-weight:bold;"> OCSP URI                     </span>--
 <span style="font-weight:bold;"> OCSP stapling                </span>not offered
 <span style="font-weight:bold;"> OCSP must staple extension   </span>--
 <span style="font-weight:bold;"> DNS CAA RR</span> (experimental)    <span style="color:#008817;">available</span> - please check for match with &quot;Issuer&quot; below
-                              <i>issue=certigna.com, issue=letsencrypt.org</i>
+                              <i>issue=certigna.com, issue=harica.gr,
+                              issue=letsencrypt.org, issuewild=harica.gr</i>
 <span style="font-weight:bold;"> Certificate Transparency     </span><span style="color:#008817;">yes</span> (certificate extension)
 <span style="font-weight:bold;"> Certificates provided</span>        4
 <span style="font-weight:bold;"> Issuer                       </span><i>YE1</i> (<i>Let&apos;s Encrypt</i> from <i>US</i>)
@@ -207,9 +210,10 @@ Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.   Encryption  Bits     Ciphe
 <span style="font-weight:bold;"> Key Exchange </span>    (weighted)  100 (30)
 <span style="font-weight:bold;"> Cipher Strength </span> (weighted)  60 (24)
 <span style="font-weight:bold;"> Final Score                  </span>84
-<span style="font-weight:bold;"> Overall Grade                </span><span style="color:#008817;font-weight:bold;">A+</span>
+<span style="font-weight:bold;"> Overall Grade                </span><span style="color:#008817;font-weight:bold;">A-</span>
+<span style="font-weight:bold;"> Grade warning                </span><span style="color:#c05600;">TLS 1.3 is not supported</span>
 
-<span style="color:white;background-color:black;"> Done 2026-07-21 09:52:21 [  63s] --&gt;&gt; 94.23.123.122:443 (basedeslieux.culture.gouv.fr) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2026-07-26 01:35:43 [  99s] --&gt;&gt; 94.23.123.122:443 (basedeslieux.culture.gouv.fr) &lt;&lt;--</span>
 
 
 </pre>
