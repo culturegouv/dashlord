@@ -1,6 +1,44 @@
 [
   [
     {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "data.culture.gouv.fr.",
+      "matched-at": "data.culture.gouv.fr",
+      "extracted-results": [
+        "edge.redirect.pizza."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 25609\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 25609\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-08-16T07:08:11.579256101Z",
+      "matcher-status": true
+    },
+    {
       "template": "dns/aaaa-fingerprint.yaml",
       "template-url": "https://templates.nuclei.sh/public/aaaa-fingerprint",
       "template-id": "aaaa-fingerprint",
@@ -38,47 +76,135 @@
       "extracted-results": [
         "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 4414\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 4414\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t1279\tIN\tAAAA\t2a12:5240::1\n",
-      "timestamp": "2026-08-09T07:04:10.714293839Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 24480\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 24480\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t3600\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-08-16T07:08:11.721293588Z",
       "matcher-status": true
     },
     {
-      "template": "dns/dns-saas-service-detection.yaml",
-      "template-url": "https://templates.nuclei.sh/public/dns-saas-service-detection",
-      "template-id": "dns-saas-service-detection",
-      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
       "info": {
-        "name": "DNS SaaS Service Detection",
+        "name": "Detect SSL Certificate Issuer",
         "author": [
-          "noah @thesubtlety",
-          "pdteam"
+          "lingtren"
         ],
         "tags": [
-          "dns",
-          "service",
+          "ssl",
+          "tls",
           "discovery"
         ],
-        "description": "A CNAME DNS record was discovered",
-        "reference": [
-          "https://ns1.com/resources/cname",
-          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
-          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
-        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
         }
       },
-      "type": "dns",
-      "host": "data.culture.gouv.fr.",
-      "matched-at": "data.culture.gouv.fr",
+      "type": "ssl",
+      "host": "data.culture.gouv.fr",
+      "matched-at": "data.culture.gouv.fr:443",
       "extracted-results": [
-        "edge.redirect.pizza."
+        "Let's Encrypt"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 30760\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 30760\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-08-09T07:04:10.732381632Z",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-08-16T07:13:43.279105123Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "data.culture.gouv.fr",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "data.culture.gouv.fr"
+      ],
+      "ip": "89.106.200.1",
+      "timestamp": "2026-08-16T07:13:43.279275862Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "data.culture.gouv.fr",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "89.106.200.1",
+      "timestamp": "2026-08-16T07:13:43.454301142Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "data.culture.gouv.fr",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "89.106.200.1",
+      "timestamp": "2026-08-16T07:13:43.476966057Z",
       "matcher-status": true
     }
   ]
