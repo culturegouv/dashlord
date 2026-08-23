@@ -38,406 +38,14 @@
           ]
         }
       },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696772839Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696839023Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696861465Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696877305Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "strict-transport-security",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696891361Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696905127Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696915416Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696926657Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
       "matcher-name": "referrer-policy",
       "type": "http",
       "host": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696938049Z",
+      "timestamp": "2026-08-23T07:36:39.125892365Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -484,9 +92,401 @@
       "host": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 09 Aug 2026 07:37:05 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:37:05.696950953Z",
+      "timestamp": "2026-08-23T07:36:39.125963653Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.125977875Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.125991285Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.126002392Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.12601477Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.12602793Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.126039187Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.126050294Z",
+      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 23 Aug 2026 07:36:39 GMT\r\nEtag: W/\"538-2fIPIztwWzyU+geRUdjFxW5ElGU\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BDXKviIH.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CEWgvU_R.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-08-23T07:36:39.126064926Z",
       "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -540,7 +540,7 @@
       ],
       "response": "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.16\r\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:39:22.058154619Z",
+      "timestamp": "2026-08-23T07:38:36.610706014Z",
       "matcher-status": true
     },
     {
@@ -571,7 +571,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:39:31.576213115Z",
+      "timestamp": "2026-08-23T07:38:45.94839632Z",
       "matcher-status": true
     },
     {
@@ -602,7 +602,7 @@
         "app.patrinotes.beta.gouv.fr"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:39:31.576359148Z",
+      "timestamp": "2026-08-23T07:38:45.948567438Z",
       "matcher-status": true
     },
     {
@@ -634,7 +634,7 @@
         "tls12"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:39:34.094823394Z",
+      "timestamp": "2026-08-23T07:38:47.976909997Z",
       "matcher-status": true
     },
     {
@@ -666,7 +666,7 @@
         "tls13"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-08-09T07:39:34.337155276Z",
+      "timestamp": "2026-08-23T07:38:48.196218698Z",
       "matcher-status": true
     }
   ]
