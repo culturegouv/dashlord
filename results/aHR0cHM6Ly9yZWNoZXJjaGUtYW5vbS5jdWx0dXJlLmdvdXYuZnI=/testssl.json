@@ -3,8 +3,8 @@
               "id"           : "service",
               "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "HTTP"
+              "severity"     : "DEBUG",
+              "finding"      : "Couldn't determine service, skipping all HTTP checks"
           }
 ,         {
               "id"           : "pre_128cipher",
@@ -367,7 +367,7 @@
               "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "45 >= 30 days"
+              "finding"      : "38 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -430,7 +430,7 @@
               "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "issue=certigna.com, issue=harica.gr, issue=letsencrypt.org, issuewild=harica.gr"
+              "finding"      : "issue=digicert.com, issue=harica.gr, issue=letsencrypt.org, issuewild=digicert.com, issuewild=harica.gr"
           }
 ,         {
               "id"           : "certificate_transparency",
@@ -594,147 +594,6 @@
               "finding"      : "intermediate certificate(s) is/are ok"
           }
 ,         {
-              "id"           : "HTTP_status_code",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "200 OK ('/')"
-          }
-,         {
-              "id"           : "HTTP_clock_skew",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "-1 seconds from localtime"
-          }
-,         {
-              "id"           : "HTTP_headerTime",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1786869020"
-          }
-,         {
-              "id"           : "HSTS_time",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "730 days (=63072000 seconds) > 15552000 seconds"
-          }
-,         {
-              "id"           : "HSTS_subdomains",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "only for this domain"
-          }
-,         {
-              "id"           : "HSTS_preload",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "domain is NOT marked for preloading"
-          }
-,         {
-              "id"           : "HPKP",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "No support for HTTP Public Key Pinning"
-          }
-,         {
-              "id"           : "banner_server",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "No Server banner line in header, interesting!"
-          }
-,         {
-              "id"           : "banner_application",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "No application banner found"
-          }
-,         {
-              "id"           : "cookie_count",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "2 at '/'"
-          }
-,         {
-              "id"           : "cookie_secure",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1/2 at '/' marked as secure"
-          }
-,         {
-              "id"           : "cookie_httponly",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1/2 at '/' marked as HttpOnly"
-          }
-,         {
-              "id"           : "X-Frame-Options",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "SAMEORIGIN"
-          }
-,         {
-              "id"           : "X-Content-Type-Options",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "nosniff"
-          }
-,         {
-              "id"           : "Content-Security-Policy",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "default-src  'self' 'unsafe-inline' 'unsafe-eval' anom-diffusion-admin.ligeo-archives.com archives-nationales-outre-mer.culture.gouv.fr anom.prd.cloud.culture.fr instance1.ligeo-easyappointments.boscop.fr data: s3.fr-par.scw.cloud webchat.wikit.ai/webchat-embed.js anom.prd.cloud.culture.fr stats.recherche-anom.culture.gouv.fr recherche-anom.culture.gouv.fr   wiki-diffusion.ligeo-archives.com"
-          }
-,         {
-              "id"           : "Permissions-Policy",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "geolocation=(), microphone=(), camera=()"
-          }
-,         {
-              "id"           : "X-XSS-Protection",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1;mode=block"
-          }
-,         {
-              "id"           : "Referrer-Policy",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "no-referrer-when-downgrade"
-          }
-,         {
-              "id"           : "Cache-Control",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "no-cache"
-          }
-,         {
-              "id"           : "banner_reverseproxy",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "INFO",
-              "cwe"          : "CWE-200",
-              "finding"      : "--"
-          }
-,         {
               "id"           : "heartbleed",
               "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
@@ -756,10 +615,10 @@
               "id"           : "ticketbleed",
               "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "INFO",
               "cve"          : "CVE-2016-9244",
               "cwe"          : "CWE-200",
-              "finding"      : "no session ticket extension"
+              "finding"      : "not applicable, not HTTP"
           }
 ,         {
               "id"           : "ROBOT",
@@ -794,16 +653,7 @@
               "severity"     : "OK",
               "cve"          : "CVE-2012-4929",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable"
-          }
-,         {
-              "id"           : "BREACH",
-              "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "cve"          : "CVE-2013-3587",
-              "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable, no gzip/deflate/compress/br HTTP compression  - only supplied '/' tested"
+              "finding"      : "not vulnerable (not using HTTP anyway)"
           }
 ,         {
               "id"           : "POODLE_SSL",
@@ -1231,6 +1081,6 @@
               "ip"           : "recherche-anom.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "85"
+              "finding"      : "105"
           }
 ]
