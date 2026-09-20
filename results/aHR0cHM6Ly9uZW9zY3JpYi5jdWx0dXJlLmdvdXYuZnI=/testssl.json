@@ -1,5 +1,12 @@
 [
          {
+              "id"           : "cmdline_fast_depreciation",
+              "ip"           : "neoscrib.culture.gouv.fr/",
+              "port"         : "443",
+              "severity"     : "WARN",
+              "finding"      : "'--fast' can have some undesired side effects thus it is not recommended to use anymore"
+          }
+,         {
               "id"           : "service",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
@@ -220,7 +227,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "off by -7 seconds from your localtime"
+              "finding"      : "off by -1 seconds from your localtime"
           }
 ,         {
               "id"           : "cert_compression",
@@ -276,7 +283,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "0513EA2588D837F095E4B1CA0B6B05D1CCD1"
+              "finding"      : "05D73D39471B9B9813C69E74002C985C624C"
           }
 ,         {
               "id"           : "cert_serialNumberLen",
@@ -290,21 +297,21 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "F72EA12FCA10BD107F4A453E424640E61323494D"
+              "finding"      : "97F6D9C91E24A9C7EC65AB3599F06E020D7BF815"
           }
 ,         {
               "id"           : "cert_fingerprintSHA256",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "75AE9DB8B069DD9931FB7576327341962C407AB7E513716D891DD73E4EBC368B"
+              "finding"      : "EFDA6DF615120E9AFDD7D6107587825507FD7B22B872311F7C74F022BCF961BC"
           }
 ,         {
               "id"           : "cert",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIFCTCCA/GgAwIBAgISBRPqJYjYN/CV5LHKC2sF0czRMA0GCSqGSIb3DQEBCwUAMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQDEwNZUjIwHhcNMjYwODIyMTk0ODI5WhcNMjYxMTIwMTk0ODI4WjAjMSEwHwYDVQQDExhuZW9zY3JpYi5jdWx0dXJlLmdvdXYuZnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCWfRjJ9qbThyD5hyUHNYaMobouhCQTunPSUntcNcyqNXlpzOMKPyrwAbX7udT/GbOMSygBioURF/WW3gkBFQx2eN6jPv04oNRpFtEEdtdGb4th42+BPlTdWFzSf9vdPaKscpA/ZTZYr50PK6oP6OT5VbbO3EhHAnrTFGdC9/Mdhz0jUK6wyM/HwIxBVcbR5Or10k/FKvEmIx4ozyapH+We1xSrQVMKS9Goo5adjqbxfguEGchKEWNzYz47aLM5tnVxjLjMzvKVOiLkcT77izCXqCgSBOxBXdurfB3Z90P77B/PtbMJFkAROM0q1Ca8quDlFr+TD4rzIMmTG+R92OzVAgMBAAGjggIlMIICITAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUqeWmHVRrYMRaZPqW0moGGdO4ZtAwHwYDVR0jBBgwFoAUQBUtJnntMiCe35pyHdYyH4EMgQwwMwYIKwYBBQUHAQEEJzAlMCMGCCsGAQUFBzAChhdodHRwOi8veXIyLmkubGVuY3Iub3JnLzAjBgNVHREEHDAaghhuZW9zY3JpYi5jdWx0dXJlLmdvdXYuZnIwEwYDVR0gBAwwCjAIBgZngQwBAgEwLgYDVR0fBCcwJTAjoCGgH4YdaHR0cDovL3lyMi5jLmxlbmNyLm9yZy84Mi5jcmwwggELBgorBgEEAdZ5AgQCBIH8BIH5APcAdQCUTkOH+uzB74HzGSQmqBhlAcfTXzgCAT9yZ31VNy4Z2AAAAaArOguaAAAEAwBGMEQCIFkTtgRynKKRCPWv1mrIVmajWFtlY4/3Prrdyo9A1YOZAiAVRDkSwhAgVKNO/fAd7BLWRxitcdDT22xIKNRuDQTpFAB+ABqLnWsP/r+BtHk5xtIxCobW0QLU8EbiGCyd419eJiXvAAABoCs6DwwACAAABQA3fd5UBAMARzBFAiEA1m2zn1QAV3F0N6SY99S9UAlFjaY8EGL8v9B2NEQZpBACIAaXA2bJptvnlWFreLl719ib1BlxJkBFEbfwTNVlzGoVMA0GCSqGSIb3DQEBCwUAA4IBAQAxdAWf/0HGWn5yjyQX0gHNNdjuIh2bQTwO1q2BKC2Mg/Mo7InlfU3IJZUNLdm8umCcnid+27TgunY/kBHTL5iPzUGIMIP0Wtm6FSyqOcE0A72CVkk1LB4omiB1kCP0RawDgdHdP54d5cuTetfke03sjV5IW+SJYJHCjSue0V2jSR9NjIdZxoI4sVMatEf8eQyeLSEAxPPoSeghAF2fnewP6pygFGa8rtonBt6FzIi0lclHlGS1nbFD+CImacq8Qt6unoQcKMug5h6TogDMcEyeIPtGgKW00wWFyWq/vQ/UbrVocrpx+avRAU1Zxj0cLdL0tzwHlJrV9yxUi8Zovclz\n-----END CERTIFICATE-----"
+              "finding"      : "-----BEGIN CERTIFICATE-----\nMIIFCzCCA/OgAwIBAgISBdc9OUcbm5gTxp50ACyYXGJMMA0GCSqGSIb3DQEBCwUAMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQDEwNZUjIwHhcNMjYwOTE4MTg1NDM2WhcNMjYxMjE3MTg1NDM1WjAjMSEwHwYDVQQDExhuZW9zY3JpYi5jdWx0dXJlLmdvdXYuZnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCqnO2L+sha/gyogRfDsph++drJqBlc6TGH/RHJssxbOQD29Vc3GPAc0x0GwZBHLfv0gm0AhG9vm2FJzMf2zGb7ff6deWXk9mecoQy2bWgFOhk5Li7IFyAmufB0veMNdTkKUvl8V8gT59RgUlEYslp1Fwqw4N1TwiOTp/mPZ8YQfXuYDcQBhbYncQ4rPO+tJbdzhxcUC3hVEo1AdBMeau0UuV4Iupq8YT3LBqdlCEUMlA+u3USe/TO2arTMOPZyk23nTg7131VShZEsmSHKn+o31Eoc0YmDvTU2to2KvFue5bMvTCsYnUzlQ9q6Eg9B8ti53JuMbPYpf125lh+6n9BzAgMBAAGjggInMIICIzAOBgNVHQ8BAf8EBAMCBaAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUqqq6cJfQT8TxMj8IpIYSFjvgUJUwHwYDVR0jBBgwFoAUQBUtJnntMiCe35pyHdYyH4EMgQwwMwYIKwYBBQUHAQEEJzAlMCMGCCsGAQUFBzAChhdodHRwOi8veXIyLmkubGVuY3Iub3JnLzAjBgNVHREEHDAaghhuZW9zY3JpYi5jdWx0dXJlLmdvdXYuZnIwEwYDVR0gBAwwCjAIBgZngQwBAgEwLgYDVR0fBCcwJTAjoCGgH4YdaHR0cDovL3lyMi5jLmxlbmNyLm9yZy83Ny5jcmwwggENBgorBgEEAdZ5AgQCBIH+BIH7APkAfgAai51rD/6/gbR5OcbSMQqG1tEC1PBG4hgsneNfXiYl7wAAAaC2FG4jAAgAAAUAQqfzqgQDAEcwRQIgT+K9Hhf0oDHcts7RRVys8TaUNNO/+Cbys1GEcQPy27MCIQC/xAbQgKlNe0uIJvOu00JsNYajp9XJLo9r/cmF2S4IFgB3AMs49xWJfIShRF9bwd37yW7ymlnNRwppBYWwyxTDFFjnAAABoLYUctcAAAQDAEgwRgIhALQtFEoeTR+Us546CPWqbpn3+1gLaVgvXQ0nO6kiKhaxAiEA4Zqke0IGjeTUTZvTBJ9eaAZrp4g2lQefzDDy1s+AHHgwDQYJKoZIhvcNAQELBQADggEBADdrGRbZs+vTM1TWJft9MT8Tj7q0mGHdR/VJpwYgFH93YWe7TToaHVpBow05doACI9bt4KitEfwccaEpzd5XZOZQGTW5xGOAgmaCD63+9Iufcje+JEDj56k2CwlDlEc49cxA65m8DqZRQzjRctuiJu5xsX/CT5tRkTPpdGx1JRFw2+w0+wseTxWOpj1kor7OUJ+D57Jtzg1agAstEWc9wiImf2XRKajI8DitxohPT21X6or7nEx0sVZp6ZUI+P1ZDFzrBM0vh+FQsTgZkvBrWra3kO4N7CkZzByKOioC1J+AjnxvBsITvvXWnGwm0N7ewCNQSy47SIQnGc8Pnewiyc4=\n-----END CERTIFICATE-----"
           }
 ,         {
               "id"           : "cert_commonName",
@@ -353,21 +360,21 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "68 >= 30 days"
+              "finding"      : "88 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "2026-08-22 19:48"
+              "finding"      : "2026-09-18 18:54"
           }
 ,         {
               "id"           : "cert_notAfter",
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "2026-11-20 19:48"
+              "finding"      : "2026-12-17 18:54"
           }
 ,         {
               "id"           : "cert_extlifeSpan",
@@ -388,7 +395,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "http://yr2.c.lencr.org/82.crl"
+              "finding"      : "http://yr2.c.lencr.org/77.crl"
           }
 ,         {
               "id"           : "cert_ocspURL",
@@ -556,7 +563,7 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1789272622"
+              "finding"      : "1789875373"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -764,7 +771,7 @@
               "severity"     : "INFO",
               "cve"          : "CVE-2016-0800 CVE-2016-0703",
               "cwe"          : "CWE-310",
-              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=75AE9DB8B069DD9931FB7576327341962C407AB7E513716D891DD73E4EBC368B"
+              "finding"      : "Make sure you don't use this certificate elsewhere with SSLv2 enabled services, see https://search.censys.io/search?resource=hosts&virtual_hosts=INCLUDE&q=EFDA6DF615120E9AFDD7D6107587825507FD7B22B872311F7C74F022BCF961BC"
           }
 ,         {
               "id"           : "LOGJAM-common_primes",
@@ -1147,6 +1154,6 @@
               "ip"           : "neoscrib.culture.gouv.fr/92.103.206.104",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "123"
+              "finding"      : "99"
           }
 ]
