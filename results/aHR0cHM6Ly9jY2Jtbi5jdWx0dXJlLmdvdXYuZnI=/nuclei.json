@@ -1,3 +1,842 @@
 [
-  []
+  [
+    {
+      "template": "http/misconfiguration/cookies-without-httponly.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/cookies-without-httponly",
+      "template-id": "cookies-without-httponly",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/cookies-without-httponly.yaml",
+      "info": {
+        "name": "Cookies without HttpOnly attribute - Detect",
+        "author": [
+          "rj coleman",
+          "mr.bobo hp"
+        ],
+        "tags": [
+          "misconfig",
+          "http",
+          "cookie",
+          "generic",
+          "vuln"
+        ],
+        "description": "Checks whether cookies in the HTTP response contain the HttpOnly attribute. If the HttpOnly flag is set, it means that the cookie is HTTP-only\n",
+        "impact": "Lack of HttpOnly flag on cookies increases the risk of client-side attacks, compromising user session security and data privacy.\n",
+        "reference": [
+          "https://owasp.org/www-community/HttpOnly"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-1004"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        },
+        "remediation": "Ensure that all cookies are set with the HttpOnly attribute to prevent client-side access.\n"
+      },
+      "type": "javascript",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "ccbmn.culture.gouv.fr",
+      "extracted-results": [
+        "bot_mitigation_cookie"
+      ],
+      "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\n\nconst nonHttpOnlyCookies = setCookieLines.filter(line => !line.toLowerCase().includes('httponly'));\n\nconst cookieNames = nonHttpOnlyCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
+      "response": "[bot_mitigation_cookie]",
+      "timestamp": "2026-09-20T06:56:52.242286708Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/cookies-without-secure.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/cookies-without-secure",
+      "template-id": "cookies-without-secure",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/cookies-without-secure.yaml",
+      "info": {
+        "name": "Cookies without Secure attribute - Detect",
+        "author": [
+          "vthiery",
+          "rj coleman"
+        ],
+        "tags": [
+          "misconfig",
+          "http",
+          "cookie",
+          "generic",
+          "vuln"
+        ],
+        "description": "Checks whether cookies in the HTTP response contain the Secure attribute. If the Secure flag is set, it means that the cookie can only be transmitted over HTTPS\n",
+        "impact": "Lack of Secure flag on cookies allows the cookie to be sent over unsecure HTTP, making it vulnerable to man-in-the-middle (MITM) attacks.\n",
+        "reference": [
+          "https://owasp.org/www-community/controls/SecureCookieAttribute"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-614"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        },
+        "remediation": "Ensure that all cookies are set with the Secure attribute to prevent MITM attacks.\n"
+      },
+      "type": "javascript",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "ccbmn.culture.gouv.fr",
+      "extracted-results": [
+        "bot_mitigation_cookie"
+      ],
+      "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\nconst nonSecureCookies = setCookieLines.filter(line => !line.toLowerCase().includes('secure'));\nconst cookieNames = nonSecureCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
+      "response": "[bot_mitigation_cookie]",
+      "timestamp": "2026-09-20T06:56:52.299343604Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "ccbmn.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:07.158507244Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "ccbmn.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:07.38859106Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.251340562Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.251550724Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.251784852Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.252070887Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.252286076Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.252500064Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.252708974Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.252884185Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.253087977Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:13 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-46946550\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:13.253270569Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/missing-cookie-samesite-strict.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/missing-cookie-samesite-strict",
+      "template-id": "missing-cookie-samesite-strict",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-cookie-samesite-strict.yaml",
+      "info": {
+        "name": "Missing Cookie SameSite Strict",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz"
+        ],
+        "tags": [
+          "misconfig",
+          "samesite",
+          "cookie",
+          "vuln"
+        ],
+        "description": "Identified cookies that lacked the samesite=strict attribute, which prevented enforcement of restrictions on cross-domain cookie transmission.\n",
+        "reference": [
+          "https://pulsesecurity.co.nz/articles/samesite-lax-csrf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://ccbmn.culture.gouv.fr",
+      "matched-at": "https://ccbmn.culture.gouv.fr",
+      "extracted-results": [
+        "bot_mitigation_cookie=VUDZUOJL6M5RM2V4MJSJLZ3ZDILLCBRVNXBCNRP5M67IITKOQTNUW4ZAQOZXXLN5EWEY33F66K32SDAEKBGARUV3WJELUSWL5YHMOGEBXDZYVTRJ5XLA====; Path=/; SameSite=lax"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: ccbmn.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:58:30 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-d96f7192-72e035bb\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_44W7X3G5MYNB3GRKTEYBB6FKDRRJCFPJEWGUSLP7LYNLIXOUY2ZQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:30.210265577Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://ccbmn.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "ccbmn.culture.gouv.fr",
+      "matched-at": "ccbmn.culture.gouv.fr",
+      "extracted-results": [
+        "waf.culture.fr"
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 37384\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;ccbmn.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 37384\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;ccbmn.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nccbmn.culture.gouv.fr.\t600\tIN\tCNAME\twaf.culture.fr.\n",
+      "timestamp": "2026-09-20T06:58:45.225330318Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "ccbmn.culture.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:45.340687888Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "ccbmn.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "ccbmn.culture.gouv.fr:443",
+      "extracted-results": [
+        "ccbmn.culture.gouv.fr"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:58:45.340879532Z",
+      "matcher-status": true
+    }
+  ]
 ]
