@@ -1,3 +1,812 @@
 [
-  []
+  [
+    {
+      "template": "http/misconfiguration/apache/apache-mod-negotiation-listing.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/apache-mod-negotiation-listing",
+      "template-id": "apache-mod-negotiation-listing",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/apache/apache-mod-negotiation-listing.yaml",
+      "info": {
+        "name": "Apache mod_negotiation - Pseudo Directory Listing",
+        "author": [
+          "0x_akoko"
+        ],
+        "tags": [
+          "apache",
+          "misconfig",
+          "exposure",
+          "mod-negotiation",
+          "vuln"
+        ],
+        "description": "Detected Apache server with mod_negotiation and MultiViews enabled, exposing a pseudo directory listing when invalid Accept headers are sent to extensionless filenames.\n",
+        "reference": [
+          "https://www.acunetix.com/vulnerabilities/web/apache-mod_negotiation-filename-bruteforcing/",
+          "https://cwe.mitre.org/data/definitions/538.html"
+        ],
+        "severity": "low",
+        "metadata": {
+          "max-request": 5,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-538"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "cvss-score": 5.3
+        }
+      },
+      "extractor-name": "exposed_files",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "path": "/index",
+      "matched-at": "https://pmb.culture.fr/index",
+      "extracted-results": [
+        "index.html"
+      ],
+      "request": "GET /index HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: fake/fake\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 406 Not Acceptable\r\nAlternates: {\"index.html\" 1 {type text/html} {length 5340}}\r\nContent-Type: text/html; charset=iso-8859-1\r\nDate: Sun, 20 Sep 2026 07:35:21 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nTcn: list\r\nVary: negotiate,Accept-Encoding\r\nX-Cp-Via: C2-d4ebf8c3-816c7baf\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>406 Not Acceptable</title>\n</head><body>\n<h1>Not Acceptable</h1>\n<p>An appropriate representation of the requested resource could not be found on this server.</p>\nAvailable variants:\n<ul>\n<li><a href=\"index.html\">index.html</a> , type text/html</li>\n</ul>\n</body></html>\n",
+      "meta": {
+        "path": "/index"
+      },
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:35:22.085511459Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: fake/fake' -H 'Host: pmb.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr/index'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "POST / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:35:29 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-3697273d-816c7baf\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:35:29.658107373Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: pmb.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "matched-at": "pmb.culture.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:39.712038338Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "matched-at": "pmb.culture.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:40.00426779Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.142791942Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.143954255Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.144971797Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.145883812Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.146929717Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.147846481Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.14894223Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:36:56 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-5f62c547-b3e1f67c\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:36:57.150146691Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/apache/apache-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/apache-detect",
+      "template-id": "apache-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/apache/apache-detect.yaml",
+      "info": {
+        "name": "Apache Detection",
+        "author": [
+          "philippedelteil"
+        ],
+        "tags": [
+          "tech",
+          "apache",
+          "discovery"
+        ],
+        "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "extracted-results": [
+        "Apache"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAccept-Ranges: bytes\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:37:05 GMT\r\nEtag: \"14dc-631cc5ad52965-gzip\"\r\nLast-Modified: Wed, 02 Apr 2025 14:20:27 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-34427411-9e4ab12b\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"https://www.w3.org/1999/xhtml\">\n<head>\n<meta https-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<title>DRAC accueil</title>\n<link type=\"text/css\" rel=\"stylesheet\" href=\"styles.css\" />\n</head>\n\n<body>\n<div id=\"Global\">\n    <div id=\"container\">\n        <div id=\"content\">\n            <div id=\"header\">\n            \t<div class=\"introImg\">\n                \t<img src=\"images/bannieredrac.png\" alt=\"centre d'information et de documentation\" />\n                </div>\n   \t\t\t</div>\n            <div id=\"main\">\n            <div class=\"section\">\n\t\t\t\t<p>Bonjour, et bienvenue sur la plate-forme documentaire du Minist&egrave;re de la Culture, utilis&eacute;e par les Directions R&eacute;gionales des Affaires Culturelles pour g&eacute;rer les ressources documentaires locales.</p>\n\t\t\t\t<p>Cette application partag&eacute;e permet d'interroger chacun des catalogues r&eacute;gionaux, pour conna&icirc;tre les documents r&eacute;f&eacute;renc&eacute;s par les services de documentation (ouvrages, p&eacute;riodiques, documents multim&eacute;dias, litt&eacute;rature grise, ressources num&eacute;riques, etc.).</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire d'une direction r&eacute;gionale, cliquez sur un des liens suivants :</p>\n            </div>\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_antilles\" title=\"Dac Martinique/Guadeloupe\">Dac Martinique/Guadeloupe</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_mayotte\" title=\"Dac Mayotte\">Dac Mayotte</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_reunion\" title=\"Dac Océan indien\">Dac Oc&eacute;an indien</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_alsace\" title=\"Drac Alsace\">Drac Alsace</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_aquitaine\" title=\"Drac Aquitaine\" >Drac Aquitaine</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_ara\" title=\"Drac Auvergne/Rhône-Alpes\">Drac Auvergne/Rh&ocirc;ne-Alpes</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_normandie\" title=\"Drac Normandie\">Drac Normandie</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bfc\" title=\"Drac Bourgogne/Franche-Comté\">Drac Bourgogne-Franche-Comt&eacute;</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_bretagne\" title=\"Drac Bretagne\">Drac Bretagne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_centre\" title=\"Drac Centre\">Drac Centre</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_champardenne\" title=\"Drac Champagne-Ardenne\">Drac Champagne-Ardenne</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_corse\" title=\"Drac Corse\">Drac Corse</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_guyane\" title=\"Dac Guyane\">Dac Guyane</a></li>\n\n\n                    <li><a style=\"color:#C68681;pointer-events:none;cursor:default;\" href=\"https://pmb.culture.fr/opac/index.php?database=\" title=\"Drac Île-de-France\">Drac &Icirc;le-de-France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_limousin\" title=\"Drac Limousin\">Drac Limousin</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_lorraine\" title=\"Drac Lorraine\">Drac Lorraine</a></li>\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_occitanie\" title=\"Drac Occitanie\">Drac Occitanie</a></li>\n\t\t    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_hdf\" title=\"Drac Hauts de France\">Drac Hauts de France</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_paca\" title=\"Drac Paca\">Drac Paca</a></li>\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_pdl\" title=\"Drac Pays de la Loire\">Drac Pays de la Loire</a></li>\n\n\n                    <li><a href=\"https://pmb.culture.fr/opac/index.php?database=pmb_poitouchar\" title=\"Drac Poitou-Charentes\">Drac Poitou-Charentes</a></li>\n\n\n                    <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div class=\"section\">\n\t\t\t\t<p>Outre les DRAC, d&apos;autres services du Minist&egrave;re de la Culture utilisent la m&ecirc;me application.</p>\n\t\t\t\t<p>Pour consulter le catalogue documentaire de l&apos;un de ces services, cliquez sur un des liens suivants :</p>\n            </div>\n\n            <div class=\"section\">\n                <ul class=\"listLiens\">\n\t\t\t\t\t<li><a href=\"https://pmb.culture.fr/opac_anmt/index.php?\" title=\"Archives nationales du monde du travail\">Archives nationales du monde du travail</a></li>\n                <div style=\"clear:both\"></div>\n                </ul>\n            </div>\n\n            <div id=\"footer\">\n   \t\t\t</div>\n    \t</div>\n    </div>\n</div>\n</body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:37:05.879739218Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/options-method.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+      "template-id": "options-method",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/options-method.yaml",
+      "info": {
+        "name": "Allowed Options Method",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr",
+      "extracted-results": [
+        "OPTIONS,HEAD,GET,POST"
+      ],
+      "request": "OPTIONS / HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAllow: OPTIONS,HEAD,GET,POST\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:37:13 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nX-Cp-Via: C2-12f00a95-816c7baf\r\nX-Frame-Options: SAMEORIGIN\r\nContent-Length: 0\r\n\r\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:37:13.758580509Z",
+      "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/apache/apache-server-status.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/apache-server-status",
+      "template-id": "apache-server-status",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/apache/apache-server-status.yaml",
+      "info": {
+        "name": "Apache Server Status Disclosure",
+        "author": [
+          "thabisocn"
+        ],
+        "tags": [
+          "misconfig",
+          "exposure",
+          "apache",
+          "debug",
+          "vuln"
+        ],
+        "description": "Apache /server-status displays information about your Apache status. If you are not using this feature, disable it.\n",
+        "reference": [
+          "https://www.exploit-db.com/ghdb/5548",
+          "https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/apache-server-status-detected/",
+          "https://www.acunetix.com/vulnerabilities/web/apache-server-status-detected/"
+        ],
+        "severity": "low",
+        "metadata": {
+          "google-query": [
+            "site:*/server-status intext:\"Apache server status for\"",
+            "site:*/server-info intext:\"Apache server Information\""
+          ],
+          "max-request": 2,
+          "verified": true
+        }
+      },
+      "type": "http",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://pmb.culture.fr",
+      "matched-at": "https://pmb.culture.fr/server-status",
+      "request": "GET /server-status HTTP/1.1\r\nHost: pmb.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nContent-Type: text/html; charset=ISO-8859-1\r\nDate: Sun, 20 Sep 2026 07:37:13 GMT\r\nServer: Apache\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-ed994149-816c7baf\r\nX-Frame-Options: SAMEORIGIN\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n<html><head>\n<title>Apache Status</title>\n</head><body>\n<h1>Apache Server Status for apf-p0-app202.culture.fr (via 143.126.222.79)</h1>\n\n<dl><dt>Server Version: Apache/2.4.62 (Rocky Linux) OpenSSL/3.5.1</dt>\n<dt>Server MPM: event</dt>\n<dt>Server Built: Dec 12 2025 00:00:00\n</dt></dl><hr /><dl>\n<dt>Current Time: Sunday, 20-Sep-2026 09:37:13 CEST</dt>\n<dt>Restart Time: Saturday, 19-Sep-2026 12:45:05 CEST</dt>\n<dt>Parent Server Config. Generation: 2</dt>\n<dt>Parent Server MPM Generation: 1</dt>\n<dt>Server uptime:  20 hours 52 minutes 8 seconds</dt>\n<dt>Server load: 0.91 0.64 0.42</dt>\n<dt>Total accesses: 80500 - Total Traffic: 3.0 GB - Total Duration: 18663931</dt>\n<dt>CPU Usage: u23.95 s29.36 cu39.28 cs58.06 - .201% CPU load</dt>\n<dt>1.07 requests/sec - 41.5 kB/second - 38.7 kB/request - 231.85 ms/request</dt>\n<dt>3 requests currently being processed, 0 workers gracefully restarting, 122 idle workers</dt>\n</dl>\n\n<table rules=\"all\" cellpadding=\"1%\">\n<tr><th rowspan=\"2\">Slot</th><th rowspan=\"2\">PID</th><th rowspan=\"2\">Stopping</th><th colspan=\"2\">Connections</th>\n<th colspan=\"2\">Threads</th><th colspan=\"3\">Async connections</th></tr>\n<tr><th>total</th><th>accepting</th><th>busy</th><th>graceful</th><th>idle</th><th>writing</th><th>keep-alive</th><th>closing</th></tr>\n<tr><td>0</td><td>13105</td><td>no</td><td>6</td><td>yes</td><td>0</td><td>0</td><td>25</td><td>0</td><td>4</td><td>2</td></tr>\n<tr><td>1</td><td>18152</td><td>no</td><td>7</td><td>yes</td><td>1</td><td>0</td><td>24</td><td>0</td><td>6</td><td>1</td></tr>\n<tr><td>2</td><td>13107</td><td>no</td><td>12</td><td>yes</td><td>2</td><td>0</td><td>23</td><td>0</td><td>10</td><td>2</td></tr>\n<tr><td>4</td><td>13235</td><td>no</td><td>7</td><td>yes</td><td>0</td><td>0</td><td>25</td><td>0</td><td>6</td><td>1</td></tr>\n<tr><td>5</td><td>13320</td><td>no</td><td>5</td><td>yes</td><td>0</td><td>0</td><td>25</td><td>0</td><td>3</td><td>2</td></tr>\n<tr><td>Sum</td><td>5</td><td>0</td><td>37</td><td>&nbsp;</td><td>3</td><td>0</td><td>122</td><td>0</td><td>29</td><td>8</td></tr>\n</table>\n<pre>_______________________________W________________________W_______\n___W_______.........................____________________________\n______________________..........................................\n................................................................\n................................................................\n................................................................\n................</pre>\n<p>Scoreboard Key:<br />\n\"<b><code>_</code></b>\" Waiting for Connection, \n\"<b><code>S</code></b>\" Starting up, \n\"<b><code>R</code></b>\" Reading Request,<br />\n\"<b><code>W</code></b>\" Sending Reply, \n\"<b><code>K</code></b>\" Keepalive (read), \n\"<b><code>D</code></b>\" DNS Lookup,<br />\n\"<b><code>C</code></b>\" Closing connection, \n\"<b><code>L</code></b>\" Logging, \n\"<b><code>G</code></b>\" Gracefully finishing,<br /> \n\"<b><code>I</code></b>\" Idle cleanup of worker, \n\"<b><code>.</code></b>\" Open slot with no current process<br />\n</p>\n\n\n<table border=\"0\"><tr><th>Srv</th><th>PID</th><th>Acc</th><th>M</th><th>CPU\n</th><th>SS</th><th>Req</th><th>Dur</th><th>Conn</th><th>Child</th><th>Slot</th><th>Client</th><th>Protocol</th><th>VHost</th><th>Request</th></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/153/489</td><td>_\n</td><td>8.41</td><td>1</td><td>0</td><td>86837</td><td>0.0</td><td>4.80</td><td>13.55\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /cgi-bin/admin.cgi?Command=sysCommand&amp;Cmd=ping${IFS}-c${IFS</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/140/461</td><td>_\n</td><td>8.40</td><td>2</td><td>0</td><td>73127</td><td>0.0</td><td>4.33</td><td>11.24\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /admin HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/159/509</td><td>_\n</td><td>8.41</td><td>1</td><td>0</td><td>76586</td><td>0.0</td><td>4.08</td><td>12.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/themes/churchope/lib/downloadlink.php?file=../.</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/150/500</td><td>_\n</td><td>8.41</td><td>1</td><td>0</td><td>76590</td><td>0.0</td><td>3.86</td><td>12.71\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /API/External/GetPrivacy HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/165/501</td><td>_\n</td><td>8.41</td><td>1</td><td>0</td><td>76784</td><td>0.0</td><td>4.88</td><td>16.73\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /index.php?c=api&amp;m=data2&amp;function=%3Cscript%3Ealert(documen</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/155/506</td><td>_\n</td><td>8.41</td><td>1</td><td>0</td><td>82962</td><td>0.0</td><td>4.81</td><td>14.49\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /_debug/_profiler/empty/search/results?limit=10 HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/156/488</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>88080</td><td>0.0</td><td>6.04</td><td>17.46\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/really-simple-captcha/includes/filesyst</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/167/512</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>84815</td><td>0.0</td><td>4.02</td><td>13.25\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /assets/img/favicon/favicon.ico HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/158/481</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>82867</td><td>0.0</td><td>5.17</td><td>16.83\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /thruk/cgi-bin/login.cgi?thruk/cgi-bin/status.cgi%3fstyle=c</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/160/485</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>80739</td><td>0.0</td><td>5.56</td><td>16.10\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /000~ROOT~000/etc/passwd HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/159/484</td><td>_\n</td><td>8.40</td><td>2</td><td>0</td><td>83945</td><td>0.0</td><td>5.47</td><td>15.75\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/168/486</td><td>_\n</td><td>8.40</td><td>2</td><td>0</td><td>82498</td><td>0.0</td><td>2.92</td><td>11.43\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /addons/phpmailer/phpmailer.php HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/158/493</td><td>_\n</td><td>8.41</td><td>1</td><td>201</td><td>66746</td><td>0.0</td><td>2.74</td><td>9.29\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>HEAD /opac/index.php?lvl=publisher_see&amp;id=7900 HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/154/489</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>75044</td><td>0.0</td><td>1.74</td><td>27.13\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /files/_sessions/ HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/165/507</td><td>_\n</td><td>8.41</td><td>1</td><td>0</td><td>422065</td><td>0.0</td><td>5.15</td><td>15.13\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/tutor/views/pages/instructors.php?sub_p</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/159/506</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>93484</td><td>0.0</td><td>2.52</td><td>12.98\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /Account/Login HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/159/496</td><td>_\n</td><td>8.40</td><td>0</td><td>218</td><td>83287</td><td>0.0</td><td>2.62</td><td>27.77\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>HEAD /opac/index.php?lvl=notice_display&amp;id=27755 HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/145/464</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>75906</td><td>0.0</td><td>2.14</td><td>9.44\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /app/webroot/files/kcfinder/files/home/000~ROOT~000/etc/pas</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/151/476</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>86568</td><td>0.0</td><td>3.82</td><td>13.49\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /config/initializers/secret_token.rb HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/151/480</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>86039</td><td>0.0</td><td>6.20</td><td>13.28\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/themes/diarise/download.php?calendar=file:///et</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/149/468</td><td>_\n</td><td>8.40</td><td>0</td><td>0</td><td>82333</td><td>0.0</td><td>4.75</td><td>12.79\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /panel HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/158/493</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>80450</td><td>0.0</td><td>2.74</td><td>12.87\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/really-simple-captcha/really-simple-cap</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/162/483</td><td>_\n</td><td>8.41</td><td>0</td><td>0</td><td>396983</td><td>0.0</td><td>3.32</td><td>15.19\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /katib/ HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/154/477</td><td>_\n</td><td>8.41</td><td>0</td><td>204</td><td>82650</td><td>0.0</td><td>2.60</td><td>11.50\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/index.php?lvl=author_see&amp;id=15472 HTTP/1.1</td></tr>\n\n<tr><td><b>0-1</b></td><td>13105</td><td>0/150/478</td><td>_\n</td><td>8.40</td><td>2</td><td>0</td><td>88132</td><td>0.0</td><td>3.31</td><td>39.23\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /magmi/web/ajax_gettime.php?prefix=%22%3E%3Cscript%3Ealert(</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/370/648</td><td>_\n</td><td>10.31</td><td>0</td><td>0</td><td>113283</td><td>0.0</td><td>8.65</td><td>54.44\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /.npm/anonymous-cli-metrics.json HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/371/629</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>101683</td><td>0.0</td><td>10.75</td><td>36.02\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /umbraco/mini-profiler-resources/results HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/367/645</td><td>_\n</td><td>10.29</td><td>0</td><td>0</td><td>104008</td><td>0.0</td><td>9.50</td><td>14.93\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /index.php?controller=pjFrontPublic&amp;action=pjActionServices</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/384/639</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>99692</td><td>0.0</td><td>7.72</td><td>15.88\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /index.php?option=com_jacomment&amp;view=../../../../../../../.</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/372/626</td><td>_\n</td><td>10.30</td><td>0</td><td>0</td><td>107565</td><td>0.0</td><td>9.33</td><td>17.86\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /system/modules/alkacon.mercury.template.jsondemo/elements/</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/372/644</td><td>_\n</td><td>10.30</td><td>0</td><td>0</td><td>108999</td><td>0.0</td><td>13.35</td><td>18.96\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-admin/admin.php?page=wp_ajax_rsvp-form&amp;tribe_tickets_re</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>98/374/640</td><td><b>W</b>\n</td><td>10.29</td><td>0</td><td>0</td><td>117782</td><td>0.0</td><td>12.35</td><td>22.81\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>HEAD /opac/doc_num.php?explnum_id=1070 HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/372/639</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>111616</td><td>0.0</td><td>11.35</td><td>17.39\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/368/642</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>112542</td><td>0.0</td><td>11.04</td><td>17.63\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /auth HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/358/634</td><td>_\n</td><td>10.29</td><td>0</td><td>0</td><td>106648</td><td>0.0</td><td>11.20</td><td>16.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /?meta=%3Csvg%2Fonload=confirm%28document.domain%29%3E HTTP</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/385/658</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>193902</td><td>0.0</td><td>15.07</td><td>21.58\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /static/login/favicon.ico HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/367/630</td><td>_\n</td><td>10.31</td><td>0</td><td>0</td><td>1070899</td><td>0.0</td><td>13.51</td><td>21.29\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /centreon/index.php HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/366/640</td><td>_\n</td><td>10.29</td><td>0</td><td>0</td><td>108344</td><td>0.0</td><td>9.91</td><td>16.16\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /atmail/index.php/admin/index/?error=1%3Cscript%3Ealert%28d</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/358/614</td><td>_\n</td><td>10.31</td><td>0</td><td>0</td><td>107220</td><td>0.0</td><td>14.16</td><td>20.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/wp-mail-smtp/vendor/autoload.php HTTP/1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/385/649</td><td>_\n</td><td>10.29</td><td>0</td><td>0</td><td>116823</td><td>0.0</td><td>11.53</td><td>20.47\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /RASHTML5Gateway/ HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/337/600</td><td>_\n</td><td>10.29</td><td>0</td><td>200</td><td>94094</td><td>0.0</td><td>7.40</td><td>13.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>HEAD /opac/index.php?lvl=author_see&amp;id=15472 HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/361/629</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>119196</td><td>0.0</td><td>11.06</td><td>21.82\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /glpi/files/_sessions/ HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/359/613</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>108240</td><td>0.0</td><td>10.90</td><td>22.49\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/361/628</td><td>_\n</td><td>10.31</td><td>0</td><td>0</td><td>320375</td><td>0.0</td><td>7.46</td><td>18.05\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /etc/replication/agents.author/publish/jcr:content.json HTT</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/354/619</td><td>_\n</td><td>10.31</td><td>0</td><td>0</td><td>107918</td><td>0.0</td><td>10.21</td><td>19.74\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /login.htm HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/369/628</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>271919</td><td>0.0</td><td>10.69</td><td>17.06\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /index.php/component/chronoforums2/profiles/avatar/u1?tvout</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/371/642</td><td>_\n</td><td>10.29</td><td>1</td><td>0</td><td>106050</td><td>0.0</td><td>10.43</td><td>16.68\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /debug/default HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/358/616</td><td>_\n</td><td>10.31</td><td>0</td><td>0</td><td>98607</td><td>0.0</td><td>7.60</td><td>12.97\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>OPTIONS / HTTP/1.1</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/348/601</td><td>_\n</td><td>10.29</td><td>0</td><td>0</td><td>98080</td><td>0.0</td><td>8.61</td><td>18.15\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /go/add-on/business-continuity/api/plugin?folderName&amp;plugin</td></tr>\n\n<tr><td><b>1-1</b></td><td>18152</td><td>0/369/648</td><td>_\n</td><td>10.30</td><td>0</td><td>0</td><td>116214</td><td>0.0</td><td>11.58</td><td>17.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /xwiki/bin/view/XWiki/Main?xpage=restore&amp;showBatch=true&amp;xre</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/202/733</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>149547</td><td>0.0</td><td>3.09</td><td>482.97\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /frontend_dev.php/_profiler/empty/search/results?limit=10 H</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/211/718</td><td>_\n</td><td>8.72</td><td>0</td><td>0</td><td>409629</td><td>0.0</td><td>4.71</td><td>19.52\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /server-info HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/214/733</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>134622</td><td>0.0</td><td>3.24</td><td>16.97\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /common.etic_cgi_portal/login.html HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/205/730</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>119613</td><td>0.0</td><td>3.49</td><td>15.62\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wfc/logon HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/220/761</td><td>_\n</td><td>8.72</td><td>0</td><td>0</td><td>140352</td><td>0.0</td><td>5.52</td><td>47.25\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /yyoa/createMysql.jsp HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/212/748</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>118941</td><td>0.0</td><td>4.49</td><td>21.23\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-admin?piereg_logout_url=true&amp;redirect_to=https://oast.m</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>10/209/712</td><td><b>W</b>\n</td><td>8.71</td><td>0</td><td>0</td><td>109415</td><td>0.0</td><td>4.24</td><td>14.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /backend_dev.php/_profiler/empty/search/results?limit=10 HT</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/215/718</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>145791</td><td>0.0</td><td>3.74</td><td>18.08\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/wp-mail-smtp/src/WPMailSMTP.php HTTP/1.</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/221/731</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>127632</td><td>0.0</td><td>7.51</td><td>18.52\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /public/_profiler/empty/search/results?limit=10 HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/206/758</td><td>_\n</td><td>8.72</td><td>0</td><td>0</td><td>135648</td><td>0.0</td><td>5.91</td><td>18.28\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /login/sls/auth HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/213/733</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>123737</td><td>0.0</td><td>3.40</td><td>20.93\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /user/login?redirect=%2F HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/213/747</td><td>_\n</td><td>8.72</td><td>0</td><td>0</td><td>131488</td><td>0.0</td><td>8.25</td><td>22.71\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /index.php?option=com_jwhmcs&amp;controller=../../../../../../.</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/214/752</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>123315</td><td>0.0</td><td>3.70</td><td>19.47\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /plus/ajax_officebuilding.php?act=key&amp;key=%e9%8c%a6%27%20a&lt;</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/209/741</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>115337</td><td>0.0</td><td>5.37</td><td>39.64\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/212/738</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>384523</td><td>0.0</td><td>4.87</td><td>18.49\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/elementor-pro/modules/notes/notificatio</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/206/743</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>145949</td><td>0.0</td><td>4.60</td><td>31.73\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /jcr:content.json HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/205/747</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>120665</td><td>0.0</td><td>4.06</td><td>24.93\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /lan.html HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>29/214/726</td><td><b>W</b>\n</td><td>8.71</td><td>0</td><td>0</td><td>399185</td><td>0.0</td><td>7.42</td><td>19.76\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /server-status HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/215/738</td><td>_\n</td><td>8.72</td><td>0</td><td>0</td><td>119347</td><td>0.0</td><td>4.96</td><td>18.45\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /ui HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/219/747</td><td>_\n</td><td>8.73</td><td>0</td><td>0</td><td>110075</td><td>0.0</td><td>3.34</td><td>16.21\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /~login HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/206/742</td><td>_\n</td><td>8.72</td><td>0</td><td>0</td><td>127467</td><td>0.0</td><td>7.60</td><td>21.22\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /msgserver HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/222/740</td><td>_\n</td><td>8.73</td><td>0</td><td>0</td><td>120930</td><td>0.0</td><td>6.06</td><td>20.88\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/224/759</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>375831</td><td>0.0</td><td>8.94</td><td>26.33\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/226/751</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>129872</td><td>0.0</td><td>5.01</td><td>18.71\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /controlloLogin.js HTTP/1.1</td></tr>\n\n<tr><td><b>2-1</b></td><td>13107</td><td>0/223/755</td><td>_\n</td><td>8.71</td><td>0</td><td>0</td><td>131874</td><td>0.0</td><td>7.06</td><td>27.39\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /html/index.html HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/648</td><td>.\n</td><td>0.00</td><td>34627</td><td>359</td><td>126453</td><td>0.0</td><td>0.00</td><td>23.65\n</td><td>143.126.222.79</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /pmbws/connector_out.php?database=pmb_alsace&amp;source_id=1&amp;ws</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/682</td><td>.\n</td><td>0.00</td><td>34627</td><td>0</td><td>107912</td><td>0.0</td><td>0.00</td><td>20.71\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac_anmt/includes/javascript/tablist.js HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/643</td><td>.\n</td><td>0.00</td><td>34627</td><td>219</td><td>104290</td><td>0.0</td><td>0.00</td><td>16.16\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac_anmt/index.php?id=70577&amp;lvl=bulletin_display HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/666</td><td>.\n</td><td>0.00</td><td>34627</td><td>194</td><td>106528</td><td>0.0</td><td>0.00</td><td>18.09\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=1022&amp;lvl=author_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/652</td><td>.\n</td><td>0.00</td><td>34627</td><td>178</td><td>331951</td><td>0.0</td><td>0.00</td><td>15.46\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?header=Lexique+%3A+syst%EF%BF%BDme+desc</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/687</td><td>.\n</td><td>0.00</td><td>34627</td><td>185</td><td>118646</td><td>0.0</td><td>0.00</td><td>21.80\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=19994&amp;lvl=categ_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/664</td><td>.\n</td><td>0.00</td><td>34627</td><td>197</td><td>118999</td><td>0.0</td><td>0.00</td><td>20.11\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=15875&amp;lvl=categ_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/636</td><td>.\n</td><td>0.00</td><td>34627</td><td>321</td><td>112250</td><td>0.0</td><td>0.00</td><td>22.68\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/index.php?id=1179&amp;lvl=publisher_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/670</td><td>.\n</td><td>0.00</td><td>34627</td><td>282</td><td>116768</td><td>0.0</td><td>0.00</td><td>20.97\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/index.php?lvl=notice_display&amp;id=7581 HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/679</td><td>.\n</td><td>0.00</td><td>34627</td><td>186</td><td>124763</td><td>0.0</td><td>0.00</td><td>17.11\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=15868&amp;lvl=categ_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/675</td><td>.\n</td><td>0.00</td><td>34627</td><td>189</td><td>116957</td><td>0.0</td><td>0.00</td><td>24.10\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/ajax.php?module=ajax&amp;categ=messages&amp;action=get_messag</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/649</td><td>.\n</td><td>0.00</td><td>34627</td><td>197</td><td>258757</td><td>0.0</td><td>0.00</td><td>19.19\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=16995&amp;lvl=categ_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/638</td><td>.\n</td><td>0.00</td><td>34627</td><td>655</td><td>114552</td><td>0.0</td><td>0.00</td><td>19.48\n</td><td>143.126.222.79</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>POST /pmbws/connector_out.php?database=pmb_corse&amp;source_id=1 HT</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/682</td><td>.\n</td><td>0.00</td><td>34627</td><td>182</td><td>135669</td><td>0.0</td><td>0.00</td><td>25.44\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=680&amp;lvl=publisher_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/668</td><td>.\n</td><td>0.00</td><td>34627</td><td>222</td><td>112248</td><td>0.0</td><td>0.00</td><td>48.45\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac_anmt/index.php?id=36374&amp;lvl=bulletin_display HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/650</td><td>.\n</td><td>0.00</td><td>34627</td><td>343</td><td>120835</td><td>0.0</td><td>0.00</td><td>14.99\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/index.php?id=454&amp;lvl=publisher_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/661</td><td>.\n</td><td>0.00</td><td>34627</td><td>202</td><td>138719</td><td>0.0</td><td>0.00</td><td>49.72\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?id=20305&amp;lvl=categ_see HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/653</td><td>.\n</td><td>0.00</td><td>34627</td><td>0</td><td>484039</td><td>0.0</td><td>0.00</td><td>19.56\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>HEAD / HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/679</td><td>.\n</td><td>0.00</td><td>34627</td><td>40</td><td>130925</td><td>0.0</td><td>0.00</td><td>97.43\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac_anmt/s.php?h=0c66f769428422a164a84f29aa7ef1a3 HTTP/1.</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/639</td><td>.\n</td><td>0.00</td><td>34627</td><td>0</td><td>333912</td><td>0.0</td><td>0.00</td><td>15.04\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/styles/drac/Drac%20Alsace/logodrac.PNG HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/666</td><td>.\n</td><td>0.00</td><td>34627</td><td>177</td><td>126238</td><td>0.0</td><td>0.00</td><td>36.84\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/cart_info.php?header=Le+gisement+pr%EF%BF%BDhistoriqu</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/667</td><td>.\n</td><td>0.00</td><td>34627</td><td>39</td><td>118955</td><td>0.0</td><td>0.00</td><td>19.64\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac_anmt/s.php?h=536b31cf117e24013bac90dfae0abbdc HTTP/1.</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/655</td><td>.\n</td><td>0.00</td><td>34627</td><td>0</td><td>107219</td><td>0.0</td><td>0.00</td><td>17.68\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/styles/drac/Drac%20Alsace/logodrac.PNG HTTP/1.1</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/673</td><td>.\n</td><td>0.00</td><td>34627</td><td>0</td><td>111138</td><td>0.0</td><td>0.00</td><td>15.99\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac/includes/javascript/dojo/dgrowl/NotificationNode.js H</td></tr>\n\n<tr><td><b>3-0</b></td><td>-</td><td>0/0/666</td><td>.\n</td><td>0.00</td><td>34627</td><td>37</td><td>342871</td><td>0.0</td><td>0.00</td><td>14.72\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /opac_anmt/s.php?h=6a71d5592ec8bc572ee84feff696e463 HTTP/1.</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/302/302</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>67483</td><td>0.0</td><td>8.81</td><td>8.81\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/290/290</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>55929</td><td>0.0</td><td>7.39</td><td>7.39\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /sitecore/shell/sitecore.version.xml HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/295/295</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>43547</td><td>0.0</td><td>7.58</td><td>7.58\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /mrtg/ HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/291/291</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>45764</td><td>0.0</td><td>10.54</td><td>10.54\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /phpstan.neon HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/294/294</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>57470</td><td>0.0</td><td>6.17</td><td>6.17\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /jsps/genrequest.jsp?routineName=\\&quot;&gt;&lt;script&gt;alert(document.d</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/286/286</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>50338</td><td>0.0</td><td>6.06</td><td>6.06\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /api/metrics HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/290/290</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>62105</td><td>0.0</td><td>10.10</td><td>10.10\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /anything_here HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/286/286</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>44174</td><td>0.0</td><td>4.25</td><td>4.25\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /dumpmdm.cmd HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/290/290</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>66552</td><td>0.0</td><td>7.59</td><td>7.59\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /MRTG/ HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/289/289</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>42444</td><td>0.0</td><td>6.42</td><td>6.42\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /?noptin_ns=email_click&amp;to=https://interact.sh HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/286/286</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>49400</td><td>0.0</td><td>7.99</td><td>7.99\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /api/v1/health HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/288/288</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>48430</td><td>0.0</td><td>7.38</td><td>7.38\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /certsrv HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/279/279</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>51631</td><td>0.0</td><td>10.05</td><td>10.05\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /login.htm HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/302/302</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>51799</td><td>0.0</td><td>5.53</td><td>5.53\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /editor_tools/rte_image_editor?types=%27;});alert(document.</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/296/296</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>62895</td><td>0.0</td><td>7.09</td><td>7.09\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /o/blogs-web/blogs/entry_cover_image_caption.jsp?coverImage</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/300/300</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>43876</td><td>0.0</td><td>4.96</td><td>4.96\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /?author=1 HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/297/297</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>52605</td><td>0.0</td><td>7.02</td><td>7.02\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /anonymous-cli-metrics.json HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/294/294</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>56283</td><td>0.0</td><td>9.08</td><td>9.08\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /api/v1/version HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/288/288</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>49231</td><td>0.0</td><td>8.81</td><td>8.81\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /sign-up HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/294/294</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>65123</td><td>0.0</td><td>10.58</td><td>10.58\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /glpi/plugins/barcode/front/send.php?file=../../../../../..</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/297/297</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>63142</td><td>0.0</td><td>10.67</td><td>10.67\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /index.php?option=com_extplorer&amp;action=show_error&amp;dir=..%2F</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/276/276</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>53250</td><td>0.0</td><td>10.58</td><td>10.58\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /robomongo.json HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/294/294</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>52586</td><td>0.0</td><td>7.74</td><td>7.74\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/297/297</td><td>_\n</td><td>10.36</td><td>0</td><td>0</td><td>57258</td><td>0.0</td><td>7.61</td><td>7.61\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/wpb-show-core/modules/jplayer_new/jplay</td></tr>\n\n<tr><td><b>4-1</b></td><td>13235</td><td>0/290/290</td><td>_\n</td><td>10.36</td><td>1</td><td>0</td><td>56433</td><td>0.0</td><td>7.07</td><td>7.07\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /login HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/410/410</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>93274</td><td>0.0</td><td>14.30</td><td>14.30\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /mobile.html HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/397/397</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>75309</td><td>0.0</td><td>9.15</td><td>9.15\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /nextcloud/index.php/login HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/404/404</td><td>_\n</td><td>12.08</td><td>0</td><td>0</td><td>84862</td><td>0.0</td><td>13.31</td><td>13.31\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /app/login HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/401/401</td><td>_\n</td><td>12.08</td><td>2</td><td>0</td><td>91267</td><td>0.0</td><td>14.24</td><td>14.24\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /.bash_history HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/404/404</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>69548</td><td>0.0</td><td>11.97</td><td>11.97\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /auth/admin/master/console/config HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/401/401</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>78391</td><td>0.0</td><td>14.00</td><td>14.00\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>POST /login.php?a=get_upload_list&amp;c=Uploadimgnew&amp;info=eyJudW0iO</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/398/398</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>78553</td><td>0.0</td><td>9.69</td><td>9.69\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /ui/ HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/423/423</td><td>_\n</td><td>12.08</td><td>0</td><td>0</td><td>146710</td><td>0.0</td><td>14.09</td><td>14.09\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/plugins/dzs-zoomsounds/ HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/382/382</td><td>_\n</td><td>12.08</td><td>2</td><td>0</td><td>94737</td><td>0.0</td><td>16.06</td><td>16.06\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/392/392</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>79835</td><td>0.0</td><td>10.05</td><td>10.05\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /project/switch/1?targetPath=http://oast.pro HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/409/409</td><td>_\n</td><td>12.09</td><td>0</td><td>0</td><td>86908</td><td>0.0</td><td>10.60</td><td>10.60\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /.viminfo HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/404/404</td><td>_\n</td><td>12.08</td><td>1</td><td>0</td><td>80193</td><td>0.0</td><td>13.97</td><td>13.97\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /cassia/login HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/403/403</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>79438</td><td>0.0</td><td>9.42</td><td>9.42\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /wp-content/themes/listingpro/style.css HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/408/408</td><td>_\n</td><td>12.08</td><td>2</td><td>0</td><td>76597</td><td>0.0</td><td>7.30</td><td>7.30\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET / HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/398/398</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>100576</td><td>0.0</td><td>18.72</td><td>18.72\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /webmail/ HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/395/395</td><td>_\n</td><td>12.08</td><td>2</td><td>0</td><td>97860</td><td>0.0</td><td>7.33</td><td>7.33\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /admin/main/console/config HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/424/424</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>83477</td><td>0.0</td><td>13.80</td><td>13.80\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /system.ini?loginuse&amp;loginpas HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/414/414</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>82085</td><td>0.0</td><td>8.20</td><td>8.20\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /pnpm-lock.yaml HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/409/409</td><td>_\n</td><td>12.09</td><td>2</td><td>0</td><td>90746</td><td>0.0</td><td>9.31</td><td>9.31\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /login HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/407/407</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>68517</td><td>0.0</td><td>9.04</td><td>9.04\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /userportal/webpages/myaccount/login.jsp HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/421/421</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>71224</td><td>0.0</td><td>8.12</td><td>8.12\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /auth/admin/main/console/config HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/409/409</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>68385</td><td>0.0</td><td>12.31</td><td>12.31\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /ssf/a/do?p_name=ss_forum&amp;p_action=1&amp;action=__login HTTP/1.</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/419/419</td><td>_\n</td><td>12.09</td><td>0</td><td>0</td><td>88797</td><td>0.0</td><td>11.92</td><td>11.92\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /r2w/signIn.do?urll=%22%3E%3Cscript%3Ealert(document.domain</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/418/418</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>77964</td><td>0.0</td><td>13.24</td><td>13.24\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /download_work_dir_file?path=/etc/passwd HTTP/1.1</td></tr>\n\n<tr><td><b>5-1</b></td><td>13320</td><td>0/397/397</td><td>_\n</td><td>12.09</td><td>1</td><td>0</td><td>79260</td><td>0.0</td><td>11.58</td><td>11.58\n</td><td>143.126.211.103</td><td>http/1.1</td><td nowrap>apf-p0-app202.culture.fr:80</td><td nowrap>GET /webconsole/webpages/login.jsp HTTP/1.1</td></tr>\n\n</table>\n <hr /> <table>\n <tr><th>Srv</th><td>Child Server number - generation</td></tr>\n <tr><th>PID</th><td>OS process ID</td></tr>\n <tr><th>Acc</th><td>Number of accesses this connection / this child / this slot</td></tr>\n <tr><th>M</th><td>Mode of operation</td></tr>\n<tr><th>CPU</th><td>CPU usage, number of seconds</td></tr>\n<tr><th>SS</th><td>Seconds since beginning of most recent request</td></tr>\n <tr><th>Req</th><td>Milliseconds required to process most recent request</td></tr>\n <tr><th>Dur</th><td>Sum of milliseconds required to process all requests</td></tr>\n <tr><th>Conn</th><td>Kilobytes transferred this connection</td></tr>\n <tr><th>Child</th><td>Megabytes transferred this child</td></tr>\n <tr><th>Slot</th><td>Total megabytes transferred this slot</td></tr>\n </table>\n<hr>\n<table cellspacing=0 cellpadding=0>\n<tr><td bgcolor=\"#000000\">\n<b><font color=\"#ffffff\" face=\"Arial,Helvetica\">SSL/TLS Session Cache Status:</font></b>\r</td></tr>\n<tr><td bgcolor=\"#ffffff\">\ncache type: <b>SHMCB</b>, shared memory: <b>512000</b> bytes, current entries: <b>0</b><br>subcaches: <b>32</b>, indexes per subcache: <b>88</b><br>index usage: <b>0%</b>, cache usage: <b>0%</b><br>total entries stored since starting: <b>0</b><br>total entries replaced since starting: <b>0</b><br>total entries expired since starting: <b>0</b><br>total (pre-expiry) entries scrolled out of the cache: <b>0</b><br>total retrieves since starting: <b>0</b> hit, <b>0</b> miss<br>total removes since starting: <b>0</b> hit, <b>0</b> miss<br></td></tr>\n</table>\n</body></html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:37:13.883845402Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://pmb.culture.fr/server-status'",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "pmb.culture.fr",
+      "matched-at": "pmb.culture.fr",
+      "extracted-results": [
+        "waf.culture.fr"
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 16638\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;pmb.culture.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 16638\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;pmb.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\npmb.culture.fr.\t600\tIN\tCNAME\twaf.culture.fr.\n",
+      "timestamp": "2026-09-20T07:37:42.502481074Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "matched-at": "pmb.culture.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:37:42.784382351Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "pmb.culture.fr",
+      "port": "443",
+      "matched-at": "pmb.culture.fr:443",
+      "extracted-results": [
+        "pmb.culture.fr"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T07:37:42.784550435Z",
+      "matcher-status": true
+    }
+  ]
 ]
