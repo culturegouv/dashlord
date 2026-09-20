@@ -1,8 +1,55 @@
 [
   [
     {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "nginxgeneric",
+      "type": "http",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
+      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:47:06 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T02:47:06.320652548Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: sculpturesdumaine.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
       "template": "http/technologies/tech-detect.yaml",
-      "template-url": "https://templates.nuclei.sh/public/tech-detect",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
       "template-id": "tech-detect",
       "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
       "info": {
@@ -23,67 +70,21 @@
       },
       "matcher-name": "nginx",
       "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
       "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:41:55 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:04 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:41:55.82683802Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T02:49:04.720903076Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
-      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862384476Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -121,18 +122,21 @@
       },
       "matcher-name": "content-security-policy",
       "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
       "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862440319Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T02:49:27.839797919Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -170,214 +174,21 @@
       },
       "matcher-name": "permissions-policy",
       "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
       "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862447546Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T02:49:27.839943276Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
-      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862451451Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
-      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862456636Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
-      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.86246514Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
-      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862470374Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -415,18 +226,125 @@
       },
       "matcher-name": "x-frame-options",
       "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
       "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862474262Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T02:49:27.840062123Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
+      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T02:49:27.840180189Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
+      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T02:49:27.840292376Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -464,37 +382,45 @@
       },
       "matcher-name": "x-content-type-options",
       "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
       "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:42:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:42:07.862480087Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T02:49:27.840404133Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/technologies/waf-detect.yaml",
-      "template-url": "https://templates.nuclei.sh/public/waf-detect",
-      "template-id": "waf-detect",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "WAF Detection",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "dwisiswant0",
-          "lu4nx",
-          "s4e-io"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "waf",
-          "tech",
-          "misc",
-          "discovery"
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
         ],
-        "description": "A web application firewall was detected.",
-        "reference": [
-          "https://github.com/ekultek/whatwaf"
-        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
@@ -502,24 +428,131 @@
         "classification": {
           "cve-id": null,
           "cwe-id": [
-            "cwe-200"
+            "cwe-693"
           ]
         }
       },
-      "matcher-name": "nginxgeneric",
+      "matcher-name": "x-permitted-cross-domain-policies",
       "type": "http",
-      "host": "https://sculpturesdumaine.culture.gouv.fr",
-      "matched-at": "https://sculpturesdumaine.culture.gouv.fr/",
-      "request": "POST / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 02:44:03 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
+      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:44:03.822474849Z",
-      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: sculpturesdumaine.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr/'",
+      "timestamp": "2026-09-20T02:49:27.84052922Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
+      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T02:49:27.840652173Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sculpturesdumaine.culture.gouv.fr",
+      "matched-at": "https://sculpturesdumaine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sculpturesdumaine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 02:49:27 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T02:49:27.840771781Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sculpturesdumaine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "ssl/detect-ssl-issuer.yaml",
-      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
       "template-id": "ssl-issuer",
       "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
       "info": {
@@ -540,17 +573,18 @@
       },
       "type": "ssl",
       "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
       "matched-at": "sculpturesdumaine.culture.gouv.fr:443",
       "extracted-results": [
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:47:43.248940608Z",
+      "timestamp": "2026-09-20T02:49:30.265013096Z",
       "matcher-status": true
     },
     {
       "template": "ssl/ssl-dns-names.yaml",
-      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
       "template-id": "ssl-dns-names",
       "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
       "info": {
@@ -571,17 +605,18 @@
       },
       "type": "ssl",
       "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
       "matched-at": "sculpturesdumaine.culture.gouv.fr:443",
       "extracted-results": [
         "sculpturesdumaine.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:47:43.249068828Z",
+      "timestamp": "2026-09-20T02:49:30.265165674Z",
       "matcher-status": true
     },
     {
       "template": "ssl/tls-version.yaml",
-      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
       "template-id": "tls-version",
       "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
@@ -603,17 +638,18 @@
       },
       "type": "ssl",
       "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
       "matched-at": "sculpturesdumaine.culture.gouv.fr:443",
       "extracted-results": [
         "tls12"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:47:47.734705925Z",
+      "timestamp": "2026-09-20T02:49:32.128877869Z",
       "matcher-status": true
     },
     {
       "template": "ssl/tls-version.yaml",
-      "template-url": "https://templates.nuclei.sh/public/tls-version",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
       "template-id": "tls-version",
       "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
@@ -635,12 +671,13 @@
       },
       "type": "ssl",
       "host": "sculpturesdumaine.culture.gouv.fr",
+      "port": "443",
       "matched-at": "sculpturesdumaine.culture.gouv.fr:443",
       "extracted-results": [
         "tls13"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T02:47:47.987247764Z",
+      "timestamp": "2026-09-20T02:49:32.413241844Z",
       "matcher-status": true
     }
   ]
