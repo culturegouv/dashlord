@@ -1,5 +1,12 @@
 [
          {
+              "id"           : "cmdline_fast_depreciation",
+              "ip"           : "basedeslieux.culture.gouv.fr/",
+              "port"         : "443",
+              "severity"     : "WARN",
+              "finding"      : "'--fast' can have some undesired side effects thus it is not recommended to use anymore"
+          }
+,         {
               "id"           : "service",
               "ip"           : "basedeslieux.culture.gouv.fr/94.23.123.122",
               "port"         : "443",
@@ -150,7 +157,7 @@
               "ip"           : "basedeslieux.culture.gouv.fr/94.23.123.122",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "server"
+              "finding"      : "server -- TLS 1.3 client determined"
           }
 ,         {
               "id"           : "FS",
@@ -360,7 +367,7 @@
               "ip"           : "basedeslieux.culture.gouv.fr/94.23.123.122",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "58 >= 30 days"
+              "finding"      : "51 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -605,7 +612,7 @@
               "ip"           : "basedeslieux.culture.gouv.fr/94.23.123.122",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1789264376"
+              "finding"      : "1789870146"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -1175,6 +1182,6 @@
               "ip"           : "basedeslieux.culture.gouv.fr/94.23.123.122",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "103"
+              "finding"      : "58"
           }
 ]
