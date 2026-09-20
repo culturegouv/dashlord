@@ -9,17 +9,14 @@
     "testsPassed": 7,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 13 Sep 2026 08:16:20 GMT",
-      "server": "Apache",
-      "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
-      "x-frame-options": "DENY, SAMEORIGIN",
-      "x-content-type-options": "nosniff, nosniff",
-      "x-powered-by": "PHP/7.4.33",
-      "vary": "Accept-Encoding",
-      "x-xss-protection": "1; mode=block",
-      "content-length": "789",
+      "date": "Sun, 20 Sep 2026 06:34:32 GMT",
       "content-type": "text/html; charset=utf-8",
-      "x-cp-via": "C2-4784133e-50f5af07",
+      "content-length": "790",
+      "x-powered-by": "PHP/8.3.33",
+      "vary": "Accept-Encoding",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-forwarded-for": ";",
+      "x-cp-via": "C2-7f239ddb-73c7540c",
       "connection": "close"
     }
   },
@@ -77,10 +74,10 @@
       "pass": true,
       "result": "hsts-implemented-max-age-at-least-six-months",
       "scoreModifier": 0,
-      "data": "max-age=63072000; includeSubDomains; preload",
+      "data": "max-age=31536000; includeSubDomains",
       "includeSubDomains": true,
-      "maxAge": 63072000,
-      "preload": true,
+      "maxAge": 31536000,
+      "preload": false,
       "preloaded": false
     },
     "subresource-integrity": {
@@ -93,16 +90,16 @@
     "x-content-type-options": {
       "expectation": "x-content-type-options-nosniff",
       "pass": false,
-      "result": "x-content-type-options-header-invalid",
+      "result": "x-content-type-options-not-implemented",
       "scoreModifier": -5,
-      "data": "nosniff, nosniff"
+      "data": null
     },
     "x-frame-options": {
       "expectation": "x-frame-options-sameorigin-or-deny",
       "pass": false,
-      "result": "x-frame-options-header-invalid",
+      "result": "x-frame-options-not-implemented",
       "scoreModifier": -20,
-      "data": "DENY, SAMEORIGIN"
+      "data": null
     },
     "cross-origin-resource-policy": {
       "expectation": "corp-implemented-with-same-site",
