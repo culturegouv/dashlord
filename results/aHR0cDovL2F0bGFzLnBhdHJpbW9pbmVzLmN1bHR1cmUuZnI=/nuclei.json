@@ -1,3 +1,562 @@
 [
-  []
+  [
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.169695223Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.17028229Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.170824741Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.171472081Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.171999449Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.172575825Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.173122153Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.173633272Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.174143065Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "atlas.patrimoines.culture.fr",
+      "port": "80",
+      "scheme": "http",
+      "url": "http://atlas.patrimoines.culture.fr",
+      "matched-at": "http://atlas.patrimoines.culture.fr/atlas/trunk/",
+      "request": "GET / HTTP/1.1\r\nHost: atlas.patrimoines.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 4736\r\nCache-Control: max-age=28800\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Sun, 20 Sep 2026 07:04:38 GMT\r\nExpires: Sun, 20 Sep 2026 15:04:38 GMT\r\nServer: Apache\r\nX-Powered-By: PHP/5.3.3\r\n\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\r\n<html>\r\n  <head>\r\n    <title>Atlas des patrimoines</title>\r\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" >\r\n\r\n\r\n\r\n  \r\n  \r\n    <!-- LIBRAIRIES Externes -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/ext-all.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext/2.3/resources/css/xtheme-gray.css\">    \r\n    <!--link rel=\"stylesheet\" type=\"text/css\" href=\"../libs/Ext.ux/css/ext-ux-slidezone.css\" -->\r\n    \r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/openlayers.css\">\r\n    \r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/layout.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/atlas.css\">\r\n    <link type=\"text/css\" rel=\"StyleSheet\" href=\"css/geonetwork.css\">\r\n    \r\n    <!-- MODULES -->\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/toolbar.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/search.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/results.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/infos.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/legend.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/panier.css\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/zoombar.css\">\r\n  </head>\r\n  <body >\r\n    <script type=\"text/javascript\">\r\n  \r\n  IGNLayers = new Array();\nIGNLayers['ORTHOIMAGERY.ORTHOPHOTOS'] = 1;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.MAPS'] = 1;\nIGNLayers['ADMINISTRATIVEUNITS.BOUNDARIES'] = 0;\nIGNLayers['BUILDINGS.BUILDINGS'] = 0;\nIGNLayers['GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40'] = 0;\nIGNLayers['CADASTRALPARCELS.PARCELLAIRE_EXPRESS'] = 1;\nIGNLayers['LIMITES_ADMINISTRATIVES_EXPRESS.LATEST'] = 0;\n  </script>\r\n\r\n    <div class=\"header-black\">\r\n        <div class=\"header-black-link\">\r\n            <a  target=\"_blank\" href=\"http://www.culture.gouv.fr\">\r\n                <img class=\"alias_large \" src=\"img/Culture.fr_large.jpg\" \r\n                    data-magnify-src=\"img/Culture.fr.jpg\" alt=\"\" />\r\n                    \r\n                <div> Un site du ministère de la Culture </div>\r\n            </a>\r\n        </div>\r\n    </div>\r\n    <div id=\"header\">&nbsp;</div>\r\n    <div id=\"header-title\">\r\n    Atlas des patrimoines</div>\r\n    <div id=\"header-menu\">\r\n        <a href=\"static/presentation.html\" title=\"Présentation\">En savoir plus sur l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/contribuer.html\" title=\"Contacter le Ministère de la Culture\">Apporter une contribution à l'Atlas</a>\r\n        <span>|</span>\r\n        <a href=\"static/aide.html\" title=\"Aide en ligne\">Aide</a>\r\n    </div>\r\n    \r\n    <div id=\"tools\">\r\n\t<div id=\"tools-commune\" class=\"tabs\"></div>\r\n        <div id=\"tools-search\" class=\"tabs\"></div>\r\n        <div id=\"tools-legend\" class=\"tabs\"></div>\r\n        <div id=\"tools-panier\" class=\"tabs\"></div>\r\n\t\r\n    </div>\r\n    <div id=\"map\"></div>\r\n    <div id=\"overview\">\r\n        <div id=\"overview-container\"></div>\r\n        <div id=\"overview-scalelist\"></div>\r\n        <div id=\"overview-zoombar\">\r\n            <span id=\"navzmout\"></span>\r\n            <ul id=\"navzoom\">\r\n                <li><a id=\"zoom1\" ext:qtip=\"1/5000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom2\" ext:qtip=\"1/1000000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom3\" ext:qtip=\"1/250000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom4\" ext:qtip=\"1/75000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom5\" ext:qtip=\"1/20000\" href=\"#\"></a></li>\r\n                <li><a id=\"zoom6\" ext:qtip=\"1/5000\" href=\"#\"></a></li>\r\n            </ul>\r\n            <span id=\"navzmin\"></span>\r\n        </div>\r\n    </div>\r\n    <div id=\"overview-toggle\" ext:qtip=\"Afficher / Masquer la carte de localisation\"></div>\r\n    <div id=\"toolbar\"></div>\r\n\r\n    <div id=\"footer\">\r\n    \t\r\n        Ministère de la Culture\r\n        &nbsp;|&nbsp;\r\n        \r\n        <a href=\"mailto:atlas.patrimoines@culture.gouv.fr\" title=\"Contacter le Ministère de la Culture\">contact</a>\r\n        &nbsp;&nbsp;\r\n    </div>\r\n        <div id='measure_result'>&nbsp</div>\r\n        \r\n        <script type=\"text/javascript\" src=\"js/openlayers.js\"></script>\n<script type=\"text/javascript\" src=\"js/ext.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas-options.js\"></script>\n<script type=\"text/javascript\" src=\"js/atlas.js\"></script>\n    \r\n     <script type=\"text/javascript\"><!--//--><![CDATA[//><!--\r\n      var APIKey = 'ign_scan_ws';\r\n      var urlAutoconf = 'http://atlas.patrimoines.culture.fr/atlas/trunk/js/autoconf.js';\r\n  \r\n      //--><!]]></script>\r\n    \r\n    \r\n  </body>\r\n    \r\n</html>\r\n",
+      "ip": "143.126.211.128",
+      "timestamp": "2026-09-20T07:04:38.17469142Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: http://atlas.patrimoines.culture.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'http://atlas.patrimoines.culture.fr/atlas/trunk/'",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "atlas.patrimoines.culture.fr",
+      "matched-at": "atlas.patrimoines.culture.fr",
+      "extracted-results": [
+        "web7.culture.fr"
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 60649\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;atlas.patrimoines.culture.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 60649\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;atlas.patrimoines.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\natlas.patrimoines.culture.fr.\t3600\tIN\tCNAME\tweb7.culture.fr.\n",
+      "timestamp": "2026-09-20T07:04:45.344202967Z",
+      "matcher-status": true
+    }
+  ]
 ]
