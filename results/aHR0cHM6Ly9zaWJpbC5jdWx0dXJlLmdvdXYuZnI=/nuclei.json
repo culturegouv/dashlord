@@ -1,0 +1,640 @@
+[
+  [
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.366747341Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.36714673Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.36748801Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.367836084Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.368131167Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.36841537Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.368728538Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.369019844Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://sibil.culture.gouv.fr",
+      "matched-at": "https://sibil.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: sibil.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:20:32 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-e1e87f6a-b66c0f34\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:20:32+0000</p>\n                <p>Request UID: aq97MMNVHw_6Z2B9bN6OWgAAAJs</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:32.369338592Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://sibil.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "sibil.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:33.64377368Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "sibil.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:20:33.827874326Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "sibil.culture.gouv.fr",
+      "matched-at": "sibil.culture.gouv.fr",
+      "extracted-results": [
+        "waf.culture.fr"
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 52181\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;sibil.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 52181\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;sibil.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nsibil.culture.gouv.fr.\t600\tIN\tCNAME\twaf.culture.fr.\n",
+      "timestamp": "2026-09-20T06:21:11.79509886Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "sibil.culture.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:21:11.984107655Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "sibil.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "sibil.culture.gouv.fr:443",
+      "extracted-results": [
+        "sibil.culture.gouv.fr"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-20T06:21:11.98428078Z",
+      "matcher-status": true
+    }
+  ]
+]
