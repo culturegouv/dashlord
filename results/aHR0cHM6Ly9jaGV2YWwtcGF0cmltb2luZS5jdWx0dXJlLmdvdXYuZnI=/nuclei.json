@@ -1,64 +1,27 @@
 [
   [
     {
-      "template": "http/technologies/tech-detect.yaml",
-      "template-url": "https://templates.nuclei.sh/public/tech-detect",
-      "template-id": "tech-detect",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
       "info": {
-        "name": "Wappalyzer Technology Detection",
+        "name": "WAF Detection",
         "author": [
-          "hakluke",
-          "righettod",
-          "matejsmycka"
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
         ],
         "tags": [
+          "waf",
           "tech",
+          "misc",
           "discovery"
         ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "matcher-name": "nginx",
-      "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:09 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:09.735161476Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
         ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
@@ -66,122 +29,93 @@
         "classification": {
           "cve-id": null,
           "cwe-id": [
-            "cwe-693"
+            "cwe-200"
           ]
         }
       },
-      "matcher-name": "cross-origin-resource-policy",
+      "matcher-name": "nginxgeneric",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
       "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "POST / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:13:41 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612833801Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:13:41.828874039Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: cheval-patrimoine.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "TLS Version - Detect",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "ssl",
+          "tls",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 4
         }
       },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "type": "ssl",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "cheval-patrimoine.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612903372Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:14:55.713498783Z",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "TLS Version - Detect",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "ssl",
+          "tls",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 4
         }
       },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "type": "ssl",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "cheval-patrimoine.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612919272Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:14:55.922640903Z",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -219,67 +153,21 @@
       },
       "matcher-name": "cross-origin-embedder-policy",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
       "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612931284Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:15:15.815272635Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612943928Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -317,18 +205,73 @@
       },
       "matcher-name": "cross-origin-opener-policy",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
       "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612955229Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:15:15.815538402Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
+      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T03:15:15.815713438Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -366,18 +309,21 @@
       },
       "matcher-name": "content-security-policy",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
       "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612966541Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:15:15.815905357Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -413,20 +359,23 @@
           ]
         }
       },
-      "matcher-name": "x-frame-options",
+      "matcher-name": "permissions-policy",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
       "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612978112Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:15:15.816094901Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://templates.nuclei.sh/public/http-missing-security-headers",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
       "template-id": "http-missing-security-headers",
       "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
@@ -464,37 +413,45 @@
       },
       "matcher-name": "x-content-type-options",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
       "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:14:19 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:14:19.612996437Z",
-      "curl-command": "curl -X 'GET' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "timestamp": "2026-09-20T03:15:15.816270479Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/technologies/waf-detect.yaml",
-      "template-url": "https://templates.nuclei.sh/public/waf-detect",
-      "template-id": "waf-detect",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "WAF Detection",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "dwisiswant0",
-          "lu4nx",
-          "s4e-io"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "waf",
-          "tech",
-          "misc",
-          "discovery"
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
         ],
-        "description": "A web application firewall was detected.",
-        "reference": [
-          "https://github.com/ekultek/whatwaf"
-        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
@@ -502,24 +459,166 @@
         "classification": {
           "cve-id": null,
           "cwe-id": [
-            "cwe-200"
+            "cwe-693"
           ]
         }
       },
-      "matcher-name": "nginxgeneric",
+      "matcher-name": "x-frame-options",
       "type": "http",
-      "host": "https://cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "https://cheval-patrimoine.culture.gouv.fr/",
-      "request": "POST / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 0\r\nContent-Type: application/octet-stream\r\nDate: Sun, 06 Sep 2026 03:15:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
+      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:15:54.965255045Z",
-      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: cheval-patrimoine.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr/'",
+      "timestamp": "2026-09-20T03:15:15.816457158Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
+      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T03:15:15.8166347Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
+      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:15 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T03:15:15.816829734Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "nginx",
+      "type": "http",
+      "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://cheval-patrimoine.culture.gouv.fr",
+      "matched-at": "https://cheval-patrimoine.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: cheval-patrimoine.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:15:18 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-20T03:15:18.822113871Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://cheval-patrimoine.culture.gouv.fr'",
       "matcher-status": true
     },
     {
       "template": "ssl/detect-ssl-issuer.yaml",
-      "template-url": "https://templates.nuclei.sh/public/ssl-issuer",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
       "template-id": "ssl-issuer",
       "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
       "info": {
@@ -540,17 +639,18 @@
       },
       "type": "ssl",
       "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
       "matched-at": "cheval-patrimoine.culture.gouv.fr:443",
       "extracted-results": [
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:19:29.308306398Z",
+      "timestamp": "2026-09-20T03:15:34.189703033Z",
       "matcher-status": true
     },
     {
       "template": "ssl/ssl-dns-names.yaml",
-      "template-url": "https://templates.nuclei.sh/public/ssl-dns-names",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
       "template-id": "ssl-dns-names",
       "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
       "info": {
@@ -571,76 +671,13 @@
       },
       "type": "ssl",
       "host": "cheval-patrimoine.culture.gouv.fr",
+      "port": "443",
       "matched-at": "cheval-patrimoine.culture.gouv.fr:443",
       "extracted-results": [
         "cheval-patrimoine.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:19:29.308473351Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/tls-version.yaml",
-      "template-url": "https://templates.nuclei.sh/public/tls-version",
-      "template-id": "tls-version",
-      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
-      "info": {
-        "name": "TLS Version - Detect",
-        "author": [
-          "pdteam",
-          "pussycat0x"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 4
-        }
-      },
-      "type": "ssl",
-      "host": "cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "cheval-patrimoine.culture.gouv.fr:443",
-      "extracted-results": [
-        "tls12"
-      ],
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:19:32.807595282Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/tls-version.yaml",
-      "template-url": "https://templates.nuclei.sh/public/tls-version",
-      "template-id": "tls-version",
-      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
-      "info": {
-        "name": "TLS Version - Detect",
-        "author": [
-          "pdteam",
-          "pussycat0x"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 4
-        }
-      },
-      "type": "ssl",
-      "host": "cheval-patrimoine.culture.gouv.fr",
-      "matched-at": "cheval-patrimoine.culture.gouv.fr:443",
-      "extracted-results": [
-        "tls13"
-      ],
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-06T03:19:32.999721616Z",
+      "timestamp": "2026-09-20T03:15:34.189879563Z",
       "matcher-status": true
     }
   ]
