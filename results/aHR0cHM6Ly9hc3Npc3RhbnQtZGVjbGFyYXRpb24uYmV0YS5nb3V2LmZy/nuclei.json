@@ -1,0 +1,1099 @@
+[
+  [
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "assistant-declaration.beta.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:08.941151895Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "assistant-declaration.beta.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:09.226970713Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr/dashboard",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'nonce-MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4' 'self' https://client.crisp.chat/ https://stats.beta.gouv.fr/;script-src-attr 'none';connect-src 'self' wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://client.crisp.chat/settings/ https://storage.crisp.chat/users/upload/ https://stats.beta.gouv.fr/ https://sentry.incubateur.net/ https://recherche-entreprises.api.gouv.fr/ https://data.geopf.fr/;frame-src 'self' https://data.assistant-declaration.beta.gouv.fr;worker-src 'self' blob:;style-src 'self' https: https://client.crisp.chat/;style-src-elem 'unsafe-inline' 'self' https: https://client.crisp.chat/;style-src-attr 'self' 'unsafe-inline';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nVary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Nonce: MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: 9d851485-e6c3-4119-bae9-30c99293f3ae\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/706b844ffa4f2c7d.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/86d34d2a1f5fb214.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/1b1d10445b60e5f7.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/becf6a4af68d7b96.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" href=\"/_next/static/chunks/webpack-e9af86a544323c86.js\"/><script src=\"/_next/static/chunks/52774a7f-e7e8ba15b7246e07.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4bd1b696-df4c0fb946159b6a.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2180-50927e8859a7d2e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/main-app-a8f402b4091428ba.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3014691f-d13afec67f0dda09.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5292-b4c0f97732b84568.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3691-335b59cd875903f4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2411-55817fe90cbbaaa2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4901-d166563986223d0f.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4684-8d156fac2cd12c3d.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5801-63c1630108c06e1b.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/562-808d5883cad34994.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9630-ecff9f63314fb5ca.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3058-61fd085f43a4b929.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4612-72edbe770c1782e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/8427-1aedfe6147492513.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4986-b93dece58d9e3c5e.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9690-3ff909c94a94a551.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/layout-95adecd557425530.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4183-372e2b4884b9b64c.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/error-5649811715d8e916.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/7836-9d3de5ef4f6906e9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/global-error-7d0fdc81ecfd25e1.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/1013-a618fd22f0e18f65.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/layout-676823ae784314e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/error-ad3d82a483e093e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/not-found-ed298909ce0dcfb4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><link rel=\"preload\" href=\"/_next/static/css/83f393d1d5f66f3e.css\" as=\"style\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Regular.119b3a3e.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Medium.452138fa.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Bold.f0ef9bad.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"apple-touch-icon\" href=\"/_next/static/media/apple-touch-icon.1db30588.png\"/><link rel=\"icon\" href=\"/_next/static/media/favicon.f453a8cf.svg\" type=\"image/svg+xml\"/><link rel=\"shortcut icon\" href=\"/_next/static/media/favicon.8c087985.ico\" type=\"image/x-icon\"/><title>Tableau de bord - Assistant déclaration</title><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">\n{\n\n    window.ssrWasPerformedWithIsDark = \"system\" === \"dark\";\n\tconst sanitizer = typeof trustedTypes !== \"undefined\" ? trustedTypes.createPolicy(\"react-dsfr-asap\", { createHTML: s => s }) : {\n\t\tcreateHTML: s => s,\n\t};\n\n    reset_persisted_value_if_website_config_changed: {\n        const localStorageKey = \"scheme-website-config-default\";\n\n        const localStorageValue = localStorage.getItem(localStorageKey);\n\n        if (localStorageValue === \"system\") {\n            break reset_persisted_value_if_website_config_changed;\n        }\n\n        localStorage.removeItem(\"scheme\");\n\n        localStorage.setItem(localStorageKey, \"system\");\n    }\n    \n    const isDark = (() => {\n    \n    \tconst isDarkExplicitlyProvidedAsParameter = (() => {\n    \t\tif (\"system\" === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (\"system\") {\n    \t\t\tcase \"dark\": return true;\n    \t\t\tcase \"light\": return false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromLocalStorage = (() => {\n    \t\tconst colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n    \n    \t\tif (colorSchemeReadFromLocalStorage === null) {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tif (colorSchemeReadFromLocalStorage === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (colorSchemeReadFromLocalStorage) {\n    \t\t\tcase \"dark\":\n    \t\t\t\treturn true;\n    \t\t\tcase \"light\":\n    \t\t\t\treturn false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromOsPreference = (() => {\n    \t\tif (!window.matchMedia) {\n    \t\t\treturn false;\n    \t\t}\n    \n    \t\treturn window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\n    \t})();\n    \n    \treturn (\n    \t\tisDarkFromLocalStorage ??\n    \t\tisDarkExplicitlyProvidedAsParameter ??\n    \t\tisDarkFromOsPreference\n    \t);\n    \n    })();\n\n    const effect = ()=> {\n\n        document.documentElement.setAttribute(\n            \"data-fr-scheme\",\n            (() => {\n                const colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n\n                if (colorSchemeReadFromLocalStorage === null) {\n                    return \"system\";\n                }\n\n                return colorSchemeReadFromLocalStorage;\n            })()\n        );\n        document.documentElement.setAttribute(\"data-fr-theme\", isDark ? \"dark\" : \"light\")\n\n        {\n\n            let element= document.getElementById(\"dsfr-root-color-scheme\");\n\n    \t\tif( element !== null ){\n    \t\t\telement.remove()\n    \t\t}\n\n            element = document.createElement(\"style\");\n\n    \t\tif (\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" !== \"\") {\n    \t\t\telement.setAttribute(\"nonce\", \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\");\n    \t\t}\n\n            element.id = \"dsfr-root-color-scheme\";\n\n            element.innerHTML = sanitizer.createHTML(`:root { color-scheme: ${isDark ? \"dark\" : \"light\"}; }`);\n\n            document.head.appendChild(element);\n\n        }\n\n        {\n\n            const name = \"theme-color\";\n\n            let element = document.querySelector(`meta[name=${name}]`);\n    \n    \t\tif( element !== null ){\n    \t\t\telement.remove();\n    \t\t}\n\n            element = document.createElement(\"meta\");\n\n            element.name = name;\n\n            element.content = isDark ? \"#161616\" : \"#ffffff\";\n\n            document.head.appendChild(element);\n\n        }\n\n    };\n\n    effect();\n\n    // NOTE: This is just for global-error.tsx support\n    {\n\n        const observer = new MutationObserver((mutationsList) => {\n          for (const mutation of mutationsList) {\n            if (\n              mutation.type === \"attributes\" &&\n              mutation.attributeName === \"data-fr-scheme\"\n            ) {\n              const htmlEl = mutation.target;\n\n              if (htmlEl.hasAttribute(\"data-fr-js\")) {\n                observer.disconnect(); \n              }\n\n              if (!htmlEl.hasAttribute(\"data-fr-scheme\")) {\n                effect();\n                observer.disconnect(); \n              }\n            }\n          }\n        });\n\n        observer.observe(document.documentElement, {\n          attributes: true,\n          attributeFilter: [\"data-fr-scheme\"],\n        });\n\n    }\n\n}\n</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">window.ssrNonce = \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\";</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div role=\"progressbar\" class=\"LoadingArea_container__Nekqr\" aria-label=\"zone en cours de chargement - contenu\"><svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" fill=\"currentColor\" style=\"color:var(--background-flat-blue-france)\" class=\"remixicon LoadingArea_spinner__M4Bqd\"><path d=\"M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z\"></path></svg></div><script src=\"/_next/static/chunks/webpack-e9af86a544323c86.js\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" id=\"_R_\" async=\"\"></script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">(self.__next_f=self.__next_f||[]).push([0])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[78616,[],\\\"ClientSegmentRoot\\\"]\\n4:I[67212,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8072\\\",\\\"static/chunks/app/(private)/layout-95adecd557425530.js\\\"],\\\"default\\\"]\\n5:I[57121,[],\\\"\\\"]\\n6:I[85308,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"7096\\\",\\\"static/chunks/app/(private)/error-5649811715d8e916.js\\\"],\\\"default\\\"]\\n7:I[74581,[],\\\"\\\"]\\n9:I[90484,[],\\\"OutletBoundary\\\"]\\na:\\\"$Sreact.suspense\\\"\\nd:I[90484,[],\\\"ViewportBoundary\\\"]\\nf:I[90484,[],\\\"MetadataBoundary\\\"]\\n11:I[26719,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"4219\\\",\\\"static/chunks/app/global-error-7d0fdc81ecfd25e1.js\\\"],\\\"default\\\"]\\n13:I[31408,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"StartDsfrOnHydration\\\"]\\n14:I[18510,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"DashboardPage\\\"]\\n15:I[58118,[\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"7177\\\",\\\"static/chunks/app/layout-676823ae784314e7.js\\\"],\\\"ServerLayout\\\"]\\n16:I[17267,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8039\\\",\\\"static/chunks/app/error-ad3d82a483e093e2.js\\\"],\\\"default\\\"]\\n18:I[91253,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"s\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"tatic/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"4345\\\",\\\"static/chunks/app/not-found-ed298909ce0dcfb4.js\\\"],\\\"ErrorLayout\\\"]\\n:HL[\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"dashboard\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"(private)\\\",{\\\"children\\\":[\\\"dashboard\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]}]},\\\"$undefined\\\",\\\"$undefined\\\",16],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"$L2\\\"]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],[\\\"$\\\",\\\"$L3\\\",null,{\\\"Component\\\":\\\"$4\\\",\\\"slots\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$6\\\",\\\"errorStyles\\\":[],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]},\\\"serverProvidedParams\\\":{\\\"params\\\":{},\\\"promises\\\":null}}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[\\\"$L8\\\",null,[\\\"$\\\",\\\"$L9\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@b\\\"}]}]]}],{},null,false,null]},null,false,\\\"$@c\\\"]},null,false,null]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$Ld\\\",null,{\\\"children\\\":\\\"$Le\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$Lf\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$L10\\\"}]}]}],null]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$11\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"S\\\":false,\\\"h\\\":null,\\\"s\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"v0.0.0-20260612221528-95849c708654\\\"}\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"12:[]\\nc:\\\"$W12\\\"\\n8:[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L14\\\",null,{}],\\\";\\\"]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"2:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$16\\\",\\\"errorStyles\\\":[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$L17\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"17:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L18\\\",null,{\\\"code\\\":404}]]}]\\ne:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nb:null\\n10:[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"Tableau de bord - Assistant déclaration\\\"}]]\\n\"])</script></body></html>",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:09.984587523Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr/dashboard",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'nonce-MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4' 'self' https://client.crisp.chat/ https://stats.beta.gouv.fr/;script-src-attr 'none';connect-src 'self' wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://client.crisp.chat/settings/ https://storage.crisp.chat/users/upload/ https://stats.beta.gouv.fr/ https://sentry.incubateur.net/ https://recherche-entreprises.api.gouv.fr/ https://data.geopf.fr/;frame-src 'self' https://data.assistant-declaration.beta.gouv.fr;worker-src 'self' blob:;style-src 'self' https: https://client.crisp.chat/;style-src-elem 'unsafe-inline' 'self' https: https://client.crisp.chat/;style-src-attr 'self' 'unsafe-inline';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nVary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Nonce: MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: 9d851485-e6c3-4119-bae9-30c99293f3ae\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/706b844ffa4f2c7d.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/86d34d2a1f5fb214.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/1b1d10445b60e5f7.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/becf6a4af68d7b96.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" href=\"/_next/static/chunks/webpack-e9af86a544323c86.js\"/><script src=\"/_next/static/chunks/52774a7f-e7e8ba15b7246e07.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4bd1b696-df4c0fb946159b6a.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2180-50927e8859a7d2e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/main-app-a8f402b4091428ba.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3014691f-d13afec67f0dda09.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5292-b4c0f97732b84568.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3691-335b59cd875903f4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2411-55817fe90cbbaaa2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4901-d166563986223d0f.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4684-8d156fac2cd12c3d.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5801-63c1630108c06e1b.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/562-808d5883cad34994.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9630-ecff9f63314fb5ca.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3058-61fd085f43a4b929.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4612-72edbe770c1782e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/8427-1aedfe6147492513.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4986-b93dece58d9e3c5e.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9690-3ff909c94a94a551.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/layout-95adecd557425530.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4183-372e2b4884b9b64c.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/error-5649811715d8e916.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/7836-9d3de5ef4f6906e9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/global-error-7d0fdc81ecfd25e1.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/1013-a618fd22f0e18f65.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/layout-676823ae784314e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/error-ad3d82a483e093e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/not-found-ed298909ce0dcfb4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><link rel=\"preload\" href=\"/_next/static/css/83f393d1d5f66f3e.css\" as=\"style\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Regular.119b3a3e.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Medium.452138fa.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Bold.f0ef9bad.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"apple-touch-icon\" href=\"/_next/static/media/apple-touch-icon.1db30588.png\"/><link rel=\"icon\" href=\"/_next/static/media/favicon.f453a8cf.svg\" type=\"image/svg+xml\"/><link rel=\"shortcut icon\" href=\"/_next/static/media/favicon.8c087985.ico\" type=\"image/x-icon\"/><title>Tableau de bord - Assistant déclaration</title><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">\n{\n\n    window.ssrWasPerformedWithIsDark = \"system\" === \"dark\";\n\tconst sanitizer = typeof trustedTypes !== \"undefined\" ? trustedTypes.createPolicy(\"react-dsfr-asap\", { createHTML: s => s }) : {\n\t\tcreateHTML: s => s,\n\t};\n\n    reset_persisted_value_if_website_config_changed: {\n        const localStorageKey = \"scheme-website-config-default\";\n\n        const localStorageValue = localStorage.getItem(localStorageKey);\n\n        if (localStorageValue === \"system\") {\n            break reset_persisted_value_if_website_config_changed;\n        }\n\n        localStorage.removeItem(\"scheme\");\n\n        localStorage.setItem(localStorageKey, \"system\");\n    }\n    \n    const isDark = (() => {\n    \n    \tconst isDarkExplicitlyProvidedAsParameter = (() => {\n    \t\tif (\"system\" === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (\"system\") {\n    \t\t\tcase \"dark\": return true;\n    \t\t\tcase \"light\": return false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromLocalStorage = (() => {\n    \t\tconst colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n    \n    \t\tif (colorSchemeReadFromLocalStorage === null) {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tif (colorSchemeReadFromLocalStorage === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (colorSchemeReadFromLocalStorage) {\n    \t\t\tcase \"dark\":\n    \t\t\t\treturn true;\n    \t\t\tcase \"light\":\n    \t\t\t\treturn false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromOsPreference = (() => {\n    \t\tif (!window.matchMedia) {\n    \t\t\treturn false;\n    \t\t}\n    \n    \t\treturn window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\n    \t})();\n    \n    \treturn (\n    \t\tisDarkFromLocalStorage ??\n    \t\tisDarkExplicitlyProvidedAsParameter ??\n    \t\tisDarkFromOsPreference\n    \t);\n    \n    })();\n\n    const effect = ()=> {\n\n        document.documentElement.setAttribute(\n            \"data-fr-scheme\",\n            (() => {\n                const colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n\n                if (colorSchemeReadFromLocalStorage === null) {\n                    return \"system\";\n                }\n\n                return colorSchemeReadFromLocalStorage;\n            })()\n        );\n        document.documentElement.setAttribute(\"data-fr-theme\", isDark ? \"dark\" : \"light\")\n\n        {\n\n            let element= document.getElementById(\"dsfr-root-color-scheme\");\n\n    \t\tif( element !== null ){\n    \t\t\telement.remove()\n    \t\t}\n\n            element = document.createElement(\"style\");\n\n    \t\tif (\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" !== \"\") {\n    \t\t\telement.setAttribute(\"nonce\", \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\");\n    \t\t}\n\n            element.id = \"dsfr-root-color-scheme\";\n\n            element.innerHTML = sanitizer.createHTML(`:root { color-scheme: ${isDark ? \"dark\" : \"light\"}; }`);\n\n            document.head.appendChild(element);\n\n        }\n\n        {\n\n            const name = \"theme-color\";\n\n            let element = document.querySelector(`meta[name=${name}]`);\n    \n    \t\tif( element !== null ){\n    \t\t\telement.remove();\n    \t\t}\n\n            element = document.createElement(\"meta\");\n\n            element.name = name;\n\n            element.content = isDark ? \"#161616\" : \"#ffffff\";\n\n            document.head.appendChild(element);\n\n        }\n\n    };\n\n    effect();\n\n    // NOTE: This is just for global-error.tsx support\n    {\n\n        const observer = new MutationObserver((mutationsList) => {\n          for (const mutation of mutationsList) {\n            if (\n              mutation.type === \"attributes\" &&\n              mutation.attributeName === \"data-fr-scheme\"\n            ) {\n              const htmlEl = mutation.target;\n\n              if (htmlEl.hasAttribute(\"data-fr-js\")) {\n                observer.disconnect(); \n              }\n\n              if (!htmlEl.hasAttribute(\"data-fr-scheme\")) {\n                effect();\n                observer.disconnect(); \n              }\n            }\n          }\n        });\n\n        observer.observe(document.documentElement, {\n          attributes: true,\n          attributeFilter: [\"data-fr-scheme\"],\n        });\n\n    }\n\n}\n</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">window.ssrNonce = \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\";</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div role=\"progressbar\" class=\"LoadingArea_container__Nekqr\" aria-label=\"zone en cours de chargement - contenu\"><svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" fill=\"currentColor\" style=\"color:var(--background-flat-blue-france)\" class=\"remixicon LoadingArea_spinner__M4Bqd\"><path d=\"M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z\"></path></svg></div><script src=\"/_next/static/chunks/webpack-e9af86a544323c86.js\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" id=\"_R_\" async=\"\"></script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">(self.__next_f=self.__next_f||[]).push([0])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[78616,[],\\\"ClientSegmentRoot\\\"]\\n4:I[67212,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8072\\\",\\\"static/chunks/app/(private)/layout-95adecd557425530.js\\\"],\\\"default\\\"]\\n5:I[57121,[],\\\"\\\"]\\n6:I[85308,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"7096\\\",\\\"static/chunks/app/(private)/error-5649811715d8e916.js\\\"],\\\"default\\\"]\\n7:I[74581,[],\\\"\\\"]\\n9:I[90484,[],\\\"OutletBoundary\\\"]\\na:\\\"$Sreact.suspense\\\"\\nd:I[90484,[],\\\"ViewportBoundary\\\"]\\nf:I[90484,[],\\\"MetadataBoundary\\\"]\\n11:I[26719,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"4219\\\",\\\"static/chunks/app/global-error-7d0fdc81ecfd25e1.js\\\"],\\\"default\\\"]\\n13:I[31408,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"StartDsfrOnHydration\\\"]\\n14:I[18510,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"DashboardPage\\\"]\\n15:I[58118,[\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"7177\\\",\\\"static/chunks/app/layout-676823ae784314e7.js\\\"],\\\"ServerLayout\\\"]\\n16:I[17267,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8039\\\",\\\"static/chunks/app/error-ad3d82a483e093e2.js\\\"],\\\"default\\\"]\\n18:I[91253,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"s\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"tatic/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"4345\\\",\\\"static/chunks/app/not-found-ed298909ce0dcfb4.js\\\"],\\\"ErrorLayout\\\"]\\n:HL[\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"dashboard\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"(private)\\\",{\\\"children\\\":[\\\"dashboard\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]}]},\\\"$undefined\\\",\\\"$undefined\\\",16],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"$L2\\\"]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],[\\\"$\\\",\\\"$L3\\\",null,{\\\"Component\\\":\\\"$4\\\",\\\"slots\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$6\\\",\\\"errorStyles\\\":[],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]},\\\"serverProvidedParams\\\":{\\\"params\\\":{},\\\"promises\\\":null}}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[\\\"$L8\\\",null,[\\\"$\\\",\\\"$L9\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@b\\\"}]}]]}],{},null,false,null]},null,false,\\\"$@c\\\"]},null,false,null]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$Ld\\\",null,{\\\"children\\\":\\\"$Le\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$Lf\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$L10\\\"}]}]}],null]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$11\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"S\\\":false,\\\"h\\\":null,\\\"s\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"v0.0.0-20260612221528-95849c708654\\\"}\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"12:[]\\nc:\\\"$W12\\\"\\n8:[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L14\\\",null,{}],\\\";\\\"]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"2:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$16\\\",\\\"errorStyles\\\":[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$L17\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"17:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L18\\\",null,{\\\"code\\\":404}]]}]\\ne:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nb:null\\n10:[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"Tableau de bord - Assistant déclaration\\\"}]]\\n\"])</script></body></html>",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:09.989054984Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr/dashboard",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'nonce-MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4' 'self' https://client.crisp.chat/ https://stats.beta.gouv.fr/;script-src-attr 'none';connect-src 'self' wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://client.crisp.chat/settings/ https://storage.crisp.chat/users/upload/ https://stats.beta.gouv.fr/ https://sentry.incubateur.net/ https://recherche-entreprises.api.gouv.fr/ https://data.geopf.fr/;frame-src 'self' https://data.assistant-declaration.beta.gouv.fr;worker-src 'self' blob:;style-src 'self' https: https://client.crisp.chat/;style-src-elem 'unsafe-inline' 'self' https: https://client.crisp.chat/;style-src-attr 'self' 'unsafe-inline';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nVary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Nonce: MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: 9d851485-e6c3-4119-bae9-30c99293f3ae\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/706b844ffa4f2c7d.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/86d34d2a1f5fb214.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/1b1d10445b60e5f7.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/becf6a4af68d7b96.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" href=\"/_next/static/chunks/webpack-e9af86a544323c86.js\"/><script src=\"/_next/static/chunks/52774a7f-e7e8ba15b7246e07.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4bd1b696-df4c0fb946159b6a.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2180-50927e8859a7d2e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/main-app-a8f402b4091428ba.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3014691f-d13afec67f0dda09.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5292-b4c0f97732b84568.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3691-335b59cd875903f4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2411-55817fe90cbbaaa2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4901-d166563986223d0f.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4684-8d156fac2cd12c3d.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5801-63c1630108c06e1b.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/562-808d5883cad34994.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9630-ecff9f63314fb5ca.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3058-61fd085f43a4b929.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4612-72edbe770c1782e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/8427-1aedfe6147492513.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4986-b93dece58d9e3c5e.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9690-3ff909c94a94a551.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/layout-95adecd557425530.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4183-372e2b4884b9b64c.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/error-5649811715d8e916.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/7836-9d3de5ef4f6906e9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/global-error-7d0fdc81ecfd25e1.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/1013-a618fd22f0e18f65.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/layout-676823ae784314e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/error-ad3d82a483e093e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/not-found-ed298909ce0dcfb4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><link rel=\"preload\" href=\"/_next/static/css/83f393d1d5f66f3e.css\" as=\"style\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Regular.119b3a3e.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Medium.452138fa.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Bold.f0ef9bad.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"apple-touch-icon\" href=\"/_next/static/media/apple-touch-icon.1db30588.png\"/><link rel=\"icon\" href=\"/_next/static/media/favicon.f453a8cf.svg\" type=\"image/svg+xml\"/><link rel=\"shortcut icon\" href=\"/_next/static/media/favicon.8c087985.ico\" type=\"image/x-icon\"/><title>Tableau de bord - Assistant déclaration</title><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">\n{\n\n    window.ssrWasPerformedWithIsDark = \"system\" === \"dark\";\n\tconst sanitizer = typeof trustedTypes !== \"undefined\" ? trustedTypes.createPolicy(\"react-dsfr-asap\", { createHTML: s => s }) : {\n\t\tcreateHTML: s => s,\n\t};\n\n    reset_persisted_value_if_website_config_changed: {\n        const localStorageKey = \"scheme-website-config-default\";\n\n        const localStorageValue = localStorage.getItem(localStorageKey);\n\n        if (localStorageValue === \"system\") {\n            break reset_persisted_value_if_website_config_changed;\n        }\n\n        localStorage.removeItem(\"scheme\");\n\n        localStorage.setItem(localStorageKey, \"system\");\n    }\n    \n    const isDark = (() => {\n    \n    \tconst isDarkExplicitlyProvidedAsParameter = (() => {\n    \t\tif (\"system\" === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (\"system\") {\n    \t\t\tcase \"dark\": return true;\n    \t\t\tcase \"light\": return false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromLocalStorage = (() => {\n    \t\tconst colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n    \n    \t\tif (colorSchemeReadFromLocalStorage === null) {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tif (colorSchemeReadFromLocalStorage === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (colorSchemeReadFromLocalStorage) {\n    \t\t\tcase \"dark\":\n    \t\t\t\treturn true;\n    \t\t\tcase \"light\":\n    \t\t\t\treturn false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromOsPreference = (() => {\n    \t\tif (!window.matchMedia) {\n    \t\t\treturn false;\n    \t\t}\n    \n    \t\treturn window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\n    \t})();\n    \n    \treturn (\n    \t\tisDarkFromLocalStorage ??\n    \t\tisDarkExplicitlyProvidedAsParameter ??\n    \t\tisDarkFromOsPreference\n    \t);\n    \n    })();\n\n    const effect = ()=> {\n\n        document.documentElement.setAttribute(\n            \"data-fr-scheme\",\n            (() => {\n                const colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n\n                if (colorSchemeReadFromLocalStorage === null) {\n                    return \"system\";\n                }\n\n                return colorSchemeReadFromLocalStorage;\n            })()\n        );\n        document.documentElement.setAttribute(\"data-fr-theme\", isDark ? \"dark\" : \"light\")\n\n        {\n\n            let element= document.getElementById(\"dsfr-root-color-scheme\");\n\n    \t\tif( element !== null ){\n    \t\t\telement.remove()\n    \t\t}\n\n            element = document.createElement(\"style\");\n\n    \t\tif (\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" !== \"\") {\n    \t\t\telement.setAttribute(\"nonce\", \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\");\n    \t\t}\n\n            element.id = \"dsfr-root-color-scheme\";\n\n            element.innerHTML = sanitizer.createHTML(`:root { color-scheme: ${isDark ? \"dark\" : \"light\"}; }`);\n\n            document.head.appendChild(element);\n\n        }\n\n        {\n\n            const name = \"theme-color\";\n\n            let element = document.querySelector(`meta[name=${name}]`);\n    \n    \t\tif( element !== null ){\n    \t\t\telement.remove();\n    \t\t}\n\n            element = document.createElement(\"meta\");\n\n            element.name = name;\n\n            element.content = isDark ? \"#161616\" : \"#ffffff\";\n\n            document.head.appendChild(element);\n\n        }\n\n    };\n\n    effect();\n\n    // NOTE: This is just for global-error.tsx support\n    {\n\n        const observer = new MutationObserver((mutationsList) => {\n          for (const mutation of mutationsList) {\n            if (\n              mutation.type === \"attributes\" &&\n              mutation.attributeName === \"data-fr-scheme\"\n            ) {\n              const htmlEl = mutation.target;\n\n              if (htmlEl.hasAttribute(\"data-fr-js\")) {\n                observer.disconnect(); \n              }\n\n              if (!htmlEl.hasAttribute(\"data-fr-scheme\")) {\n                effect();\n                observer.disconnect(); \n              }\n            }\n          }\n        });\n\n        observer.observe(document.documentElement, {\n          attributes: true,\n          attributeFilter: [\"data-fr-scheme\"],\n        });\n\n    }\n\n}\n</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">window.ssrNonce = \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\";</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div role=\"progressbar\" class=\"LoadingArea_container__Nekqr\" aria-label=\"zone en cours de chargement - contenu\"><svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" fill=\"currentColor\" style=\"color:var(--background-flat-blue-france)\" class=\"remixicon LoadingArea_spinner__M4Bqd\"><path d=\"M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z\"></path></svg></div><script src=\"/_next/static/chunks/webpack-e9af86a544323c86.js\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" id=\"_R_\" async=\"\"></script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">(self.__next_f=self.__next_f||[]).push([0])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[78616,[],\\\"ClientSegmentRoot\\\"]\\n4:I[67212,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8072\\\",\\\"static/chunks/app/(private)/layout-95adecd557425530.js\\\"],\\\"default\\\"]\\n5:I[57121,[],\\\"\\\"]\\n6:I[85308,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"7096\\\",\\\"static/chunks/app/(private)/error-5649811715d8e916.js\\\"],\\\"default\\\"]\\n7:I[74581,[],\\\"\\\"]\\n9:I[90484,[],\\\"OutletBoundary\\\"]\\na:\\\"$Sreact.suspense\\\"\\nd:I[90484,[],\\\"ViewportBoundary\\\"]\\nf:I[90484,[],\\\"MetadataBoundary\\\"]\\n11:I[26719,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"4219\\\",\\\"static/chunks/app/global-error-7d0fdc81ecfd25e1.js\\\"],\\\"default\\\"]\\n13:I[31408,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"StartDsfrOnHydration\\\"]\\n14:I[18510,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"DashboardPage\\\"]\\n15:I[58118,[\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"7177\\\",\\\"static/chunks/app/layout-676823ae784314e7.js\\\"],\\\"ServerLayout\\\"]\\n16:I[17267,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8039\\\",\\\"static/chunks/app/error-ad3d82a483e093e2.js\\\"],\\\"default\\\"]\\n18:I[91253,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"s\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"tatic/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"4345\\\",\\\"static/chunks/app/not-found-ed298909ce0dcfb4.js\\\"],\\\"ErrorLayout\\\"]\\n:HL[\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"dashboard\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"(private)\\\",{\\\"children\\\":[\\\"dashboard\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]}]},\\\"$undefined\\\",\\\"$undefined\\\",16],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"$L2\\\"]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],[\\\"$\\\",\\\"$L3\\\",null,{\\\"Component\\\":\\\"$4\\\",\\\"slots\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$6\\\",\\\"errorStyles\\\":[],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]},\\\"serverProvidedParams\\\":{\\\"params\\\":{},\\\"promises\\\":null}}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[\\\"$L8\\\",null,[\\\"$\\\",\\\"$L9\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@b\\\"}]}]]}],{},null,false,null]},null,false,\\\"$@c\\\"]},null,false,null]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$Ld\\\",null,{\\\"children\\\":\\\"$Le\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$Lf\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$L10\\\"}]}]}],null]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$11\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"S\\\":false,\\\"h\\\":null,\\\"s\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"v0.0.0-20260612221528-95849c708654\\\"}\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"12:[]\\nc:\\\"$W12\\\"\\n8:[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L14\\\",null,{}],\\\";\\\"]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"2:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$16\\\",\\\"errorStyles\\\":[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$L17\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"17:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L18\\\",null,{\\\"code\\\":404}]]}]\\ne:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nb:null\\n10:[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"Tableau de bord - Assistant déclaration\\\"}]]\\n\"])</script></body></html>",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:09.994065111Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr/dashboard",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'nonce-MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4' 'self' https://client.crisp.chat/ https://stats.beta.gouv.fr/;script-src-attr 'none';connect-src 'self' wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://client.crisp.chat/settings/ https://storage.crisp.chat/users/upload/ https://stats.beta.gouv.fr/ https://sentry.incubateur.net/ https://recherche-entreprises.api.gouv.fr/ https://data.geopf.fr/;frame-src 'self' https://data.assistant-declaration.beta.gouv.fr;worker-src 'self' blob:;style-src 'self' https: https://client.crisp.chat/;style-src-elem 'unsafe-inline' 'self' https: https://client.crisp.chat/;style-src-attr 'self' 'unsafe-inline';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nVary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Nonce: MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: 9d851485-e6c3-4119-bae9-30c99293f3ae\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/706b844ffa4f2c7d.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/86d34d2a1f5fb214.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/1b1d10445b60e5f7.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/becf6a4af68d7b96.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" href=\"/_next/static/chunks/webpack-e9af86a544323c86.js\"/><script src=\"/_next/static/chunks/52774a7f-e7e8ba15b7246e07.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4bd1b696-df4c0fb946159b6a.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2180-50927e8859a7d2e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/main-app-a8f402b4091428ba.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3014691f-d13afec67f0dda09.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5292-b4c0f97732b84568.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3691-335b59cd875903f4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2411-55817fe90cbbaaa2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4901-d166563986223d0f.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4684-8d156fac2cd12c3d.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5801-63c1630108c06e1b.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/562-808d5883cad34994.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9630-ecff9f63314fb5ca.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3058-61fd085f43a4b929.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4612-72edbe770c1782e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/8427-1aedfe6147492513.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4986-b93dece58d9e3c5e.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9690-3ff909c94a94a551.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/layout-95adecd557425530.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4183-372e2b4884b9b64c.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/error-5649811715d8e916.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/7836-9d3de5ef4f6906e9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/global-error-7d0fdc81ecfd25e1.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/1013-a618fd22f0e18f65.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/layout-676823ae784314e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/error-ad3d82a483e093e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/not-found-ed298909ce0dcfb4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><link rel=\"preload\" href=\"/_next/static/css/83f393d1d5f66f3e.css\" as=\"style\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Regular.119b3a3e.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Medium.452138fa.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Bold.f0ef9bad.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"apple-touch-icon\" href=\"/_next/static/media/apple-touch-icon.1db30588.png\"/><link rel=\"icon\" href=\"/_next/static/media/favicon.f453a8cf.svg\" type=\"image/svg+xml\"/><link rel=\"shortcut icon\" href=\"/_next/static/media/favicon.8c087985.ico\" type=\"image/x-icon\"/><title>Tableau de bord - Assistant déclaration</title><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">\n{\n\n    window.ssrWasPerformedWithIsDark = \"system\" === \"dark\";\n\tconst sanitizer = typeof trustedTypes !== \"undefined\" ? trustedTypes.createPolicy(\"react-dsfr-asap\", { createHTML: s => s }) : {\n\t\tcreateHTML: s => s,\n\t};\n\n    reset_persisted_value_if_website_config_changed: {\n        const localStorageKey = \"scheme-website-config-default\";\n\n        const localStorageValue = localStorage.getItem(localStorageKey);\n\n        if (localStorageValue === \"system\") {\n            break reset_persisted_value_if_website_config_changed;\n        }\n\n        localStorage.removeItem(\"scheme\");\n\n        localStorage.setItem(localStorageKey, \"system\");\n    }\n    \n    const isDark = (() => {\n    \n    \tconst isDarkExplicitlyProvidedAsParameter = (() => {\n    \t\tif (\"system\" === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (\"system\") {\n    \t\t\tcase \"dark\": return true;\n    \t\t\tcase \"light\": return false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromLocalStorage = (() => {\n    \t\tconst colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n    \n    \t\tif (colorSchemeReadFromLocalStorage === null) {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tif (colorSchemeReadFromLocalStorage === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (colorSchemeReadFromLocalStorage) {\n    \t\t\tcase \"dark\":\n    \t\t\t\treturn true;\n    \t\t\tcase \"light\":\n    \t\t\t\treturn false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromOsPreference = (() => {\n    \t\tif (!window.matchMedia) {\n    \t\t\treturn false;\n    \t\t}\n    \n    \t\treturn window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\n    \t})();\n    \n    \treturn (\n    \t\tisDarkFromLocalStorage ??\n    \t\tisDarkExplicitlyProvidedAsParameter ??\n    \t\tisDarkFromOsPreference\n    \t);\n    \n    })();\n\n    const effect = ()=> {\n\n        document.documentElement.setAttribute(\n            \"data-fr-scheme\",\n            (() => {\n                const colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n\n                if (colorSchemeReadFromLocalStorage === null) {\n                    return \"system\";\n                }\n\n                return colorSchemeReadFromLocalStorage;\n            })()\n        );\n        document.documentElement.setAttribute(\"data-fr-theme\", isDark ? \"dark\" : \"light\")\n\n        {\n\n            let element= document.getElementById(\"dsfr-root-color-scheme\");\n\n    \t\tif( element !== null ){\n    \t\t\telement.remove()\n    \t\t}\n\n            element = document.createElement(\"style\");\n\n    \t\tif (\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" !== \"\") {\n    \t\t\telement.setAttribute(\"nonce\", \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\");\n    \t\t}\n\n            element.id = \"dsfr-root-color-scheme\";\n\n            element.innerHTML = sanitizer.createHTML(`:root { color-scheme: ${isDark ? \"dark\" : \"light\"}; }`);\n\n            document.head.appendChild(element);\n\n        }\n\n        {\n\n            const name = \"theme-color\";\n\n            let element = document.querySelector(`meta[name=${name}]`);\n    \n    \t\tif( element !== null ){\n    \t\t\telement.remove();\n    \t\t}\n\n            element = document.createElement(\"meta\");\n\n            element.name = name;\n\n            element.content = isDark ? \"#161616\" : \"#ffffff\";\n\n            document.head.appendChild(element);\n\n        }\n\n    };\n\n    effect();\n\n    // NOTE: This is just for global-error.tsx support\n    {\n\n        const observer = new MutationObserver((mutationsList) => {\n          for (const mutation of mutationsList) {\n            if (\n              mutation.type === \"attributes\" &&\n              mutation.attributeName === \"data-fr-scheme\"\n            ) {\n              const htmlEl = mutation.target;\n\n              if (htmlEl.hasAttribute(\"data-fr-js\")) {\n                observer.disconnect(); \n              }\n\n              if (!htmlEl.hasAttribute(\"data-fr-scheme\")) {\n                effect();\n                observer.disconnect(); \n              }\n            }\n          }\n        });\n\n        observer.observe(document.documentElement, {\n          attributes: true,\n          attributeFilter: [\"data-fr-scheme\"],\n        });\n\n    }\n\n}\n</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">window.ssrNonce = \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\";</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div role=\"progressbar\" class=\"LoadingArea_container__Nekqr\" aria-label=\"zone en cours de chargement - contenu\"><svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" fill=\"currentColor\" style=\"color:var(--background-flat-blue-france)\" class=\"remixicon LoadingArea_spinner__M4Bqd\"><path d=\"M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z\"></path></svg></div><script src=\"/_next/static/chunks/webpack-e9af86a544323c86.js\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" id=\"_R_\" async=\"\"></script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">(self.__next_f=self.__next_f||[]).push([0])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[78616,[],\\\"ClientSegmentRoot\\\"]\\n4:I[67212,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8072\\\",\\\"static/chunks/app/(private)/layout-95adecd557425530.js\\\"],\\\"default\\\"]\\n5:I[57121,[],\\\"\\\"]\\n6:I[85308,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"7096\\\",\\\"static/chunks/app/(private)/error-5649811715d8e916.js\\\"],\\\"default\\\"]\\n7:I[74581,[],\\\"\\\"]\\n9:I[90484,[],\\\"OutletBoundary\\\"]\\na:\\\"$Sreact.suspense\\\"\\nd:I[90484,[],\\\"ViewportBoundary\\\"]\\nf:I[90484,[],\\\"MetadataBoundary\\\"]\\n11:I[26719,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"4219\\\",\\\"static/chunks/app/global-error-7d0fdc81ecfd25e1.js\\\"],\\\"default\\\"]\\n13:I[31408,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"StartDsfrOnHydration\\\"]\\n14:I[18510,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"DashboardPage\\\"]\\n15:I[58118,[\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"7177\\\",\\\"static/chunks/app/layout-676823ae784314e7.js\\\"],\\\"ServerLayout\\\"]\\n16:I[17267,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8039\\\",\\\"static/chunks/app/error-ad3d82a483e093e2.js\\\"],\\\"default\\\"]\\n18:I[91253,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"s\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"tatic/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"4345\\\",\\\"static/chunks/app/not-found-ed298909ce0dcfb4.js\\\"],\\\"ErrorLayout\\\"]\\n:HL[\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"dashboard\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"(private)\\\",{\\\"children\\\":[\\\"dashboard\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]}]},\\\"$undefined\\\",\\\"$undefined\\\",16],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"$L2\\\"]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],[\\\"$\\\",\\\"$L3\\\",null,{\\\"Component\\\":\\\"$4\\\",\\\"slots\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$6\\\",\\\"errorStyles\\\":[],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]},\\\"serverProvidedParams\\\":{\\\"params\\\":{},\\\"promises\\\":null}}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[\\\"$L8\\\",null,[\\\"$\\\",\\\"$L9\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@b\\\"}]}]]}],{},null,false,null]},null,false,\\\"$@c\\\"]},null,false,null]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$Ld\\\",null,{\\\"children\\\":\\\"$Le\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$Lf\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$L10\\\"}]}]}],null]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$11\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"S\\\":false,\\\"h\\\":null,\\\"s\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"v0.0.0-20260612221528-95849c708654\\\"}\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"12:[]\\nc:\\\"$W12\\\"\\n8:[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L14\\\",null,{}],\\\";\\\"]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"2:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$16\\\",\\\"errorStyles\\\":[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$L17\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"17:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L18\\\",null,{\\\"code\\\":404}]]}]\\ne:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nb:null\\n10:[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"Tableau de bord - Assistant déclaration\\\"}]]\\n\"])</script></body></html>",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:09.998626788Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/weak-hsts-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/weak-hsts-detect",
+      "template-id": "weak-hsts-detect",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/weak-hsts-detect.yaml",
+      "info": {
+        "name": "Weak HTTP Strict-Transport-Security - Detect",
+        "author": [
+          "saint_orion"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "hsts"
+        ],
+        "description": "Detected HTTP Strict-Transport-Security header with a weak max-age value (less than one year). A low max-age reduces the effectiveness of HSTS, leaving users vulnerable to protocol downgrade attacks and cookie hijacking during the gap period.\n",
+        "reference": [
+          "https://owasp.org/www-project-secure-headers/",
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        }
+      },
+      "extractor-name": "hsts-header",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr/dashboard",
+      "extracted-results": [
+        "max-age=15552000; includeSubDomains"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: private, no-cache, no-store, max-age=0, must-revalidate\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'nonce-MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4' 'self' https://client.crisp.chat/ https://stats.beta.gouv.fr/;script-src-attr 'none';connect-src 'self' wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://client.crisp.chat/settings/ https://storage.crisp.chat/users/upload/ https://stats.beta.gouv.fr/ https://sentry.incubateur.net/ https://recherche-entreprises.api.gouv.fr/ https://data.geopf.fr/;frame-src 'self' https://data.assistant-declaration.beta.gouv.fr;worker-src 'self' blob:;style-src 'self' https: https://client.crisp.chat/;style-src-elem 'unsafe-inline' 'self' https: https://client.crisp.chat/;style-src-attr 'self' 'unsafe-inline';upgrade-insecure-requests\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nVary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Nonce: MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: 9d851485-e6c3-4119-bae9-30c99293f3ae\r\nX-Xss-Protection: 0\r\n\r\n<!DOCTYPE html><html lang=\"fr\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/706b844ffa4f2c7d.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/86d34d2a1f5fb214.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/1b1d10445b60e5f7.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"stylesheet\" href=\"/_next/static/css/becf6a4af68d7b96.css\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" data-precedence=\"next\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" href=\"/_next/static/chunks/webpack-e9af86a544323c86.js\"/><script src=\"/_next/static/chunks/52774a7f-e7e8ba15b7246e07.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4bd1b696-df4c0fb946159b6a.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2180-50927e8859a7d2e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/main-app-a8f402b4091428ba.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3014691f-d13afec67f0dda09.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5292-b4c0f97732b84568.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3691-335b59cd875903f4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/2411-55817fe90cbbaaa2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4901-d166563986223d0f.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4684-8d156fac2cd12c3d.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/5801-63c1630108c06e1b.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/562-808d5883cad34994.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9630-ecff9f63314fb5ca.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/3058-61fd085f43a4b929.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4612-72edbe770c1782e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/8427-1aedfe6147492513.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4986-b93dece58d9e3c5e.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/9690-3ff909c94a94a551.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/layout-95adecd557425530.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/4183-372e2b4884b9b64c.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/error-5649811715d8e916.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/7836-9d3de5ef4f6906e9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/global-error-7d0fdc81ecfd25e1.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/1013-a618fd22f0e18f65.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/layout-676823ae784314e7.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/error-ad3d82a483e093e2.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><script src=\"/_next/static/chunks/app/not-found-ed298909ce0dcfb4.js\" async=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script><link rel=\"preload\" href=\"/_next/static/css/83f393d1d5f66f3e.css\" as=\"style\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Regular.119b3a3e.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Medium.452138fa.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"preload\" href=\"/_next/static/media/Marianne-Bold.f0ef9bad.woff2\" as=\"font\" crossorigin=\"anonymous\"/><link rel=\"apple-touch-icon\" href=\"/_next/static/media/apple-touch-icon.1db30588.png\"/><link rel=\"icon\" href=\"/_next/static/media/favicon.f453a8cf.svg\" type=\"image/svg+xml\"/><link rel=\"shortcut icon\" href=\"/_next/static/media/favicon.8c087985.ico\" type=\"image/x-icon\"/><title>Tableau de bord - Assistant déclaration</title><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">\n{\n\n    window.ssrWasPerformedWithIsDark = \"system\" === \"dark\";\n\tconst sanitizer = typeof trustedTypes !== \"undefined\" ? trustedTypes.createPolicy(\"react-dsfr-asap\", { createHTML: s => s }) : {\n\t\tcreateHTML: s => s,\n\t};\n\n    reset_persisted_value_if_website_config_changed: {\n        const localStorageKey = \"scheme-website-config-default\";\n\n        const localStorageValue = localStorage.getItem(localStorageKey);\n\n        if (localStorageValue === \"system\") {\n            break reset_persisted_value_if_website_config_changed;\n        }\n\n        localStorage.removeItem(\"scheme\");\n\n        localStorage.setItem(localStorageKey, \"system\");\n    }\n    \n    const isDark = (() => {\n    \n    \tconst isDarkExplicitlyProvidedAsParameter = (() => {\n    \t\tif (\"system\" === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (\"system\") {\n    \t\t\tcase \"dark\": return true;\n    \t\t\tcase \"light\": return false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromLocalStorage = (() => {\n    \t\tconst colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n    \n    \t\tif (colorSchemeReadFromLocalStorage === null) {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tif (colorSchemeReadFromLocalStorage === \"system\") {\n    \t\t\treturn undefined;\n    \t\t}\n    \n    \t\tswitch (colorSchemeReadFromLocalStorage) {\n    \t\t\tcase \"dark\":\n    \t\t\t\treturn true;\n    \t\t\tcase \"light\":\n    \t\t\t\treturn false;\n    \t\t}\n    \t})();\n    \n    \tconst isDarkFromOsPreference = (() => {\n    \t\tif (!window.matchMedia) {\n    \t\t\treturn false;\n    \t\t}\n    \n    \t\treturn window.matchMedia(\"(prefers-color-scheme: dark)\").matches;\n    \t})();\n    \n    \treturn (\n    \t\tisDarkFromLocalStorage ??\n    \t\tisDarkExplicitlyProvidedAsParameter ??\n    \t\tisDarkFromOsPreference\n    \t);\n    \n    })();\n\n    const effect = ()=> {\n\n        document.documentElement.setAttribute(\n            \"data-fr-scheme\",\n            (() => {\n                const colorSchemeReadFromLocalStorage = localStorage.getItem(\"scheme\");\n\n                if (colorSchemeReadFromLocalStorage === null) {\n                    return \"system\";\n                }\n\n                return colorSchemeReadFromLocalStorage;\n            })()\n        );\n        document.documentElement.setAttribute(\"data-fr-theme\", isDark ? \"dark\" : \"light\")\n\n        {\n\n            let element= document.getElementById(\"dsfr-root-color-scheme\");\n\n    \t\tif( element !== null ){\n    \t\t\telement.remove()\n    \t\t}\n\n            element = document.createElement(\"style\");\n\n    \t\tif (\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" !== \"\") {\n    \t\t\telement.setAttribute(\"nonce\", \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\");\n    \t\t}\n\n            element.id = \"dsfr-root-color-scheme\";\n\n            element.innerHTML = sanitizer.createHTML(`:root { color-scheme: ${isDark ? \"dark\" : \"light\"}; }`);\n\n            document.head.appendChild(element);\n\n        }\n\n        {\n\n            const name = \"theme-color\";\n\n            let element = document.querySelector(`meta[name=${name}]`);\n    \n    \t\tif( element !== null ){\n    \t\t\telement.remove();\n    \t\t}\n\n            element = document.createElement(\"meta\");\n\n            element.name = name;\n\n            element.content = isDark ? \"#161616\" : \"#ffffff\";\n\n            document.head.appendChild(element);\n\n        }\n\n    };\n\n    effect();\n\n    // NOTE: This is just for global-error.tsx support\n    {\n\n        const observer = new MutationObserver((mutationsList) => {\n          for (const mutation of mutationsList) {\n            if (\n              mutation.type === \"attributes\" &&\n              mutation.attributeName === \"data-fr-scheme\"\n            ) {\n              const htmlEl = mutation.target;\n\n              if (htmlEl.hasAttribute(\"data-fr-js\")) {\n                observer.disconnect(); \n              }\n\n              if (!htmlEl.hasAttribute(\"data-fr-scheme\")) {\n                effect();\n                observer.disconnect(); \n              }\n            }\n          }\n        });\n\n        observer.observe(document.documentElement, {\n          attributes: true,\n          attributeFilter: [\"data-fr-scheme\"],\n        });\n\n    }\n\n}\n</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">window.ssrNonce = \"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\";</script><script src=\"/_next/static/chunks/polyfills-42372ed130431b0a.js\" noModule=\"\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\"></script></head><body><div hidden=\"\"><!--$--><!--/$--></div><div role=\"progressbar\" class=\"LoadingArea_container__Nekqr\" aria-label=\"zone en cours de chargement - contenu\"><svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"40\" height=\"40\" fill=\"currentColor\" style=\"color:var(--background-flat-blue-france)\" class=\"remixicon LoadingArea_spinner__M4Bqd\"><path d=\"M18.364 5.63604L16.9497 7.05025C15.683 5.7835 13.933 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12H21C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.4853 3 16.7353 4.00736 18.364 5.63604Z\"></path></svg></div><script src=\"/_next/static/chunks/webpack-e9af86a544323c86.js\" nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\" id=\"_R_\" async=\"\"></script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">(self.__next_f=self.__next_f||[]).push([0])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[78616,[],\\\"ClientSegmentRoot\\\"]\\n4:I[67212,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8072\\\",\\\"static/chunks/app/(private)/layout-95adecd557425530.js\\\"],\\\"default\\\"]\\n5:I[57121,[],\\\"\\\"]\\n6:I[85308,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"7096\\\",\\\"static/chunks/app/(private)/error-5649811715d8e916.js\\\"],\\\"default\\\"]\\n7:I[74581,[],\\\"\\\"]\\n9:I[90484,[],\\\"OutletBoundary\\\"]\\na:\\\"$Sreact.suspense\\\"\\nd:I[90484,[],\\\"ViewportBoundary\\\"]\\nf:I[90484,[],\\\"MetadataBoundary\\\"]\\n11:I[26719,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"4219\\\",\\\"static/chunks/app/global-error-7d0fdc81ecfd25e1.js\\\"],\\\"default\\\"]\\n13:I[31408,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"StartDsfrOnHydration\\\"]\\n14:I[18510,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"4986\\\",\\\"static/chunks/4986-b93dece58d9e3c5e.js\\\",\\\"8152\\\",\\\"static/chunks/app/(private)/dashboard/page-0fbaadf160c1f8d9.js\\\"],\\\"DashboardPage\\\"]\\n15:I[58118,[\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"4901\\\",\\\"static/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"7177\\\",\\\"static/chunks/app/layout-676823ae784314e7.js\\\"],\\\"ServerLayout\\\"]\\n16:I[17267,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"8039\\\",\\\"static/chunks/app/error-ad3d82a483e093e2.js\\\"],\\\"default\\\"]\\n18:I[91253,[\\\"8823\\\",\\\"static/chunks/3014691f-d13afec67f0dda09.js\\\",\\\"5292\\\",\\\"static/chunks/5292-b4c0f97732b84568.js\\\",\\\"3691\\\",\\\"static/chunks/3691-335b59cd875903f4.js\\\",\\\"2411\\\",\\\"static/chunks/2411-55817fe90cbbaaa2.js\\\",\\\"4183\\\",\\\"static/chunks/4183-372e2b4884b9b64c.js\\\",\\\"4901\\\",\\\"s\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"tatic/chunks/4901-d166563986223d0f.js\\\",\\\"4684\\\",\\\"static/chunks/4684-8d156fac2cd12c3d.js\\\",\\\"5801\\\",\\\"static/chunks/5801-63c1630108c06e1b.js\\\",\\\"562\\\",\\\"static/chunks/562-808d5883cad34994.js\\\",\\\"9630\\\",\\\"static/chunks/9630-ecff9f63314fb5ca.js\\\",\\\"3058\\\",\\\"static/chunks/3058-61fd085f43a4b929.js\\\",\\\"4612\\\",\\\"static/chunks/4612-72edbe770c1782e7.js\\\",\\\"7836\\\",\\\"static/chunks/7836-9d3de5ef4f6906e9.js\\\",\\\"1013\\\",\\\"static/chunks/1013-a618fd22f0e18f65.js\\\",\\\"8427\\\",\\\"static/chunks/8427-1aedfe6147492513.js\\\",\\\"9690\\\",\\\"static/chunks/9690-3ff909c94a94a551.js\\\",\\\"4345\\\",\\\"static/chunks/app/not-found-ed298909ce0dcfb4.js\\\"],\\\"ErrorLayout\\\"]\\n:HL[\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n:HL[\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"style\\\",{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"0:{\\\"P\\\":null,\\\"c\\\":[\\\"\\\",\\\"dashboard\\\"],\\\"q\\\":\\\"\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"(private)\\\",{\\\"children\\\":[\\\"dashboard\\\",{\\\"children\\\":[\\\"__PAGE__\\\",{}]}]}]},\\\"$undefined\\\",\\\"$undefined\\\",16],[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"$L2\\\"]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],[\\\"$\\\",\\\"$L3\\\",null,{\\\"Component\\\":\\\"$4\\\",\\\"slots\\\":{\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$6\\\",\\\"errorStyles\\\":[],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]},\\\"serverProvidedParams\\\":{\\\"params\\\":{},\\\"promises\\\":null}}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}],{\\\"children\\\":[[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[\\\"$L8\\\",null,[\\\"$\\\",\\\"$L9\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@b\\\"}]}]]}],{},null,false,null]},null,false,\\\"$@c\\\"]},null,false,null]},null,false,null],[\\\"$\\\",\\\"$1\\\",\\\"h\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$Ld\\\",null,{\\\"children\\\":\\\"$Le\\\"}],[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$Lf\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$a\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$L10\\\"}]}]}],null]}],false]],\\\"m\\\":\\\"$undefined\\\",\\\"G\\\":[\\\"$11\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/706b844ffa4f2c7d.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/86d34d2a1f5fb214.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"S\\\":false,\\\"h\\\":null,\\\"s\\\":\\\"$undefined\\\",\\\"l\\\":\\\"$undefined\\\",\\\"p\\\":\\\"$undefined\\\",\\\"d\\\":\\\"$undefined\\\",\\\"b\\\":\\\"v0.0.0-20260612221528-95849c708654\\\"}\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"12:[]\\nc:\\\"$W12\\\"\\n8:[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L14\\\",null,{}],\\\";\\\"]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"2:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[\\\"$\\\",\\\"$L5\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$16\\\",\\\"errorStyles\\\":[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]],\\\"errorScripts\\\":[],\\\"template\\\":[\\\"$\\\",\\\"$L7\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$L17\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/83f393d1d5f66f3e.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"1\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/1b1d10445b60e5f7.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/css/becf6a4af68d7b96.css\\\",\\\"precedence\\\":\\\"next\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\"}]]],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]}]\\n\"])</script><script nonce=\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\">self.__next_f.push([1,\"17:[\\\"$\\\",\\\"$L15\\\",null,{\\\"nonce\\\":\\\"MDgyYzFmMDctMDBkNS00MTkzLWExNTQtMjU2ZmY2ZDM5YTA4\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L13\\\",null,{}],[\\\"$\\\",\\\"$L18\\\",null,{\\\"code\\\":404}]]}]\\ne:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"}],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"}]]\\nb:null\\n10:[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"Tableau de bord - Assistant déclaration\\\"}]]\\n\"])</script></body></html>",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.003352641Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.006077697Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.006337862Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.006613075Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.006863772Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.007112114Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.007356479Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.007622565Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.007872881Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 307 Temporary Redirect\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nDate: Sun, 20 Sep 2026 06:50:09 GMT\r\nLocation: /dashboard\r\nStrict-Transport-Security: max-age=31536000\r\nX-Request-Id: 1e39eb4a-6d09-4d6d-9b48-fc906fe9f372\r\n\r\n",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:10.008114722Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://assistant-declaration.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/dashboard'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/security-txt.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/security-txt",
+      "template-id": "security-txt",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/security-txt.yaml",
+      "info": {
+        "name": "security.txt File",
+        "author": [
+          "bad5ect0r",
+          "noraj"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "description": "File similar to robots.txt but intended to be read by humans wishing to contact a website’s owner about security issues. Often defines a security policy and contact details.\n",
+        "reference": [
+          "https://securitytxt.org/",
+          "https://community.turgensec.com/security-txt-progress-in-ethical-security-research/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 2,
+          "shodan-query": "http.securitytxt:contact http.status:200",
+          "verified": true
+        }
+      },
+      "type": "http",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://assistant-declaration.beta.gouv.fr",
+      "matched-at": "https://assistant-declaration.beta.gouv.fr/.well-known/security.txt",
+      "extracted-results": [
+        " https://github.com/betagouv/assistant-declaration/issues"
+      ],
+      "request": "GET /.well-known/security.txt HTTP/1.1\r\nHost: assistant-declaration.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 127\r\nConnection: keep-alive\r\nContent-Security-Policy: default-src 'self';base-uri 'self';font-src 'self' https: data: https://client.crisp.chat/static/;form-action 'self';frame-ancestors 'self';img-src 'self' data: https://*.crisp.chat/;object-src 'none';script-src 'nonce-MTUzM2NkMTktZDI2YS00NGU3LThmNGEtYzQwYjBiMjMzOTBj' 'self' https://client.crisp.chat/ https://stats.beta.gouv.fr/;script-src-attr 'none';connect-src 'self' wss://client.relay.crisp.chat/ https://client.crisp.chat/static/ https://client.crisp.chat/settings/ https://storage.crisp.chat/users/upload/ https://stats.beta.gouv.fr/ https://sentry.incubateur.net/ https://recherche-entreprises.api.gouv.fr/ https://data.geopf.fr/;frame-src 'self' https://data.assistant-declaration.beta.gouv.fr;worker-src 'self' blob:;style-src 'self' https: https://client.crisp.chat/;style-src-elem 'unsafe-inline' 'self' https: https://client.crisp.chat/;style-src-attr 'self' 'unsafe-inline';upgrade-insecure-requests\r\nDate: Sun, 20 Sep 2026 06:50:37 GMT\r\nEtag: \"ncgjcl1v5u3j\"\r\nOrigin-Agent-Cluster: ?1\r\nReferrer-Policy: no-referrer\r\nStrict-Transport-Security: max-age=15552000; includeSubDomains\r\nX-Content-Type-Options: nosniff\r\nX-Dns-Prefetch-Control: off\r\nX-Download-Options: noopen\r\nX-Frame-Options: SAMEORIGIN\r\nX-Nonce: MTUzM2NkMTktZDI2YS00NGU3LThmNGEtYzQwYjBiMjMzOTBj\r\nX-Permitted-Cross-Domain-Policies: none\r\nX-Request-Id: ba630500-efca-42d8-b135-f4115e53fa1b\r\nX-Xss-Protection: 0\r\n\r\nContact: https://github.com/betagouv/assistant-declaration/issues\nExpires: 2026-09-27T06:50:37.366Z\nPreferred-Languages: fr, en",
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:50:37.433028606Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://assistant-declaration.beta.gouv.fr/.well-known/security.txt'",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/nameserver-fingerprint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/nameserver-fingerprint",
+      "template-id": "nameserver-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/nameserver-fingerprint.yaml",
+      "info": {
+        "name": "NS Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "ns",
+          "discovery"
+        ],
+        "description": "An NS record was detected. An NS record delegates a subdomain to a set of name servers.",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "matched-at": "assistant-declaration.beta.gouv.fr",
+      "extracted-results": [
+        "dns19.ovh.net.",
+        "ns19.ovh.net."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 24135\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t NS\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 24135\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t NS\n\n;; ANSWER SECTION:\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tNS\tdns19.ovh.net.\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tNS\tns19.ovh.net.\n",
+      "timestamp": "2026-09-20T06:51:17.528050832Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dmarc-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dmarc-detect",
+      "template-id": "dmarc-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/dmarc-detect.yaml",
+      "info": {
+        "name": "DNS DMARC - Detect",
+        "author": [
+          "juliosmelo"
+        ],
+        "tags": [
+          "dns",
+          "dmarc",
+          "discovery"
+        ],
+        "description": "DNS DMARC information was detected.\n",
+        "reference": [
+          "https://dmarc.org/",
+          "https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "dns",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "matched-at": "_dmarc.assistant-declaration.beta.gouv.fr",
+      "extracted-results": [
+        "\"v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 9190\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;_dmarc.assistant-declaration.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 9190\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;_dmarc.assistant-declaration.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\n_dmarc.assistant-declaration.beta.gouv.fr.\t3600\tIN\tTXT\t\"v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com\"\n",
+      "timestamp": "2026-09-20T06:51:17.541119024Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/spf-record-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/spf-record-detect",
+      "template-id": "spf-record-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/spf-record-detect.yaml",
+      "info": {
+        "name": "SPF Record - Detection",
+        "author": [
+          "rxerium"
+        ],
+        "tags": [
+          "dns",
+          "spf",
+          "discovery"
+        ],
+        "description": "An SPF TXT record was detected\n",
+        "reference": [
+          "https://www.mimecast.com/content/how-to-create-an-spf-txt-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "matched-at": "assistant-declaration.beta.gouv.fr",
+      "extracted-results": [
+        "v=spf1 include:_spf.tem.scaleway.com include:_spf.ox.numerique.gouv.fr -all\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 24466\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 24466\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tTXT\t\"v=spf1 include:_spf.tem.scaleway.com include:_spf.ox.numerique.gouv.fr -all\"\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tTXT\t\"brevo-code:4dfb09887a8040e1a473e079c9fb3d89\"\n",
+      "timestamp": "2026-09-20T06:51:17.639889706Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/txt-fingerprint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/txt-fingerprint",
+      "template-id": "txt-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/txt-fingerprint.yaml",
+      "info": {
+        "name": "DNS TXT Record Detected",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "txt",
+          "discovery"
+        ],
+        "description": "A DNS TXT record was detected. The TXT record lets a domain admin leave notes on a DNS server.",
+        "reference": [
+          "https://www.netspi.com/blog/technical/network-penetration-testing/analyzing-dns-txt-records-to-fingerprint-service-providers/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "matched-at": "assistant-declaration.beta.gouv.fr",
+      "extracted-results": [
+        "\"v=spf1 include:_spf.tem.scaleway.com include:_spf.ox.numerique.gouv.fr -all\"",
+        "\"brevo-code:4dfb09887a8040e1a473e079c9fb3d89\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 24466\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 24466\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tTXT\t\"v=spf1 include:_spf.tem.scaleway.com include:_spf.ox.numerique.gouv.fr -all\"\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tTXT\t\"brevo-code:4dfb09887a8040e1a473e079c9fb3d89\"\n",
+      "timestamp": "2026-09-20T06:51:17.640311082Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/mx-fingerprint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/mx-fingerprint",
+      "template-id": "mx-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/mx-fingerprint.yaml",
+      "info": {
+        "name": "MX Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "mx",
+          "discovery"
+        ],
+        "description": "An MX record was detected. MX records direct emails to a mail exchange server.",
+        "reference": [
+          "https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/",
+          "https://mxtoolbox.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "matched-at": "assistant-declaration.beta.gouv.fr",
+      "extracted-results": [
+        "5 mx.ox.numerique.gouv.fr."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 10587\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t MX\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 10587\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;assistant-declaration.beta.gouv.fr.\tIN\t MX\n\n;; ANSWER SECTION:\nassistant-declaration.beta.gouv.fr.\t3600\tIN\tMX\t5 mx.ox.numerique.gouv.fr.\n",
+      "timestamp": "2026-09-20T06:51:17.75838736Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "assistant-declaration.beta.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:51:17.794947823Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "assistant-declaration.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "assistant-declaration.beta.gouv.fr:443",
+      "extracted-results": [
+        "assistant-declaration.beta.gouv.fr"
+      ],
+      "ip": "185.21.194.105",
+      "timestamp": "2026-09-20T06:51:17.795159938Z",
+      "matcher-status": true
+    }
+  ]
+]
