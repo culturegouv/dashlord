@@ -1,0 +1,810 @@
+[
+  [
+    {
+      "template": "http/technologies/waf-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+      "template-id": "waf-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/waf-detect.yaml",
+      "info": {
+        "name": "WAF Detection",
+        "author": [
+          "dwisiswant0",
+          "lu4nx",
+          "s4e-io"
+        ],
+        "tags": [
+          "waf",
+          "tech",
+          "misc",
+          "discovery"
+        ],
+        "description": "A web application firewall was detected.",
+        "reference": [
+          "https://github.com/Ekultek/WhatWaf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "apachegeneric",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr",
+      "request": "POST / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+      "response": "HTTP/1.1 403 Forbidden\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nContent-Language: fr\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:51:45 GMT\r\nReferrer-Policy: same-origin\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Language, Cookie, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: e05a7519-7cd4-424f-bc75-65a72d4dfcd6\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n  <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n  <title>403 Forbidden</title>\n  <style>\n    html * { padding:0; margin:0; }\n    body * { padding:10px 20px; }\n    body * * { padding:0; }\n    body { font-family: sans-serif; background:#eee; color:#000; }\n    body>div { border-bottom:1px solid #ddd; }\n    h1 { font-weight:normal; margin-bottom:.4em; }\n    h1 span { font-size:60%; color:#666; font-weight:normal; }\n    #info { background:#f6f6f6; }\n    #info ul { margin: 0.5em 4em; }\n    #info p, #summary p { padding-top:10px; }\n    #summary { background: #ffc; }\n    #explanation { background:#eee; border-bottom: 0px none; }\n  </style>\n</head>\n<body>\n<div id=\"summary\">\n  <h1>Interdit <span>(403)</span></h1>\n  <p>La vérification CSRF a échoué. La requête a été interrompue.</p>\n\n  <p>Vous voyez ce message parce que ce site HTTPS exige que le navigateur web envoie un en-tête « Referer », ce qu’il n&#x27;a pas fait. Cet en-tête est exigé pour des raisons de sécurité, afin de s’assurer que le navigateur n’ait pas été piraté par un intervenant externe.</p>\n  <p>Si vous avez désactivé l’envoi des en-têtes « Referer » par votre navigateur, veuillez les réactiver, au moins pour ce site ou pour les connexions HTTPS, ou encore pour les requêtes de même origine (« same-origin »).</p>\n  <p>Si vous utilisez la balise &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt; ou que vous incluez l’en-tête « Referrer-Policy: no-referrer », il est préférable de les enlever. La protection CSRF exige que l’en-tête ``Referer`` effectue un contrôle de référant strict. Si vous vous souciez de la confidentialité, utilisez des alternatives comme &lt;a rel=&quot;noreferrer&quot; …&gt; pour les liens vers des sites tiers.</p>\n\n\n</div>\n\n<div id=\"explanation\">\n  <p><small>Des informations plus détaillées sont affichées lorsque la variable DEBUG vaut True.</small></p>\n</div>\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:51:45.706432539Z",
+      "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "euphrosyne.beta.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:52:54.749151899Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "euphrosyne.beta.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:52:54.961818712Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/form-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/form-detection",
+      "template-id": "form-detection",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/form-detection.yaml",
+      "info": {
+        "name": "Form Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "form",
+          "misc",
+          "miscellaneous",
+          "vuln"
+        ],
+        "description": "A template to detect HTML Forms in page response.\n",
+        "reference": [
+          "https://github.com/dirtycoder0124/formcrawler"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:52:59 GMT\r\nExpires: Sun, 20 Sep 2026 06:52:59 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: 7f4d47fa-228a-4774-a0d3-52259d880c96\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"Ijz7y19NsKhQEFGv0jBUJuLOCmtYrY7QPBf0imMvZbpYEqOWTd76T4slDe3LggMg\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"Ijz7y19NsKhQEFGv0jBUJuLOCmtYrY7QPBf0imMvZbpYEqOWTd76T4slDe3LggMg\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:52:59.879645341Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:05 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:05 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: e07bb50c-ee12-432c-a801-73580c0690f9\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:05.169431893Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:05 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:05 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: e07bb50c-ee12-432c-a801-73580c0690f9\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:05.17113439Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:05 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:05 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: e07bb50c-ee12-432c-a801-73580c0690f9\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:05.17288497Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:05 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:05 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: e07bb50c-ee12-432c-a801-73580c0690f9\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"rHoGwSGYvxAZ9OGpMpttSU0nmFVjW4Ghc67ksZe1v5q5tjp9GkXheQwb1be1rcbM\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:05.174364489Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/wordpress-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/wordpress-detect",
+      "template-id": "wordpress-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/wordpress-detect.yaml",
+      "info": {
+        "name": "WordPress Detect",
+        "author": [
+          "pdteam",
+          "daffainfo",
+          "ricardomaia",
+          "topscoder",
+          "adamcrosser"
+        ],
+        "tags": [
+          "tech",
+          "wordpress",
+          "cms",
+          "wp",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "category": "cms",
+          "max-request": 4,
+          "product": "wordpress",
+          "shodan-query": [
+            "http.component:\"WordPress\"",
+            "http.component:\"wordpress\"",
+            "cpe:\"cpe:2.3:a:wordpress:wordpress\""
+          ],
+          "vendor": "wordpress",
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": null,
+          "cpe": "cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*"
+        }
+      },
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:18 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:18 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: adc175ac-e12e-421c-baab-6708d606ef54\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"zqLYdRz6leXWiO6iISSEOwuZX1FZKEvOImL4Bqvnhx0fQww8ekRaJtCRE4RPAMBH\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"zqLYdRz6leXWiO6iISSEOwuZX1FZKEvOImL4Bqvnhx0fQww8ekRaJtCRE4RPAMBH\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:18.283231529Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/missing-cookie-samesite-strict.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/missing-cookie-samesite-strict",
+      "template-id": "missing-cookie-samesite-strict",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-cookie-samesite-strict.yaml",
+      "info": {
+        "name": "Missing Cookie SameSite Strict",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz"
+        ],
+        "tags": [
+          "misconfig",
+          "samesite",
+          "cookie",
+          "vuln"
+        ],
+        "description": "Identified cookies that lacked the samesite=strict attribute, which prevented enforcement of restrictions on cross-domain cookie transmission.\n",
+        "reference": [
+          "https://pulsesecurity.co.nz/articles/samesite-lax-csrf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "extracted-results": [
+        "csrftoken=3ZcL5bVEn5lMOKCqDXcHZD8o5jJxMZ3K; expires=Sun, 19 Sep 2027 06:53:31 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:31 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:31 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: 916004c8-d912-47fd-a943-1de225e34b12\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"DFHnQgD2K5QkDXh5YmUi8aBmagAdIqYawuJYLhowX01WhxJlr9WPXDzA5p9AkfRK\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"DFHnQgD2K5QkDXh5YmUi8aBmagAdIqYawuJYLhowX01WhxJlr9WPXDzA5p9AkfRK\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:32.095643165Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/fingerprinthub-web-fingerprints.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/fingerprinthub-web-fingerprints",
+      "template-id": "fingerprinthub-web-fingerprints",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/fingerprinthub-web-fingerprints.yaml",
+      "info": {
+        "name": "FingerprintHub Technology Fingerprint",
+        "author": [
+          "pdteam",
+          "righettod"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "description": "FingerprintHub Technology Fingerprint tests run in nuclei.",
+        "reference": [
+          "https://github.com/0x727/FingerprintHub"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "matcher-name": "django",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:31 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:31 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: 916004c8-d912-47fd-a943-1de225e34b12\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"DFHnQgD2K5QkDXh5YmUi8aBmagAdIqYawuJYLhowX01WhxJlr9WPXDzA5p9AkfRK\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"DFHnQgD2K5QkDXh5YmUi8aBmagAdIqYawuJYLhowX01WhxJlr9WPXDzA5p9AkfRK\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:32.139276481Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "django",
+      "type": "http",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://euphrosyne.beta.gouv.fr",
+      "matched-at": "https://euphrosyne.beta.gouv.fr/login/?next=/",
+      "request": "GET / HTTP/1.1\r\nHost: euphrosyne.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nCache-Control: max-age=0, no-cache, no-store, must-revalidate, private\r\nConnection: keep-alive\r\nContent-Language: en\r\nContent-Security-Policy-Report-Only: default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'\r\nContent-Type: text/html; charset=utf-8\r\nCross-Origin-Opener-Policy: same-origin\r\nDate: Sun, 20 Sep 2026 06:53:31 GMT\r\nExpires: Sun, 20 Sep 2026 06:53:31 GMT\r\nReferrer-Policy: same-origin\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Cookie, Accept-Language, origin\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: DENY\r\nX-Request-Id: 916004c8-d912-47fd-a943-1de225e34b12\r\n\r\n<!DOCTYPE html>\n\n<html lang=\"en\" dir=\"ltr\">\n<head>\n<title>Log in | Euphrosyne</title>\n<link rel=\"stylesheet\" href=\"/static/admin/css/base.428a30193bdc.css\">\n\n<link rel=\"stylesheet\" href=\"/static/anonymous.71dd1bc4f970.css\">\n\n<link rel=\"stylesheet\" href=\"/static/dsfr.581c73622181.css\">\n<link rel=\"stylesheet\" href=\"/static/icons.c07b41367651.css\">\n<link rel=\"stylesheet\" href=\"/static/admin/css/dark_mode.a364bd93cdcc.css\">\n\n  <link rel=\"stylesheet\" href=\"/static/admin/css/nav_sidebar.dd925738f4cc.css\">\n  <script src=\"/static/admin/js/nav_sidebar.3b9190d420b1.js\" defer></script>\n\n\n<link rel=\"stylesheet\" href=\"/static/admin/css/login.a3b47c458e5d.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/login.e1c0efc5b658.css\">\n\n\n<link rel=\"stylesheet\" href=\"/static/css/unauthorized.ff8112f5644c.css\">\n\n\n\n\n\n\n<script type=\"text/javascript\" src=\"/static/anonymous.848578ebc9fa.js\"></script>\n\n\n\n    <meta name=\"viewport\" content=\"user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"/static/admin/css/responsive.ea11f463f024.css\">\n    \n\n<meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n</head>\n\n<body class=\" unauthorized login\"\n  data-admin-utc-offset=\"7200\">\n\n<!-- Container -->\n<div id=\"container\">\n    <div class=\"main\" id=\"main\">\n      \n        \n      \n      <div class=\"content\">\n        \n          \n        \n        \n          \n        \n        <!-- Content -->\n        <div id=\"content\" class=\"colM\">\n          \n          \n          \n          \n    <div class=\"fr-grid-row fr-grid-row--gutters fr-grid-row--middle\" id=\"panels-container\">\n      <div class=\"fr-col-0 fr-col-md-6 left-panel fr-background-alt--blue-ecume\">\n          <div class=\"fr-container left-panel__container\">\n            <h1>Euphrosyne</h1>\n            <img src=\"/static/img/illustration-unauthorized.6e667cacb39b.svg\" class=\"left-panel__illustration\">\n            <h2>\n            \n              The online board to track your <span class=\"fr-text-label--blue-cumulus\">New AGLAE</span> search projects\n            \n            </h2>\n          </div>\n      </div>\n      <div class=\"fr-col-12 fr-col-md-6\">\n          <div class=\"fr-container right-panel__container\">\n            \n            \n            \n  \n  <div id=\"content-main\">\n\n    <h3>Log in</h3>\n\n    \n\n    <div class=\"orcid-row fr-mt-6w fr-mb-4w\">\n      <form action=\"/login/orcid/\" method=\"post\">\n        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"DFHnQgD2K5QkDXh5YmUi8aBmagAdIqYawuJYLhowX01WhxJlr9WPXDzA5p9AkfRK\">\n        <button class=\"button\" type=\"submit\">\n          <img alt=\"ORCID logo\" src=\"https://info.orcid.org/wp-content/uploads/2019/11/orcid_24x24.png\" width=\"24\" height=\"24\" />\n          Log in with ORCID\n        </button>\n      </form>\n    </div>\n    \n    <form action=\"/login/?next=/\" method=\"post\" id=\"login-form\"><input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"DFHnQgD2K5QkDXh5YmUi8aBmagAdIqYawuJYLhowX01WhxJlr9WPXDzA5p9AkfRK\">\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_username\" class=\"required\">Email address:</label> <input type=\"text\" name=\"username\" autofocus autocapitalize=\"none\" autocomplete=\"username\" maxlength=\"254\" required id=\"id_username\" class=\" fr-input\">\n      </div>\n      <div class=\"form-row\">\n        \n        <label class=\"fr-label\"  for=\"id_password\" class=\"required\">Password:</label> <input type=\"password\" name=\"password\" autocomplete=\"current-password\" required id=\"id_password\" class=\" fr-input\">\n        <input type=\"hidden\" name=\"next\" value=\"/\">\n      </div>\n\n      \n      \n      <div class=\"fr-mt-3v\">\n        <a class=\"fr-link fr-link--sm\" href=\"/password_reset/\">Forgotten your password or username?</a>\n      </div>\n      \n\n      <div class=\"fr-mt-4w\">\n        <input type=\"submit\" value=\"Log in\">\n      </div>\n    </form>\n  </div>\n\n            </div>\n        </div>\n    </div>\n\n\n          \n          <br class=\"clear\">\n        </div>\n        <!-- END Content -->\n      </div>\n    </div>\n    \n  </div>\n\n  \n    \n<footer class=\"fr-footer\" role=\"contentinfo\" id=\"footer\">\n    <div class=\"fr-container\">\n        <div class=\"fr-footer__body\">\n            <div class=\"fr-footer__brand\">\n                <p class=\"fr-logo\" title=\"ministère de la culture\">\n                  Ministère\n                  <br>\n                  de la Culture\n                </p>\n              </div>\n            <div class=\"fr-footer__content\">\n                <p class=\"fr-footer__content-desc\">\n                    \n                        Euphrosyne, open <a href=\"https://c2rmf.fr/aglae-0\">New AGLAE</a> data.\n                    \n                </p>\n                <ul class=\"fr-footer__content-list\">\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://legifrance.gouv.fr\">legifrance.gouv.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://gouvernement.fr\">gouvernement.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://service-public.fr\">service-public.fr</a>\n                    </li>\n                    <li class=\"fr-footer__content-item\">\n                        <a class=\"fr-footer__content-link\" href=\"https://data.gouv.fr\">data.gouv.fr</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <div class=\"fr-footer__partners\">\n            <h4 class=\"fr-footer__partners-title\">Our partners</h4>\n            <div class=\"fr-footer__partners-logos\">\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-atelier-numerique.d19f4b1aee97.svg\" alt=\"Incubateur Atelier Numérique\" />\n                    </a>\n                </div>\n                <div class=\"fr-footer__partners-main\">\n                    <a class=\"footer__partners-link\" href=\"#\">\n                        <img class=\"fr-footer__logo\" style=\"height: 5.625rem\" src=\"/static/img/logo-beta-gouv.35ed01443813.png\" alt=\"Beta Gouv\" />\n                    </a>\n                </div>\n            </div>\n        </div>\n        <div class=\"fr-footer__bottom\">\n            <ul class=\"fr-footer__bottom-list\">\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/accessibility/declaration/\">Accessibility: non-compliant</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/cgu/\">End-user license agreement</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/legal-notice/\">Legal notice</a>\n                </li>\n                <li class=\"fr-footer__bottom-item\">\n                    <a class=\"fr-footer__bottom-link\" href=\"/personal-data/\">Personal data and cookies</a>\n                </li>\n            </ul>\n            <div class=\"fr-footer__bottom-copy\">\n                <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href=\"https://github.com/etalab/licence-ouverte/blob/master/LO.md\" target=\"_blank\">licence etalab-2.0</a>\n                </p>\n            </div>\n        </div>\n    </div>\n</footer>\n\n  \n\n<!-- END Container -->\n\n</body>\n</html>\n",
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:32.16661413Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Referer: https://euphrosyne.beta.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://euphrosyne.beta.gouv.fr/login/?next=/'",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/spf-record-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/spf-record-detect",
+      "template-id": "spf-record-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/spf-record-detect.yaml",
+      "info": {
+        "name": "SPF Record - Detection",
+        "author": [
+          "rxerium"
+        ],
+        "tags": [
+          "dns",
+          "spf",
+          "discovery"
+        ],
+        "description": "An SPF TXT record was detected\n",
+        "reference": [
+          "https://www.mimecast.com/content/how-to-create-an-spf-txt-record"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "euphrosyne.beta.gouv.fr",
+      "matched-at": "euphrosyne.beta.gouv.fr",
+      "extracted-results": [
+        "v=spf1 include:spf.mailjet.com include:_spf.alwaysdata.com ~all\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 63335\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 63335\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\neuphrosyne.beta.gouv.fr.\t300\tIN\tTXT\t\"v=spf1 include:spf.mailjet.com include:_spf.alwaysdata.com ~all\"\n",
+      "timestamp": "2026-09-20T06:53:47.6839875Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/txt-fingerprint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/txt-fingerprint",
+      "template-id": "txt-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/txt-fingerprint.yaml",
+      "info": {
+        "name": "DNS TXT Record Detected",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "txt",
+          "discovery"
+        ],
+        "description": "A DNS TXT record was detected. The TXT record lets a domain admin leave notes on a DNS server.",
+        "reference": [
+          "https://www.netspi.com/blog/technical/network-penetration-testing/analyzing-dns-txt-records-to-fingerprint-service-providers/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "euphrosyne.beta.gouv.fr",
+      "matched-at": "euphrosyne.beta.gouv.fr",
+      "extracted-results": [
+        "\"v=spf1 include:spf.mailjet.com include:_spf.alwaysdata.com ~all\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 63335\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 63335\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\neuphrosyne.beta.gouv.fr.\t300\tIN\tTXT\t\"v=spf1 include:spf.mailjet.com include:_spf.alwaysdata.com ~all\"\n",
+      "timestamp": "2026-09-20T06:53:47.684250889Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/mx-fingerprint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/mx-fingerprint",
+      "template-id": "mx-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/mx-fingerprint.yaml",
+      "info": {
+        "name": "MX Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "mx",
+          "discovery"
+        ],
+        "description": "An MX record was detected. MX records direct emails to a mail exchange server.",
+        "reference": [
+          "https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/",
+          "https://mxtoolbox.com/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "euphrosyne.beta.gouv.fr",
+      "matched-at": "euphrosyne.beta.gouv.fr",
+      "extracted-results": [
+        "20 mx2.alwaysdata.com.",
+        "10 mx1.alwaysdata.com."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 52732\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t MX\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 52732\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t MX\n\n;; ANSWER SECTION:\neuphrosyne.beta.gouv.fr.\t300\tIN\tMX\t20 mx2.alwaysdata.com.\neuphrosyne.beta.gouv.fr.\t300\tIN\tMX\t10 mx1.alwaysdata.com.\n",
+      "timestamp": "2026-09-20T06:53:47.806432316Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/nameserver-fingerprint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/nameserver-fingerprint",
+      "template-id": "nameserver-fingerprint",
+      "template-path": "/home/runner/nuclei-templates/dns/nameserver-fingerprint.yaml",
+      "info": {
+        "name": "NS Record Detection",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "ns",
+          "discovery"
+        ],
+        "description": "An NS record was detected. An NS record delegates a subdomain to a set of name servers.",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ]
+        }
+      },
+      "type": "dns",
+      "host": "euphrosyne.beta.gouv.fr",
+      "matched-at": "euphrosyne.beta.gouv.fr",
+      "extracted-results": [
+        "ns10.ovh.net.",
+        "dns10.ovh.net."
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 31410\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t NS\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 31410\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;euphrosyne.beta.gouv.fr.\tIN\t NS\n\n;; ANSWER SECTION:\neuphrosyne.beta.gouv.fr.\t3600\tIN\tNS\tns10.ovh.net.\neuphrosyne.beta.gouv.fr.\t3600\tIN\tNS\tdns10.ovh.net.\n",
+      "timestamp": "2026-09-20T06:53:47.806610221Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dmarc-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dmarc-detect",
+      "template-id": "dmarc-detect",
+      "template-path": "/home/runner/nuclei-templates/dns/dmarc-detect.yaml",
+      "info": {
+        "name": "DNS DMARC - Detect",
+        "author": [
+          "juliosmelo"
+        ],
+        "tags": [
+          "dns",
+          "dmarc",
+          "discovery"
+        ],
+        "description": "DNS DMARC information was detected.\n",
+        "reference": [
+          "https://dmarc.org/",
+          "https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "dns",
+      "host": "euphrosyne.beta.gouv.fr",
+      "matched-at": "_dmarc.euphrosyne.beta.gouv.fr",
+      "extracted-results": [
+        "\"v=DMARC1;p=none;\""
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 50194\n;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;_dmarc.euphrosyne.beta.gouv.fr.\tIN\t TXT\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 50194\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;_dmarc.euphrosyne.beta.gouv.fr.\tIN\t TXT\n\n;; ANSWER SECTION:\n_dmarc.euphrosyne.beta.gouv.fr.\t300\tIN\tTXT\t\"v=DMARC1;p=none;\"\n",
+      "timestamp": "2026-09-20T06:53:48.017787076Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "euphrosyne.beta.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:48.027936349Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "euphrosyne.beta.gouv.fr",
+      "port": "443",
+      "matched-at": "euphrosyne.beta.gouv.fr:443",
+      "extracted-results": [
+        "euphrosyne.beta.gouv.fr"
+      ],
+      "ip": "148.253.96.193",
+      "timestamp": "2026-09-20T06:53:48.028117784Z",
+      "matcher-status": true
+    }
+  ]
+]
