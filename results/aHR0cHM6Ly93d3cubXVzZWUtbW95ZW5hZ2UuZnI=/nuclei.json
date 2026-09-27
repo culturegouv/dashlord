@@ -47,7 +47,7 @@
       ],
       "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\nconst nonSecureCookies = setCookieLines.filter(line => !line.toLowerCase().includes('secure'));\nconst cookieNames = nonSecureCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
       "response": "[bot_mitigation_cookie]",
-      "timestamp": "2026-09-20T03:34:06.603344131Z",
+      "timestamp": "2026-09-27T03:44:26.458810327Z",
       "matcher-status": true
     },
     {
@@ -97,279 +97,7 @@
       ],
       "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\n\nconst nonHttpOnlyCookies = setCookieLines.filter(line => !line.toLowerCase().includes('httponly'));\n\nconst cookieNames = nonHttpOnlyCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
       "response": "[bot_mitigation_cookie]",
-      "timestamp": "2026-09-20T03:34:07.444226585Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/tls-version.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
-      "template-id": "tls-version",
-      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
-      "info": {
-        "name": "TLS Version - Detect",
-        "author": [
-          "pdteam",
-          "pussycat0x"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 4
-        }
-      },
-      "type": "ssl",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "matched-at": "www.musee-moyenage.fr:443",
-      "extracted-results": [
-        "tls12"
-      ],
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:22.532877632Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/tls-version.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
-      "template-id": "tls-version",
-      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
-      "info": {
-        "name": "TLS Version - Detect",
-        "author": [
-          "pdteam",
-          "pussycat0x"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 4
-        }
-      },
-      "type": "ssl",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "matched-at": "www.musee-moyenage.fr:443",
-      "extracted-results": [
-        "tls13"
-      ],
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:22.834776779Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/missing-cookie-samesite-strict.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/missing-cookie-samesite-strict",
-      "template-id": "missing-cookie-samesite-strict",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-cookie-samesite-strict.yaml",
-      "info": {
-        "name": "Missing Cookie SameSite Strict",
-        "author": [
-          "lucky0x0d",
-          "pulsesecurity.co.nz"
-        ],
-        "tags": [
-          "misconfig",
-          "samesite",
-          "cookie",
-          "vuln"
-        ],
-        "description": "Identified cookies that lacked the samesite=strict attribute, which prevented enforcement of restrictions on cross-domain cookie transmission.\n",
-        "reference": [
-          "https://pulsesecurity.co.nz/articles/samesite-lax-csrf"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1,
-          "verified": true
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ],
-          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
-        }
-      },
-      "type": "http",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.musee-moyenage.fr",
-      "matched-at": "https://www.musee-moyenage.fr",
-      "extracted-results": [
-        "bot_mitigation_cookie=E62X4L22C4B47PF7TV6D5I7QHKLVUJLHBHYG7KUAVMM2MJSEO4ZFNYT5M2R63KEKHZ6Y34BQJWX4XO3QWLRAYQUKGTO5WYG24J3JJQW4AGKE3GZLTX3A====; Path=/; SameSite=lax"
-      ],
-      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:39 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-7f239ddb-4fb97886\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:39.115507792Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "strict-transport-security",
-      "type": "http",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.musee-moyenage.fr",
-      "matched-at": "https://www.musee-moyenage.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.179694747Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.musee-moyenage.fr",
-      "matched-at": "https://www.musee-moyenage.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.180012296Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.musee-moyenage.fr",
-      "matched-at": "https://www.musee-moyenage.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.180247219Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
+      "timestamp": "2026-09-27T03:44:26.462741998Z",
       "matcher-status": true
     },
     {
@@ -418,61 +146,9 @@
       "url": "https://www.musee-moyenage.fr",
       "matched-at": "https://www.musee-moyenage.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.180457927Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "www.musee-moyenage.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.musee-moyenage.fr",
-      "matched-at": "https://www.musee-moyenage.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.180660352Z",
+      "timestamp": "2026-09-27T03:45:36.192245929Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
       "matcher-status": true
     },
@@ -522,9 +198,61 @@
       "url": "https://www.musee-moyenage.fr",
       "matched-at": "https://www.musee-moyenage.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.18085192Z",
+      "timestamp": "2026-09-27T03:45:36.19254406Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "https://www.musee-moyenage.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:36.192816082Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
       "matcher-status": true
     },
@@ -574,9 +302,9 @@
       "url": "https://www.musee-moyenage.fr",
       "matched-at": "https://www.musee-moyenage.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.181035447Z",
+      "timestamp": "2026-09-27T03:45:36.193033952Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
       "matcher-status": true
     },
@@ -626,9 +354,9 @@
       "url": "https://www.musee-moyenage.fr",
       "matched-at": "https://www.musee-moyenage.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.181220385Z",
+      "timestamp": "2026-09-27T03:45:36.193238767Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
       "matcher-status": true
     },
@@ -678,9 +406,9 @@
       "url": "https://www.musee-moyenage.fr",
       "matched-at": "https://www.musee-moyenage.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.181386706Z",
+      "timestamp": "2026-09-27T03:45:36.193428113Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
       "matcher-status": true
     },
@@ -730,9 +458,281 @@
       "url": "https://www.musee-moyenage.fr",
       "matched-at": "https://www.musee-moyenage.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 03:35:46 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-88d7b31f-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_6HUUSWFJESM4QMJDSBF2EB3MYADSFO2JZBXADHVOVGHJIJDFKMIA====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:35:46.181550162Z",
+      "timestamp": "2026-09-27T03:45:36.193640243Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "https://www.musee-moyenage.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:36.193903408Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "https://www.musee-moyenage.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:36.194137378Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "https://www.musee-moyenage.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:36 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4dfec9bd-a11881fe\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:36.194312758Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "matched-at": "www.musee-moyenage.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:36.249014806Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "matched-at": "www.musee-moyenage.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:36.569671834Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/missing-cookie-samesite-strict.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/missing-cookie-samesite-strict",
+      "template-id": "missing-cookie-samesite-strict",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-cookie-samesite-strict.yaml",
+      "info": {
+        "name": "Missing Cookie SameSite Strict",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz"
+        ],
+        "tags": [
+          "misconfig",
+          "samesite",
+          "cookie",
+          "vuln"
+        ],
+        "description": "Identified cookies that lacked the samesite=strict attribute, which prevented enforcement of restrictions on cross-domain cookie transmission.\n",
+        "reference": [
+          "https://pulsesecurity.co.nz/articles/samesite-lax-csrf"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "https://www.musee-moyenage.fr",
+      "extracted-results": [
+        "bot_mitigation_cookie=6Z4LGZF6CE6FHC42ANECNZILXNQIFIGHPXPTOVH65OXP6FJUBNDNQHF4HVRULWD75UHK5FKAQZF4WSHUIUIA6BJJYCO2ZYHLOYRWMSJY5YC2Y7JCXSOQ====; Path=/; SameSite=lax"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: www.musee-moyenage.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 03:45:42 GMT\r\nSet-Cookie: ***\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-0d9639fc\r\n\r\n<html lang=\"en\"><head></head><body><script>window.location.href='/redirect_4F7XWSQM2CTL3MOXZHXMCX3OFV4HUYP44567NSDK2IDZ45FHNNQQ====/';</script><noscript>This website requires JS enabled and cookies</noscript></body></html>",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T03:45:42.821340933Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.musee-moyenage.fr'",
       "matcher-status": true
     },
@@ -769,9 +769,9 @@
       "extracted-results": [
         "waf.culture.fr"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 56056\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.musee-moyenage.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 56056\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.musee-moyenage.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.musee-moyenage.fr.\t300\tIN\tCNAME\twaf.culture.fr.\n",
-      "timestamp": "2026-09-20T03:36:00.51058943Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 53896\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.musee-moyenage.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 53896\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.musee-moyenage.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.musee-moyenage.fr.\t194\tIN\tCNAME\twaf.culture.fr.\n",
+      "timestamp": "2026-09-27T03:46:16.506317986Z",
       "matcher-status": true
     },
     {
@@ -803,7 +803,7 @@
         "Let's Encrypt"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:36:00.786762162Z",
+      "timestamp": "2026-09-27T03:46:16.807357284Z",
       "matcher-status": true
     },
     {
@@ -832,11 +832,11 @@
       "port": "443",
       "matched-at": "www.musee-moyenage.fr:443",
       "extracted-results": [
-        "cluny.prd.cloud.culture.fr",
-        "www.musee-moyenage.fr"
+        "www.musee-moyenage.fr",
+        "cluny.prd.cloud.culture.fr"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T03:36:00.786957356Z",
+      "timestamp": "2026-09-27T03:46:16.807574423Z",
       "matcher-status": true
     }
   ]
