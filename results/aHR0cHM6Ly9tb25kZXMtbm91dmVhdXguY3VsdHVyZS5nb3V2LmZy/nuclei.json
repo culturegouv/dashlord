@@ -41,34 +41,117 @@
       "url": "https://mondes-nouveaux.culture.gouv.fr",
       "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
       "request": "POST / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:11:34 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:15:53 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:11:34.485117595Z",
+      "timestamp": "2026-09-27T03:15:53.69621163Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: mondes-nouveaux.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/technologies/tech-detect.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
-      "template-id": "tech-detect",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "Wappalyzer Technology Detection",
+        "name": "TLS Version - Detect",
         "author": [
-          "hakluke",
-          "righettod",
-          "matejsmycka"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "tech",
+          "ssl",
+          "tls",
           "discovery"
         ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mondes-nouveaux.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "mondes-nouveaux.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-27T03:17:07.67380865Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "mondes-nouveaux.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "mondes-nouveaux.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-27T03:17:07.870628162Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
         }
       },
-      "matcher-name": "nginx",
+      "matcher-name": "content-security-policy",
       "type": "http",
       "host": "mondes-nouveaux.culture.gouv.fr",
       "port": "443",
@@ -76,9 +159,9 @@
       "url": "https://mondes-nouveaux.culture.gouv.fr",
       "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:49 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:49.842745103Z",
+      "timestamp": "2026-09-27T03:17:20.66753625Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -128,269 +211,9 @@
       "url": "https://mondes-nouveaux.culture.gouv.fr",
       "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.484884643Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "mondes-nouveaux.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://mondes-nouveaux.culture.gouv.fr",
-      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.485087736Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "mondes-nouveaux.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://mondes-nouveaux.culture.gouv.fr",
-      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.485237083Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "mondes-nouveaux.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://mondes-nouveaux.culture.gouv.fr",
-      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.485372365Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "mondes-nouveaux.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://mondes-nouveaux.culture.gouv.fr",
-      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.485534926Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "mondes-nouveaux.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://mondes-nouveaux.culture.gouv.fr",
-      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.485715875Z",
+      "timestamp": "2026-09-27T03:17:20.667706067Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -440,9 +263,217 @@
       "url": "https://mondes-nouveaux.culture.gouv.fr",
       "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.485897709Z",
+      "timestamp": "2026-09-27T03:17:20.667848704Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "mondes-nouveaux.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mondes-nouveaux.culture.gouv.fr",
+      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-27T03:17:20.667983656Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "mondes-nouveaux.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mondes-nouveaux.culture.gouv.fr",
+      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-27T03:17:20.668157311Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "mondes-nouveaux.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mondes-nouveaux.culture.gouv.fr",
+      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-27T03:17:20.668312401Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "mondes-nouveaux.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://mondes-nouveaux.culture.gouv.fr",
+      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-09-27T03:17:20.668473462Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -492,9 +523,9 @@
       "url": "https://mondes-nouveaux.culture.gouv.fr",
       "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.486092891Z",
+      "timestamp": "2026-09-27T03:17:20.668591953Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -544,76 +575,45 @@
       "url": "https://mondes-nouveaux.culture.gouv.fr",
       "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 20 Sep 2026 03:12:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:12:54.486272733Z",
+      "timestamp": "2026-09-27T03:17:20.668704534Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "ssl/tls-version.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
-      "template-id": "tls-version",
-      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
       "info": {
-        "name": "TLS Version - Detect",
+        "name": "Wappalyzer Technology Detection",
         "author": [
-          "pdteam",
-          "pussycat0x"
+          "hakluke",
+          "righettod",
+          "matejsmycka"
         ],
         "tags": [
-          "ssl",
-          "tls",
+          "tech",
           "discovery"
         ],
-        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 4
+          "max-request": 1
         }
       },
-      "type": "ssl",
+      "matcher-name": "nginx",
+      "type": "http",
       "host": "mondes-nouveaux.culture.gouv.fr",
       "port": "443",
-      "matched-at": "mondes-nouveaux.culture.gouv.fr:443",
-      "extracted-results": [
-        "tls12"
-      ],
+      "scheme": "https",
+      "url": "https://mondes-nouveaux.culture.gouv.fr",
+      "matched-at": "https://mondes-nouveaux.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: mondes-nouveaux.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 27 Sep 2026 03:17:25 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:13:23.474166314Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/tls-version.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
-      "template-id": "tls-version",
-      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
-      "info": {
-        "name": "TLS Version - Detect",
-        "author": [
-          "pdteam",
-          "pussycat0x"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 4
-        }
-      },
-      "type": "ssl",
-      "host": "mondes-nouveaux.culture.gouv.fr",
-      "port": "443",
-      "matched-at": "mondes-nouveaux.culture.gouv.fr:443",
-      "extracted-results": [
-        "tls13"
-      ],
-      "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:13:23.783475876Z",
+      "timestamp": "2026-09-27T03:17:25.927295606Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://mondes-nouveaux.culture.gouv.fr'",
       "matcher-status": true
     },
     {
@@ -645,7 +645,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:13:25.019126027Z",
+      "timestamp": "2026-09-27T03:17:46.015787239Z",
       "matcher-status": true
     },
     {
@@ -677,7 +677,7 @@
         "mondes-nouveaux.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-09-20T03:13:25.019298227Z",
+      "timestamp": "2026-09-27T03:17:46.015970792Z",
       "matcher-status": true
     }
   ]
