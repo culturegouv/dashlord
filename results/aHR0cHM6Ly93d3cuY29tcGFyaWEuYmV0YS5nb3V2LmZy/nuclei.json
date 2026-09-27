@@ -30,7 +30,7 @@
         "tls12"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:09.494288877Z",
+      "timestamp": "2026-09-27T06:46:08.560727703Z",
       "matcher-status": true
     },
     {
@@ -63,215 +63,7 @@
         "tls13"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:09.803258636Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "www.comparia.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.comparia.beta.gouv.fr",
-      "matched-at": "https://www.comparia.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.730651201Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "www.comparia.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.comparia.beta.gouv.fr",
-      "matched-at": "https://www.comparia.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.730996089Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "www.comparia.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.comparia.beta.gouv.fr",
-      "matched-at": "https://www.comparia.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.731286945Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "www.comparia.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://www.comparia.beta.gouv.fr",
-      "matched-at": "https://www.comparia.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.731557302Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
+      "timestamp": "2026-09-27T06:46:08.769741955Z",
       "matcher-status": true
     },
     {
@@ -320,9 +112,9 @@
       "url": "https://www.comparia.beta.gouv.fr",
       "matched-at": "https://www.comparia.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.731853688Z",
+      "timestamp": "2026-09-27T06:46:38.794810146Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -372,9 +164,61 @@
       "url": "https://www.comparia.beta.gouv.fr",
       "matched-at": "https://www.comparia.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.732119557Z",
+      "timestamp": "2026-09-27T06:46:38.7951576Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "www.comparia.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.comparia.beta.gouv.fr",
+      "matched-at": "https://www.comparia.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T06:46:38.79552897Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -424,9 +268,113 @@
       "url": "https://www.comparia.beta.gouv.fr",
       "matched-at": "https://www.comparia.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.732379365Z",
+      "timestamp": "2026-09-27T06:46:38.795830287Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "www.comparia.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.comparia.beta.gouv.fr",
+      "matched-at": "https://www.comparia.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T06:46:38.796087933Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "www.comparia.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.comparia.beta.gouv.fr",
+      "matched-at": "https://www.comparia.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T06:46:38.796349756Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -476,9 +424,61 @@
       "url": "https://www.comparia.beta.gouv.fr",
       "matched-at": "https://www.comparia.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.732637239Z",
+      "timestamp": "2026-09-27T06:46:38.796598905Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "www.comparia.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.comparia.beta.gouv.fr",
+      "matched-at": "https://www.comparia.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-09-27T06:46:38.796848996Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -528,9 +528,9 @@
       "url": "https://www.comparia.beta.gouv.fr",
       "matched-at": "https://www.comparia.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: www.comparia.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 20 Sep 2026 06:36:29 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-adf1f171-aa8cc6d2\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-20T06:36:29+0000</p>\n                <p>Request UID: aq9-7cgHumV9a7pOmf1S2wAAADk</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 27 Sep 2026 06:46:38 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-ea604c7a-28201435\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-09-27T06:46:38+0000</p>\n                <p>Request UID: ari7zvcrMubdEp4F22Tn3AAAAGU</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:29.732884272Z",
+      "timestamp": "2026-09-27T06:46:38.797074581Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.comparia.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -567,9 +567,9 @@
       "extracted-results": [
         "waf.culture.fr"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 53372\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.comparia.beta.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 53372\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.comparia.beta.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.comparia.beta.gouv.fr.\t3438\tIN\tCNAME\twaf.culture.fr.\n",
-      "timestamp": "2026-09-20T06:36:49.793325992Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 40660\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.comparia.beta.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 40660\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.comparia.beta.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.comparia.beta.gouv.fr.\t3600\tIN\tCNAME\twaf.culture.fr.\n",
+      "timestamp": "2026-09-27T06:46:46.633271848Z",
       "matcher-status": true
     },
     {
@@ -601,7 +601,7 @@
         "Let's Encrypt"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:50.192179115Z",
+      "timestamp": "2026-09-27T06:46:46.770912028Z",
       "matcher-status": true
     },
     {
@@ -630,15 +630,15 @@
       "port": "443",
       "matched-at": "www.comparia.beta.gouv.fr:443",
       "extracted-results": [
-        "ai-arenaen.dk",
         "aiarenaen.dk",
         "arene.comparia.beta.gouv.fr",
         "comparia.beta.gouv.fr",
         "metabase.comparia.beta.gouv.fr",
-        "www.comparia.beta.gouv.fr"
+        "www.comparia.beta.gouv.fr",
+        "ai-arenaen.dk"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-09-20T06:36:50.192355466Z",
+      "timestamp": "2026-09-27T06:46:46.771076918Z",
       "matcher-status": true
     }
   ]
