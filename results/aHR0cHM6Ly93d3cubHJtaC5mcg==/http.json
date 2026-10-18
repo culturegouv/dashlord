@@ -14,16 +14,13 @@
       "content-type": "text/html; charset=utf-8",
       "expires": "-1",
       "vary": "Accept-Encoding",
-      "set-cookie": [
-        "_syrSessGuid=6b0221cf-6660-4268-a2b1-27c32d7b88e9; expires=Sun, 11-Oct-2026 04:56:31 GMT; path=/; secure; HttpOnly; SameSite=Lax"
-      ],
       "x-content-type-options": "nosniff",
       "referrer-policy": "strict-origin-when-cross-origin",
       "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
       "content-security-policy": "default-src 'self'; form-action 'self'; script-src https: 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'none'; style-src https: 'self' 'unsafe-inline'; img-src https: 'self' data: blob:; font-src 'self' data: https:; frame-src 'self' https: blob:; frame-ancestors 'self' https:; media-src 'self' blob:; connect-src 'self' https://*.google-analytics.com https://*.matomo.cloud",
-      "date": "Sun, 11 Oct 2026 04:26:31 GMT",
+      "date": "Sun, 18 Oct 2026 03:43:17 GMT",
       "connection": "close",
-      "content-length": "48072"
+      "content-length": "50209"
     }
   },
   "tests": {
@@ -103,20 +100,10 @@
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
       "pass": true,
-      "result": "cookies-secure-with-httponly-sessions-and-samesite",
-      "scoreModifier": 5,
-      "data": {
-        "_syrSessGuid": {
-          "domain": "www.lrmh.fr",
-          "expires": "2026-10-11T04:56:31.000Z",
-          "httponly": true,
-          "path": "/",
-          "port": null,
-          "samesite": "lax",
-          "secure": true
-        }
-      },
-      "sameSite": true
+      "result": "cookies-not-found",
+      "scoreModifier": 0,
+      "data": null,
+      "sameSite": false
     },
     "cross-origin-resource-sharing": {
       "expectation": "cross-origin-resource-sharing-not-implemented",
