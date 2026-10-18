@@ -30,7 +30,7 @@
         "tls12"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-11T07:35:02.419860823Z",
+      "timestamp": "2026-10-18T06:41:41.099912946Z",
       "matcher-status": true
     },
     {
@@ -63,45 +63,475 @@
         "tls13"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-11T07:35:02.473119135Z",
+      "timestamp": "2026-10-18T06:41:41.122145318Z",
       "matcher-status": true
     },
     {
-      "template": "dns/dns-saas-service-detection.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
-      "template-id": "dns-saas-service-detection",
-      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "DNS SaaS Service Detection",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "noah @thesubtlety",
-          "pdteam"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "dns",
-          "service",
-          "discovery"
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
         ],
-        "description": "A CNAME DNS record was discovered",
-        "reference": [
-          "https://ns1.com/resources/cname",
-          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
-          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
-        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
         }
       },
-      "type": "dns",
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
       "host": "www.museedesplansreliefs.culture.fr",
-      "matched-at": "www.museedesplansreliefs.culture.fr",
-      "extracted-results": [
-        "edge.redirect.pizza"
-      ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 36887\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 36887\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-10-11T07:35:40.590268231Z",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.729490181Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.729708543Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.729872135Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.730008756Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.730164946Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.730346154Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.730508493Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.730640959Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "www.museedesplansreliefs.culture.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://www.museedesplansreliefs.culture.fr",
+      "matched-at": "https://www.museedesplansreliefs.culture.fr",
+      "request": "GET / HTTP/1.1\r\nHost: www.museedesplansreliefs.culture.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 06:42:08 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-10-18T06:42:08.730781837Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://www.museedesplansreliefs.culture.fr'",
       "matcher-status": true
     },
     {
@@ -142,73 +572,47 @@
       "extracted-results": [
         "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 27064\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 27064\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t1481\tIN\tAAAA\t2a12:5240::1\n",
-      "timestamp": "2026-10-11T07:35:40.620435419Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 23399\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 23399\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3439\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t616\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-10-18T06:42:23.703330339Z",
       "matcher-status": true
     },
     {
-      "template": "ssl/detect-ssl-issuer.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
-      "template-id": "ssl-issuer",
-      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
       "info": {
-        "name": "Detect SSL Certificate Issuer",
+        "name": "DNS SaaS Service Detection",
         "author": [
-          "lingtren"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "ssl",
-      "host": "www.museedesplansreliefs.culture.fr",
-      "port": "443",
-      "matched-at": "www.museedesplansreliefs.culture.fr:443",
-      "extracted-results": [
-        "Let's Encrypt"
-      ],
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-11T07:35:40.667600262Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/ssl-dns-names.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
-      "template-id": "ssl-dns-names",
-      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
-      "info": {
-        "name": "SSL DNS Names",
-        "author": [
+          "noah @thesubtlety",
           "pdteam"
         ],
         "tags": [
-          "ssl",
-          "tls",
-          "vuln"
+          "dns",
+          "service",
+          "discovery"
         ],
-        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
         "severity": "info",
         "metadata": {
           "max-request": 1
         }
       },
-      "type": "ssl",
+      "type": "dns",
       "host": "www.museedesplansreliefs.culture.fr",
-      "port": "443",
-      "matched-at": "www.museedesplansreliefs.culture.fr:443",
+      "matched-at": "www.museedesplansreliefs.culture.fr",
       "extracted-results": [
-        "www.museedesplansreliefs.culture.fr"
+        "edge.redirect.pizza"
       ],
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-11T07:35:40.667765431Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 38418\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 38418\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;www.museedesplansreliefs.culture.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nwww.museedesplansreliefs.culture.fr.\t3439\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-10-18T06:42:23.704828679Z",
       "matcher-status": true
     }
   ]
