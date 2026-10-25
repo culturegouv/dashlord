@@ -1,3 +1,634 @@
 [
-  []
+  [
+    {
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
+      "info": {
+        "name": "TLS Version - Detect",
+        "author": [
+          "pdteam",
+          "pussycat0x"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 4
+        }
+      },
+      "type": "ssl",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "neoscrib.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:57:43.554455113Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/missing-sri.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/missing-sri",
+      "template-id": "missing-sri",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/missing-sri.yaml",
+      "info": {
+        "name": "Missing Subresource Integrity",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz",
+          "sullo amarsct"
+        ],
+        "tags": [
+          "compliance",
+          "js",
+          "css",
+          "sri",
+          "misconfig",
+          "vuln"
+        ],
+        "description": "Checks if external script and stylesheet tags in the HTML response are missing the Subresource Integrity (SRI) attribute.\n",
+        "reference": [
+          "https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#subresource-integrity",
+          "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-353"
+          ]
+        }
+      },
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr/",
+      "extracted-results": [
+        "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:57:49 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:57:49.491198558Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr/'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "info": {
+        "name": "Wappalyzer Technology Detection",
+        "author": [
+          "hakluke",
+          "righettod",
+          "matejsmycka"
+        ],
+        "tags": [
+          "tech",
+          "discovery"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "matcher-name": "google-font-api",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:57:54 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:57:55.008717336Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/xss-deprecated-header.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/xss-deprecated-header",
+      "template-id": "xss-deprecated-header",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/xss-deprecated-header.yaml",
+      "info": {
+        "name": "XSS-Protection Header - Cross-Site Scripting",
+        "author": [
+          "joshlarsen"
+        ],
+        "tags": [
+          "xss",
+          "misconfig",
+          "generic",
+          "vuln"
+        ],
+        "description": "Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+          "https://owasp.org/www-project-secure-headers/#x-xss-protection"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-79"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "extracted-results": [
+        "1; mode=block"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:57:57 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:57:57.740416776Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/miscellaneous/options-method.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+      "template-id": "options-method",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/options-method.yaml",
+      "info": {
+        "name": "Allowed Options Method",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "miscellaneous",
+          "misc",
+          "generic",
+          "vuln"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "extracted-results": [
+        "OPTIONS, TRACE, GET, HEAD, POST"
+      ],
+      "request": "OPTIONS / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAllow: OPTIONS, TRACE, GET, HEAD, POST\r\nDate: Sun, 25 Oct 2026 02:58:10 GMT\r\nPublic: OPTIONS, TRACE, GET, HEAD, POST\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\nContent-Length: 0\r\n\r\n",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:11.263193144Z",
+      "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/technologies/microsoft/aspnet-version-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/aspnet-version-detect",
+      "template-id": "aspnet-version-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/microsoft/aspnet-version-detect.yaml",
+      "info": {
+        "name": "AspNet Version Disclosure - Detect",
+        "author": [
+          "lucky0x0d",
+          "pulsesecurity.co.nz"
+        ],
+        "tags": [
+          "tech",
+          "detect",
+          "aspnet",
+          "discovery"
+        ],
+        "description": "Detects version disclosed via 'X-AspNet-Version' header.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "shodan-query": "X-AspNet-Version",
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr/%3f",
+      "extracted-results": [
+        "4.0.30319"
+      ],
+      "request": "GET /%3f HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 400 Bad Request\r\nContent-Length: 3723\r\nCache-Control: private\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 25 Oct 2026 02:58:15 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nX-Aspnet-Version: 4.0.30319\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n    <head>\r\n        <title>Erreur d'exécution</title>\r\n        <meta name=\"viewport\" content=\"width=device-width\" />\r\n        <style>\r\n         body {font-family:\"Verdana\";font-weight:normal;font-size: .7em;color:black;} \r\n         p {font-family:\"Verdana\";font-weight:normal;color:black;margin-top: -5px}\r\n         b {font-family:\"Verdana\";font-weight:bold;color:black;margin-top: -5px}\r\n         H1 { font-family:\"Verdana\";font-weight:normal;font-size:18pt;color:red }\r\n         H2 { font-family:\"Verdana\";font-weight:normal;font-size:14pt;color:maroon }\r\n         pre {font-family:\"Consolas\",\"Lucida Console\",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}\r\n         .marker {font-weight: bold; color: black;text-decoration: none;}\r\n         .version {color: gray;}\r\n         .error {margin-bottom: 10px;}\r\n         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }\r\n         @media screen and (max-width: 639px) {\r\n          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }\r\n         }\r\n         @media screen and (max-width: 479px) {\r\n          pre { width: 280px; }\r\n         }\r\n        </style>\r\n    </head>\r\n\r\n    <body bgcolor=\"white\">\r\n\r\n            <span><H1>Erreur du serveur dans l'application '/'.<hr width=100% size=1 color=silver></H1>\r\n\r\n            <h2> <i>Erreur d'exécution</i> </h2></span>\r\n\r\n            <font face=\"Arial, Helvetica, Geneva, SunSans-Regular, sans-serif \">\r\n\r\n            <b> Description : </b>Une erreur d'application s'est produite sur le serveur. Les paramètres d'erreur personnalisés actuels pour cette application empêchent l'affichage à distance des détails de l'erreur de l'application (pour des raisons de sécurité). Cependant, ils peuvent être affichés par les navigateurs qui s'exécutent sur l'ordinateur serveur local.\r\n            <br><br>\r\n\r\n            <b>Détails:</b> Pour permettre l&#39;affichage des d&#233;tails de ce message d&#39;erreur sp&#233;cifique sur les ordinateurs distants, cr&#233;ez une balise &lt;customErrors&gt; dans un fichier de configuration &quot;web.config&quot; situ&#233; dans le r&#233;pertoire racine de l&#39;application Web en cours. Attribuez ensuite la valeur &quot;off&quot; &#224; l&#39;attribut &quot;mode&quot; de cette balise &lt;customErrors&gt;.<br><br>\r\n\r\n            <table width=100% bgcolor=\"#ffffcc\">\r\n               <tr>\r\n                  <td>\r\n                      <code><pre>\r\n\r\n&lt;!-- Fichier de configuration Web.Config --&gt;\r\n\r\n&lt;configuration&gt;\r\n    &lt;system.web&gt;\r\n        &lt;customErrors mode=&quot;Off&quot;/&gt;\r\n    &lt;/system.web&gt;\r\n&lt;/configuration&gt;</pre></code>\r\n\r\n                  </td>\r\n               </tr>\r\n            </table>\r\n\r\n            <br>\r\n\r\n            <b>Remarques:</b> La page d&#39;erreurs actuellement affich&#233;e peut &#234;tre remplac&#233;e par une page d&#39;erreurs personnalis&#233;e. Pour ce faire, modifiez l&#39;attribut &quot;defaultRedirect&quot; de la balise de configuration &lt;customErrors&gt; de l&#39;application, de sorte qu&#39;il pointe vers une URL de la page d&#39;erreurs personnalis&#233;e.<br><br>\r\n\r\n            <table width=100% bgcolor=\"#ffffcc\">\r\n               <tr>\r\n                  <td>\r\n                      <code><pre>\r\n\r\n&lt;!-- Fichier de configuration Web.Config --&gt;\r\n\r\n&lt;configuration&gt;\r\n    &lt;system.web&gt;\r\n        &lt;customErrors mode=&quot;RemoteOnly&quot; defaultRedirect=&quot;mycustompage.htm&quot;/&gt;\r\n    &lt;/system.web&gt;\r\n&lt;/configuration&gt;</pre></code>\r\n\r\n                  </td>\r\n               </tr>\r\n            </table>\r\n\r\n            <br>\r\n\r\n    </body>\r\n</html>\r\n",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:15.658926991Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr/%3f'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:58:26 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:26.679707004Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:58:26 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:26.681212981Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:58:26 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:26.682669155Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:58:26 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:26.684139286Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:58:26 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:26.685456431Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-resource-policy",
+      "type": "http",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://neoscrib.culture.gouv.fr",
+      "matched-at": "https://neoscrib.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: neoscrib.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:58:26 GMT\r\nEtag: \"075528c6e28dc1:0\"\r\nLast-Modified: Thu, 18 Sep 2025 07:33:38 GMT\r\nReferrer-Policy: no-referrer\r\nServer: \r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1; mode=block\r\n\r\n﻿<!DOCTYPE html>\r\n\r\n<html lang=\"fr\">\r\n\r\n<head>\r\n\r\n    <head>\r\n        <meta charset=\"utf-8\" />\r\n        <title></title>\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\r\n        <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\" />\r\n        <meta content=\"\" name=\"author\" />\r\n        <title>NéoSCRIB</title>\r\n        <link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all\" rel=\"stylesheet\"\r\n            type=\"text/css\" />\r\n        <link href=\"css/simple-line-icons.min.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n        <link rel=\"stylesheet\" href=\"css/style.default.css\">\r\n        <link rel=\"stylesheet\" href=\"css/components.min.css\">\r\n    </head>\r\n</head>\r\n<!-- END HEAD -->\r\n\r\n<body>\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"page-banner-container\">\r\n            <div class=\"page-logo\">\r\n                <a href=\"#\">\r\n                    <img src=\"images/Logo.png\" alt=\"logo\" class=\"logo-default\" />\r\n                </a>\r\n            </div>\r\n            <div class=\"top-menu\" style=\"background-image: url('images/Batiment.jpg'); width: 392px; height: 120px;\">\r\n            </div>\r\n        </div>\r\n        <div class=\"page-separator\"></div>\r\n\r\n        <div class=\"page-content\">\r\n            <div id=\"WR_Graphe_Container\">\r\n                <div class=\"note note-info\">\r\n                    <h4 class=\"block\">Bienvenue !</h4>\r\n                    <p>Bienvenue dans la nouvelle application SCRIB.</p>\r\n                    <p>Au travers de cette page, vous pourrez accéder indépendamment à l'application SCRIB 2024 ou encore à l'application SCRIB 2025 (sur la base des donnés 2024).</p>\r\n                    <p>Pour ce faire, merci de faire votre choix en cliquant sur l'une des quatre briques ci-dessous.\r\n                    </p>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2024</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2024.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2024/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2025</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2025.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2025/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\t\t\t\t\t<div style=\"width:33%\">\r\n                        <div class=\"portlet light portlet-fit\">\r\n                            <div class=\"portlet-title\">\r\n                                <div class=\"caption\">\r\n                                    <i class=\"icon-layers font-green\"></i>\r\n                                    <span class=\"caption-subject font-green bold uppercase\">Neoscrib 2026</span>\r\n                                    <div class=\"caption-desc font-grey-cascade\"></div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"portlet-body\">\r\n                                <div class=\"mt-element-overlay\">\r\n                                    <div class=\"row\">\r\n                                        <div class=\"col-md-12\">\r\n                                            <div class=\"mt-overlay-1\">\r\n                                                <img class=\"neoscrib-app-image\" src=\"Images/rapport_2026.png\" />\r\n                                                <div class=\"mt-overlay\">\r\n                                                    <ul class=\"mt-info\">\r\n                                                        <li>\r\n                                                            <a class=\"btn default btn-outline\" href=\"2026/login.htm\">\r\n                                                                <i class=\"icon-pencil\"></i>\r\n                                                            </a>\r\n                                                        </li>\r\n                                                    </ul>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"page-footer\">\r\n            <div class=\"page-footer-inner\">2025 © Soft Concept</div>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>",
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:26.68679676Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://neoscrib.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "neoscrib.culture.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:44.025593625Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "neoscrib.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "neoscrib.culture.gouv.fr:443",
+      "extracted-results": [
+        "neoscrib.culture.gouv.fr"
+      ],
+      "ip": "92.103.206.104",
+      "timestamp": "2026-10-25T02:58:44.025908622Z",
+      "matcher-status": true
+    }
+  ]
 ]
