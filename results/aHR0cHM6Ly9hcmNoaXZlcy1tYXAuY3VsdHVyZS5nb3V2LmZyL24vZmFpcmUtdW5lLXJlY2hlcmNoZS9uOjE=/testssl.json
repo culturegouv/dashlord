@@ -381,7 +381,7 @@
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "OK",
-              "finding"      : "63 >= 30 days"
+              "finding"      : "56 >= 30 days"
           }
 ,         {
               "id"           : "cert_notBefore",
@@ -626,7 +626,7 @@
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1792306706"
+              "finding"      : "1792908571"
           }
 ,         {
               "id"           : "HSTS_time",
@@ -681,22 +681,15 @@
               "id"           : "cookie_secure",
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "INFO",
-              "finding"      : "1/2 at '/' marked as secure"
+              "severity"     : "OK",
+              "finding"      : "All (2) at '/' marked as secure"
           }
 ,         {
               "id"           : "cookie_httponly",
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "1/2 at '/' marked as HttpOnly"
-          }
-,         {
-              "id"           : "X-Frame-Options",
-              "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "SAMEORIGIN"
+              "finding"      : "2/2 at '/' marked as HttpOnly"
           }
 ,         {
               "id"           : "X-Content-Type-Options",
@@ -704,13 +697,6 @@
               "port"         : "443",
               "severity"     : "OK",
               "finding"      : "nosniff"
-          }
-,         {
-              "id"           : "Content-Security-Policy",
-              "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
-              "port"         : "443",
-              "severity"     : "OK",
-              "finding"      : "default-src  'self' 'unsafe-inline' 'unsafe-eval' map-diffusion-admin.ligeo-archives.com archives-map.culture.gouv.fr *.ligeo-archives.com *.culture.gouv.fr *.jquery.com *.culture.fr *.google.com *.google.fr *fonts.googleapis.com   wiki-diffusion.ligeo-archives.com"
           }
 ,         {
               "id"           : "Permissions-Policy",
@@ -738,7 +724,7 @@
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "no-cache"
+              "finding"      : "no-store"
           }
 ,         {
               "id"           : "banner_reverseproxy",
@@ -814,10 +800,10 @@
               "id"           : "BREACH",
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
-              "severity"     : "OK",
+              "severity"     : "MEDIUM",
               "cve"          : "CVE-2013-3587",
               "cwe"          : "CWE-310",
-              "finding"      : "not vulnerable, no gzip/deflate/compress/br HTTP compression  - only supplied '/' tested"
+              "finding"      : "potentially VULNERABLE, gzip HTTP compression detected  - only supplied '/' tested"
           }
 ,         {
               "id"           : "POODLE_SSL",
@@ -1245,6 +1231,6 @@
               "ip"           : "archives-map.culture.gouv.fr/91.223.76.144",
               "port"         : "443",
               "severity"     : "INFO",
-              "finding"      : "97"
+              "finding"      : "67"
           }
 ]
