@@ -1,471 +1,69 @@
 [
   [
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "TLS Version - Detect",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "ssl",
+          "tls",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 4
         }
       },
-      "matcher-name": "content-security-policy",
-      "type": "http",
+      "type": "ssl",
       "host": "data.culture.gouv.fr",
       "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.684499228Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "timestamp": "2026-10-25T05:21:43.714087534Z",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "TLS Version - Detect",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "ssl",
+          "tls",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 4
         }
       },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
+      "type": "ssl",
       "host": "data.culture.gouv.fr",
       "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.684780731Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.684937326Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-resource-policy",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.685085018Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "strict-transport-security",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.685229826Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.685420162Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.685570278Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.685726643Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 18 Oct 2026 05:59:33 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:33.685880364Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "timestamp": "2026-10-25T05:21:43.79504379Z",
       "matcher-status": true
     },
     {
@@ -506,9 +104,9 @@
       "extracted-results": [
         "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 12865\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 12865\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t3600\tIN\tAAAA\t2a12:5240::1\n",
-      "timestamp": "2026-10-18T05:59:40.967255071Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 60868\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 60868\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t1318\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-10-25T05:22:24.942833283Z",
       "matcher-status": true
     },
     {
@@ -544,9 +142,9 @@
       "extracted-results": [
         "edge.redirect.pizza"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 21642\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 21642\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3493\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-10-18T05:59:40.99185303Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 54559\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 54559\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-10-25T05:22:24.944236268Z",
       "matcher-status": true
     },
     {
@@ -578,7 +176,7 @@
         "Let's Encrypt"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:41.025493177Z",
+      "timestamp": "2026-10-25T05:22:25.008110102Z",
       "matcher-status": true
     },
     {
@@ -610,7 +208,7 @@
         "data.culture.gouv.fr"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-18T05:59:41.025634389Z",
+      "timestamp": "2026-10-25T05:22:25.008275621Z",
       "matcher-status": true
     }
   ]
