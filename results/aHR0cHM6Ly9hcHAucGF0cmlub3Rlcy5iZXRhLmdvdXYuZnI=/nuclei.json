@@ -1,86 +1,6 @@
 [
   [
     {
-      "template": "javascript/detection/ssh-auth-methods.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/ssh-auth-methods",
-      "template-id": "ssh-auth-methods",
-      "template-path": "/home/runner/nuclei-templates/javascript/detection/ssh-auth-methods.yaml",
-      "info": {
-        "name": "SSH Auth Methods - Detection",
-        "author": [
-          "ice3man543"
-        ],
-        "tags": [
-          "js",
-          "detect",
-          "ssh",
-          "enum",
-          "network",
-          "discovery"
-        ],
-        "description": "SSH (Secure Shell) authentication modes are methods used to verify the identity of users and ensure secure access to remote systems. Common SSH authentication modes include password-based authentication, which relies on a secret passphrase, and public key authentication, which uses cryptographic keys for a more secure and convenient login process. Additionally, multi-factor authentication (MFA) can be employed to enhance security by requiring users to provide multiple forms of authentication, such as a password and a one-time code.\n",
-        "reference": [
-          "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1,
-          "shodan-query": "product:\"OpenSSH\""
-        }
-      },
-      "type": "javascript",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "22",
-      "url": "app.patrinotes.beta.gouv.fr:22",
-      "matched-at": "app.patrinotes.beta.gouv.fr:22",
-      "extracted-results": [
-        "[\"publickey\",\"password\"]"
-      ],
-      "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
-      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"1gBwHAfyVn8VU0MCcRyMUw==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"Qk4Qoj/uMhyOkgf+Tme/YSMOEzm8ncI357NQAn4ZH0I=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABKAAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\",\"h\":\"uMR7xRhjWqiRsecalwGJBodtoLmLUT/vjiwHfRk/jlA=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:22:48.981933925Z",
-      "matcher-status": true
-    },
-    {
-      "template": "javascript/enumeration/ssh/ssh-password-auth.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/ssh-password-auth",
-      "template-id": "ssh-password-auth",
-      "template-path": "/home/runner/nuclei-templates/javascript/enumeration/ssh/ssh-password-auth.yaml",
-      "info": {
-        "name": "SSH Password-based Authentication",
-        "author": [
-          "princechaddha"
-        ],
-        "tags": [
-          "ssh",
-          "js",
-          "enum",
-          "network",
-          "discovery"
-        ],
-        "reference": [
-          "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 2,
-          "shodan-query": "product:\"OpenSSH\"",
-          "verified": true
-        }
-      },
-      "type": "javascript",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "22",
-      "url": "app.patrinotes.beta.gouv.fr:22",
-      "matched-at": "app.patrinotes.beta.gouv.fr:22",
-      "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
-      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"1gBwHAfyVn8VU0MCcRyMUw==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"Qk4Qoj/uMhyOkgf+Tme/YSMOEzm8ncI357NQAn4ZH0I=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABKAAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\",\"h\":\"uMR7xRhjWqiRsecalwGJBodtoLmLUT/vjiwHfRk/jlA=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:22:49.046536485Z",
-      "matcher-status": true
-    },
-    {
       "template": "javascript/enumeration/ssh/ssh-sha1-hmac-algo.yaml",
       "template-url": "https://cloud.projectdiscovery.io/public/ssh-sha1-hmac-algo",
       "template-id": "ssh-sha1-hmac-algo",
@@ -115,9 +35,9 @@
       "url": "app.patrinotes.beta.gouv.fr:22",
       "matched-at": "app.patrinotes.beta.gouv.fr:22",
       "request": "let m = require(\"nuclei/ssh\");\nlet c = m.SSHClient();\nlet response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
-      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"1gBwHAfyVn8VU0MCcRyMUw==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"Qk4Qoj/uMhyOkgf+Tme/YSMOEzm8ncI357NQAn4ZH0I=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABKAAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\",\"h\":\"uMR7xRhjWqiRsecalwGJBodtoLmLUT/vjiwHfRk/jlA=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"fMm6y2VTPSrm9niB9z1lvQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"7+fbGM4Ua9GbPqY4qq5KIH7NPd5X4X+HLJ5cA1C0vgc=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABIAAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\",\"h\":\"U1pzuIrUgm4qpZ9Pg0WzAwAXJNR9PKe54O5MqU8rIKU=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:22:49.072262544Z",
+      "timestamp": "2026-10-25T05:42:33.078818757Z",
       "matcher-status": true
     },
     {
@@ -154,9 +74,89 @@
         "SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18"
       ],
       "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
-      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"1gBwHAfyVn8VU0MCcRyMUw==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"Qk4Qoj/uMhyOkgf+Tme/YSMOEzm8ncI357NQAn4ZH0I=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABKAAAAIQDfiU/aiXsDslZ57TZ4Yu7XGrt/XF8JPnjhV7+Y1V4frQAAACEAzuq351LEHdxMFPSKMkwyk6LIfdqyZImXv/OyVeHctUA=\",\"h\":\"uMR7xRhjWqiRsecalwGJBodtoLmLUT/vjiwHfRk/jlA=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"fMm6y2VTPSrm9niB9z1lvQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"7+fbGM4Ua9GbPqY4qq5KIH7NPd5X4X+HLJ5cA1C0vgc=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABIAAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\",\"h\":\"U1pzuIrUgm4qpZ9Pg0WzAwAXJNR9PKe54O5MqU8rIKU=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:22:49.072473358Z",
+      "timestamp": "2026-10-25T05:42:33.080221603Z",
+      "matcher-status": true
+    },
+    {
+      "template": "javascript/enumeration/ssh/ssh-password-auth.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssh-password-auth",
+      "template-id": "ssh-password-auth",
+      "template-path": "/home/runner/nuclei-templates/javascript/enumeration/ssh/ssh-password-auth.yaml",
+      "info": {
+        "name": "SSH Password-based Authentication",
+        "author": [
+          "princechaddha"
+        ],
+        "tags": [
+          "ssh",
+          "js",
+          "enum",
+          "network",
+          "discovery"
+        ],
+        "reference": [
+          "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 2,
+          "shodan-query": "product:\"OpenSSH\"",
+          "verified": true
+        }
+      },
+      "type": "javascript",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "22",
+      "url": "app.patrinotes.beta.gouv.fr:22",
+      "matched-at": "app.patrinotes.beta.gouv.fr:22",
+      "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
+      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"fMm6y2VTPSrm9niB9z1lvQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"7+fbGM4Ua9GbPqY4qq5KIH7NPd5X4X+HLJ5cA1C0vgc=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABIAAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\",\"h\":\"U1pzuIrUgm4qpZ9Pg0WzAwAXJNR9PKe54O5MqU8rIKU=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:42:33.08054169Z",
+      "matcher-status": true
+    },
+    {
+      "template": "javascript/detection/ssh-auth-methods.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssh-auth-methods",
+      "template-id": "ssh-auth-methods",
+      "template-path": "/home/runner/nuclei-templates/javascript/detection/ssh-auth-methods.yaml",
+      "info": {
+        "name": "SSH Auth Methods - Detection",
+        "author": [
+          "ice3man543"
+        ],
+        "tags": [
+          "js",
+          "detect",
+          "ssh",
+          "enum",
+          "network",
+          "discovery"
+        ],
+        "description": "SSH (Secure Shell) authentication modes are methods used to verify the identity of users and ensure secure access to remote systems. Common SSH authentication modes include password-based authentication, which relies on a secret passphrase, and public key authentication, which uses cryptographic keys for a more secure and convenient login process. Additionally, multi-factor authentication (MFA) can be employed to enhance security by requiring users to provide multiple forms of authentication, such as a password and a one-time code.\n",
+        "reference": [
+          "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "shodan-query": "product:\"OpenSSH\""
+        }
+      },
+      "type": "javascript",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "22",
+      "url": "app.patrinotes.beta.gouv.fr:22",
+      "matched-at": "app.patrinotes.beta.gouv.fr:22",
+      "extracted-results": [
+        "[\"publickey\",\"password\"]"
+      ],
+      "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
+      "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.18\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.9p1\",\n    \"Comment\": \"Ubuntu-3ubuntu0.18\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"fMm6y2VTPSrm9niB9z1lvQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"sntrup761x25519-sha512@openssh.com\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\",\"kex-strict-s-v00@openssh.com\"],\"host_key_algorithms\":[\"rsa-sha2-512\",\"rsa-sha2-256\",\"ecdsa-sha2-nistp256\",\"ssh-ed25519\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"41ff3ecd1458b0bf86e1b4891636213e\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"7+fbGM4Ua9GbPqY4qq5KIH7NPd5X4X+HLJ5cA1C0vgc=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABIAAAAIBNCRIs4lTNh83e9PHg8U+TDL5n5/WtpGLrEXpYHrWu3AAAAIAcuAwmodCpSo+aw+4qN9aIUdodHuWg7nxLvwIDpwEid\",\"h\":\"U1pzuIrUgm4qpZ9Pg0WzAwAXJNR9PKe54O5MqU8rIKU=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"In9iA2iBGVdPJuriak+8da2fbljAqxl/asxmdwOz3KQ=\",\"y\":\"oaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBCJ/YgNogRlXTybq4mpPvHWtn25YwKsZf2rMZncDs9ykoaJLsOS140omwvSu7NuxCBdIubHxoZOCvzwHibdar9A=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"9675e246c0043772830f118f9c37fa088980ff96b8d26ca8097185d9998aedce\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:42:33.081670406Z",
       "matcher-status": true
     },
     {
@@ -189,7 +189,7 @@
         "tls12"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:40.130288026Z",
+      "timestamp": "2026-10-25T05:43:25.497814479Z",
       "matcher-status": true
     },
     {
@@ -222,267 +222,7 @@
         "tls13"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:40.332587897Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.822914363Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "permissions-policy",
-      "type": "http",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.823320467Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-content-type-options",
-      "type": "http",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.823695815Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.824023403Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "app.patrinotes.beta.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://app.patrinotes.beta.gouv.fr",
-      "matched-at": "https://app.patrinotes.beta.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
-      "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.82439842Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "timestamp": "2026-10-25T05:43:25.790895017Z",
       "matcher-status": true
     },
     {
@@ -531,9 +271,9 @@
       "url": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.824772174Z",
+      "timestamp": "2026-10-25T05:43:50.032308387Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -583,9 +323,9 @@
       "url": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.825138895Z",
+      "timestamp": "2026-10-25T05:43:50.032636672Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -627,7 +367,7 @@
           ]
         }
       },
-      "matcher-name": "strict-transport-security",
+      "matcher-name": "content-security-policy",
       "type": "http",
       "host": "app.patrinotes.beta.gouv.fr",
       "port": "443",
@@ -635,9 +375,9 @@
       "url": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.825519091Z",
+      "timestamp": "2026-10-25T05:43:50.032913971Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -687,9 +427,61 @@
       "url": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.825846079Z",
+      "timestamp": "2026-10-25T05:43:50.033189428Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:43:50.033476061Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -739,9 +531,217 @@
       "url": "https://app.patrinotes.beta.gouv.fr",
       "matched-at": "https://app.patrinotes.beta.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 06:23:58 GMT\r\nEtag: W/\"538-gnRUjI4lpp8jM49zIgx5asrN2G4\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BpsTdRjE.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BSbPfsYw.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:23:58.82621798Z",
+      "timestamp": "2026-10-25T05:43:50.033757917Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:43:50.034045622Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:43:50.034323552Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "permissions-policy",
+      "type": "http",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:43:50.034599069Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "app.patrinotes.beta.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://app.patrinotes.beta.gouv.fr",
+      "matched-at": "https://app.patrinotes.beta.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: app.patrinotes.beta.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\nAlt-Svc: h3=\":443\"; ma=2592000\r\nCache-Control: no-cache\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 05:43:49 GMT\r\nEtag: W/\"538-RJ3t8ocHSPTXdgp1J066VvThjJc\"\r\nVary: Accept-Encoding\r\nVary: Origin\r\n\r\n<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\" />\n    <link rel=\"apple-touch-icon\" href=\"/dsfr/favicon/apple-touch-icon.png?v=1.13.2\" />\n    <link rel=\"icon\" href=\"/dsfr/favicon/favicon.svg?v=1.13.2\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/dsfr/favicon/favicon.ico?v=1.13.2\" type=\"image/x-icon\" />\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\" crossorigin=\"use-credentials\" />\n    <link rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon-DrfPSIlu.png\" />\n    <link rel=\"icon\" href=\"/assets/favicon-CduWKyBp.svg\" type=\"image/svg+xml\" />\n    <link rel=\"shortcut icon\" href=\"/assets/favicon-BMkCb9zi.ico\" type=\"image/x-icon\" />\n    <link\n      rel=\"manifest\"\n      href=\"/assets/manifest-Ysg1ohlc.webmanifest\"\n      crossorigin=\"use-credentials\"\n    />\n\n    <title>Patrinotes</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-BxuXJ2YX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-7FItD0lG.css\">\n  <link rel=\"manifest\" href=\"/manifest.webmanifest\"></head>\n  <body>\n    <div id=\"root\"></div>\n    <script src=\"/env.js\"></script>\n    <script src=\"/version.js\"></script>\n  </body>\n</html>\n",
+      "ip": "51.159.97.224",
+      "timestamp": "2026-10-25T05:43:50.034829309Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://app.patrinotes.beta.gouv.fr'",
       "matcher-status": true
     },
@@ -774,7 +774,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:24:18.662657972Z",
+      "timestamp": "2026-10-25T05:44:03.820210025Z",
       "matcher-status": true
     },
     {
@@ -806,7 +806,7 @@
         "app.patrinotes.beta.gouv.fr"
       ],
       "ip": "51.159.97.224",
-      "timestamp": "2026-10-18T06:24:18.662842365Z",
+      "timestamp": "2026-10-25T05:44:03.820391943Z",
       "matcher-status": true
     }
   ]
