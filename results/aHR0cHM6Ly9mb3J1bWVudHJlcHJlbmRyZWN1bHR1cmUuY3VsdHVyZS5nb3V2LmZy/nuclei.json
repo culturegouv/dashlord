@@ -30,7 +30,7 @@
         "tls12"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:25:30.687059385Z",
+      "timestamp": "2026-10-25T02:31:06.17727563Z",
       "matcher-status": true
     },
     {
@@ -63,59 +63,7 @@
         "tls13"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:25:30.897739672Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "content-security-policy",
-      "type": "http",
-      "host": "forumentreprendreculture.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://forumentreprendreculture.culture.gouv.fr",
-      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.667243904Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
+      "timestamp": "2026-10-25T02:31:06.359149705Z",
       "matcher-status": true
     },
     {
@@ -164,165 +112,9 @@
       "url": "https://forumentreprendreculture.culture.gouv.fr",
       "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.667623462Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "forumentreprendreculture.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://forumentreprendreculture.culture.gouv.fr",
-      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.667908072Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
-      "host": "forumentreprendreculture.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://forumentreprendreculture.culture.gouv.fr",
-      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.668172395Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "forumentreprendreculture.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://forumentreprendreculture.culture.gouv.fr",
-      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.668430917Z",
+      "timestamp": "2026-10-25T02:31:42.083899286Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -372,61 +164,9 @@
       "url": "https://forumentreprendreculture.culture.gouv.fr",
       "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.668725356Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "forumentreprendreculture.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://forumentreprendreculture.culture.gouv.fr",
-      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
-      "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.66899583Z",
+      "timestamp": "2026-10-25T02:31:42.084148542Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -476,9 +216,61 @@
       "url": "https://forumentreprendreculture.culture.gouv.fr",
       "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.669255163Z",
+      "timestamp": "2026-10-25T02:31:42.08436493Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "forumentreprendreculture.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://forumentreprendreculture.culture.gouv.fr",
+      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-10-25T02:31:42.08457561Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -528,9 +320,217 @@
       "url": "https://forumentreprendreculture.culture.gouv.fr",
       "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 18 Oct 2026 02:26:06 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C3-4671ed3f-6795437d\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-18T02:26:06+0000</p>\n                <p>Request UID: atQuPtvMYlzal43sYEhDdAAAAHE</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:06.669509908Z",
+      "timestamp": "2026-10-25T02:31:42.084775934Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "content-security-policy",
+      "type": "http",
+      "host": "forumentreprendreculture.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://forumentreprendreculture.culture.gouv.fr",
+      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-10-25T02:31:42.084962739Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "forumentreprendreculture.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://forumentreprendreculture.culture.gouv.fr",
+      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-10-25T02:31:42.085160339Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "forumentreprendreculture.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://forumentreprendreculture.culture.gouv.fr",
+      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-10-25T02:31:42.085450195Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "forumentreprendreculture.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://forumentreprendreculture.culture.gouv.fr",
+      "matched-at": "https://forumentreprendreculture.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: forumentreprendreculture.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 403 Forbidden\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Oct 2026 02:31:42 GMT\r\nStrict-Transport-Security: max-age=31536000\r\nVary: Accept-Encoding\r\nX-Cp-Via: C2-594ad03e-72ee1731\r\n\r\n<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Attack detected</title>\n        <style>\n            .container {\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n            }\n            .content {\n                align-self: flex-start;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"content\">\n                <p>Your request has been blocked</p>\n                <p>Date: 2026-10-25T02:31:42+0000</p>\n                <p>Request UID: at1qDkZTNyjHXr6nTLDOUwAAACw</p>\n            </div>\n        </div>\n    </body>\n</html>\n",
+      "ip": "87.98.187.73",
+      "timestamp": "2026-10-25T02:31:42.085713712Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://forumentreprendreculture.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -567,9 +567,9 @@
       "extracted-results": [
         "waf.culture.fr"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 38874\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;forumentreprendreculture.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 38874\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;forumentreprendreculture.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nforumentreprendreculture.culture.gouv.fr.\t600\tIN\tCNAME\twaf.culture.fr.\n",
-      "timestamp": "2026-10-18T02:26:09.081010211Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 37241\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;forumentreprendreculture.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 37241\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;forumentreprendreculture.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nforumentreprendreculture.culture.gouv.fr.\t437\tIN\tCNAME\twaf.culture.fr.\n",
+      "timestamp": "2026-10-25T02:31:44.627275069Z",
       "matcher-status": true
     },
     {
@@ -601,7 +601,7 @@
         "Let's Encrypt"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:09.253652106Z",
+      "timestamp": "2026-10-25T02:31:44.711689559Z",
       "matcher-status": true
     },
     {
@@ -630,23 +630,23 @@
       "port": "443",
       "matched-at": "forumentreprendreculture.culture.gouv.fr:443",
       "extracted-results": [
-        "nuitdesmusees.culture.gouv.fr",
-        "saisoncabaret.culture.gouv.fr",
+        "rencontresnumeriques.culture.gouv.fr",
+        "saisonmediterranee2026.culture.gouv.fr",
         "bicentenairephotographie.culture.gouv.fr",
-        "dismoidixmots.culture.gouv.fr",
-        "fetedelamusique.culture.gouv.fr",
+        "forumentreprendreculture.culture.gouv.fr",
         "journeesarcheologie.culture.gouv.fr",
         "liberationdeparis.culture.gouv.fr",
-        "rencontresnumeriques.culture.gouv.fr",
         "rendezvousauxjardins.culture.gouv.fr",
-        "saisonmediterranee2026.culture.gouv.fr",
+        "saisoncabaret.culture.gouv.fr",
+        "dismoidixmots.culture.gouv.fr",
         "etats-generaux-information.fr",
-        "forumentreprendreculture.culture.gouv.fr",
+        "fetedelamusique.culture.gouv.fr",
         "journeesarchitecture.culture.gouv.fr",
-        "journeesdupatrimoine.culture.gouv.fr"
+        "journeesdupatrimoine.culture.gouv.fr",
+        "nuitdesmusees.culture.gouv.fr"
       ],
       "ip": "87.98.187.73",
-      "timestamp": "2026-10-18T02:26:09.253861327Z",
+      "timestamp": "2026-10-25T02:31:44.711884906Z",
       "matcher-status": true
     }
   ]
