@@ -41,9 +41,9 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "POST / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
-      "response": "HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:47:20 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 0\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 03:59:36 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:47:21.062474299Z",
+      "timestamp": "2026-11-01T03:59:36.106718825Z",
       "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: notre-dame-de-paris.culture.gouv.fr' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -77,7 +77,7 @@
         "tls12"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:36.602561358Z",
+      "timestamp": "2026-11-01T04:00:47.193129757Z",
       "matcher-status": true
     },
     {
@@ -110,48 +110,31 @@
         "tls13"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:36.886155382Z",
+      "timestamp": "2026-11-01T04:00:47.465676472Z",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "http/technologies/tech-detect.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
+      "template-id": "tech-detect",
+      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "Wappalyzer Technology Detection",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "hakluke",
+          "righettod",
+          "matejsmycka"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "tech",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
         }
       },
-      "matcher-name": "permissions-policy",
+      "matcher-name": "nginx",
       "type": "http",
       "host": "notre-dame-de-paris.culture.gouv.fr",
       "port": "443",
@@ -159,113 +142,9 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:00:54 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.065690087Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "x-frame-options",
-      "type": "http",
-      "host": "notre-dame-de-paris.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://notre-dame-de-paris.culture.gouv.fr",
-      "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.06586704Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "notre-dame-de-paris.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://notre-dame-de-paris.culture.gouv.fr",
-      "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066043402Z",
+      "timestamp": "2026-11-01T04:00:54.122077241Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -315,9 +194,9 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066184561Z",
+      "timestamp": "2026-11-01T04:01:08.494749832Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -359,7 +238,7 @@
           ]
         }
       },
-      "matcher-name": "x-content-type-options",
+      "matcher-name": "permissions-policy",
       "type": "http",
       "host": "notre-dame-de-paris.culture.gouv.fr",
       "port": "443",
@@ -367,9 +246,9 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066278691Z",
+      "timestamp": "2026-11-01T04:01:08.494996504Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -411,7 +290,7 @@
           ]
         }
       },
-      "matcher-name": "x-permitted-cross-domain-policies",
+      "matcher-name": "referrer-policy",
       "type": "http",
       "host": "notre-dame-de-paris.culture.gouv.fr",
       "port": "443",
@@ -419,9 +298,9 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066432429Z",
+      "timestamp": "2026-11-01T04:01:08.495227177Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -471,61 +350,9 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066584495Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "notre-dame-de-paris.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://notre-dame-de-paris.culture.gouv.fr",
-      "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
-      "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066697593Z",
+      "timestamp": "2026-11-01T04:01:08.495498797Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -575,34 +402,51 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:48:42 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:48:43.066812073Z",
+      "timestamp": "2026-11-01T04:01:08.495671821Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/technologies/tech-detect.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/tech-detect",
-      "template-id": "tech-detect",
-      "template-path": "/home/runner/nuclei-templates/http/technologies/tech-detect.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "Wappalyzer Technology Detection",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "hakluke",
-          "righettod",
-          "matejsmycka"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "tech",
-          "discovery"
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
         ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
         }
       },
-      "matcher-name": "nginx",
+      "matcher-name": "x-frame-options",
       "type": "http",
       "host": "notre-dame-de-paris.culture.gouv.fr",
       "port": "443",
@@ -610,9 +454,165 @@
       "url": "https://notre-dame-de-paris.culture.gouv.fr",
       "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 18 Oct 2026 02:49:07 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:49:07.176533354Z",
+      "timestamp": "2026-11-01T04:01:08.495834436Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-content-type-options",
+      "type": "http",
+      "host": "notre-dame-de-paris.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://notre-dame-de-paris.culture.gouv.fr",
+      "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-11-01T04:01:08.496002181Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "notre-dame-de-paris.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://notre-dame-de-paris.culture.gouv.fr",
+      "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-11-01T04:01:08.496174053Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "notre-dame-de-paris.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://notre-dame-de-paris.culture.gouv.fr",
+      "matched-at": "https://notre-dame-de-paris.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: notre-dame-de-paris.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nConnection: keep-alive\r\nContent-Type: application/octet-stream\r\nDate: Sun, 01 Nov 2026 04:01:08 GMT\r\nServer: nginx\r\nStrict-Transport-Security: max-age=63072000\r\nContent-Length: 0\r\n\r\n",
+      "ip": "51.159.155.253",
+      "timestamp": "2026-11-01T04:01:08.496434051Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://notre-dame-de-paris.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -645,7 +645,7 @@
         "Let's Encrypt"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:49:15.949548962Z",
+      "timestamp": "2026-11-01T04:01:26.173655954Z",
       "matcher-status": true
     },
     {
@@ -677,7 +677,7 @@
         "notre-dame-de-paris.culture.gouv.fr"
       ],
       "ip": "51.159.155.253",
-      "timestamp": "2026-10-18T02:49:15.949706336Z",
+      "timestamp": "2026-11-01T04:01:26.173901144Z",
       "matcher-status": true
     }
   ]
