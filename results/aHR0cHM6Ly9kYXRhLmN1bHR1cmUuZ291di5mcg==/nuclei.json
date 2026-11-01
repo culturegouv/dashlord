@@ -30,7 +30,7 @@
         "tls12"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-25T05:21:43.714087534Z",
+      "timestamp": "2026-11-01T07:14:14.546439928Z",
       "matcher-status": true
     },
     {
@@ -63,7 +63,45 @@
         "tls13"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-25T05:21:43.79504379Z",
+      "timestamp": "2026-11-01T07:14:14.675303789Z",
+      "matcher-status": true
+    },
+    {
+      "template": "dns/dns-saas-service-detection.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
+      "template-id": "dns-saas-service-detection",
+      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "info": {
+        "name": "DNS SaaS Service Detection",
+        "author": [
+          "noah @thesubtlety",
+          "pdteam"
+        ],
+        "tags": [
+          "dns",
+          "service",
+          "discovery"
+        ],
+        "description": "A CNAME DNS record was discovered",
+        "reference": [
+          "https://ns1.com/resources/cname",
+          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
+          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "dns",
+      "host": "data.culture.gouv.fr",
+      "matched-at": "data.culture.gouv.fr",
+      "extracted-results": [
+        "edge.redirect.pizza"
+      ],
+      "request": ";; opcode: QUERY, status: NOERROR, id: 11997\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 11997\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-11-01T07:14:59.712661856Z",
       "matcher-status": true
     },
     {
@@ -104,47 +142,9 @@
       "extracted-results": [
         "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 60868\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 60868\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t1318\tIN\tAAAA\t2a12:5240::1\n",
-      "timestamp": "2026-10-25T05:22:24.942833283Z",
-      "matcher-status": true
-    },
-    {
-      "template": "dns/dns-saas-service-detection.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
-      "template-id": "dns-saas-service-detection",
-      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
-      "info": {
-        "name": "DNS SaaS Service Detection",
-        "author": [
-          "noah @thesubtlety",
-          "pdteam"
-        ],
-        "tags": [
-          "dns",
-          "service",
-          "discovery"
-        ],
-        "description": "A CNAME DNS record was discovered",
-        "reference": [
-          "https://ns1.com/resources/cname",
-          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
-          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "dns",
-      "host": "data.culture.gouv.fr",
-      "matched-at": "data.culture.gouv.fr",
-      "extracted-results": [
-        "edge.redirect.pizza"
-      ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 54559\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 54559\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-10-25T05:22:24.944236268Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 41914\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 41914\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t2930\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-11-01T07:14:59.722087372Z",
       "matcher-status": true
     },
     {
@@ -176,7 +176,7 @@
         "Let's Encrypt"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-25T05:22:25.008110102Z",
+      "timestamp": "2026-11-01T07:14:59.8663646Z",
       "matcher-status": true
     },
     {
@@ -208,7 +208,7 @@
         "data.culture.gouv.fr"
       ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-10-25T05:22:25.008275621Z",
+      "timestamp": "2026-11-01T07:14:59.866548233Z",
       "matcher-status": true
     }
   ]
