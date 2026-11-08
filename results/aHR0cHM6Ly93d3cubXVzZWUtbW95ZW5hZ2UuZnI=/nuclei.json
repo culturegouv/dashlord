@@ -1,3 +1,104 @@
 [
-  []
+  [
+    {
+      "template": "http/misconfiguration/cookies-without-httponly.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/cookies-without-httponly",
+      "template-id": "cookies-without-httponly",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/cookies-without-httponly.yaml",
+      "info": {
+        "name": "Cookies without HttpOnly attribute - Detect",
+        "author": [
+          "rj coleman",
+          "mr.bobo hp"
+        ],
+        "tags": [
+          "misconfig",
+          "http",
+          "cookie",
+          "generic",
+          "vuln"
+        ],
+        "description": "Checks whether cookies in the HTTP response contain the HttpOnly attribute. If the HttpOnly flag is set, it means that the cookie is HTTP-only\n",
+        "impact": "Lack of HttpOnly flag on cookies increases the risk of client-side attacks, compromising user session security and data privacy.\n",
+        "reference": [
+          "https://owasp.org/www-community/HttpOnly"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-1004"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        },
+        "remediation": "Ensure that all cookies are set with the HttpOnly attribute to prevent client-side access.\n"
+      },
+      "type": "javascript",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "www.musee-moyenage.fr",
+      "extracted-results": [
+        "bot_mitigation_cookie"
+      ],
+      "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\n\nconst nonHttpOnlyCookies = setCookieLines.filter(line => !line.toLowerCase().includes('httponly'));\n\nconst cookieNames = nonHttpOnlyCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
+      "response": "[bot_mitigation_cookie]",
+      "timestamp": "2026-11-08T04:37:43.587003202Z",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/cookies-without-secure.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/cookies-without-secure",
+      "template-id": "cookies-without-secure",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/cookies-without-secure.yaml",
+      "info": {
+        "name": "Cookies without Secure attribute - Detect",
+        "author": [
+          "vthiery",
+          "rj coleman"
+        ],
+        "tags": [
+          "misconfig",
+          "http",
+          "cookie",
+          "generic",
+          "vuln"
+        ],
+        "description": "Checks whether cookies in the HTTP response contain the Secure attribute. If the Secure flag is set, it means that the cookie can only be transmitted over HTTPS\n",
+        "impact": "Lack of Secure flag on cookies allows the cookie to be sent over unsecure HTTP, making it vulnerable to man-in-the-middle (MITM) attacks.\n",
+        "reference": [
+          "https://owasp.org/www-community/controls/SecureCookieAttribute"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-614"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        },
+        "remediation": "Ensure that all cookies are set with the Secure attribute to prevent MITM attacks.\n"
+      },
+      "type": "javascript",
+      "host": "www.musee-moyenage.fr",
+      "port": "443",
+      "url": "https://www.musee-moyenage.fr",
+      "matched-at": "www.musee-moyenage.fr",
+      "extracted-results": [
+        "bot_mitigation_cookie"
+      ],
+      "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\nconst nonSecureCookies = setCookieLines.filter(line => !line.toLowerCase().includes('secure'));\nconst cookieNames = nonSecureCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
+      "response": "[bot_mitigation_cookie]",
+      "timestamp": "2026-11-08T04:37:45.456571983Z",
+      "matcher-status": true
+    }
+  ]
 ]
