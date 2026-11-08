@@ -49,7 +49,7 @@
       ],
       "request": "content = template.http_all_headers\nconst setCookieLines = content\n    .split(/\\r\\n/)\n    .filter(line => line.trim().toLowerCase().startsWith('set-cookie:'***\n\nconst nonHttpOnlyCookies = setCookieLines.filter(line => !line.toLowerCase().includes('httponly'));\n\nconst cookieNames = nonHttpOnlyCookies.map(line => {\n    const match = line.match(/set-cookie:***\n    return match ? match[1] : null;\n}).filter(Boolean);\ncookieNames",
       "response": "[techaro.lol-anubis-auth techaro.lol-anubis-cookie-verification]",
-      "timestamp": "2026-11-01T07:58:46.615145991Z",
+      "timestamp": "2026-11-08T07:49:28.739075506Z",
       "matcher-status": true
     },
     {
@@ -82,7 +82,7 @@
         "tls12"
       ],
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:00:32.704482184Z",
+      "timestamp": "2026-11-08T07:51:18.344482399Z",
       "matcher-status": true
     },
     {
@@ -115,57 +115,7 @@
         "tls13"
       ],
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:00:32.930620188Z",
-      "matcher-status": true
-    },
-    {
-      "template": "http/miscellaneous/robots-txt-endpoint.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/robots-txt-endpoint",
-      "template-id": "robots-txt-endpoint",
-      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/robots-txt-endpoint.yaml",
-      "info": {
-        "name": "robots.txt endpoint prober",
-        "author": [
-          "caspergn",
-          "pdteam",
-          "thezakman"
-        ],
-        "tags": [
-          "miscellaneous",
-          "misc",
-          "generic",
-          "discovery"
-        ],
-        "severity": "info",
-        "metadata": {
-          "max-request": 1,
-          "verified": true
-        }
-      },
-      "extractor-name": "endpoints",
-      "type": "http",
-      "host": "recherche-anom.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://recherche-anom.culture.gouv.fr",
-      "matched-at": "https://recherche-anom.culture.gouv.fr/robots.txt",
-      "extracted-results": [
-        "/img/",
-        "/archives/",
-        "/archive/recherche/",
-        "/archives/recherche/",
-        "/archive/resultats/",
-        "/redirections/url_redirect/",
-        "/data/",
-        "/archive/",
-        "/archives/resultats/",
-        "/cms/redirections/url_redirect/"
-      ],
-      "request": "GET /robots.txt HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nContent-Length: 382\r\nAccept-Ranges: bytes\r\nCache-Control: private\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:00:43 GMT\r\nEtag: \"69272b87-17e\"\r\nLast-Modified: Wed, 26 Nov 2025 16:32:07 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1;mode=block\r\n\r\nUser-agent: *\nCrawl-delay: 5\nDisallow: /data/\nDisallow: /img/\nDisallow: /archive/*/view:*\nDisallow: /archives/*/view:*\nDisallow: /archive/recherche/*?*\nDisallow: /archives/recherche/*?*\nDisallow: /archive/resultats/*?*\nDisallow: /archives/resultats/*?*\nDisallow: /cms/redirections/url_redirect/*\nDisallow: /redirections/url_redirect/*\n\n#Sitemap: https://xxx.fr/sitemap/contenus.xml\n",
-      "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:00:43.374195671Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr/robots.txt'",
+      "timestamp": "2026-11-08T07:51:18.533669323Z",
       "matcher-status": true
     },
     {
@@ -197,10 +147,59 @@
       "url": "https://recherche-anom.culture.gouv.fr",
       "matched-at": "https://recherche-anom.culture.gouv.fr/robots.txt",
       "request": "GET /robots.txt HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nContent-Length: 382\r\nAccept-Ranges: bytes\r\nCache-Control: private\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:00:45 GMT\r\nEtag: \"69272b87-17e\"\r\nLast-Modified: Wed, 26 Nov 2025 16:32:07 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1;mode=block\r\n\r\nUser-agent: *\nCrawl-delay: 5\nDisallow: /data/\nDisallow: /img/\nDisallow: /archive/*/view:*\nDisallow: /archives/*/view:*\nDisallow: /archive/recherche/*?*\nDisallow: /archives/recherche/*?*\nDisallow: /archive/resultats/*?*\nDisallow: /archives/resultats/*?*\nDisallow: /cms/redirections/url_redirect/*\nDisallow: /redirections/url_redirect/*\n\n#Sitemap: https://xxx.fr/sitemap/contenus.xml\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 382\r\nAccept-Ranges: bytes\r\nCache-Control: private\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:18 GMT\r\nEtag: \"69272b87-17e\"\r\nLast-Modified: Wed, 26 Nov 2025 16:32:07 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1;mode=block\r\n\r\nUser-agent: *\nCrawl-delay: 5\nDisallow: /data/\nDisallow: /img/\nDisallow: /archive/*/view:*\nDisallow: /archives/*/view:*\nDisallow: /archive/recherche/*?*\nDisallow: /archives/recherche/*?*\nDisallow: /archive/resultats/*?*\nDisallow: /archives/resultats/*?*\nDisallow: /cms/redirections/url_redirect/*\nDisallow: /redirections/url_redirect/*\n\n#Sitemap: https://xxx.fr/sitemap/contenus.xml\n",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:00:45.326824946Z",
+      "timestamp": "2026-11-08T07:51:18.958583485Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr/robots.txt'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/xss-deprecated-header.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/xss-deprecated-header",
+      "template-id": "xss-deprecated-header",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/xss-deprecated-header.yaml",
+      "info": {
+        "name": "XSS-Protection Header - Cross-Site Scripting",
+        "author": [
+          "joshlarsen"
+        ],
+        "tags": [
+          "xss",
+          "misconfig",
+          "generic",
+          "vuln"
+        ],
+        "description": "Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.",
+        "reference": [
+          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
+          "https://owasp.org/www-project-secure-headers/#x-xss-protection"
+        ],
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-79"
+          ],
+          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+        }
+      },
+      "type": "http",
+      "host": "recherche-anom.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://recherche-anom.culture.gouv.fr",
+      "matched-at": "https://recherche-anom.culture.gouv.fr",
+      "extracted-results": [
+        "1;mode=block"
+      ],
+      "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:22 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:22.592521605+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba23-fae0-77ee-bdca-c9a62a47e7d2\",\"method\":\"metarefresh\",\"randomData\":\"de7be36d58af88e07d4c48217f9cf1d17fc554554344a36aeed7203162171ac19ec624ed922e1bf6cd7eca1de6b743f2c16fe056c628d1d30b7059fff51c166b\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/8ebd92cb-73a3-4e73-a6f5-585efd63657f/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p><meta http-equiv=\"refresh\" content=\"2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=de7be36d58af88e07d4c48217f9cf1d17fc554554344a36aeed7203162171ac19ec624ed922e1bf6cd7eca1de6b743f2c16fe056c628d1d30b7059fff51c166b&amp;id=01a1ba23-fae0-77ee-bdca-c9a62a47e7d2&amp;redir=%2F\"></div><footer></footer></main></body></html>",
+      "ip": "91.223.76.144",
+      "timestamp": "2026-11-08T07:51:22.667845924Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
       "matcher-status": true
     },
     {
@@ -244,169 +243,63 @@
       "url": "https://recherche-anom.culture.gouv.fr",
       "matched-at": "https://recherche-anom.culture.gouv.fr",
       "extracted-results": [
-        "techaro.lol-anubis-auth=; Path=/; Expires=Sun, 01 Nov 2026 07:59:49 GMT; Max-Age=0; Secure; SameSite=None techaro.lol-anubis-cookie-verification=01a19620-1c0f-7359-80fd-f56e741ef2e4; Path=/; Expires=Sun, 01 Nov 2026 08:30:49 GMT; Secure; SameSite=None"
+        "techaro.lol-anubis-auth=; Path=/; Expires=Sun, 08 Nov 2026 07:50:31 GMT; Max-Age=0; Secure; SameSite=None techaro.lol-anubis-cookie-verification=01a1ba24-1e01-7456-8639-896143ca92ba; Path=/; Expires=Sun, 08 Nov 2026 08:21:31 GMT; Secure; SameSite=None"
       ],
       "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:00:49 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:00:49.167223486+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-1c0f-7359-80fd-f56e741ef2e4\",\"method\":\"metarefresh\",\"randomData\":\"f45679e38032d512dc3b87a9f157a9330651d8cdf7ee379f0b83770f17cb9041da7528ba5a635d25736f5e01798c1092b1a65c35dcf8dbc0e4d6261749503af8\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/9bc12456-340b-4653-a911-5b56ec34a6d7/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p><meta http-equiv=\"refresh\" content=\"2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=f45679e38032d512dc3b87a9f157a9330651d8cdf7ee379f0b83770f17cb9041da7528ba5a635d25736f5e01798c1092b1a65c35dcf8dbc0e4d6261749503af8&amp;id=01a19620-1c0f-7359-80fd-f56e741ef2e4&amp;redir=%2F\"></div><footer></footer></main></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:31 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:31.585288406+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-1e01-7456-8639-896143ca92ba\",\"method\":\"metarefresh\",\"randomData\":\"d3e886bdfaabeaa6e68e62be88f642bf5294b71c4e7defc9f3fe3fde786c8b4cb714583ab7acaf324f9640537ad0845e02e2560499bed8ef054e6cbf3ede4434\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/a439009c-8883-4561-8796-3279453ebcb7/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p><meta http-equiv=\"refresh\" content=\"2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=d3e886bdfaabeaa6e68e62be88f642bf5294b71c4e7defc9f3fe3fde786c8b4cb714583ab7acaf324f9640537ad0845e02e2560499bed8ef054e6cbf3ede4434&amp;id=01a1ba24-1e01-7456-8639-896143ca92ba&amp;redir=%2F\"></div><footer></footer></main></body></html>",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:00:49.285312865Z",
+      "timestamp": "2026-11-08T07:51:31.721492398Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "http/miscellaneous/robots-txt-endpoint.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/robots-txt-endpoint",
+      "template-id": "robots-txt-endpoint",
+      "template-path": "/home/runner/nuclei-templates/http/miscellaneous/robots-txt-endpoint.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "robots.txt endpoint prober",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "caspergn",
+          "pdteam",
+          "thezakman"
         ],
         "tags": [
-          "misconfig",
-          "headers",
+          "miscellaneous",
+          "misc",
           "generic",
-          "vuln"
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 1,
+          "verified": true
         }
       },
-      "matcher-name": "x-permitted-cross-domain-policies",
+      "extractor-name": "endpoints",
       "type": "http",
       "host": "recherche-anom.culture.gouv.fr",
       "port": "443",
       "scheme": "https",
       "url": "https://recherche-anom.culture.gouv.fr",
-      "matched-at": "https://recherche-anom.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:05 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982&id=01a19620-5bdd-7b9d-80d4-a2481edd3536&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:05.501763974+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-5bdd-7b9d-80d4-a2481edd3536\",\"method\":\"metarefresh\",\"randomData\":\"12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/10cdbdc8-80e6-4fd4-88e3-79b208402d2e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
+      "matched-at": "https://recherche-anom.culture.gouv.fr/robots.txt",
+      "extracted-results": [
+        "/archive/resultats/",
+        "/archives/resultats/",
+        "/archives/",
+        "/archives/recherche/",
+        "/cms/redirections/url_redirect/",
+        "/redirections/url_redirect/",
+        "/data/",
+        "/img/",
+        "/archive/",
+        "/archive/recherche/"
+      ],
+      "request": "GET /robots.txt HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 382\r\nAccept-Ranges: bytes\r\nCache-Control: private\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:53 GMT\r\nEtag: \"69272b87-17e\"\r\nLast-Modified: Wed, 26 Nov 2025 16:32:07 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-Xss-Protection: 1;mode=block\r\n\r\nUser-agent: *\nCrawl-delay: 5\nDisallow: /data/\nDisallow: /img/\nDisallow: /archive/*/view:*\nDisallow: /archives/*/view:*\nDisallow: /archive/recherche/*?*\nDisallow: /archives/recherche/*?*\nDisallow: /archive/resultats/*?*\nDisallow: /archives/resultats/*?*\nDisallow: /cms/redirections/url_redirect/*\nDisallow: /redirections/url_redirect/*\n\n#Sitemap: https://xxx.fr/sitemap/contenus.xml\n",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:05.556071197Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-embedder-policy",
-      "type": "http",
-      "host": "recherche-anom.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://recherche-anom.culture.gouv.fr",
-      "matched-at": "https://recherche-anom.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:05 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982&id=01a19620-5bdd-7b9d-80d4-a2481edd3536&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:05.501763974+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-5bdd-7b9d-80d4-a2481edd3536\",\"method\":\"metarefresh\",\"randomData\":\"12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/10cdbdc8-80e6-4fd4-88e3-79b208402d2e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
-      "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:05.556606415Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "cross-origin-opener-policy",
-      "type": "http",
-      "host": "recherche-anom.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://recherche-anom.culture.gouv.fr",
-      "matched-at": "https://recherche-anom.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:05 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982&id=01a19620-5bdd-7b9d-80d4-a2481edd3536&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:05.501763974+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-5bdd-7b9d-80d4-a2481edd3536\",\"method\":\"metarefresh\",\"randomData\":\"12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/10cdbdc8-80e6-4fd4-88e3-79b208402d2e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
-      "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:05.557089677Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
+      "timestamp": "2026-11-08T07:51:53.538557945Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr/robots.txt'",
       "matcher-status": true
     },
     {
@@ -455,9 +348,9 @@
       "url": "https://recherche-anom.culture.gouv.fr",
       "matched-at": "https://recherche-anom.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:05 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982&id=01a19620-5bdd-7b9d-80d4-a2481edd3536&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:05.501763974+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-5bdd-7b9d-80d4-a2481edd3536\",\"method\":\"metarefresh\",\"randomData\":\"12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/10cdbdc8-80e6-4fd4-88e3-79b208402d2e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:54 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233&id=01a1ba24-75f3-7def-bf3c-141ce6de856d&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:54.099918356+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-75f3-7def-bf3c-141ce6de856d\",\"method\":\"metarefresh\",\"randomData\":\"af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/d6706049-ad94-49a6-a166-2433d940177e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:05.557583064Z",
+      "timestamp": "2026-11-08T07:51:54.145989997Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -507,9 +400,9 @@
       "url": "https://recherche-anom.culture.gouv.fr",
       "matched-at": "https://recherche-anom.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:05 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982&id=01a19620-5bdd-7b9d-80d4-a2481edd3536&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:05.501763974+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-5bdd-7b9d-80d4-a2481edd3536\",\"method\":\"metarefresh\",\"randomData\":\"12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/10cdbdc8-80e6-4fd4-88e3-79b208402d2e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:54 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233&id=01a1ba24-75f3-7def-bf3c-141ce6de856d&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:54.099918356+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-75f3-7def-bf3c-141ce6de856d\",\"method\":\"metarefresh\",\"randomData\":\"af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/d6706049-ad94-49a6-a166-2433d940177e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:05.558061729Z",
+      "timestamp": "2026-11-08T07:51:54.146666579Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -559,33 +452,39 @@
       "url": "https://recherche-anom.culture.gouv.fr",
       "matched-at": "https://recherche-anom.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:05 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982&id=01a19620-5bdd-7b9d-80d4-a2481edd3536&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:05.501763974+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-5bdd-7b9d-80d4-a2481edd3536\",\"method\":\"metarefresh\",\"randomData\":\"12f6918d6882a59e5e6d7808e5fa28eb5853b59ff378be19904edeff8a59bd95d5b6605dfa860dd896023107f25f1be7b725ae6ba0552ba0cacd5f6bd8b77982\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/10cdbdc8-80e6-4fd4-88e3-79b208402d2e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:54 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233&id=01a1ba24-75f3-7def-bf3c-141ce6de856d&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:54.099918356+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-75f3-7def-bf3c-141ce6de856d\",\"method\":\"metarefresh\",\"randomData\":\"af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/d6706049-ad94-49a6-a166-2433d940177e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:05.558538341Z",
+      "timestamp": "2026-11-08T07:51:54.147338021Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/xss-deprecated-header.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/xss-deprecated-header",
-      "template-id": "xss-deprecated-header",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/xss-deprecated-header.yaml",
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
       "info": {
-        "name": "XSS-Protection Header - Cross-Site Scripting",
+        "name": "HTTP Missing Security Headers",
         "author": [
-          "joshlarsen"
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
         ],
         "tags": [
-          "xss",
           "misconfig",
+          "headers",
           "generic",
           "vuln"
         ],
-        "description": "Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.",
-        "reference": [
-          "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection",
-          "https://owasp.org/www-project-secure-headers/#x-xss-protection"
-        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
         "severity": "info",
         "metadata": {
           "max-request": 1
@@ -593,24 +492,125 @@
         "classification": {
           "cve-id": null,
           "cwe-id": [
-            "cwe-79"
-          ],
-          "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+            "cwe-693"
+          ]
         }
       },
+      "matcher-name": "x-permitted-cross-domain-policies",
       "type": "http",
       "host": "recherche-anom.culture.gouv.fr",
       "port": "443",
       "scheme": "https",
       "url": "https://recherche-anom.culture.gouv.fr",
       "matched-at": "https://recherche-anom.culture.gouv.fr",
-      "extracted-results": [
-        "1;mode=block"
-      ],
       "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 01 Nov 2026 08:01:08 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-01T09:01:08.10884103+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"52.240.168.197\"},\"id\":\"01a19620-660c-7ccc-8632-7535718c119a\",\"method\":\"metarefresh\",\"randomData\":\"b0c3c24652d8283f2b8b19cef00390f3a122ff977cb09b4f5f76991e555e6f85c76fa1c4bec7359503a68c5b83ddad317cf93b3432f23cc545d8b77bbc36f31d\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/40fa8467-bec8-404f-8551-b04068929156/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p><meta http-equiv=\"refresh\" content=\"2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=b0c3c24652d8283f2b8b19cef00390f3a122ff977cb09b4f5f76991e555e6f85c76fa1c4bec7359503a68c5b83ddad317cf93b3432f23cc545d8b77bbc36f31d&amp;id=01a19620-660c-7ccc-8632-7535718c119a&amp;redir=%2F\"></div><footer></footer></main></body></html>",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:54 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233&id=01a1ba24-75f3-7def-bf3c-141ce6de856d&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:54.099918356+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-75f3-7def-bf3c-141ce6de856d\",\"method\":\"metarefresh\",\"randomData\":\"af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/d6706049-ad94-49a6-a166-2433d940177e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:08.179427569Z",
+      "timestamp": "2026-11-08T07:51:54.147999485Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-embedder-policy",
+      "type": "http",
+      "host": "recherche-anom.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://recherche-anom.culture.gouv.fr",
+      "matched-at": "https://recherche-anom.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:54 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233&id=01a1ba24-75f3-7def-bf3c-141ce6de856d&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:54.099918356+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-75f3-7def-bf3c-141ce6de856d\",\"method\":\"metarefresh\",\"randomData\":\"af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/d6706049-ad94-49a6-a166-2433d940177e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
+      "ip": "91.223.76.144",
+      "timestamp": "2026-11-08T07:51:54.148750167Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "cross-origin-opener-policy",
+      "type": "http",
+      "host": "recherche-anom.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://recherche-anom.culture.gouv.fr",
+      "matched-at": "https://recherche-anom.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: recherche-anom.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nCache-Control: no-store\r\nContent-Type: text/html; charset=utf-8\r\nDate: Sun, 08 Nov 2026 07:51:54 GMT\r\nPermissions-Policy: geolocation=(), microphone=(), camera=()\r\nReferrer-Policy: no-referrer-when-downgrade\r\nRefresh: 2; url=/.within.website/x/cmd/anubis/api/pass-challenge?challenge=af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233&id=01a1ba24-75f3-7def-bf3c-141ce6de856d&redir=%2F\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=63072000\r\nX-Content-Type-Options: nosniff\r\nX-Xss-Protection: 1;mode=block\r\n\r\n<!doctype html><html lang=\"en\"><head><title>Making sure you&#39;re not a bot!</title><link rel=\"stylesheet\" href=\"/.within.website/x/xess/xess.min.css?cachebuster=1.24.0-38-g4e0df8c-dev\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><meta name=\"robots\" content=\"noindex,nofollow\"><style>\n        body,\n        html {\n            height: 100%;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        .centered-div {\n            text-align: center;\n        }\n\n        #status {\n            font-variant-numeric: tabular-nums;\n        }\n\n        #progress {\n            display: none;\n            width: 90%;\n            width: min(20rem, 90%);\n            height: 2rem;\n            border-radius: 1rem;\n            overflow: hidden;\n            margin: 1rem 0 2rem;\n            outline-offset: 2px;\n            outline: #b16286 solid 4px;\n        }\n\n        .bar-inner {\n            background-color: #b16286;\n            height: 100%;\n            width: 0;\n            transition: width 0.25s ease-in;\n        }\n    \t</style><script id=\"anubis_version\" type=\"application/json\">\"1.24.0-38-g4e0df8c-dev\"\n</script><script id=\"anubis_challenge\" type=\"application/json\">{\"rules\":{\"algorithm\":\"metarefresh\",\"difficulty\":1},\"challenge\":{\"issuedAt\":\"2026-11-08T08:51:54.099918356+01:00\",\"metadata\":{\"User-Agent\":\"Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\",\"X-Real-Ip\":\"9.234.149.82\"},\"id\":\"01a1ba24-75f3-7def-bf3c-141ce6de856d\",\"method\":\"metarefresh\",\"randomData\":\"af035b27e567dea20256824f2eb0767e133c931b41f117aae3f1a2d77dc3fcf603e48fd4ede94f67ead58e79ca2386ada5e1dc023562ae6d0af508ddf2010233\",\"policyRuleHash\":\"ac980f49c4d35fab\",\"difficulty\":1,\"spent\":false}}\n</script><script id=\"anubis_base_prefix\" type=\"application/json\">\"\"\n</script><script id=\"anubis_public_url\" type=\"application/json\">\"\"\n</script></head><body id=\"top\"><script type=\"ignore\"><a href=\"/.within.website/x/cmd/anubis/api/honeypot/d6706049-ad94-49a6-a166-2433d940177e/init\">Don't click me</a></script><main><h1 id=\"title\" class=\"centered-div\">Making sure you&#39;re not a bot!</h1><div class=\"centered-div\"><img id=\"image\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"> <img style=\"display:none;\" style=\"width:100%;max-width:256px;\" src=\"/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.24.0-38-g4e0df8c-dev\"><p id=\"status\">Loading...</p><p>Please wait a moment while we ensure the security of your connection.</p></div><footer></footer></main></body></html>",
+      "ip": "91.223.76.144",
+      "timestamp": "2026-11-08T07:51:54.149438581Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://recherche-anom.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -647,9 +647,9 @@
       "extracted-results": [
         "anom-diffusion-prod.ligeo-archives.com"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 41637\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;recherche-anom.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 41637\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;recherche-anom.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nrecherche-anom.culture.gouv.fr.\t2958\tIN\tCNAME\tanom-diffusion-prod.ligeo-archives.com.\n",
-      "timestamp": "2026-11-01T08:01:11.237094657Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 17995\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;recherche-anom.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 17995\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;recherche-anom.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nrecherche-anom.culture.gouv.fr.\t2499\tIN\tCNAME\tanom-diffusion-prod.ligeo-archives.com.\n",
+      "timestamp": "2026-11-08T07:51:55.823899574Z",
       "matcher-status": true
     },
     {
@@ -681,7 +681,7 @@
         "Let's Encrypt"
       ],
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:11.560618003Z",
+      "timestamp": "2026-11-08T07:51:56.050851576Z",
       "matcher-status": true
     },
     {
@@ -713,7 +713,7 @@
         "recherche-anom.culture.gouv.fr"
       ],
       "ip": "91.223.76.144",
-      "timestamp": "2026-11-01T08:01:11.560793551Z",
+      "timestamp": "2026-11-08T07:51:56.051068343Z",
       "matcher-status": true
     }
   ]
