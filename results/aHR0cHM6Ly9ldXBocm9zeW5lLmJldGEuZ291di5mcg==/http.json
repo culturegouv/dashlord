@@ -3,30 +3,31 @@
     "algorithmVersion": 4,
     "grade": "B",
     "error": null,
-    "score": 70,
+    "score": 75,
     "statusCode": 200,
-    "testsFailed": 2,
-    "testsPassed": 8,
+    "testsFailed": 1,
+    "testsPassed": 9,
     "testsQuantity": 10,
     "responseHeaders": {
-      "date": "Sun, 01 Nov 2026 07:39:44 GMT",
+      "date": "Sun, 08 Nov 2026 07:30:45 GMT",
+      "set-cookie": [
+        "csrftoken=DpgjIkJHxbBNWP5FZ165idSKDL7IaptP; expires=Sun, 07 Nov 2027 07:30:45 GMT; Max-Age=31449600; Path=/; SameSite=Lax; Secure"
+      ],
       "content-type": "text/html; charset=utf-8",
-      "transfer-encoding": "chunked",
-      "connection": "close",
-      "x-request-id": "86cb75eb-1713-4fde-8a98-0351e7b86ebe",
-      "expires": "Sun, 01 Nov 2026 07:39:44 GMT",
+      "x-request-id": "a6886167-c5e9-4d96-9f93-508a992ed848",
+      "expires": "Sun, 08 Nov 2026 07:30:45 GMT",
       "cache-control": "max-age=0, no-cache, no-store, must-revalidate, private",
-      "vary": "Cookie, Accept-Language, origin",
-      "content-security-policy-report-only": "default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://euphrosyne-tools-api-production.osc-secnum-fr1.scalingo.io; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'",
+      "vary": "Cookie,Accept-Language,origin",
+      "content-security-policy-report-only": "default-src 'self'; img-src 'self' data: https://info.orcid.org https://iiif.prd.cloud.culture.fr; script-src 'self' 'unsafe-inline' https://stats.beta.gouv.fr; style-src 'self' 'unsafe-inline'; connect-src 'self' https://stats.beta.gouv.fr https://opentheso.huma-num.fr https://secure.geonames.org https://api.ror.org https://sentry.incubateur.net https://tools.euphrosyne.beta.gouv.fr; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; report-uri https://sentry.incubateur.net/api/179/security/?sentry_key=387b15a5897e55c39dbdd622edd91769",
       "x-frame-options": "DENY",
       "content-language": "fr",
       "x-content-type-options": "nosniff",
       "referrer-policy": "same-origin",
       "cross-origin-opener-policy": "same-origin",
-      "set-cookie": [
-        "csrftoken=lR6nlMRkALKmByztsgDpcSQD0MQAP5eA; expires=Sun, 31 Oct 2027 07:39:44 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
-      ],
-      "strict-transport-security": "max-age=31536000"
+      "strict-transport-security": "max-age=31536000",
+      "x-cp-via": "C2-9c74a3ff-e6f54674",
+      "connection": "close",
+      "transfer-encoding": "chunked"
     }
   },
   "tests": {
@@ -43,20 +44,21 @@
     },
     "cookies": {
       "expectation": "cookies-secure-with-httponly-sessions",
-      "pass": false,
-      "result": "cookies-without-secure-flag-but-protected-by-hsts",
-      "scoreModifier": -5,
+      "pass": true,
+      "result": "cookies-secure-with-httponly-sessions-and-samesite",
+      "scoreModifier": 5,
       "data": {
         "csrftoken": {
           "domain": "euphrosyne.beta.gouv.fr",
-          "expires": "2027-10-31T07:39:44.000Z",
+          "expires": "2027-11-07T07:30:45.000Z",
           "max-age": 31449600,
           "path": "/",
           "port": null,
-          "samesite": "lax"
+          "samesite": "lax",
+          "secure": true
         }
       },
-      "sameSite": false
+      "sameSite": true
     },
     "cross-origin-resource-sharing": {
       "expectation": "cross-origin-resource-sharing-not-implemented",
