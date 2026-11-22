@@ -1,107 +1,58 @@
 [
   [
     {
-      "template": "dns/dns-saas-service-detection.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/dns-saas-service-detection",
-      "template-id": "dns-saas-service-detection",
-      "template-path": "/home/runner/nuclei-templates/dns/dns-saas-service-detection.yaml",
+      "template": "http/exposures/configs/azure-domain-tenant.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/azure-domain-tenant",
+      "template-id": "azure-domain-tenant",
+      "template-path": "/home/runner/nuclei-templates/http/exposures/configs/azure-domain-tenant.yaml",
       "info": {
-        "name": "DNS SaaS Service Detection",
+        "name": "Microsoft Entra ID Tenant ID - Detect",
         "author": [
-          "noah @thesubtlety",
-          "pdteam"
+          "v0idc0de",
+          "tortuginator"
         ],
         "tags": [
-          "dns",
-          "service",
-          "discovery"
+          "azure",
+          "microsoft",
+          "cloud",
+          "exposure",
+          "entra",
+          "tenant",
+          "appproxy"
         ],
-        "description": "A CNAME DNS record was discovered",
+        "description": "Detected the Microsoft Entra ID (Azure AD) tenant ID behind a host. The target's pre-authentication redirect is checked first for a tenant GUID in the Location header or the Application Proxy x-ms-proxy-subscription-id header. If the target does not disclose the tenant, the host is resolved to its verified Azure AD domain through the login.microsoftonline.com userrealm endpoint and the tenant ID is read from the OpenID Connect discovery document.\n",
         "reference": [
-          "https://ns1.com/resources/cname",
-          "https://www.theregister.com/2021/02/24/dns_cname_tracking/",
-          "https://www.ionos.com/digitalguide/hosting/technical-matters/cname-record/"
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/",
+          "https://learn.microsoft.com/en-us/entra/identity/app-proxy/overview-what-is-app-proxy"
         ],
         "severity": "info",
         "metadata": {
-          "max-request": 1
+          "max-request": 3,
+          "verified": true
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-200"
+          ],
+          "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
         }
       },
-      "type": "dns",
-      "host": "basedeslieux.culture.gouv.fr",
-      "matched-at": "basedeslieux.culture.gouv.fr",
-      "extracted-results": [
-        "master-7rqtwti-id4gk7ywjmqls.fr-3.platformsh.site"
-      ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 16347\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;basedeslieux.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 16347\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;basedeslieux.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\nbasedeslieux.culture.gouv.fr.\t3600\tIN\tCNAME\tmaster-7rqtwti-id4gk7ywjmqls.fr-3.platformsh.site.\n",
-      "timestamp": "2026-11-08T03:08:37.660853362Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/detect-ssl-issuer.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
-      "template-id": "ssl-issuer",
-      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
-      "info": {
-        "name": "Detect SSL Certificate Issuer",
-        "author": [
-          "lingtren"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "discovery"
-        ],
-        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "ssl",
+      "extractor-name": "tenant_id",
+      "type": "http",
       "host": "basedeslieux.culture.gouv.fr",
       "port": "443",
-      "matched-at": "basedeslieux.culture.gouv.fr:443",
+      "scheme": "https",
+      "url": "https://basedeslieux.culture.gouv.fr",
+      "matched-at": "https://login.microsoftonline.com:443/culture.gouv.fr/v2.0/.well-known/openid-configuration",
       "extracted-results": [
-        "Let's Encrypt"
+        "5d0b42b2-7ba0-42b9-bd88-2dd1558bd190"
       ],
-      "ip": "94.23.123.122",
-      "timestamp": "2026-11-08T03:08:48.578123332Z",
-      "matcher-status": true
-    },
-    {
-      "template": "ssl/ssl-dns-names.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
-      "template-id": "ssl-dns-names",
-      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
-      "info": {
-        "name": "SSL DNS Names",
-        "author": [
-          "pdteam"
-        ],
-        "tags": [
-          "ssl",
-          "tls",
-          "vuln"
-        ],
-        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        }
-      },
-      "type": "ssl",
-      "host": "basedeslieux.culture.gouv.fr",
-      "port": "443",
-      "matched-at": "basedeslieux.culture.gouv.fr:443",
-      "extracted-results": [
-        "cartes.culture.gouv.fr",
-        "basedeslieux.culture.gouv.fr",
-        "carte.culture.gouv.fr"
-      ],
-      "ip": "94.23.123.122",
-      "timestamp": "2026-11-08T03:08:48.578374983Z",
+      "request": "GET /culture.gouv.fr/v2.0/.well-known/openid-configuration HTTP/1.1\r\nHost: login.microsoftonline.com\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nCookie: ***\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1964\r\nAccess-Control-Allow-Methods: GET, OPTIONS\r\nAccess-Control-Allow-Origin: *\r\nCache-Control: max-age=86400, private\r\nContent-Security-Policy-Report-Only: object-src 'none'; base-uri 'self'; script-src 'self' 'nonce-GR8R-LZvh1dkV596NV9YTg' 'unsafe-inline' 'unsafe-eval' https://*.msauth.net https://*.msftauth.net https://*.msftauthimages.net https://*.msauthimages.net https://*.msidentity.com https://*.microsoftonline-p.com https://*.microsoftazuread-sso.com https://*.azureedge.net https://*.outlook.com https://*.office.com https://*.office365.com https://*.microsoft.com https://*.bing.com 'report-sample'; report-uri https://cspv2.core.microsoft/report/7290fd99-e070-4ee6-abdf-b2158190ceff/ESTS-UX-All\r\nContent-Type: application/json; charset=utf-8\r\nDate: Sun, 22 Nov 2026 03:57:53 GMT\r\nP3p: CP=\"DSP CUR OTPi IND OTRi ONL FIN\"\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nX-Content-Type-Options: nosniff\r\nX-Ms-Ests-Server: 2.1.25611.5 - FRC ProdSlices\r\nX-Ms-Request-Id: 10b83b30-c59e-47c7-a734-fa8b237f0300\r\nX-Ms-Srs: 1.P\r\nX-Xss-Protection: 0\r\n\r\n{\"token_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/token\",\"token_endpoint_auth_methods_supported\":[\"client_secret_post\",\"private_key_jwt\",\"client_secret_basic\",\"self_signed_tls_client_auth\"],\"jwks_uri\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/discovery/v2.0/keys\",\"response_modes_supported\":[\"query\",\"fragment\",\"form_post\"],\"subject_types_supported\":[\"pairwise\"],\"id_token_signing_alg_values_supported\":[\"RS256\"],\"response_types_supported\":[\"code\",\"id_token\",\"code id_token\",\"id_token token\"],\"scopes_supported\":[\"openid\",\"profile\",\"email\",\"offline_access\"],\"issuer\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/v2.0\",\"request_uri_parameter_supported\":false,\"userinfo_endpoint\":\"https://graph.microsoft.com/oidc/userinfo\",\"authorization_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/authorize\",\"device_authorization_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/devicecode\",\"http_logout_supported\":true,\"frontchannel_logout_supported\":true,\"end_session_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/logout\",\"claims_supported\":[\"sub\",\"iss\",\"cloud_instance_name\",\"cloud_instance_host_name\",\"cloud_graph_host_name\",\"msgraph_host\",\"aud\",\"exp\",\"iat\",\"auth_time\",\"acr\",\"nonce\",\"preferred_username\",\"name\",\"tid\",\"ver\",\"at_hash\",\"c_hash\",\"email\"],\"kerberos_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/kerberos\",\"mtls_endpoint_aliases\":{\"token_endpoint\":\"https://mtlsauth.microsoft.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/token\"},\"tls_client_certificate_bound_access_tokens\":true,\"tenant_region_scope\":\"EU\",\"cloud_instance_name\":\"microsoftonline.com\",\"cloud_graph_host_name\":\"graph.windows.net\",\"msgraph_host\":\"graph.microsoft.com\",\"rbac_url\":\"https://pas.windows.net\"}",
+      "ip": "40.126.29.9",
+      "timestamp": "2026-11-22T03:57:53.734949344Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Cookie: ***' -H 'Host: login.microsoftonline.com' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://login.microsoftonline.com:443/culture.gouv.fr/v2.0/.well-known/openid-configuration'",
       "matcher-status": true
     }
   ]
