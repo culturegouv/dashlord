@@ -49,114 +49,76 @@
         "5d0b42b2-7ba0-42b9-bd88-2dd1558bd190"
       ],
       "request": "GET /culture.gouv.fr/v2.0/.well-known/openid-configuration HTTP/1.1\r\nHost: login.microsoftonline.com\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nCookie: ***\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1964\r\nAccess-Control-Allow-Methods: GET, OPTIONS\r\nAccess-Control-Allow-Origin: *\r\nCache-Control: max-age=86400, private\r\nContent-Security-Policy-Report-Only: object-src 'none'; base-uri 'self'; script-src 'self' 'nonce-ZTr-4u7TKenZP5UryxPBeg' 'unsafe-inline' 'unsafe-eval' https://*.msauth.net https://*.msftauth.net https://*.msftauthimages.net https://*.msauthimages.net https://*.msidentity.com https://*.microsoftonline-p.com https://*.microsoftazuread-sso.com https://*.azureedge.net https://*.outlook.com https://*.office.com https://*.office365.com https://*.microsoft.com https://*.bing.com 'report-sample'; report-uri https://cspv2.core.microsoft/report/7290fd99-e070-4ee6-abdf-b2158190ceff/ESTS-UX-All\r\nContent-Type: application/json; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:09:59 GMT\r\nP3p: CP=\"DSP CUR OTPi IND OTRi ONL FIN\"\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nX-Content-Type-Options: nosniff\r\nX-Ms-Ests-Server: 2.1.25515.5 - SEC ProdSlices\r\nX-Ms-Request-Id: 1a799254-2e91-4809-9ee8-9feeb0795800\r\nX-Ms-Srs: 1.P\r\nX-Xss-Protection: 0\r\n\r\n{\"token_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/token\",\"token_endpoint_auth_methods_supported\":[\"client_secret_post\",\"private_key_jwt\",\"client_secret_basic\",\"self_signed_tls_client_auth\"],\"jwks_uri\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/discovery/v2.0/keys\",\"response_modes_supported\":[\"query\",\"fragment\",\"form_post\"],\"subject_types_supported\":[\"pairwise\"],\"id_token_signing_alg_values_supported\":[\"RS256\"],\"response_types_supported\":[\"code\",\"id_token\",\"code id_token\",\"id_token token\"],\"scopes_supported\":[\"openid\",\"profile\",\"email\",\"offline_access\"],\"issuer\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/v2.0\",\"request_uri_parameter_supported\":false,\"userinfo_endpoint\":\"https://graph.microsoft.com/oidc/userinfo\",\"authorization_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/authorize\",\"device_authorization_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/devicecode\",\"http_logout_supported\":true,\"frontchannel_logout_supported\":true,\"end_session_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/logout\",\"claims_supported\":[\"sub\",\"iss\",\"cloud_instance_name\",\"cloud_instance_host_name\",\"cloud_graph_host_name\",\"msgraph_host\",\"aud\",\"exp\",\"iat\",\"auth_time\",\"acr\",\"nonce\",\"preferred_username\",\"name\",\"tid\",\"ver\",\"at_hash\",\"c_hash\",\"email\"],\"kerberos_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/kerberos\",\"mtls_endpoint_aliases\":{\"token_endpoint\":\"https://mtlsauth.microsoft.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/token\"},\"tls_client_certificate_bound_access_tokens\":true,\"tenant_region_scope\":\"EU\",\"cloud_instance_name\":\"microsoftonline.com\",\"cloud_graph_host_name\":\"graph.windows.net\",\"msgraph_host\":\"graph.microsoft.com\",\"rbac_url\":\"https://pas.windows.net\"}",
-      "ip": "20.190.151.133",
-      "timestamp": "2026-11-15T07:10:00.202811985Z",
+      "response": "HTTP/1.1 200 OK\r\nContent-Length: 1964\r\nAccess-Control-Allow-Methods: GET, OPTIONS\r\nAccess-Control-Allow-Origin: *\r\nCache-Control: max-age=86400, private\r\nContent-Security-Policy-Report-Only: object-src 'none'; base-uri 'self'; script-src 'self' 'nonce-SUoVLdkEcxr7yAR0EzdBzg' 'unsafe-inline' 'unsafe-eval' https://*.msauth.net https://*.msftauth.net https://*.msftauthimages.net https://*.msauthimages.net https://*.msidentity.com https://*.microsoftonline-p.com https://*.microsoftazuread-sso.com https://*.azureedge.net https://*.outlook.com https://*.office.com https://*.office365.com https://*.microsoft.com https://*.bing.com 'report-sample'; report-uri https://cspv2.core.microsoft/report/7290fd99-e070-4ee6-abdf-b2158190ceff/ESTS-UX-All\r\nContent-Type: application/json; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:34:11 GMT\r\nP3p: CP=\"DSP CUR OTPi IND OTRi ONL FIN\"\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nSet-Cookie: ***\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nX-Content-Type-Options: nosniff\r\nX-Ms-Ests-Server: 2.1.25611.5 - NEULR1 ProdSlices\r\nX-Ms-Request-Id: ea9bdf8d-180f-47a0-b075-f1fd06430700\r\nX-Ms-Srs: 1.P\r\nX-Xss-Protection: 0\r\n\r\n{\"token_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/token\",\"token_endpoint_auth_methods_supported\":[\"client_secret_post\",\"private_key_jwt\",\"client_secret_basic\",\"self_signed_tls_client_auth\"],\"jwks_uri\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/discovery/v2.0/keys\",\"response_modes_supported\":[\"query\",\"fragment\",\"form_post\"],\"subject_types_supported\":[\"pairwise\"],\"id_token_signing_alg_values_supported\":[\"RS256\"],\"response_types_supported\":[\"code\",\"id_token\",\"code id_token\",\"id_token token\"],\"scopes_supported\":[\"openid\",\"profile\",\"email\",\"offline_access\"],\"issuer\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/v2.0\",\"request_uri_parameter_supported\":false,\"userinfo_endpoint\":\"https://graph.microsoft.com/oidc/userinfo\",\"authorization_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/authorize\",\"device_authorization_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/devicecode\",\"http_logout_supported\":true,\"frontchannel_logout_supported\":true,\"end_session_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/logout\",\"claims_supported\":[\"sub\",\"iss\",\"cloud_instance_name\",\"cloud_instance_host_name\",\"cloud_graph_host_name\",\"msgraph_host\",\"aud\",\"exp\",\"iat\",\"auth_time\",\"acr\",\"nonce\",\"preferred_username\",\"name\",\"tid\",\"ver\",\"at_hash\",\"c_hash\",\"email\"],\"kerberos_endpoint\":\"https://login.microsoftonline.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/kerberos\",\"mtls_endpoint_aliases\":{\"token_endpoint\":\"https://mtlsauth.microsoft.com/5d0b42b2-7ba0-42b9-bd88-2dd1558bd190/oauth2/v2.0/token\"},\"tls_client_certificate_bound_access_tokens\":true,\"tenant_region_scope\":\"EU\",\"cloud_instance_name\":\"microsoftonline.com\",\"cloud_graph_host_name\":\"graph.windows.net\",\"msgraph_host\":\"graph.microsoft.com\",\"rbac_url\":\"https://pas.windows.net\"}",
+      "ip": "20.190.151.7",
+      "timestamp": "2026-11-22T06:34:11.678752119Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Cookie: ***' -H 'Host: login.microsoftonline.com' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://login.microsoftonline.com:443/culture.gouv.fr/v2.0/.well-known/openid-configuration'",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "TLS Version - Detect",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "ssl",
+          "tls",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 4
         }
       },
-      "matcher-name": "x-frame-options",
-      "type": "http",
+      "type": "ssl",
       "host": "data.culture.gouv.fr",
       "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls12"
+      ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.069328268Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "timestamp": "2026-11-22T06:35:45.032550687Z",
       "matcher-status": true
     },
     {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "template": "ssl/tls-version.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/tls-version",
+      "template-id": "tls-version",
+      "template-path": "/home/runner/nuclei-templates/ssl/tls-version.yaml",
       "info": {
-        "name": "HTTP Missing Security Headers",
+        "name": "TLS Version - Detect",
         "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
+          "pdteam",
+          "pussycat0x"
         ],
         "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
+          "ssl",
+          "tls",
+          "discovery"
         ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "description": "TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.\nIt is important to detect the TLS version in order to ensure secure communication between two computers or servers.\n",
         "severity": "info",
         "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
+          "max-request": 4
         }
       },
-      "matcher-name": "x-permitted-cross-domain-policies",
-      "type": "http",
+      "type": "ssl",
       "host": "data.culture.gouv.fr",
       "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "tls13"
+      ],
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.069461015Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "timestamp": "2026-11-22T06:35:45.056332816Z",
       "matcher-status": true
     },
     {
@@ -205,113 +167,9 @@
       "url": "https://data.culture.gouv.fr",
       "matched-at": "https://data.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.069563588Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "strict-transport-security",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.069669526Z",
-      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
-      "matcher-status": true
-    },
-    {
-      "template": "http/misconfiguration/http-missing-security-headers.yaml",
-      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
-      "template-id": "http-missing-security-headers",
-      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
-      "info": {
-        "name": "HTTP Missing Security Headers",
-        "author": [
-          "socketz",
-          "geeknik",
-          "g4l1t0",
-          "convisoappsec",
-          "kurohost",
-          "dawid-czarnecki",
-          "forgedhallpass",
-          "jub0bs",
-          "userdehghani",
-          "celbahraoui",
-          "safejulian"
-        ],
-        "tags": [
-          "misconfig",
-          "headers",
-          "generic",
-          "vuln"
-        ],
-        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
-        "severity": "info",
-        "metadata": {
-          "max-request": 1
-        },
-        "classification": {
-          "cve-id": null,
-          "cwe-id": [
-            "cwe-693"
-          ]
-        }
-      },
-      "matcher-name": "referrer-policy",
-      "type": "http",
-      "host": "data.culture.gouv.fr",
-      "port": "443",
-      "scheme": "https",
-      "url": "https://data.culture.gouv.fr",
-      "matched-at": "https://data.culture.gouv.fr",
-      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
-      "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.069772479Z",
+      "timestamp": "2026-11-22T06:36:02.571758359Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -361,9 +219,9 @@
       "url": "https://data.culture.gouv.fr",
       "matched-at": "https://data.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.069873049Z",
+      "timestamp": "2026-11-22T06:36:02.571973342Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -413,9 +271,9 @@
       "url": "https://data.culture.gouv.fr",
       "matched-at": "https://data.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.070002692Z",
+      "timestamp": "2026-11-22T06:36:02.572186402Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -465,9 +323,9 @@
       "url": "https://data.culture.gouv.fr",
       "matched-at": "https://data.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.07010827Z",
+      "timestamp": "2026-11-22T06:36:02.572396756Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -517,9 +375,217 @@
       "url": "https://data.culture.gouv.fr",
       "matched-at": "https://data.culture.gouv.fr",
       "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
-      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 15 Nov 2026 07:10:03 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
       "ip": "89.106.200.1",
-      "timestamp": "2026-11-15T07:10:03.07022972Z",
+      "timestamp": "2026-11-22T06:36:02.572589417Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-frame-options",
+      "type": "http",
+      "host": "data.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://data.culture.gouv.fr",
+      "matched-at": "https://data.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-11-22T06:36:02.572774434Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "x-permitted-cross-domain-policies",
+      "type": "http",
+      "host": "data.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://data.culture.gouv.fr",
+      "matched-at": "https://data.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-11-22T06:36:02.572918224Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "strict-transport-security",
+      "type": "http",
+      "host": "data.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://data.culture.gouv.fr",
+      "matched-at": "https://data.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-11-22T06:36:02.573091879Z",
+      "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
+      "matcher-status": true
+    },
+    {
+      "template": "http/misconfiguration/http-missing-security-headers.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+      "template-id": "http-missing-security-headers",
+      "template-path": "/home/runner/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+      "info": {
+        "name": "HTTP Missing Security Headers",
+        "author": [
+          "socketz",
+          "geeknik",
+          "g4l1t0",
+          "convisoappsec",
+          "kurohost",
+          "dawid-czarnecki",
+          "forgedhallpass",
+          "jub0bs",
+          "userdehghani",
+          "celbahraoui",
+          "safejulian"
+        ],
+        "tags": [
+          "misconfig",
+          "headers",
+          "generic",
+          "vuln"
+        ],
+        "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        },
+        "classification": {
+          "cve-id": null,
+          "cwe-id": [
+            "cwe-693"
+          ]
+        }
+      },
+      "matcher-name": "referrer-policy",
+      "type": "http",
+      "host": "data.culture.gouv.fr",
+      "port": "443",
+      "scheme": "https",
+      "url": "https://data.culture.gouv.fr",
+      "matched-at": "https://data.culture.gouv.fr",
+      "request": "GET / HTTP/1.1\r\nHost: data.culture.gouv.fr\r\nUser-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+      "response": "HTTP/1.1 429 Too Many Requests\r\nContent-Length: 22\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Sun, 22 Nov 2026 06:36:02 GMT\r\nX-Content-Type-Options: nosniff\r\n\r\nLimit exceeded for ip\n",
+      "ip": "89.106.200.1",
+      "timestamp": "2026-11-22T06:36:02.57334325Z",
       "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Nuclei - Open-source project (github.com/projectdiscovery/nuclei)' 'https://data.culture.gouv.fr'",
       "matcher-status": true
     },
@@ -556,9 +622,9 @@
       "extracted-results": [
         "edge.redirect.pizza"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 31592\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 31592\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
-      "timestamp": "2026-11-15T07:10:42.894412371Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 21964\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 21964\n;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t CNAME\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\n",
+      "timestamp": "2026-11-22T06:36:26.352508609Z",
       "matcher-status": true
     },
     {
@@ -599,9 +665,73 @@
       "extracted-results": [
         "2a12:5240::1"
       ],
-      "request": ";; opcode: QUERY, status: NOERROR, id: 54817\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
-      "response": ";; opcode: QUERY, status: NOERROR, id: 54817\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 1232\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t3600\tIN\tAAAA\t2a12:5240::1\n",
-      "timestamp": "2026-11-15T07:10:43.235077157Z",
+      "request": ";; opcode: QUERY, status: NOERROR, id: 3328\n;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 4096\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n",
+      "response": ";; opcode: QUERY, status: NOERROR, id: 3328\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version 0; flags:; udp: 512\n\n;; QUESTION SECTION:\n;data.culture.gouv.fr.\tIN\t AAAA\n\n;; ANSWER SECTION:\ndata.culture.gouv.fr.\t3600\tIN\tCNAME\tedge.redirect.pizza.\nedge.redirect.pizza.\t1391\tIN\tAAAA\t2a12:5240::1\n",
+      "timestamp": "2026-11-22T06:36:26.619298516Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/detect-ssl-issuer.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-issuer",
+      "template-id": "ssl-issuer",
+      "template-path": "/home/runner/nuclei-templates/ssl/detect-ssl-issuer.yaml",
+      "info": {
+        "name": "Detect SSL Certificate Issuer",
+        "author": [
+          "lingtren"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "discovery"
+        ],
+        "description": "Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "data.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "Let's Encrypt"
+      ],
+      "ip": "89.106.200.1",
+      "timestamp": "2026-11-22T06:36:26.631409916Z",
+      "matcher-status": true
+    },
+    {
+      "template": "ssl/ssl-dns-names.yaml",
+      "template-url": "https://cloud.projectdiscovery.io/public/ssl-dns-names",
+      "template-id": "ssl-dns-names",
+      "template-path": "/home/runner/nuclei-templates/ssl/ssl-dns-names.yaml",
+      "info": {
+        "name": "SSL DNS Names",
+        "author": [
+          "pdteam"
+        ],
+        "tags": [
+          "ssl",
+          "tls",
+          "vuln"
+        ],
+        "description": "Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.\n",
+        "severity": "info",
+        "metadata": {
+          "max-request": 1
+        }
+      },
+      "type": "ssl",
+      "host": "data.culture.gouv.fr",
+      "port": "443",
+      "matched-at": "data.culture.gouv.fr:443",
+      "extracted-results": [
+        "data.culture.gouv.fr"
+      ],
+      "ip": "89.106.200.1",
+      "timestamp": "2026-11-22T06:36:26.631599311Z",
       "matcher-status": true
     }
   ]
